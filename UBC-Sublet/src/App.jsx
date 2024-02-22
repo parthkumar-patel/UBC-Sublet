@@ -1,5 +1,4 @@
 import Navbar from './components/Nav';
-// import Auth from './context/AuthContext';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected';
@@ -10,9 +9,6 @@ import './App.css'
 
 export default function App() {
   return (
-      // <div className="app--container"> 
-      //     <Auth />
-      // </div>
       <div>
         <AuthContextProvider>
           <Navbar />
