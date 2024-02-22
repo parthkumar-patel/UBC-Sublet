@@ -1,8 +1,15 @@
+import { useContext, createContext, useEffect, useState } from 'react';
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, 
-    signOut, signInWithEmailAndPassword
-    } from "firebase/auth"
-  
+import {
+    GoogleAuthProvider,
+    signInWithRedirect,
+    signOut,
+    onAuthStateChanged,
+    getAuth, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword
+  } from 'firebase/auth';
+import PropTypes from 'prop-types';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -58,6 +65,48 @@ const handleLogoutClick = () => {
             console.error('Error:', err.message);
         });
 };
+
+
+// google sign in 
+const AuthContext = createContext();
+
+export const AuthContextProvider = ({ children }) => {
+    const [user, setUser] = useState({});
+    
+    const googleSignIn = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithRedirect(auth, provider)
+    }
+
+    const logOut = () => {
+        signOut(auth)
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser);
+          console.log('User', currentUser)
+        });
+        return () => {
+          unsubscribe();
+        };
+    }, []);
+
+    return (
+        <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+          {children}
+        </AuthContext.Provider>
+    );
+}
+
+AuthContextProvider.propTypes = {
+    children: PropTypes.node.isRequired 
+};
+
+export const UserAuth = () => {
+    return useContext(AuthContext);
+};
+
 
 export default function Auth() {
     return (
