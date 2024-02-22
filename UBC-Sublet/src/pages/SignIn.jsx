@@ -64,7 +64,7 @@ export default function SignIn() {
 		if (user != null) {
 			navigate('/account');
 		}
-	}, [user]);
+	}, [navigate, user]);
 
 	return (
 		<div>
