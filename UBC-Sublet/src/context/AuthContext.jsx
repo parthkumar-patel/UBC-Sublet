@@ -5,10 +5,7 @@ import {
     signInWithRedirect,
     signOut,
     onAuthStateChanged,
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword,
-    updateProfile
+    getAuth
   } from 'firebase/auth';
 import PropTypes from 'prop-types';
 
@@ -25,44 +22,6 @@ const firebaseConfig = {
   
 initializeApp(firebaseConfig);
 const auth = getAuth();
-
-
-// Function to handle signup form submission
-export const handleSignupSubmit = (e) => {
-    e.preventDefault();
-    const displayName = e.target.elements.displayName.value;
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(async (cred) => {
-            try {
-                await updateProfile(cred.user, { displayName: displayName });
-                console.log('User created:', cred.user);
-                e.target.reset();
-            } catch (err) {
-                console.error('Error updating profile:', err.message);
-            }
-        })
-        .catch((err) => {
-            console.error('Error:', err.message);
-        });
-};
-
-// Function to handle login form submission
-export const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
-    signInWithEmailAndPassword(auth, email, password)
-        .then((cred) => {
-            console.log('User logged in:', cred.user);
-            e.target.reset();
-        })
-        .catch((err) => {
-            console.error('Error:', err.message);
-        });
-};
-
 
 // google sign in 
 const AuthContext = createContext();
