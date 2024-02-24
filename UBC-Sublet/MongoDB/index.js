@@ -1,8 +1,50 @@
-const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://rythem:rp99@cluster0.e53yyxx.mongodb.net/houses?retryWrites=true&w=majority&appName=Cluster0")
-.then(() => {
-    console.log("Connected To MongoDB");
+const express = require("express");
+const mongoose = require("mongoose");
+const Sublets = require("./models/sublets");
+require("dotenv").config();
+
+
+const app = express();
+app.use(express.json());
+
+const port = 3001;
+const uri = process.env.MONGODB_CONNECTION_STRING;
+
+mongoose.connect(uri, {
+    useUnifiedTopology: true,
 })
-.catch((err) => {
-    console.log(err);
+
+
+
+const connection = mongoose.connection;
+connection.once("open", () => {
+    console.log("MongoDB database connection established successfuly");
+});
+app.get("/subletslist", async (req, res) => {
+    try {
+        const result = await Sublets.find({});
+        console.log("Sublet from db: ", result);
+        res.send(result);
+    } catch (err) {
+        console.error("Error fetching sublets:", err);
+        res.status(500).send("Error fetching sublets");
+    }
+});
+
+app.post("/sublets", async(req, res) => {
+    try {
+        console.log("req.body: ", req.body);
+        const sublets = new Sublets(req.body); // Create a new Sublets object directly from req.body
+
+        await sublets.save(); // Save the sublets object to the database
+        res.send("Sublet added"); // Send a success response
+    } catch(err) {
+        console.log("error catched: ", err);
+    }
 })
+
+app.listen(port, () => {
+    console.log(`app is listening at http://localhost:${port}`);
+});
+
+
