@@ -18,7 +18,7 @@ export default function Navbar() {
                 <Link to="/" className="navbar-brand">Firebase Google Auth & Context</Link>
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav ml-auto">
-                        {user?.displayName ? (
+                        {user ? (
                             <li className="nav-item">
                                 <button onClick={handleSignOut} className="btn btn-outline-light">Logout</button>
                             </li>
