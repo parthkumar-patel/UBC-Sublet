@@ -3,6 +3,7 @@ import { UserAuth } from '../context/AuthContext';
 import Logo from "../assets/logo.png"
 import Profile from "../assets/profile.png"
 import Fav from "../assets/fav.svg"
+import Search from "../assets/search.svg"
 
 export default function Navbar() {
     const { user, logOut } = UserAuth();
@@ -29,8 +30,8 @@ export default function Navbar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <form className="d-flex ms-auto">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" 
+                            style={{ backgroundImage: `url(${Search})`, backgroundPosition: '10px center', backgroundRepeat: 'no-repeat', paddingLeft: '40px' }} />
                     </form>
                     <Link to="/Fav" className="navbar">
                         <img src={Fav} alt="Fav" width="30" height="24" className="d-inline-block align-text-top ms-2" />
