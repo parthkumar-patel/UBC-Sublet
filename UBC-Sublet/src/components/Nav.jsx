@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext';
+import Logo from "../assets/logo.png"
+import Profile from "../assets/profile.png"
+import Fav from "../assets/fav.svg"
 
 export default function Navbar() {
     const { user, logOut } = UserAuth();
@@ -13,20 +16,41 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+        <nav className="navbar navbar-expand-lg bg-primary bg-body-secondary fixed-top">
             <div className="container">
-                <Link to="/" className="navbar-brand">Firebase Google Auth & Context</Link>
-                <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav ml-auto">
-                        {user ? (
-                            <li className="nav-item">
-                                <button onClick={handleSignOut} className="btn btn-outline-light">Logout</button>
-                            </li>
-                        ) : (
-                            <li className="nav-item">
-                                <Link to="/signin" className="btn btn-outline-light">Sign in</Link>
-                            </li>
-                        )}
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <Link to="/" className="navbar-brand">
+                    <img src={Logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top me-2" />
+                    UBC Sublet
+                </Link>
+
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <form className="d-flex ms-auto">
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <Link to="/Fav" className="navbar">
+                        <img src={Fav} alt="Fav" width="30" height="24" className="d-inline-block align-text-top ms-2" />
+                    </Link>
+                </div>
+
+                <div className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src={Profile} alt="Profile" width="30" height="24" className="d-inline-block align-text-top ms-2" />  
+                    </a>
+                    <ul className="dropdown-menu">
+                        <Link to="/profile" className="dropdown-item ms-3">Profile</Link>
+                        <hr className="dropdown-divider" />
+                        <div className="dropdown-item ms-1">
+                            {user ? (
+                                <a onClick={handleSignOut} className="btn">Logout</a>
+                            ) : (
+                                <Link to="/signin" className="btn">Sign in</Link>
+                            )}
+                        </div>
                     </ul>
                 </div>
             </div>
