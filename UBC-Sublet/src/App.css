@@ -1,44 +1,6 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  background-color: hsl(0, 0%, 98%);
 }
 
 /*------ Save Button ------*/
@@ -96,4 +58,40 @@
   50% {
     transform: scaleY(1.2);
   }
+}
+
+
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+/* Styles for the card container */
+.card {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  width: 200px;
+}
+
+/* Styles for the card image */
+.card img {
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Styles for card stats (title, artist, year) */
+.card--stats h2 {
+  color: #b5b7c0;
+  font-size: 18px;
+  margin: 10px 0;
 }
