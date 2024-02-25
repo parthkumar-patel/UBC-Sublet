@@ -13,9 +13,6 @@ const uri = process.env.MONGODB_CONNECTION_STRING;
 mongoose.connect(uri, {
     useUnifiedTopology: true,
 })
-
-
-
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("MongoDB database connection established successfuly");
@@ -23,8 +20,9 @@ connection.once("open", () => {
 app.get("/subletslist", async (req, res) => {
     try {
         const result = await Sublets.find({});
+        const base64Images = result.map(sublet => sublet.rooms);
+        res.status(200).json({ base64Images })
         console.log("Sublet from db: ", result);
-        res.send(result);
     } catch (err) {
         console.error("Error fetching sublets:", err);
         res.status(500).send("Error fetching sublets");
