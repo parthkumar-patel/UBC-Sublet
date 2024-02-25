@@ -18,15 +18,14 @@ export default function Search() {
                 position: 'absolute', 
                 top: '50%', 
                 left: '50%', 
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                transform: 'translate(-82%, 112%)',
+                // backgroundColor: 'rgba(255, 255, 255, 0.8)', 
                 padding: '10px',
-                borderRadius: '4px',
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
-                width: 'calc(100% - 900px)', 
-                marginTop: '150px',
-                marginLeft: '-200px',
-                maxWidth: '1024px' 
+                width: 'calc(100% - 20px)', // Adjusted width for smaller screens
+                // maxWidth: '1024px',
+                maxWidth: '600px',
+                margin: 'auto' // Center the form horizontally
             }}>
                 <input 
                     className="form-control me-2" 
@@ -37,10 +36,19 @@ export default function Search() {
                         backgroundImage: `url(${SearchIcon})`, 
                         backgroundPosition: '10px center', 
                         backgroundRepeat: 'no-repeat', 
+                        borderRadius: '30px',
                         paddingLeft: '40px',
                     }} 
                 />
-                <button className="btn btn-primary" type="submit">Search</button>
+                <button className="btn btn-primary" type="submit"
+                    style ={{
+                        paddingTop: '12px',
+                        paddingBottom: '12px',
+                        marginLeft : '-85px',
+                        borderTopRightRadius: '30px',
+                        borderBottomRightRadius: '30px'
+                    }} >
+                    Search</button>
             </form>
         </div>
     )

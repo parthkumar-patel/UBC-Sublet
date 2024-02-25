@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import pic from "../assets/pic2.jpg"
-
+import "../App.css"
 export default function Card() {
     // const [isChecked, setIsChecked] = useState(true);
 
