@@ -5,9 +5,9 @@ const subletsSchema = new Schema({
     location: {
         type: String,
     },
-    rooms: {
+    rooms: [{
         type: String
-    },
+    }],
     pricing: [{
         initialDeposit: Number,
         monthlyRent: Number
