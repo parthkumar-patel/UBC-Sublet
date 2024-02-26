@@ -17,12 +17,18 @@ const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("MongoDB database connection established successfuly");
 });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow specific HTTP methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allow specific headers
+    next();
+});
+
 app.get("/subletslist", async (req, res) => {
     try {
-        const result = await Sublets.find({});
-        const base64Images = result.map(sublet => sublet.rooms);
-        res.status(200).json({ base64Images })
-        console.log("Sublet from db: ", result);
+        const sublets = await Sublets.find({});
+
+        res.json(sublets);    
     } catch (err) {
         console.error("Error fetching sublets:", err);
         res.status(500).send("Error fetching sublets");

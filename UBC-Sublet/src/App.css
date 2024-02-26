@@ -60,25 +60,25 @@
   }
 }
 
-
 .cards-list {
   display: flex;
   flex-wrap: nowrap;
   gap: 20px;
   overflow-x: auto;
   /* padding-left: 30px; */
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 /* Styles for the card container */
 .card {
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 10px;
-  margin-top: 80px;
+  margin-top: 100px;
   padding: 20px;
+  padding-bottom: 2px;
   flex: 0 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* position: relative; */
   position: absolute;
   align-items: center;
@@ -87,13 +87,28 @@
 
 /* Styles for the card image */
 .card img {
+  padding: 2px;
   height: auto;
   border-radius: 5px;
 }
 
+.featuredITems {
+  font-size: larger;
+  font-weight: 1000;
+  margin-Top: 80px;
+  margin-left: 20px;
+  position: absolute;
+}
 /* Styles for card stats (title, artist, year) */
-.card--stats h2 {
+.card--stats {
   color: #b5b7c0;
-  font-size: 18px;
   margin: 10px 0;
+}
+
+.card--stats .firstElement h6 {
+  font-weight: 1000;
+}
+
+.card--stats div {
+  margin-top: -8px;
 }
