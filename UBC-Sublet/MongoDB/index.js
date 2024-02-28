@@ -41,7 +41,7 @@ app.post("/sublets", async(req, res) => {
         const sublets = new Sublets(req.body); // Create a new Sublets object directly from req.body
 
         await sublets.save(); // Save the sublets object to the database
-        res.send("Sublet added"); // Send a success response
+        res.send("Sublet added"); // Send a success response 
     } catch(err) {
         console.log("error catched: ", err);
     }

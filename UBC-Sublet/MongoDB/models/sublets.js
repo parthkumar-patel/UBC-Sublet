@@ -6,7 +6,7 @@ const subletsSchema = new Schema({
         type: String,
     },
     rooms: [{
-        type: String
+        roomImages: [String]
     }],
     pricing: [{
         initialDeposit: Number,
