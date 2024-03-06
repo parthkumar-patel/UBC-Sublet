@@ -53,26 +53,23 @@ export default function Card() {
         // );
     return (
         <div>
-            <div className="featuredITems"> Featured sublets
+            {/* <div className="featuredITems"> Featured sublets
             </div>
             <div class = "cards-list">
-            {allImage.map((item, index) => (
-                <div key={index}>
-                    {item.rooms.map((eachImage, roomIndex) => (
-                        <div key = {roomIndex} className="card">
-                        {eachImage.roomImages.map((singleImage, imageIndex) => (
-                            <div key ={imageIndex} class = "img">
+            {/* {allImage.map((item, index) => ( */}
+                {/* {allImage.map((eachImage) => (
+                    <div key = {roomIndex} className="card">
+                    {eachImage.roomImages.map((singleImage, imageIndex) => (
+                        <div key ={imageIndex} class = "img">
                                 <img src={singleImage} alt="pic" width="170px" />
                             </div>
                         ))} <div className="card--stats">
                                 <div class = "firstElement"> <h6> {item.roomType} </h6> </div>
                                 <div> {item.location} </div>
                             </div>
-                        </div>                       
+                        </div>                     
                 ))}
-                </div>
-            ))}
-        </div>
+            </div>   */}
         </div>
     );
 }
