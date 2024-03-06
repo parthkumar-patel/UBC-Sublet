@@ -25,25 +25,32 @@ export default function SearchList() {
             setentireData(data);
         })
     }
+  
     useEffect(() => {
         entireData.forEach(data => {
             const latitudes = data.location.map(loc => loc.latitude);
-            if (Math.abs(latitudes - latitude <= 0.005)) {
-                setconditionalData(data);
-            }
-        });
-        entireData.forEach(data => {
-            // console.log(data);
             const longitudes = data.location.map(loc => loc.longitude);
-            if (Math.abs(longitudes - longitude <= 0.005)) {
-                setconditionalData(data);
+            if (Math.abs(latitudes - latitude) <= 0.005 && Math.abs(longitudes - longitude) <= 0.005) {
+                setconditionalData([data]);
             }
         });
     },  [entireData]);
 
     return ( 
-        <div> 
-            
+        <div className="featuredITems"> Featured sublets
+        {conditionalData.map((items, index) => (
+                <div key = {index} className="card">
+                {items.rooms.map((singleImage, imageIndex) => (
+                    <div key ={imageIndex} class = "img">
+                            <img src={singleImage} alt="pic" width="170px" />
+                    </div>
+                ))} 
+                <div className="card--stats">
+                    <div class = "firstElement"> <h6> {items.roomType} </h6> </div>
+                    <div> {items.location.currentLocation} </div>
+                </div>
+            </div>                            
+        ))};
         </div>
-    );
+    )
 }
