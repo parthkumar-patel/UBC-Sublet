@@ -2,12 +2,13 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const subletsSchema = new Schema({
-    location: {
-        type: String,
-    },
-    rooms: [{
-        roomImages: [String]
+    location: [{
+        currentLocation: String,
+        latitude: Number,
+        longitude: Number
     }],
+    rooms: [String],
+
     pricing: [{
         initialDeposit: Number,
         monthlyRent: Number
