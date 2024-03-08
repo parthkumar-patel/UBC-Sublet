@@ -1,4 +1,3 @@
-import { useState } from "react";
 import pic from "../assets/pic2.jpg"
 import "../App.css"
 import { useState, useEffect } from "react";
