@@ -17,7 +17,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg bg-primary bg-body-secondary fixed-top p-3">
+        <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
             <div className="container">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

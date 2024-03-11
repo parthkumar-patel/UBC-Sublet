@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+
 #root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background:white;
 }
-
+body {
+  margin: 0;
+  line-height: normal;
+}
 /* Search bar overlay adjustments */
 .search-bar {
   position: absolute;

@@ -6,7 +6,7 @@ export default function Card() {
     useEffect(() => {
         getImage()
     },[])
-    console.log("did it");
+
     const [isChecked, setIsChecked] = useState(true);
 
     const handleCheckboxChange = () => {
@@ -39,17 +39,17 @@ export default function Card() {
         <div>
             <div className="featuredITems"> Featured sublets
             </div>
-            <div class = "cards-list">
+            <div className = "cards-list">
             {allImage.map((item, index) => (
                 <div key={index}>
                     {item.rooms.map((eachImage, roomIndex) => (
                         <div key = {roomIndex} className="card">
                         {eachImage.roomImages.map((singleImage, imageIndex) => (
-                            <div key ={imageIndex} class = "img">
+                            <div key ={imageIndex} className = "img">
                                 <img src={singleImage} alt="pic" width="170px" />
                             </div>
                         ))} <div className="card--stats">
-                                <div class = "firstElement"> <h6> {item.roomType} </h6> </div>
+                                <div className = "firstElement"> <h6> {item.roomType} </h6> </div>
                                 <div> {item.location} </div>
                             </div>
                         </div>                       

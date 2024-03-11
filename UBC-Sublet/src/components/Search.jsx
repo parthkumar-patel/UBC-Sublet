@@ -104,8 +104,8 @@ export default function Search() {
                         background: "#24a0ed",
                         padding: '10px',
                         paddingInline: '15px',
-                        marginBlock: '10px',
-                        marginLeft : '-101.5px',
+                        marginBlock: '7.5px',
+                        marginLeft : '-100px',
                         borderRadius: '10px'
                     }} >
                     Search</button>

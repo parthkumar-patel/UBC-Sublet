@@ -19,7 +19,7 @@ const Card = () => {
 }  
 
   return (
-    <div className="card">
+    <div className="container-3-parent">
       <div className="img">
         <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
           <div className="carousel-inner">
@@ -66,28 +66,32 @@ const Card = () => {
           </label>
         </div>
       </div>
-
-      <div className="  p-3 " style={{ maxWidth: '400px' }}>
-  <div className="row">
-    <div className="col">
-      <h1 className="fw-bold mb-3" style={{ fontSize: '24px' }}>Orchard Commons 
-        <em>
-          $975
-          <small>
-            /mo
-          </small>
-        </em>
-      </h1>
-    </div>
-    <div className="col-auto">
-      <p className="fw-bold mb-3" style={{ fontSize: '24px' }}>$975/mo</p>
-    </div>
-  </div>
-  <p className="mb-3" style={{ fontSize: '16px' }}>3.4 mi away</p>
-  <p className="mb-4" style={{ fontSize: '14px' }}>1BR/4BA • Private room in shared unit</p>
-  <button className="btn btn-primary fw-bold" style={{ fontSize: '16px' }}>Contact for details</button>
-</div>
-
+      <div className="container-3">
+        <div className="frame">
+          <b className="location">Orchard Commons</b>
+        </div>
+        <div className="frame1">
+          <div className="distance"> Vancouver 3.4 mi away</div>
+        </div>
+        <div className="frame2">
+          <b className="price">
+            <span className="span">$975</span>
+            <span className="mo">/mo</span>
+          </b>
+        </div>
+        <div className="frame3">
+          <div className="description">
+            {" "}
+            1BR/4BA • Private room in shared unit
+          </div>
+        </div>
+        <div className="frame4">
+          <div className="duration">
+            <span> Available</span>
+            <b>: May 1, 2024 - July 1, 2024</b>
+          </div>
+        </div>
+      </div> 
     </div>
   );
 };
