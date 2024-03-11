@@ -1,22 +1,17 @@
-import { useState } from "react";
-import "./card.css"; // Import CSS file
 import pic from "../assets/pic2.jpg";
 import pic1 from "../assets/pic1.jpeg"
+import { useState } from "react";
+import "./card.css"; 
+import DateConvertor from "./DateConvertor";
 
-const Card = () => {
+export default function CardComponent(prop){
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
-  const data = {
-    index: 1,
-    roomImages: [pic, pic1],
-    roomType: "Single",
-    location: "Orchard Commons",
-    price: "1100",
-}  
+  console.log(prop.item)
 
   return (
     <div className="container-3-parent">
@@ -24,10 +19,13 @@ const Card = () => {
         <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={data.roomImages[0]} className="d-block w-100" alt="pic" />
+              <img src={pic} className="d-block w-100" alt="pic" />
             </div>
             <div className="carousel-item">
-              <img src={data.roomImages[1]} className="d-block w-100" alt="pic" />
+              <img src={pic1} className="d-block w-100" alt="pic" />
+            </div>
+            <div className="carousel-item">
+              <img src={prop.item.rooms[0]} className="d-block w-100" alt="pic" />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -68,32 +66,34 @@ const Card = () => {
       </div>
       <div className="container-3">
         <div className="frame">
-          <b className="location">Orchard Commons</b>
+          <b className="location">{prop.item.location[0].currentLocation}</b>
         </div>
         <div className="frame1">
           <div className="distance"> Vancouver 3.4 mi away</div>
         </div>
         <div className="frame2">
           <b className="price">
-            <span className="span">$975</span>
+            <span className="span">${prop.item.pricing[0].monthlyRent.$numberInt}</span>
             <span className="mo">/mo</span>
           </b>
         </div>
         <div className="frame3">
           <div className="description">
             {" "}
-            1BR/4BA • Private room in shared unit
+            1BR/{prop.item.roomType}BA • {prop.item.description}
           </div>
         </div>
         <div className="frame4">
           <div className="duration">
             <span> Available</span>
-            <b>: May 1, 2024 - July 1, 2024</b>
+            {/* <b>: May 1, 2024 - July 1, 2024</b> */}
+            <DateConvertor 
+              start = {prop.item.startingSubletDate}
+              timePeriod = {prop.item.timePeriod.$numberInt}
+            />
           </div>
         </div>
       </div> 
     </div>
   );
-};
-
-export default Card;
+}
