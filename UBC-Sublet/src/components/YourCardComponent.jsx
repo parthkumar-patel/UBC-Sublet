@@ -67,13 +67,27 @@ const Card = () => {
         </div>
       </div>
 
-      <div className="text">
-        <p className="h3">{data.location}</p>
-        <p className="p">{data.roomType}</p>
-        <p className="p">{data.roomType}</p>
+      <div className="  p-3 " style={{ maxWidth: '400px' }}>
+  <div className="row">
+    <div className="col">
+      <h1 className="fw-bold mb-3" style={{ fontSize: '24px' }}>Orchard Commons 
+        <em>
+          $975
+          <small>
+            /mo
+          </small>
+        </em>
+      </h1>
+    </div>
+    <div className="col-auto">
+      <p className="fw-bold mb-3" style={{ fontSize: '24px' }}>$975/mo</p>
+    </div>
+  </div>
+  <p className="mb-3" style={{ fontSize: '16px' }}>3.4 mi away</p>
+  <p className="mb-4" style={{ fontSize: '14px' }}>1BR/4BA • Private room in shared unit</p>
+  <button className="btn btn-primary fw-bold" style={{ fontSize: '16px' }}>Contact for details</button>
+</div>
 
-        
-      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import homepage from "../assets/pic2 3.jpg";
-import SearchIcon from "../assets/search.svg"
-import React, { useState } from 'react';
+import marine from "../assets/marine_drive.png";
+import SearchIcon from "../assets/search.svg";
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -66,29 +67,22 @@ export default function Search() {
 
     // console.warn("result return here", place)
     return (
-        <div style={{ marginTop: '-40px', display: 'flex' }} className="">
-            <img src={homepage} className="img-fluid img-thumbnail" 
+        <div className="position-relative" style={{marginTop: '7%'}}>
+            <img src={homepage} className="img-fluid m-3 bg-body-tertiary rounded position-relative" 
                 style={{
-                    width: '100%', 
-                    height: 'auto',
+                    width: '70%', 
+                    height: '500px',
+                    marginTop: '30px',
                     borderRadius: '8px',
                     boxShadow: '0 8px 12px rgba(0, 0, 0, 0.3)', 
                     filter: 'contrast(110%)' 
                 }} 
                 alt="Homepage"
             />
-            <form className="d-flex" style={{ 
-                position: 'absolute', 
-                top: '50%', 
-                left: '50%', 
-                transform: 'translate(-82%, 112%)',
-                // backgroundColor: 'rgba(255, 255, 255, 0.8)', 
-                padding: '10px',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
-                width: 'calc(100% - 20px)', // Adjusted width for smaller screens
-                // maxWidth: '1024px',
-                maxWidth: '600px',
-                margin: 'auto' // Center the form horizontally
+            <form className="d-flex position-absolute translate-middle" style={{ 
+                top: '86%',
+                left: '38%',
+                minWidth: '600px'
             }}>
                 <input 
                     className="form-control me-2" 
@@ -98,20 +92,21 @@ export default function Search() {
                     onChange={handlePlaceChange}
                     style={{ 
                         backgroundImage: `url(${SearchIcon})`, 
-                        backgroundPosition: '10px center', 
+                        backgroundPosition: '15px center', 
                         backgroundRepeat: 'no-repeat', 
-                        borderRadius: '30px',
-                        paddingLeft: '40px',
+                        borderRadius: '10px',
+                        paddingInline: '50px',
                     }} 
                 />
-                <button className="btn btn-primary" type="submit"
-                onClick={handleSubmit}
+                <button className="btn text-white" type="submit"
+                    onClick={handleSubmit}
                     style ={{
-                        paddingTop: '12px',
-                        paddingBottom: '12px',
-                        marginLeft : '-85px',
-                        borderTopRightRadius: '30px',
-                        borderBottomRightRadius: '30px'
+                        background: "#24a0ed",
+                        padding: '10px',
+                        paddingInline: '15px',
+                        marginBlock: '10px',
+                        marginLeft : '-101.5px',
+                        borderRadius: '10px'
                     }} >
                     Search</button>
             </form>
