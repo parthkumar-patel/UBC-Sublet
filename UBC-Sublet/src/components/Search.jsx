@@ -4,7 +4,6 @@ import SearchIcon from "../assets/search.svg";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 // import { useHistory } from 'react-router-dom';
 
 // import { GoogleComponent } from 'react-google-location'
@@ -32,7 +31,7 @@ export default function Search() {
               setData({ latitude: '', longitude: '' }); // Clear data state if input is empty
 
             }
-                  // Handle the response data here
+            //       Handle the response data here
             // const predictions = response.data.predictions;
             // for (const prediction of predictions) {
             //     // Extract place ID

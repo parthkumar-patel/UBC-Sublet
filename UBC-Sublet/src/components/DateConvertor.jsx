@@ -12,7 +12,7 @@ export default function DateConvertor(prop) {
 
     // Calculate ending date
     const endingDate = new Date(startingDate);
-    endingDate.setMonth(endingDate.getMonth() + parseInt(data.timePeriod.$numberInt));
+    endingDate.setMonth(endingDate.getMonth() + parseInt(data.timePeriod));
 
     // Format starting and ending dates
     const endingMonth = endingDate.toLocaleString('default', { month: 'long' });
