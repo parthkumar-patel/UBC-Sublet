@@ -1,7 +1,7 @@
 import pic from "../assets/pic2.jpg";
 import pic1 from "../assets/pic1.jpeg"
 import { useState } from "react";
-import "./card.css"; 
+import "./styles/card.css"; 
 import DateConvertor from "./DateConvertor";
 
 export default function CardComponent(prop){

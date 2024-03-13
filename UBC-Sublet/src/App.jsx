@@ -6,6 +6,7 @@ import Account from './pages/Account';
 import Home from './pages/Home';
 import Signin from './pages/SignIn';
 import SearchSublet from './components/SearchSublet';
+import Descrition from './components/Description';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,6 +18,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signin' element={<Signin />} />
         <Route path = '/searchSublet' element= {<SearchSublet />} />
+        <Route path = '/desc' element= {<Descrition />} />
         <Route
           path='/account'
           element={

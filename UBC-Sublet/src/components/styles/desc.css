@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mandali:wght@400&display=swap");
+
+.month1-br4ba,
+.sunny-1br-in {
+  align-self: stretch;
+  position: relative;
+  font-family: Manrope;
+  text-align: left;
+}
+.sunny-1br-in {
+  margin: 0;
+  font-size: 36px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #000;
+}
+.month1-br4ba {
+  font-size: 18px;
+  line-height: 40px;
+  color: #9095a1;
+}
+.sunny-1br-in-marine-drive-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 19px;
+  gap: 3px 0;
+}
+.about-this-place,
+.beautiful-and-sunny {
+  position: relative;
+  font-family: Manrope;
+  color: #000;
+  text-align: left;
+}
+.about-this-place {
+  width: 436px;
+  height: 26px;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.beautiful-and-sunny {
+  align-self: stretch;
+  font-size: 15px;
+  line-height: 22px;
+}
+.about-this-place-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 14px;
+  box-sizing: border-box;
+  gap: 21px 0;
+  max-width: 100%;
+}
+.amenities,
+.hover-me {
+  position: relative;
+  text-align: left;
+}
+.amenities {
+  width: 436px;
+  height: 26px;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  font-family: Manrope;
+  color: #000;
+  align-items: center;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.hover-me {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  color: #1b0658;
+}
+.bonus-button-3 {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #1b0658;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 55px 10px 15px;
+  white-space: nowrap;
+}
+.bonus-button-10:hover,
+.bonus-button-3:hover,
+.bonus-button-4:hover,
+.bonus-button-5:hover,
+.bonus-button-6:hover,
+.bonus-button-7:hover{
+  background-color: rgba(79, 56, 138, 0.09);
+  border: 1px solid #4f388a;
+  box-sizing: border-box;
+}
+.hover-me {
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  color: #1b0658;
+  text-align: left;
+}
+.bonus-button-4 {
+  cursor: pointer;
+  border: 1px solid #1b0658;
+  padding: 10px 30px 10px 15px;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bonus-button-5 {
+  cursor: pointer;
+  border: 1px solid #1b0658;
+  padding: 10px 30px 10px 15px;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bonus-button-6 {
+  cursor: pointer;
+  border: 1px solid #1b0658;
+  padding: 10px 30px 10px 15px;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bonus-button-7 {
+  cursor: pointer;
+  border: 1px solid #1b0658;
+  padding: 10px 30px 10px 15px;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bonus-button-10 {
+  cursor: pointer;
+  border: 1px solid #1b0658;
+  padding: 10px 32px 10px 15px;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.deposit-rent-frame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 107px;
+  gap: 20px;
+}
+.bonus-button,
+.line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+.line {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 18px 0;
+}
+.bonus-button {
+  flex: 1;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+}
+.bonus-button-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 14px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.pricing {
+  width: 436px;
+  border: 0;
+  outline: 0;
+  display: flex;
+  font-family: Manrope;
+  font-size: 24px;
+  background-color: transparent;
+  height: 26px;
+  position: relative;
+  line-height: 30px;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  max-width: 100%;
+  padding: 0;
+}
+.frame5 {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid #9095a1;
+  box-sizing: border-box;
+}
+.pricing-parent {
+  align-self: stretch;
+  height: 39px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 13px 0;
+  max-width: 100%;
+}
+.price-container,
+.deposit {
+  position: relative;
+  line-height: 26px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.deposit {
+  width: 74px;
+  height: 20px;
+  font-size: 16px;
+  font-family: Mandali;
+  color: #9095a1;
+}
+.price-container {
+  align-self: stretch;
+  height: 12px;
+  font-size: 15px;
+  font-family: Manrope;
+  color: #000;
+  white-space: nowrap;
+}
+.payment-details {
+  width: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px 0;
+}
+.div,
+.first-months-rent {
+  height: 20px;
+  position: relative;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: Mandali;
+  color: #9095a1;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.div {
+  width: 86px;
+  height: 12px;
+  font-size: 15px;
+  font-family: Manrope;
+  color: #000;
+  white-space: nowrap;
+}
+.name-input,
+.payment-details1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px 0;
+}
+.name-input {
+  width: 521px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+.frame6,
+.name-input-parent {
+  align-self: stretch;
+  box-sizing: border-box;
+}
+.frame6 {
+  height: 1px;
+  position: relative;
+  border-top: 1px solid #9095a1;
+}
+.name-input-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 14px;
+  gap: 13px 0;
+  max-width: 100%;
+}
+.contact {
+  align-self: stretch;
+  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  font-family: Manrope;
+  color: #000;
+  text-align: left;
+}
+.name {
+  width: 166px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.name,
+.your-name {
+  position: relative;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: Manrope;
+  color: #7a7a7a;
+  text-align: left;
+}
+.your-name-input,
+.your-name-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.your-name-wrapper {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 8px 16px;
+  background-color: rgba(242, 242, 242, 0.55);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  white-space: nowrap;
+}
+.your-name-wrapper:hover {
+  background-color: rgba(217, 217, 217, 0.55);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.your-name-input {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px 0;
+}
+.send-button-frame,
+.send-button-frame-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.send-button-frame {
+  flex: 1;
+  flex-direction: column;
+  gap: 8px 0;
+}
+.send-button-frame-wrapper {
+  width: 394px;
+  flex-direction: row;
+  padding: 0 0 14px;
+  box-sizing: border-box;
+}
+.frame-icon1 {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.send {
+  position: relative;
+  font-size: 16px;
+  line-height: 12px;
+  font-family: Manrope;
+  color: #fff;
+  text-align: left;
+}
+.frame-parent,
+.send-button {
+  align-items: center;
+  justify-content: center;
+}
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+  gap: 0 7px;
+}
+.send-button {
+  cursor: pointer;
+  border: 0;
+  padding: 12px 16px;
+  background-color: #24a0ed;
+  border-radius: 10px;
+}
+.frame7,
+.macbook-air-2,
+.send-button {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.frame7 {
+  align-self: stretch;
+  align-items: flex-end;
+  justify-content: center;
+}
+.macbook-air-2 {
+  margin: 0;
+  width: 1280px;
+  background-color: #fff;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 47px 237px 6.2000000000000455px;
+  box-sizing: border-box;
+  gap: 13px 0;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 750px) {
+  .sunny-1br-in {
+    font-size: 29px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .macbook-air-2 {
+    padding-left: 118px;
+    padding-right: 118px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sunny-1br-in {
+    font-size: 22px;
+    line-height: 18px;
+  }
+  .about-this-place,
+  .amenities {
+    font-size: 19px;
+    line-height: 24px;
+  }
+  .hover-me {
+    font-size: 16px;
+  }
+  .pricing {
+    font-size: 19px;
+    line-height: 24px;
+  }
+  .name-input {
+    flex-wrap: wrap;
+  }
+  .contact {
+    font-size: 19px;
+    line-height: 24px;
+  }
+  .macbook-air-2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}
