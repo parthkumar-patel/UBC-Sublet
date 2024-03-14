@@ -40,7 +40,7 @@ export default function SearchSublet() {
         entireData.forEach(data => {
             const latitudes = data.location.map(loc => loc.latitude);
             const longitudes = data.location.map(loc => loc.longitude);
-            if (Math.abs(latitudes - latitude) <= 1 && Math.abs(longitudes - longitude) <= 1) {
+            if (Math.abs(latitudes - latitude) <= 5 && Math.abs(longitudes - longitude) <= 5) {
                 newData.push(data); // Add data to the temporary array
             }
         });
@@ -171,68 +171,121 @@ export default function SearchSublet() {
         //     return;
         // }
         // setconditionalData(filteredData);
-        const handleTheFilter = (e) => {
-            let filteredData = [...conditionalDataInActive]; // Start with the original data set
+        // const handleTheFilter = (e) => {
+            // let filteredData = [...conditionalDataInActive]; // Start with the original data set
         
-            if (activeButtons.includes("Newest")) {
-                filteredData.sort((a, b) => {
-                    // Split the date strings and construct Date objects
-                    const datePartsA = a.dateAdding.split('/');
-                    const datePartsB = b.dateAdding.split('/');
-                    // Create Date objects with format: day/month/year
-                    const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-                    const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
-                    // Sort in descending order based on the date field
-                    console.log(a.dateAdding);
-                    console.log(b.dateAdding);
-                    return dateB - dateA; // Sorting in descending order
-                });
-            }
-        
-            if (activeButtons.includes("Oldest")) {
-                filteredData.sort((a, b) => {
-                    // Split the date strings and construct Date objects
-                    const datePartsA = a.dateAdding.split('/');
-                    const datePartsB = b.dateAdding.split('/');
-                    // Create Date objects with format: day/month/year
-                    const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-                    const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
-                    // Sort in descending order based on the date field
-                    console.log(a.dateAdding);
-                    console.log(b.dateAdding);
-                    return dateA - dateB; // Sorting in descending order
-                });
-            }
-        
-            if (activeButtons.includes("Lowest Price")) {
-                filteredData.sort((a, b) => a.pricing[0].monthlyRent - b.pricing[0].monthlyRent);
-            }
-        
-            if (activeButtons.includes("Highest Price")) {
-                filteredData.sort((a, b) => b.pricing[0].monthlyRent - a.pricing[0].monthlyRent);
-            }
-
-            if (activeButtons.includes("Shortest Lease")) {
-                filteredData.sort((a, b) => a.timePeriod - b.timePeriod);
-            } 
-            if (activeButtons.includes("Longest Lease")) {
-                filteredData.sort((a, b) => a.timePeriod - b.timePeriod);
-            } 
             
-            if (maxpriceRange != 0) {
-            // Apply additional filtering based on price and lease range
-                filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange && data.pricing[0].monthlyRent <= maxpriceRange);
-            } else {
-                filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange);
-            } if (maxleaseRange != 0) {
-                filteredData = filteredData.filter(data => data.timePeriod >= leaseRange && data.timePeriod <= maxleaseRange);
-            } else {
-                filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= leaseRange);
-            }
+            
+            // if (maxpriceRange != 0) {
+            // // Apply additional filtering based on price and lease range
+            //     filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange && data.pricing[0].monthlyRent <= maxpriceRange);
+            // } else {
+            //     filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange);
+            // } if (maxleaseRange != 0) {
+            //     filteredData = filteredData.filter(data => data.timePeriod >= leaseRange && data.timePeriod <= maxleaseRange);
+            // } else {
+            //     filteredData = filteredData.filter(data => data.timePeriod >= leaseRange);
+            // } 
         
-            setFilteredData(filteredData);
-            setconditionalData(filteredData);
-        };
+            // setFilteredData(filteredData);
+            // setconditionalData(filteredData);
+
+            const handleTheFilter = (e) => {
+                let filteredData = [...conditionalDataInActive]; // Start with the original data set
+            
+                // Determine the primary filter based on the first selected filter
+                const primaryFilter = activeButtons[0];
+
+                const sortingFunctions = {
+                    "Newest": (a, b) => {
+                        // Sorting logic for sorting data by newest date
+                        // This function compares two objects based on their dateAdding property
+                        // and sorts them in descending order (newest first)
+                        const datePartsA = a.dateAdding.split('/');
+                        const datePartsB = b.dateAdding.split('/');
+                        const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
+                        const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
+                        return dateB - dateA;
+                    },
+                    "Oldest": (a, b) => {
+                        // Sorting logic for sorting data by oldest date
+                        // This function compares two objects based on their dateAdding property
+                        // and sorts them in ascending order (oldest first)
+                        const datePartsA = a.dateAdding.split('/');
+                        const datePartsB = b.dateAdding.split('/');
+                        const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
+                        const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
+                        return dateA - dateB;
+                    },
+                    "Lowest Price": (a, b) => {
+                        const pricingA = a.pricing[0].monthlyRent;
+                        const pricingB = b.pricing[0].monthlyRent;
+                        return pricingA - pricingB;
+                    },
+                    "Highest Price" : (a, b) => {
+                        const pricingA = a.pricing[0].monthlyRent;
+                        const pricingB = b.pricing[0].monthlyRent;
+                        return pricingB - pricingA; // Sorting in descending order
+                    },
+                    "Shortest Lease" : (a, b) => {
+                        const timePeriodA = a.timePeriod;
+                        const timePeriodB = b.timePeriod;
+                        return timePeriodA - timePeriodB; // Sorting in descending order
+                    },
+                    "Longest Lease" : (a, b) => {
+                        const timePeriodA = a.timePeriod;
+                        const timePeriodB = b.timePeriod;
+                        return timePeriodB - timePeriodA; // Sorting in descending order
+                    }
+                    // Define sorting functions for other filters (e.g., Lowest Price, Highest Price, Shortest Lease, etc.)
+                };
+                
+
+                // Apply sorting based on the primary filter
+                if (primaryFilter) {
+                    filteredData = filteredData.slice().sort(sortingFunctions[primaryFilter]);
+                }
+            
+                // Apply secondary filters if more than one button is active
+                if (activeButtons.length > 1) {
+                    // Divide the sorted data into groups of 4 cards
+                    const groups = [];
+                    for (let i = 0; i < filteredData.length; i += 4) {
+                        groups.push(filteredData.slice(i, i + 4));
+                    }
+            
+                    // Apply the secondary filters to each group of 4 cards
+                    const filteredGroups = groups.map(group => {
+                        // Apply filters other than the primary filter
+                        let filteredGroup = group;
+                        activeButtons.slice(1).forEach(filter => {
+                            if (sortingFunctions[filter]) {
+                                filteredGroup = filteredGroup.sort(sortingFunctions[filter]);
+                            }
+                        });
+                        return filteredGroup;
+                    });
+            
+                    // Combine the filtered groups
+                    filteredData = filteredGroups.flat();
+                }
+            
+                // Apply additional filtering based on price and lease range
+                if (maxpriceRange != 0) {
+                    // Apply additional filtering based on price and lease range
+                        filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange && data.pricing[0].monthlyRent <= maxpriceRange);
+                    } else {
+                        filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange);
+                    } if (maxleaseRange != 0) {
+                        filteredData = filteredData.filter(data => data.timePeriod >= leaseRange && data.timePeriod <= maxleaseRange);
+                    } else {
+                        filteredData = filteredData.filter(data => data.timePeriod >= leaseRange);
+                    }             
+                // Update state with filtered data
+                setFilteredData(filteredData);
+                setconditionalData(filteredData);
+            };
+            
         
     
     
