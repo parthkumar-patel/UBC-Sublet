@@ -1,6 +1,6 @@
-.card {
+.container-3-parent {
   margin: 10px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding-bottom: 2px;
   flex: 0 0 auto;
   display: flex;
@@ -9,16 +9,19 @@
   /* width: 309.5px;
   height: 294.023px; */
   width: 343px;
-  height: 309px;
+  height: 290px;
   background: white;
   border-radius: 0px;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
   transition: 0.2s ease-in-out;
-  position: relative; 
+  position: relative;
+  /* position: absolute; */
+  margin-left: 40px;
 }
 
 .img {
-  width: 343px;
+  margin-top: 0px;
+  width: 245px;
   height: 309px;
   position: absolute;
   left: 0;
@@ -41,6 +44,7 @@
   position: absolute; 
   top: 0px; 
   right: 0px; 
+  left: 170px;
   z-index: 1; 
 }
 
@@ -56,7 +60,7 @@
   align-items: space-around;
 }
 
-.card:hover {
+.container-3-parent:hover {
   cursor: pointer;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
 }
@@ -176,8 +180,9 @@
 }
 .container-3-parent {
   width: 100%;
-  position: relative;
+  position: absolute;
   height: 505px;
+  margin-top: 80px;
   text-align: left;
   font-size: 14px;
   color: #323743;

@@ -19,13 +19,15 @@ export default function CardComponent(prop){
         <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={pic} className="d-block w-100" alt="pic" />
+              <img src={prop.item.rooms[0]} className="d-block w-100" alt="pic" />
             </div>
             <div className="carousel-item">
               <img src={pic1} className="d-block w-100" alt="pic" />
             </div>
-            <div className="carousel-item">
-              <img src={prop.item.rooms[0]} className="d-block w-100" alt="pic" />
+            <div className="carousel-item" style = {{ marginTop: '180px'}}>
+              <img src={prop.item.rooms[1]} className="d-block w-50" style={{  marginTop: '180px', width: '10px', height: 'auto' }}
+              alt="pic" 
+              />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -44,6 +46,9 @@ export default function CardComponent(prop){
               type="checkbox"
               checked={isChecked}
               onChange={handleCheckboxChange}
+              style ={{
+                marginLeft: '-120px'
+              }}
             />
             <svg
               className="save-regular"
@@ -57,39 +62,50 @@ export default function CardComponent(prop){
               className="save-solid"
               xmlns="http://www.w3.org/2000/svg"
               height="0.5em"
-              viewBox="0 0 384 512"
-            >
+              viewBox="0 0 384 512"            >
               <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"></path>
             </svg>
           </label>
         </div>
       </div>
-      <div className="container-3">
-        <div className="frame">
+      <div className="container-3" style={{ 
+        width: '16.8%',
+        height: '80%',
+        marginTop: '5px'
+        }}>
+        <div className="frame" style={{ marginTop: '-80px', fontSize: '14px'}} >
           <b className="location">{prop.item.location[0].currentLocation}</b>
         </div>
-        <div className="frame1">
+        <div className="frame1" style={{ marginTop: '-86px', marginLeft:'-2px'}} >
           <div className="distance"> Vancouver 3.4 mi away</div>
         </div>
-        <div className="frame2">
+        <div className="frame2" style={{ marginTop: '-75px'}} >
           <b className="price">
             <span className="span">${prop.item.pricing[0].monthlyRent.$numberInt}</span>
             <span className="mo">/mo</span>
           </b>
         </div>
-        <div className="frame3">
+        <div className="frame3" style={{ 
+          marginTop: '-92px',
+          marginLeft: '2px',
+          fontSize: '12px'
+          }} >
           <div className="description">
             {" "}
-            1BR/{prop.item.roomType}BA • {prop.item.description}
+            1BR/{prop.item.roomType}BA 
           </div>
         </div>
-        <div className="frame4">
+        <div className="frame4" style={{ 
+          marginTop: '-99px',
+          fontSize: '14px',
+          marginLeft: '-18px'
+        }}>
           <div className="duration">
             <span> Available</span>
             {/* <b>: May 1, 2024 - July 1, 2024</b> */}
-            <DateConvertor 
+           <DateConvertor 
               start = {prop.item.startingSubletDate}
-              timePeriod = {prop.item.timePeriod.$numberInt}
+              timePeriod = {prop.item.timePeriod}
             />
           </div>
         </div>

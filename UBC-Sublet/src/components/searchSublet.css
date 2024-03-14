@@ -1,0 +1,9 @@
+.btn-outline-secondary:hover {
+    transition: 0.6s;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.btn-btn-dark:hover {
+    transition: 1.0s;
+    padding-right: 10px;
+}

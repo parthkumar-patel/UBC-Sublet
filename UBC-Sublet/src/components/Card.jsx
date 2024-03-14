@@ -79,11 +79,10 @@ export default function Card() {
     //         "__v": { "$numberInt": "0" }
     //       },
     //   ]
-
     const cards = allImage.map((item, index) => {
         return (
             <CardComponent
-                key={index}
+                key= {index}
                 item={item}
             />
         )
@@ -92,7 +91,11 @@ export default function Card() {
     return (
         <div>
             <b className="featuredITems"> Featured sublets </b>
-            <section className = "cards-list">
+            <section className = "cards-list"
+            // style ={{
+            //     marginTop: '1-0px'
+            // }}
+            >
                 {cards}
             </section>
         </div>

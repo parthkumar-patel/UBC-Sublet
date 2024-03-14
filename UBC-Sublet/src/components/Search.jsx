@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-// import { useHistory } from 'react-router-dom';
 
 // import { GoogleComponent } from 'react-google-location'
 const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U"
@@ -56,9 +55,9 @@ export default function Search() {
     console.log(data.latitude);
     console.log(data.longitude);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate("/searchSublet", {
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        navigate("/searchSubletss", {
             state: { latitude: data.latitude, longitude: data.longitude }
         })
     }
@@ -99,7 +98,6 @@ export default function Search() {
                     }} 
                 />
                 <button className="btn text-white" type="submit"
-                    onClick={handleSubmit}
                     style ={{
                         background: "#24a0ed",
                         padding: '10px',
@@ -107,8 +105,10 @@ export default function Search() {
                         marginBlock: '7.5px',
                         marginLeft : '-100px',
                         borderRadius: '10px'
-                    }} >
-                    Search</button>
+                    }} 
+                    onClick={handleSubmit}>
+                    Search
+                    </button>
             </form>
             {/* <GoogleComponent
                 // apiKey={API_KEY}
