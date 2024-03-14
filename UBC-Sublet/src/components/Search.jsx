@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
+// import { useHistory } from 'react-router-dom';
 
 // import { GoogleComponent } from 'react-google-location'
 const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U"
@@ -31,7 +32,7 @@ export default function Search() {
               setData({ latitude: '', longitude: '' }); // Clear data state if input is empty
 
             }
-                  // Handle the response data here
+            //       Handle the response data here
             // const predictions = response.data.predictions;
             // for (const prediction of predictions) {
             //     // Extract place ID

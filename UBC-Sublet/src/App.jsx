@@ -5,7 +5,7 @@ import Protected from './components/Protected';
 import Account from './pages/Account';
 import Home from './pages/Home';
 import Signin from './pages/SignIn';
-import SearchSublet from './components/SearchSublets';
+import SearchSublet from './components/SearchSublet';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signin' element={<Signin />} />
-        <Route path = '/searchSubletss' element= {<SearchSublet />} />
+        <Route path = '/searchSublet' element= {<SearchSublet />} />
         <Route
           path='/account'
           element={
