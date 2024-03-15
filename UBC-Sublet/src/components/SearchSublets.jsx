@@ -190,7 +190,7 @@ export default function SearchSublet() {
   // setFilteredData(filteredData);
   // setconditionalData(filteredData);
 
-  const handleTheFilter = (e) => {
+  const handleTheFilter = () => {
     let filteredData = [...conditionalDataInActive]; // Start with the original data set
 
     // Determine the primary filter based on the first selected filter
@@ -297,65 +297,24 @@ export default function SearchSublet() {
     setconditionalData(filteredData);
   };
 
-  return (
-    <div>
-      <div className="featuredITems">
-        <h1
-          style={{
-            marginTop: "-80px",
-            marginLeft: "200px",
-            fontSize: "40px",
-            fontWeight: "bold",
-            fontFamily: "Archivo Black",
-          }}
-        >
-          {" "}
-          Sublets in UBC
-        </h1>
+  const cards = conditionalData.map((item, index) => {
+    return <CardComponent key={index} item={item} />;
+  });
 
-        {conditionalData.length == 0 ? (
-          <div className="position-absolute top-50 start-50 translate-middle">
-            <h1> No search results found, please go back </h1>
-          </div>
-        ) : (
-          conditionalData.map((items, index) => (
-            <div
-              key={index}
-              className="card"
-              style={{
-                marginLeft: "400px",
-                marginTop: "100px",
-              }}
-            >
-              {items.rooms.map((singleImage, imageIndex) => (
-                <div key={imageIndex} className="img">
-                  <img src={singleImage} alt="pic" width="170px" />
-                </div>
-              ))}
-              <div className="card--stats">
-                <div className="firstElement">
-                  {" "}
-                  <h6> {items.roomType} </h6>{" "}
-                </div>
-                <div> {items.location.currentLocation} </div>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
-      <div style={{ marginTop: "180px" }}>
+  return (
+    <div className="filteredData">
+      <div className="filters">
         <h2
           style={{
-            marginLeft: "40px",
-            marginTop: "-60px",
+            marginLeft: "16px",
+            marginTop: "-49.5px",
             position: "absolute",
-            fontSize: "30px",
-            fontWeight: "bold",
-            fontFamily: "Archivo Black",
+            fontSize: "40px",
+            fontFamily: "Quicksand",
+            // textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
           }}
         >
-          {" "}
-          Filters{" "}
+          Filters
         </h2>
         <button
           type="button"
@@ -656,6 +615,15 @@ export default function SearchSublet() {
           {" "}
           Apply Filters{" "}
         </button>
+      </div>
+      <div className="cards">
+        {conditionalData.length == 0 ? (
+          <div className="position-absolute top-50 start-50 translate-middle">
+            <h1> No search results found, please go back </h1>
+          </div>
+        ) : (
+          <section className="cards-list">{cards}</section>
+        )}
       </div>
     </div>
   );
