@@ -10,35 +10,7 @@ export default function CardComponent(prop) {
     setIsChecked(!isChecked);
   };
 
-<<<<<<< HEAD
-  console.log("ititiitit", prop.item._id);
 
-return (
-<div className="container-3-parent">
-<div className="img">
-<div id= {"carouselExampleControlsNoTouching" + prop.item._id} className="carousel slide" data-bs-touch="fase">
-<div className="carousel-inner">
-<div className="carousel-item active">
-<img src={prop.item.rooms[0]} className="d-block w-100" alt="pic" />
-</div>
-<div className="carousel-item">
-<img src={prop.item.rooms[1]} className="d-block w-100" alt="pic" />
-</div>
-<div className="carousel-item">
-<img src={prop.item.rooms[2]} className="d-block w-100" alt="pic" />
-</div>
-
-<button className="carousel-control-prev" type="button" data-bs-target={"#carouselExampleControlsNoTouching" + prop.item._id} data-bs-slide="prev">
-<span className="carousel-control-prev-icon" aria-hidden="true"></span>
-<span className="visually-hidden">Previous</span>
-</button>
-<button className="carousel-control-next" type="button" data-bs-target={"#carouselExampleControlsNoTouching" + prop.item._id} data-bs-slide="next">
-<span className="carousel-control-next-icon" aria-hidden="true"></span>
-<span className="visually-hidden">Next</span>
-</button>
-</div>
-</div>
-=======
   return (
     <div className="container-3-parent">
       <div className="img">
@@ -90,8 +62,6 @@ return (
             </button>
           </div>
         </div>
->>>>>>> b552c6103e15dec0b605e52d1bebcbd63b309b45
-
         <div className="save">
           <label className="save-container mx-4">
             <input

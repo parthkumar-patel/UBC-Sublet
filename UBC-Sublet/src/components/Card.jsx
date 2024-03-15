@@ -33,13 +33,6 @@ export default function Card() {
         console.error("Error fetching data:", error);
       });
   }
-
-  const cards = allImage.map((item, index) => {
-    return <CardComponent key={index} item={item} />;
-  });
-
-<<<<<<< HEAD
-
 const cards = allImage.map((item, index) => {
     console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
@@ -52,9 +45,6 @@ return (
 })
 
 return (
-=======
-  return (
->>>>>>> b552c6103e15dec0b605e52d1bebcbd63b309b45
     <div>
       <b className="featuredITems"> Featured sublets </b>
       <section className="cards-list">{cards}</section>

@@ -622,7 +622,7 @@ export default function SearchSublet() {
             <h1> No search results found, please go back </h1>
           </div>
         ) : (
-          <section className="cards-list">{cards}</section>
+          <section className="cards-lists">{cards}</section>
         )}
       </div>
     </div>

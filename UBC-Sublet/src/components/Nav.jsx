@@ -4,9 +4,17 @@ import Logo from "../assets/logo.png"
 import Profile from "../assets/profile.png"
 import Fav from "../assets/fav.svg"
 import Search from "../assets/search.svg"
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
+
 
 export default function Navbar() {
+    const navigate = useNavigate();
     const { user, logOut } = UserAuth();
+    const [data, setData] = useState({ latitude: "", longitude: "" });
+
 
     const handleSignOut = async () => {
         try {
@@ -15,6 +23,36 @@ export default function Navbar() {
           console.log(error);
         }
     };
+    let shouldNavigate = false; // Declare shouldNavigate outside of handleChange
+
+    const handleChange = async (e) => {
+        try {
+            const inputValue = e.target.value;
+            if (inputValue.trim() !== "") {
+                const response = await fetch(
+                    `http://localhost:3001/search?q=${inputValue}`
+                    );
+                const searchData = await response.json();
+                setData(searchData);
+                shouldNavigate = true; // Set shouldNavigate to true
+            } else {
+                setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for UBC
+                shouldNavigate = false; // Ensure shouldNavigate is false when inputValue is empty
+            }
+        } catch (error) {
+            console.error("Error:", error);
+          }
+        }
+    
+    useEffect(() => {
+        if (shouldNavigate) { // Only navigate if shouldNavigate is true
+            navigate("/searchSubletss"), {
+                state: { latitude: data.latitude, longitude: data.longitude },
+            }
+        }
+    }, [shouldNavigate == true]);
+
+        
 
     return (
         <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
@@ -30,9 +68,10 @@ export default function Navbar() {
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <form className="d-flex ms-auto">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" 
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange = {handleChange}
                             style={{ backgroundImage: `url(${Search})`, backgroundPosition: '10px center', backgroundRepeat: 'no-repeat', paddingLeft: '40px' }} />
                     </form>
+
                     <Link to="/Fav" className="navbar">
                         <img src={Fav} alt="Fav" width="30" height="24" className="d-inline-block align-text-top ms-2" />
                     </Link>
