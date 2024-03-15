@@ -48,8 +48,8 @@ export default function SearchSublet() {
       const latitudes = data.location.map((loc) => loc.latitude);
       const longitudes = data.location.map((loc) => loc.longitude);
       if (
-        Math.abs(latitudes - latitude) <= 0.1 &&
-        Math.abs(longitudes - longitude) <= 0.1
+        Math.abs(latitudes - latitude) <= 0.005 &&
+        Math.abs(longitudes - longitude) <= 0.005
       ) {
         newData.push(data); // Add data to the temporary array
       }
