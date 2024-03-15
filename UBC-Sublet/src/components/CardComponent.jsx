@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/card.css";
 import DateConvertor from "./DateConvertor";
-import prev from "../assets/prev.svg";
+// import prev from "../assets/prev.svg";
 
 export default function CardComponent(prop) {
   const [isChecked, setIsChecked] = useState(true);
