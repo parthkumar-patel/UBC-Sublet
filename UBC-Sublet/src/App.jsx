@@ -8,7 +8,6 @@ import Signin from './pages/SignIn';
 import SearchSublet from './components/SearchSublets';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 export default function App() {
   return (
     <AuthContextProvider>

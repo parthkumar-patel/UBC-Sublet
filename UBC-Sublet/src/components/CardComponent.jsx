@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/card.css";
 import DateConvertor from "./DateConvertor";
-import prev from "../assets/prev.svg";
+// import prev from "../assets/prev.svg";
 
 export default function CardComponent(prop) {
   const [isChecked, setIsChecked] = useState(true);
@@ -10,6 +10,7 @@ export default function CardComponent(prop) {
     setIsChecked(!isChecked);
   };
 
+<<<<<<< HEAD
   console.log("ititiitit", prop.item._id);
 
 return (
@@ -37,6 +38,59 @@ return (
 </button>
 </div>
 </div>
+=======
+  return (
+    <div className="container-3-parent">
+      <div className="img">
+        <div
+          id={"carouselExampleControlsNoTouching" + prop.item._id}
+          className="carousel carousel-dark slide"
+          data-bs-touch="false"
+        >
+          <div className="carousel-inner">
+            {prop.item.rooms.map((room, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+              >
+                <img src={room} className="d-block" alt="pic" />
+              </div>
+            ))}
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target={
+                "#carouselExampleControlsNoTouching" + prop.item._id
+              }
+              data-bs-slide="prev"
+            >
+              <div className="carousel-control-wrapper">
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </div>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target={
+                "#carouselExampleControlsNoTouching" + prop.item._id
+              }
+              data-bs-slide="next"
+            >
+              <div className="carousel-control-wrapper">
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </div>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+>>>>>>> b552c6103e15dec0b605e52d1bebcbd63b309b45
 
         <div className="save">
           <label className="save-container mx-4">

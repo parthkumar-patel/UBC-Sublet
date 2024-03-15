@@ -1,9 +1,30 @@
 .btn-outline-secondary:hover {
-    transition: 0.6s;
-    padding-right: 10px;
-    padding-left: 10px;
+  transition: 0.6s;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .btn-btn-dark:hover {
-    transition: 1.0s;
-    padding-right: 10px;
+  transition: 1s;
+  padding-right: 10px;
+}
+
+.filteredData {
+  display: flex;
+}
+
+.filters {
+  flex: 1;
+  padding-left: 16px;
+  padding-right: 64px;
+  padding-top: 150px;
+  height: 900px;
+  /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); small shadow*/
+  /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.075); large shadow*/
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
+  z-index: 2;
+}
+
+.cards {
+  flex: 4;
+  background-color: #f2f2f2;
 }

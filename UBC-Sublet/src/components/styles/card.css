@@ -35,20 +35,17 @@
   z-index: 2;
   left: 112px;
   top: -38px;
-<<<<<<< HEAD
   border-radius: 20px 20px 20px 20px;
   }
   
   
-  .carousel-control-prev-icon {
-=======
+.carousel-control-prev-icon {
   border-radius: 10px;
 }
 
 .carousel-control-wrapper {
   width: 40px;
   height: 40px;
->>>>>>> afa56be7f4062ba4bd01fb72579f43824ab294e0
   background-color: white;
   /* background-image: url("../assets/prev.svg"); */
   border-radius: 50%;
@@ -216,11 +213,7 @@
   left: 110px;
   /* border-radius: 6px; */
   background-color: #fff;
-<<<<<<< HEAD
   border-radius: 20px 20px 20px 20px;
-=======
-  border-radius: 10px;
->>>>>>> afa56be7f4062ba4bd01fb72579f43824ab294e0
   box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
   height: 440px;
 }
@@ -234,7 +227,6 @@
   font-family: Manrope;
   left: -80px;
   height: 440px;
-<<<<<<< HEAD
   flex-flow: row wrap;
   flex-wrap: wrap; /* Allow items to wrap to the next row */
 
@@ -271,9 +263,6 @@
 
 
   
-  
-=======
-}
 
 .cards-list {
   display: flex;
@@ -290,4 +279,3 @@
   left: -45px;
   margin-right: 22%; /* Add right margin to create gap between cards */
 }
->>>>>>> afa56be7f4062ba4bd01fb72579f43824ab294e0
