@@ -1,7 +1,7 @@
 // import { isEmpty } from "@firebase/util";
 import { useState, useEffect } from "react";
 import "./searchSublet.css";
-// import React from 'react';
+import CardComponent from "./CardComponent";
 import { useLocation } from "react-router-dom";
 
 export default function SearchSublet() {
@@ -303,7 +303,7 @@ export default function SearchSublet() {
         <h1
           style={{
             marginTop: "-80px",
-            marginLeft: "600px",
+            marginLeft: "200px",
             fontSize: "40px",
             fontWeight: "bold",
             fontFamily: "Archivo Black",

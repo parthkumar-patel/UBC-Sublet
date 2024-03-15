@@ -10,8 +10,6 @@ export default function CardComponent(prop) {
     setIsChecked(!isChecked);
   };
 
-  console.log("ititiitit", prop.item._id);
-
   return (
     <div className="container-3-parent">
       <div className="img">
