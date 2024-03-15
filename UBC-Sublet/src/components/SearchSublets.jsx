@@ -4,6 +4,7 @@ import "./searchSublet.css";
 import CardComponent from "./CardComponent";
 import { useLocation } from "react-router-dom";
 
+
 export default function SearchSublet() {
   const [entireData, setentireData] = useState([]);
   const [conditionalData, setconditionalData] = useState([]);
@@ -19,12 +20,18 @@ export default function SearchSublet() {
   const [maxleaseRange, setmaxLeaseRange] = useState(0);
 
   const { latitude, longitude } = location.state;
+  // Add event listener to the search button
+
   // console.log('Latitude:', latitude);
   // console.log('Longitude:', longitude);
+
   useEffect(() => {
     getLocationCordinates();
   }, []);
+
+
   function getLocationCordinates() {
+    setentireData([]);
     fetch("http://localhost:3001/subletslist", {
       method: "GET",
     })
@@ -41,8 +48,8 @@ export default function SearchSublet() {
       const latitudes = data.location.map((loc) => loc.latitude);
       const longitudes = data.location.map((loc) => loc.longitude);
       if (
-        Math.abs(latitudes - latitude) <= 5 &&
-        Math.abs(longitudes - longitude) <= 5
+        Math.abs(latitudes - latitude) <= 0.1 &&
+        Math.abs(longitudes - longitude) <= 0.1
       ) {
         newData.push(data); // Add data to the temporary array
       }

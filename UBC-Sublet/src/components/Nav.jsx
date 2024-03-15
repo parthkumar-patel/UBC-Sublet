@@ -6,14 +6,21 @@ import Fav from "../assets/fav.svg"
 import Search from "../assets/search.svg"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./nav.css"
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
 
 export default function Navbar() {
+    const [alreadyNavigated, setAlreadyNavigated] = useState(false);
     const navigate = useNavigate();
     const { user, logOut } = UserAuth();
     const [data, setData] = useState({ latitude: "", longitude: "" });
+    const [shouldNavigate, setShouldNavigate] = useState(false);
+    const [searchInput, setSearchInput] = useState([]);
+
+   
 
 
     const handleSignOut = async () => {
@@ -23,38 +30,50 @@ export default function Navbar() {
           console.log(error);
         }
     };
-    let shouldNavigate = false; // Declare shouldNavigate outside of handleChange
 
-    const handleChange = async (e) => {
+    const handlePlaceChange = () => {
+        // if (window.location.pathname === "/searchSubletss") {
+        //     // Reload the page if already on the "searchSubletss" page
+        //     window.location.reload();
+        // } 
+       
+        navigate("/searchSubletss", {
+            state: { latitude: data.latitude, longitude: data.longitude },
+        });  
+        window.location.reload();  
+    }
+    
+    
+
+
+    const handleCoordinates = async (e) => {
         try {
-            const inputValue = e.target.value;
-            if (inputValue.trim() !== "") {
-                const response = await fetch(
-                    `http://localhost:3001/search?q=${inputValue}`
-                    );
-                const searchData = await response.json();
-                setData(searchData);
-                shouldNavigate = true; // Set shouldNavigate to true
+            let inputValue = "";
+            inputValue = e.target.value.trim(); // Trim whitespace from input
+            if (inputValue) { // Check if input is not empty
+                const response = await fetch(`http://localhost:3001/search?q=${inputValue}`);
+                console.log("response", response);
+                if (response.ok) {
+                    const searchData = await response.json();
+                    console.log(searchData.longitude);
+                    setData(searchData);
+                } else {
+                    console.error("Search request failed:", response.statusText);
+                }
             } else {
-                setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for UBC
-                shouldNavigate = false; // Ensure shouldNavigate is false when inputValue is empty
+                // Optionally provide feedback to the user about empty input
+                console.log("Input is empty");
             }
         } catch (error) {
             console.error("Error:", error);
-          }
         }
-    
-    useEffect(() => {
-        if (shouldNavigate) { // Only navigate if shouldNavigate is true
-            navigate("/searchSubletss"), {
-                state: { latitude: data.latitude, longitude: data.longitude },
-            }
-        }
-    }, [shouldNavigate == true]);
+    };
+
 
         
 
     return (
+        
         <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
             <div className="container">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,16 +86,21 @@ export default function Navbar() {
                 </Link>
 
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <form className="d-flex ms-auto">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange = {handleChange}
-                            style={{ backgroundImage: `url(${Search})`, backgroundPosition: '10px center', backgroundRepeat: 'no-repeat', paddingLeft: '40px' }} />
-                    </form>
+                <div class="input-group">
+                    <div class="form-outline" data-mdb-input-init>
+                        <input id="search-input" type="search" class="form-control" onChange={handleCoordinates} />
+                        {/* <label class="form-label" for="form1">Search</label> */}
+                    </div>
+                    <button id="search-button" type="button" class="btn btn-primary"
+                    onClick={handlePlaceChange}>
+                        <i class="fas fa-search"></i>
+                    </button>
+                    </div>
 
                     <Link to="/Fav" className="navbar">
                         <img src={Fav} alt="Fav" width="30" height="24" className="d-inline-block align-text-top ms-2" />
                     </Link>
                 </div>
-
                 <div className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src={Profile} alt="Profile" width="30" height="24" className="d-inline-block align-text-top ms-2" />  

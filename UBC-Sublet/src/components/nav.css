@@ -1,0 +1,18 @@
+
+.input-group {
+    position: relative;
+    right: -10px;
+    left: 70%;
+}
+
+/* .form-label {
+    position: absolute;
+    top: -2px;
+    padding: 10px;
+} */
+
+
+
+.btn.btn-primary {
+    width: 35px;
+}
