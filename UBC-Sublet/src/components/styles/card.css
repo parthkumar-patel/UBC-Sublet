@@ -35,7 +35,7 @@
   z-index: 2;
   left: 112px;
   top: -38px;
-  border-radius: 40px 40px 40px 40px;
+  border-radius: 20px 20px 20px 20px;
   }
   
   
@@ -199,7 +199,7 @@
   left: 110px;
   /* border-radius: 6px; */
   background-color: #fff;
-  border-radius: 40px 40px 40px 40px;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
   height: 440px;
   }
@@ -213,22 +213,40 @@
   font-family: Manrope;
   left: -80px;
   height: 440px;
-  }
-  
+  flex-flow: row wrap;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+
+  }  
   
   .cards-list {
-  display: flex;
-  gap: 20px;
-  /* flex-flow: row wrap; */
-  /* align-content: space-around; */
-  /* gap: 100px; */
-  overflow: auto;
-  margin-top: 100px;
-  height: 490px;
-  box-sizing: border-box; /* Include padding in the total width */
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    /* align-content: space-around; */
+    /* gap: 100px; */
+    margin-top: 100px;
+    /* height: 490px; */ /* Remove the fixed height */
+    box-sizing: border-box; /* Include padding in the total width */
   }
+  
+  @media screen and (max-width: 10000px) {
+    .cards-list .container-3-parent {
+      flex-flow: row wrap;
+      flex-wrap: wrap;
+      display: flex;  
+      flex-basis: calc(50% - 20px); /* Adjust item width for smaller screens */
+    }
+  }
+  
+
   .cards-list .container-3-parent {
     left: -45px;
+
     margin-right: 22%; /* Add right margin to create gap between cards */
   }
+
+
+
+  
   

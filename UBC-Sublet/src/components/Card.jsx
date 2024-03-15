@@ -39,7 +39,7 @@ fetch("http://localhost:3001/subletslist", {
 
 
 const cards = allImage.map((item, index) => {
-    console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item.id);
+    console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
 return (
     <CardComponent

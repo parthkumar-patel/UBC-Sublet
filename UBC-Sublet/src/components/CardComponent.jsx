@@ -16,7 +16,7 @@ console.log("ititiitit", prop.item._id);
 return (
 <div className="container-3-parent">
 <div className="img">
-<div id= {"carouselExampleControlsNoTouching" + prop.item._id} className="carousel slide" data-bs-touch="fase">
+<div id= {"carouselExampleControlsNoTouching" + prop.item._id} className="carousel slide" data-bs-touch="false">
 <div className="carousel-inner">
 <div className="carousel-item active">
 <img src={prop.item.rooms[0]} className="d-block w-100" alt="pic" />
