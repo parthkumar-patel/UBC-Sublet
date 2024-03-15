@@ -1,9 +1,26 @@
-import "./styles/desc.css"
-import send from "../assets/send.svg"
+import "./styles/desc.css";
+import send from "../assets/send.svg";
+import main from "../assets/main.png";
+import side1 from "../assets/side1.png";
+import side2 from "../assets/side2.png";
+import side3 from "../assets/side3.png";
+import side4 from "../assets/side4.png";
 
 export default function Descrition() {
-    return (
-      <form className="macbook-air-2 mt-5">
+  return (
+    <form className="macbook-air-2">
+      <div className="desc-img-container">
+        <div className="main-img">
+          <img src={main} alt="" className="desc-img" />
+        </div>
+        <div className="side-images">
+          <img src={side1} alt="" className="desc-img" />
+          <img src={side2} alt="" className="desc-img" />
+          <img src={side3} alt="" className="desc-img" />
+          <img src={side4} alt="" className="desc-img" />
+        </div>
+      </div>
+      <div className="form-wrapper">
         <section className="sunny-1br-in-marine-drive-parent">
           <h2 className="sunny-1br-in">Sunny 1BR in Marine Drive</h2>
           <div className="month1-br4ba">$975/month•1BR•4BA</div>
@@ -84,6 +101,7 @@ export default function Descrition() {
             </div>
           </button>
         </div>
-      </form>
-    );
+      </div>
+    </form>
+  );
 }
