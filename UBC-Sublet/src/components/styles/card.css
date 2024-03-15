@@ -12,21 +12,22 @@
   height: 309px;
   background: white;
   border-radius: 0px;
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   transition: 0.2s ease-in-out;
   position: relative;
-  }
+}
 
-  .featuredITems {
-    top: 680px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: large;
-    font-weight: 400; /* or any other valid numeric value */
-    left: 650px;
-    position: absolute;
-  }
-  
-  .img {
+.featuredITems {
+  top: 680px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 400; /* or any other valid numeric value */
+  left: 650px;
+  position: absolute;
+}
+
+.img {
   width: 275px;
   height: 309px;
   position: absolute;
@@ -35,22 +36,31 @@
   left: 112px;
   top: -38px;
   border-radius: 10px;
-  }
-  
-  
-  .carousel-control-prev-icon {
+}
+
+.carousel-control-wrapper {
+  width: 40px;
+  height: 40px;
   background-color: white;
+  /* background-image: url("../assets/prev.svg"); */
   border-radius: 50%;
-  padding: 10px;
-  opacity: 0.9;
-  }
-  
-  .carousel-item img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-control-prev {
+  margin-left: 10px;
+}
+.carousel-control-next {
+  margin-right: 10px;
+}
+
+.carousel-item img {
   width: 100%;
   height: 100%;
-  }
-  
-  .save {
+}
+
+.save {
   transition: 0.2s ease-in-out;
   border-radius: 10px;
   margin: 20px;
@@ -64,40 +74,40 @@
   top: 0px;
   right: 0px;
   z-index: 1;
-  }
-  
-  .save .svg {
+}
+
+.save .svg {
   width: 15px;
   height: 15px;
-  }
-  
-  .text {
+}
+
+.text {
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: space-around;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
   cursor: pointer;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-  }
-  
-  .save:hover {
+}
+
+.save:hover {
   transform: scale(1.1) rotate(10deg);
-  }
-  
-  .save:hover .svg {
+}
+
+.save:hover .svg {
   fill: #ced8de;
-  }
-  
-  .location {
+}
+
+.location {
   position: absolute;
   bottom: 0;
   left: 23px;
   line-height: 30px;
-  }
-  .frame {
+}
+.frame {
   position: absolute;
   top: 330px;
   left: 5px;
@@ -105,8 +115,8 @@
   height: 30px;
   overflow: hidden;
   font-size: 20px;
-  }
-  .distance {
+}
+.distance {
   position: absolute;
   width: calc(100% - 23px);
   bottom: 0;
@@ -114,85 +124,85 @@
   line-height: 22px;
   white-space: pre-wrap;
   /* display: inline-block; */
-  }
-  .frame1 {
+}
+.frame1 {
   position: absolute;
   top: 362px;
   left: 5px;
   width: 311px;
   height: 18px;
   overflow: hidden;
-  }
-  .span {
+}
+.span {
   line-height: 36px;
-  }
-  .mo {
+}
+.mo {
   font-size: 16px;
   line-height: 26px;
   color: #9095a1;
-  }
-  .frame2,
-  .price {
+}
+.frame2,
+.price {
   position: absolute;
-  }
-  .price {
+}
+.price {
   bottom: 0;
   left: 25px;
-  }
-  .frame2 {
+}
+.frame2 {
   top: 320px;
   left: 0;
   width: 113px;
   height: 6px;
   font-size: 24px;
   color: #171a1f;
-  }
-  .description {
+}
+.description {
   position: absolute;
   top: 0;
   left: 23px;
   line-height: 22px;
   /* display: inline-block; */
   width: 258px;
-  }
-  .frame3 {
+}
+.frame3 {
   position: absolute;
   top: 378px;
   width: 281px;
   left: 5px;
   height: 20px;
   overflow: hidden;
-  }
-  .duration {
+}
+.duration {
   position: absolute;
   top: 0;
   left: 23px;
   line-height: 24px;
   /* display: inline-block; */
   width: 258px;
-  }
+}
 
-  .container-3,
-  .frame4 {
+.container-3,
+.frame4 {
   position: absolute;
   left: 0;
   margin-top: 40px;
   overflow: hidden;
-  }
-  .frame4 {
+}
+.frame4 {
   top: 360px;
   width: 281px;
   height: 20px;
-  left :5px;
+  left: 5px;
   font-size: 15px;
-  }
-  .container-3,
-  .frame-icon {
+}
+.container-3,
+.frame-icon {
   top: -1px;
   width: 343px;
   height: 309px;
-  }
-  .container-3 {
+}
+.container-3 {
   max-width: 280px;
   top: -80px;
   left: 110px;
@@ -201,8 +211,8 @@
   border-radius: 10px;
   box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
   height: 440px;
-  }
-  .container-3-parent {
+}
+.container-3-parent {
   max-width: 10%;
   position: relative;
   /* height: 100px; */
@@ -212,10 +222,9 @@
   font-family: Manrope;
   left: -80px;
   height: 440px;
-  }
-  
-  
-  .cards-list {
+}
+
+.cards-list {
   display: flex;
   gap: 20px;
   /* flex-flow: row wrap; */
@@ -225,9 +234,8 @@
   margin-top: 100px;
   height: 490px;
   box-sizing: border-box; /* Include padding in the total width */
-  }
-  .cards-list .container-3-parent {
-    left: -45px;
-    margin-right: 22%; /* Add right margin to create gap between cards */
-  }
-  
+}
+.cards-list .container-3-parent {
+  left: -45px;
+  margin-right: 22%; /* Add right margin to create gap between cards */
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./styles/card.css";
 import DateConvertor from "./DateConvertor";
+import prev from "../assets/prev.svg";
 
 export default function CardComponent(prop) {
   const [isChecked, setIsChecked] = useState(true);
@@ -16,32 +17,18 @@ export default function CardComponent(prop) {
       <div className="img">
         <div
           id={"carouselExampleControlsNoTouching" + prop.item._id}
-          className="carousel slide"
+          className="carousel carousel-dark slide"
           data-bs-touch="false"
         >
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src={prop.item.rooms[0]}
-                className="d-block w-100"
-                alt="pic"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src={prop.item.rooms[1]}
-                className="d-block w-100"
-                alt="pic"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src={prop.item.rooms[2]}
-                className="d-block w-100"
-                alt="pic"
-              />
-            </div>
-
+            {prop.item.rooms.map((room, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+              >
+                <img src={room} className="d-block" alt="pic" />
+              </div>
+            ))}
             <button
               className="carousel-control-prev"
               type="button"
@@ -50,10 +37,12 @@ export default function CardComponent(prop) {
               }
               data-bs-slide="prev"
             >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
+              <div className="carousel-control-wrapper">
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </div>
               <span className="visually-hidden">Previous</span>
             </button>
             <button
@@ -64,10 +53,12 @@ export default function CardComponent(prop) {
               }
               data-bs-slide="next"
             >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+              <div className="carousel-control-wrapper">
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </div>
               <span className="visually-hidden">Next</span>
             </button>
           </div>
