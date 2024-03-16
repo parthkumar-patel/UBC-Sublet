@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from 'emailjs-com';
+// import emailjs from "@emailjs/browser";
 import send from "../assets/send.svg";
 
 const Contact = () => {

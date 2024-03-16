@@ -8,6 +8,7 @@ import Signin from "./pages/SignIn";
 import SearchSublet from "./components/SearchSublets";
 import Description from "./components/Description";
 import "./App.css";
+import Post from "./components/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/searchSubletss" element={<SearchSublet />} />
         <Route path="/desc" element={<Description />} />
+        <Route path="/post" element = {<Post />} />
         <Route
           path="/account"
           element={
