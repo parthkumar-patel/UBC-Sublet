@@ -1,14 +1,14 @@
 import "./styles/desc.css";
-import send from "../assets/send.svg";
 import main from "../assets/main.png";
 import side1 from "../assets/side1.png";
 import side2 from "../assets/side2.png";
 import side3 from "../assets/side3.png";
 import side4 from "../assets/side4.png";
+import Contact from "./Contact";
 
 export default function Descrition() {
   return (
-    <form className="macbook-air-2">
+    <div className="macbook-air-2">
       <div className="desc-img-container">
         <div className="main-img">
           <img src={main} alt="" className="desc-img" />
@@ -82,26 +82,8 @@ export default function Descrition() {
           </div>
           <div className="frame6" />
         </div>
-        <div className="send-button-frame-wrapper">
-          <div className="send-button-frame">
-            <b className="contact">Contact</b>
-            <div className="your-name-input">
-              <div className="name">Name</div>
-              <button className="your-name-wrapper">
-                <div className="your-name">Your name</div>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="frame7">
-          <button className="send-button">
-            <div className="frame-parent">
-              <img className="frame-icon1" alt="" src={send} />
-              <div className="send">Send</div>
-            </div>
-          </button>
-        </div>
+        <Contact />
       </div>
-    </form>
+    </div>
   );
 }
