@@ -47,7 +47,7 @@ export default function PersonalProfile() {
     });
 
     return () => unsubscribe();
-  }, [user]);
+  }, [user, colRef]);
 
   // Redirect to sign-in page if user is not authenticated
   if (!user) {
@@ -61,7 +61,14 @@ export default function PersonalProfile() {
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
   if (!userProfile) {
     // return <Navigate to="/create-profile" />;
-    return <CreateProfile colRef={colRef} />;
+    return (
+      //   <Navigate
+      //     to="/create-profile"
+      //     state={{ colRef: colRef, uid: user.uid }}
+      //   />
+      //   navigate("/create-profile", { state: { colRef: colRef, user: user } })
+      <CreateProfile colRef={colRef} user={user} />
+    );
   }
 
   return (

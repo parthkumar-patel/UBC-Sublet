@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+// import { UserAuth } from "../context/AuthContext";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import {
   ref,
@@ -17,26 +19,34 @@ export default function CreateProfile(prop) {
     FirstName: "",
     LastName: "",
     Email: "",
-    Contact: "",
+    ContactNo: "",
+    uid: "",
   });
   const storage = getStorage();
+  //   const { user } = UserAuth();
+
+  if (!prop.user) {
+    return <Navigate to="/signin" />;
+  }
 
   function handleAddProfile() {
+    console.log(prop.colRef);
+    console.log("uid" + prop.user.uid);
+
     if (image && prop.colRef) {
       const imageRef = ref(storage, `images/${image.name}`);
       const uploadTask = uploadBytesResumable(imageRef, image);
 
       uploadTask.on("state_changed", () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
-          console.log(formData);
-
+          console.log(downloadURL);
           addDoc(prop.colRef, {
             imageURL: downloadURL,
             FirstName: formData.FirstName,
             LastName: formData.LastName,
             Email: formData.Email,
-            Contact: formData.Contact,
+            ContactNo: formData.Contact,
+            uid: prop.user.uid,
           });
         });
       });
@@ -48,7 +58,8 @@ export default function CreateProfile(prop) {
       FirstName: "",
       LastName: "",
       Email: "",
-      Contact: "",
+      ContactNo: "",
+      uid: "",
     });
   }
 
@@ -76,7 +87,7 @@ export default function CreateProfile(prop) {
 
   return (
     <div className="create-profile-container">
-      <Form className="create-profile-form mt-5">
+      <Form className="create-profile-form">
         <Row className="mb-3">
           <div className="upload-container">
             <label htmlFor="file">
@@ -140,7 +151,7 @@ export default function CreateProfile(prop) {
             type="text"
             placeholder="Enter contact number"
             name="Contact"
-            value={formData.Contact}
+            value={formData.ContactNo}
             onChange={handleChange}
           />
         </Form.Group>
