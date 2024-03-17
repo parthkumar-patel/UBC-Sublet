@@ -33,7 +33,7 @@ export default function Card() {
         console.error("Error fetching data:", error);
       });
   }
-const cards = allImage.map((item, index) => {
+const cards = allImage.map((item) => {
     console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
 return (
