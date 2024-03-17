@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-// import { UserAuth } from "../context/AuthContext";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import {
   ref,
@@ -22,8 +21,8 @@ export default function CreateProfile(prop) {
     ContactNo: "",
     uid: "",
   });
-  const storage = getStorage();
-  //   const { user } = UserAuth();
+
+  const storage = getStorage(prop.app);
 
   if (!prop.user) {
     return <Navigate to="/signin" />;
@@ -33,22 +32,50 @@ export default function CreateProfile(prop) {
     console.log(prop.colRef);
     console.log("uid" + prop.user.uid);
 
-    if (image && prop.colRef) {
+    if (image) {
       const imageRef = ref(storage, `images/${image.name}`);
       const uploadTask = uploadBytesResumable(imageRef, image);
 
-      uploadTask.on("state_changed", () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log(downloadURL);
-          addDoc(prop.colRef, {
-            imageURL: downloadURL,
-            FirstName: formData.FirstName,
-            LastName: formData.LastName,
-            Email: formData.Email,
-            ContactNo: formData.Contact,
-            uid: prop.user.uid,
+      uploadTask.on(
+        storage.TaskEvent,
+        (snapshot) => {
+          // Handle different states of the upload
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(`Upload is ${progress}% done`);
+          switch (snapshot.state) {
+            case storage.TaskState.PAUSED:
+              console.log("Upload is paused");
+              break;
+            case storage.TaskState.RUNNING:
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {
+          console.error("Error uploading image:", error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            addDoc(prop.colRef, {
+              imageURL: downloadURL,
+              FirstName: formData.FirstName,
+              LastName: formData.LastName,
+              Email: formData.Email,
+              ContactNo: formData.ContactNo,
+              uid: prop.user.uid,
+            });
           });
-        });
+        }
+      );
+    } else {
+      addDoc(prop.colRef, {
+        imageURL: prop.user.photoURL,
+        FirstName: formData.FirstName,
+        LastName: formData.LastName,
+        Email: formData.Email,
+        ContactNo: formData.ContactNo,
+        uid: prop.user.uid,
       });
     }
     setImage(null);
@@ -150,7 +177,7 @@ export default function CreateProfile(prop) {
           <Form.Control
             type="text"
             placeholder="Enter contact number"
-            name="Contact"
+            name="ContactNo"
             value={formData.ContactNo}
             onChange={handleChange}
           />

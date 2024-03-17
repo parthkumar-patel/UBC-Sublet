@@ -25,12 +25,21 @@ export default function PersonalProfile() {
     appId: "1:744862491087:web:a44f1fe890494086b772ba",
     measurementId: "G-943F4K57XC",
   };
+  const firebaseConfignew = {
+    apiKey: "AIzaSyApjwpwpCwORh66wapgNgigm1iKdEjZub8",
+    authDomain: "art-gallery-ab57c.firebaseapp.com",
+    projectId: "art-gallery-ab57c",
+    storageBucket: "art-gallery-ab57c.appspot.com",
+    messagingSenderId: "569425492328",
+    appId: "1:569425492328:web:dd223dcd55fe4d681ffedd",
+    measurementId: "G-S5LYSLD7F9",
+  };
 
-  initializeApp(firebaseConfig);
-  const db = getFirestore();
-  const colRef = collection(db, "profiles");
+  const app = initializeApp(firebaseConfig);
+  const appNew = initializeApp(firebaseConfignew, "new");
+  const db1 = getFirestore(appNew);
+  const colRef = collection(db1, "profiles");
 
-  // Effect hook to fetch user profiles from Firestore
   useEffect(() => {
     if (!user) return; // Return if user is not authenticated
 
@@ -47,7 +56,7 @@ export default function PersonalProfile() {
     });
 
     return () => unsubscribe();
-  }, [user, colRef]);
+  }, [user]);
 
   // Redirect to sign-in page if user is not authenticated
   if (!user) {
@@ -60,14 +69,10 @@ export default function PersonalProfile() {
 
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
   if (!userProfile) {
-    // return <Navigate to="/create-profile" />;
     return (
-      //   <Navigate
-      //     to="/create-profile"
-      //     state={{ colRef: colRef, uid: user.uid }}
-      //   />
-      //   navigate("/create-profile", { state: { colRef: colRef, user: user } })
-      <CreateProfile colRef={colRef} user={user} />
+      <div className="" style={{ marginTop: "-65px" }}>
+        <CreateProfile colRef={colRef} user={user} app={app} />
+      </div>
     );
   }
 
@@ -79,7 +84,12 @@ export default function PersonalProfile() {
             <Card.Body>
               <div className="d-flex align-items-center">
                 <Col xs={6} md={4}>
-                  <Image src={user.photoURL} alt="Profile" roundedCircle />
+                  <Image
+                    src={userProfile.imageURL}
+                    width="100px"
+                    alt="Profile"
+                    roundedCircle
+                  />
                 </Col>
                 {userProfile && (
                   <div className="ml-3">
