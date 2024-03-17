@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-// import Profile from "../assets/profile.png";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -8,13 +8,15 @@ import {
   query,
   onSnapshot,
 } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { Card, Container, Row, Col, Image } from "react-bootstrap";
 
+// Function component for user profile page
 export default function PersonalProfile() {
-  const [profiles, setProfiles] = useState([]);
-  const { user } = UserAuth();
+  const [profiles, setProfiles] = useState([]); // State to hold user profiles
+  const [loading, setLoading] = useState(true);
+  const { user } = UserAuth(); // Destructuring user from authentication context
 
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
     authDomain: "ubc-sublet.firebaseapp.com",
@@ -25,42 +27,68 @@ export default function PersonalProfile() {
     measurementId: "G-943F4K57XC",
   };
 
+  // Initialize Firebase app
   initializeApp(firebaseConfig);
 
+  // Effect hook to fetch user profiles from Firestore
   useEffect(() => {
-    if (!user) return;
+    if (!user) return; // Return if user is not authenticated
 
-    const db = getFirestore();
-    const colRef = collection(db, "profiles");
-    const q = query(colRef);
+    const db = getFirestore(); // Firestore database instance
+    const colRef = collection(db, "profiles"); // Reference to 'profiles' collection
+    const q = query(colRef); // Query to get all documents from collection
 
+    // Subscribe to real-time updates on 'profiles' collection
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const newProfiles = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      setProfiles(newProfiles);
+      setProfiles(newProfiles); // Update profiles state with new data
+      setLoading(false);
     });
 
+    // Unsubscribe from snapshot listener when component unmounts
     return () => unsubscribe();
-  }, [user]);
+  }, [user]); // Dependency array with 'user'
 
+  // Redirect to sign-in page if user is not authenticated
   if (!user) {
     return <Navigate to="/signin" />;
   }
-  console.log(profiles[0]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Find user profile from profiles array
+  const userProfile = profiles.find((profile) => profile.uid === user.uid);
+  if (!userProfile) {
+    return <Navigate to="/create-profile" />;
+  }
+
   return (
-    <div className="d-flex">
-      <img src={user.photoURL} alt="Profile" />
-      {profiles.length > 0 && (
-        <div>
-          <p>First Name: {profiles[0].FirstName}</p>
-          <p>Last Name: {profiles[0].LastName}</p>
-          {/* <p>Birthday: {profiles[0].Birthday}</p> */}
-          <p>Email Id: {profiles[0].Email}</p>
-          <p>Contact Number: {profiles[0].ContactNo}</p>
-        </div>
-      )}
-    </div>
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col md={6}>
+          <Card className="">
+            <Card.Body>
+              <div className="d-flex align-items-center">
+                <Col xs={6} md={4}>
+                  <Image src={user.photoURL} alt="Profile" roundedCircle />
+                </Col>
+                {userProfile && (
+                  <div className="ml-3">
+                    <h4>{`${userProfile.FirstName} ${userProfile.LastName}`}</h4>
+                    <p>Email: {userProfile.Email}</p>
+                    <p>Contact Number: {userProfile.ContactNo}</p>
+                  </div>
+                )}
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
