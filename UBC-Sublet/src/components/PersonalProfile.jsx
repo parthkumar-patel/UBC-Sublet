@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import CreateProfile from "./CreateProfile";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -10,13 +11,11 @@ import {
 } from "firebase/firestore";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
 
-// Function component for user profile page
 export default function PersonalProfile() {
-  const [profiles, setProfiles] = useState([]); // State to hold user profiles
+  const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { user } = UserAuth(); // Destructuring user from authentication context
+  const { user } = UserAuth();
 
-  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
     authDomain: "ubc-sublet.firebaseapp.com",
@@ -27,16 +26,15 @@ export default function PersonalProfile() {
     measurementId: "G-943F4K57XC",
   };
 
-  // Initialize Firebase app
   initializeApp(firebaseConfig);
+  const db = getFirestore();
+  const colRef = collection(db, "profiles");
 
   // Effect hook to fetch user profiles from Firestore
   useEffect(() => {
     if (!user) return; // Return if user is not authenticated
 
-    const db = getFirestore(); // Firestore database instance
-    const colRef = collection(db, "profiles"); // Reference to 'profiles' collection
-    const q = query(colRef); // Query to get all documents from collection
+    const q = query(colRef);
 
     // Subscribe to real-time updates on 'profiles' collection
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -44,13 +42,12 @@ export default function PersonalProfile() {
         ...doc.data(),
         id: doc.id,
       }));
-      setProfiles(newProfiles); // Update profiles state with new data
+      setProfiles(newProfiles);
       setLoading(false);
     });
 
-    // Unsubscribe from snapshot listener when component unmounts
     return () => unsubscribe();
-  }, [user]); // Dependency array with 'user'
+  }, [user]);
 
   // Redirect to sign-in page if user is not authenticated
   if (!user) {
@@ -61,10 +58,10 @@ export default function PersonalProfile() {
     return <div>Loading...</div>;
   }
 
-  // Find user profile from profiles array
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
   if (!userProfile) {
-    return <Navigate to="/create-profile" />;
+    // return <Navigate to="/create-profile" />;
+    return <CreateProfile colRef={colRef} />;
   }
 
   return (
