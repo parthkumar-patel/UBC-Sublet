@@ -1,5 +1,6 @@
 import CardComponent from "./CardComponent";
 import "../App.css";
+import "./styles/card.css";
 import { useState, useEffect } from "react";
 export default function Card() {
   const [allImage, setAllImage] = useState([]);
@@ -46,8 +47,8 @@ return (
 
 return (
     <div>
-      <b className="featuredITems"> Featured sublets </b>
-      <section className="cards-list">{cards}</section>
+      <div className="featuredITems" style={{ marginLeft: '-580px', marginTop: '30px', fontSize: "30px" }} > Featured sublets </div>
+      <section className="cards-list" style = {{ marginTop: '150px' }}>{cards}</section>
     </div>
   );
 }

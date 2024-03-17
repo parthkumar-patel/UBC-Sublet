@@ -128,48 +128,18 @@ export default function Post() {
                             <label className="bedRooms"> Bedrooms </label>
                             <input type="text" placeholder="eg. 4" id = "bedRooms" onInput={(e) => e.target.className = ''} name="bedrooms" />
 
-                            <label className="bathRooms"> Bedrooms </label>
-                            <input type="text" placeholder="eg. 4" id = "bathRooms" onInput={(e) => e.target.className = ''} name="bathRooms" />
+                            <label className="bathRooms"> bathRooms </label>
+                            <input type="text" placeholder="eg. 2" id = "bathRooms" onInput={(e) => e.target.className = ''} name="bathRooms" />
 
 
                         </div>
-                        <div className="tab">
-                            <p><input placeholder="First Name" onInput={(e) => e.target.className = ''} name="first" /></p>
-                            <p><input placeholder="Last Name" onInput={(e) => e.target.className = ''} name="last" /></p>
-                            <p><input placeholder="Email" onInput={(e) => e.target.className = ''} name="email" /></p>
-                            <p><input placeholder="Phone" onInput={(e) => e.target.className = ''} name="phone" /></p>
-                            <p><input placeholder="Street Address" onInput={(e) => e.target.className = ''} name="address" /></p>
-                            <p><input placeholder="City" onInput={(e) => e.target.className = ''} name="city" /></p>
-                            <p><input placeholder="State" onInput={(e) => e.target.className = ''} name="state" /></p>
-                            <p><input placeholder="Country" onInput={(e) => e.target.className = ''} name="country" /></p>
+                        <div className="tab"> <div className = "headings2"> Share your contact information</div>
+                            <p className='firstName'><input placeholder="First Name" id = "firsts" onInput={(e) => e.target.className = ''} name="firsts" /></p>
+                            <p className='lastName'><input placeholder="Last Name" id = "last" onInput={(e) => e.target.className = ''} name="last" /></p>
+                            <p className='email'><input placeholder="Email" id = "email" onInput={(e) => e.target.className = ''} name="email" /></p>
+                            <p className='phone'><input placeholder="Phone" id = "phone" onInput={(e) => e.target.className = ''} name="phone" /></p>
                         </div>
-                        <div className="tab">
-                            <p><input placeholder="Credit Card #" onInput={(e) => e.target.className = ''} name="email" /></p>
-                            <p>Exp Month
-                                <select id="month">
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select></p>
-                            <p>Exp Year
-                                <select id="year">
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                </select></p>
-                            <p><input placeholder="CVV" onInput={(e) => e.target.className = ''} name="phone" /></p>
-                        </div>
-                        <div className="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" className="mb-4" />
+                         <div className="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" className="mb-4" />
                             <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you shortly!</span>
                         </div>
                         <div style={{ overflow: "auto" }} id="nextprevious">

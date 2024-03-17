@@ -99,7 +99,14 @@ button:hover {
     font-size: 20px;
 }
 
-
+.container1:hover {
+    cursor: pointer;
+    padding-bottom: 50px;
+    padding-right: 4px;
+    padding-left: 82px;
+    padding-top: 20px;
+    transition: 0.4s;
+}
 
 /* Hide the browser's default radio button */
 
@@ -129,9 +136,9 @@ button:hover {
 
 /* On mouse-over, add a grey background color */
 
-.container:hover input~.checkmark {
+/* .container:hover input~.checkmark {
     background-color: #ccc;
-}
+} */
 
 
 
@@ -186,6 +193,13 @@ button:hover {
     max-width: 330px;
     overflow-y: wrap;
 }
+#addressBox:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+
+}
 .buildingName {
     font-weight: bold;
     font-size: 20px;
@@ -200,6 +214,14 @@ button:hover {
     height:60px;
     max-width: 250px;
     overflow-y: wrap;
+}
+
+#buildingNameBox:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+
 }
 
 #nextBtn {
@@ -230,6 +252,13 @@ button:hover {
     overflow-y: wrap;
 }
 
+#bedRooms:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
 .bathRooms {
     position: absolute;
     margin-top: 160px;
@@ -246,4 +275,123 @@ button:hover {
     height:60px;
     max-width: 250px;
     overflow-y: wrap;
+    
+}
+
+#bathRooms:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+
+}
+
+.headings2 {
+    margin-left: 0px;
+    margin-top: 100px;
+    margin-bottom: -40px;
+    font-size: large;
+    font-weight: bold;
+    font-size: 27px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* margin-left: -49px; */
+
+}
+/* .tab {
+    height:400px;
+    margin-left: 200px;
+} */
+/* .firstName {
+    position: relative;
+    margin-left: -8%;
+    margin-top: 15%;
+    max-width: 40%;
+} */
+
+/* .lastName {
+    position: absolute;
+    margin-right: 5%;
+} */
+
+#firsts {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 80px;
+    border-radius: 10px;
+    height:60px;
+    max-width: 450px;
+    overflow-y: wrap;
+}
+#firsts:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+#last {
+    position: absolute;
+    margin-left: 2.7%;
+    margin-top: 140px;
+    border-radius: 10px;
+    height:60px;
+    max-width: 450px;
+    overflow-y: wrap;
+}
+
+#last:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+#email {
+    position: absolute;
+    margin-left: 2.7%;
+    margin-top: 216px;
+    border-radius: 10px;
+    height:60px;
+    max-width: 450px;
+    overflow-y: wrap;
+}
+
+#email:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+#phone {
+    position: absolute;
+    margin-left: 2.7%;
+    margin-top: 292px;
+    border-radius: 10px;
+    height:60px;
+    max-width: 450px;
+    overflow-y: wrap;
+}
+
+#phone:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+#prevBtn {
+    position: absolute;
+    margin-top: 30%;
+    margin-left: -12%;
+    border-radius: 10px;
+    background-color: gray;
+
+}
+#prevBtn:hover {
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    background-color: black;
+    transition: 0.5s;
 }
