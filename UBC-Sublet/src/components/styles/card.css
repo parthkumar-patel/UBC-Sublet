@@ -17,15 +17,7 @@
   position: relative;
 }
 
-.featuredITems {
-  top: 680px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: large;
-  font-weight: 400; /* or any other valid numeric value */
-  left: 650px;
-  position: absolute;
-}
+
 
 .img {
   width: 275px;
@@ -277,5 +269,16 @@
 }
 .cards-list .container-3-parent {
   left: -45px;
-  margin-right: 22%; /* Add right margin to create gap between cards */
+  margin-right: 12%; /* Add right margin to create gap between cards */
+}
+
+
+.featuredITems {
+  top: 680px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 120%; /* Adjust the font size using em */
+  font-weight: 400;
+  left: 650px;
+  position: absolute;
 }
