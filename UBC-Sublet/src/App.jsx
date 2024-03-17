@@ -12,6 +12,8 @@ import Profile from "./pages/Profile";
 import "./App.css";
 import Post from "./components/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './scss/styles.scss'
+
 export default function App() {
   return (
     <AuthContextProvider>
