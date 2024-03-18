@@ -18,10 +18,10 @@
   padding-left: 16px;
   padding-right: 64px;
   padding-top: 150px;
-  height: 900px;
+  height: 100vh;
   /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); small shadow*/
   /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.075); large shadow*/
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
+  box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
   z-index: 2;
 }
 
@@ -31,17 +31,14 @@
   flex-wrap: wrap;
 }
 
-.cards {
-    /* display: flex; */
-    flex-wrap: wrap;
-  }
-  
 .cards-lists {
-    display: flex;
-    margin-top: 12%;
-    gap: 40%;
-    margin-bottom: 20%;
-    max-width: 75%;
-    flex-wrap: wrap;
-    row-gap: 40px;
+  display: flex;
+  margin-top: 12%;
+  gap: 42%;
+  margin-bottom: 20%;
+  padding-left: 64px;
+  padding-top: 16px;
+  max-width: 75%;
+  flex-wrap: wrap;
+  row-gap: 40px;
 }

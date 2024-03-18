@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import CreateProfile from "./CreateProfile";
+import CardComponent from "./CardComponent";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -10,11 +11,30 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { Card, Container, Row, Col, Image } from "react-bootstrap";
+import "./styles/profile.css";
 
 export default function PersonalProfile() {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = UserAuth();
+  const [allImage, setAllImage] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:3001/subletslist");
+        const data = await response.json();
+        const sortedData = data
+          .slice()
+          .sort((a, b) => a.dateAdding - b.dateAdding);
+        setAllImage(sortedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
@@ -70,39 +90,53 @@ export default function PersonalProfile() {
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
   if (!userProfile) {
     return (
-      <div className="" style={{ marginTop: "-65px" }}>
+      <div style={{ marginTop: "-65px" }}>
         <CreateProfile colRef={colRef} user={user} app={app} />
       </div>
     );
   }
 
+  const filteredImages = allImage.filter((image) => {
+    return userProfile.lisitings.includes(image._id);
+  });
+
+  const cards = filteredImages.map((item) => {
+    return <CardComponent key={item._id} item={item} />;
+  });
+
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-center">
-        <Col md={6}>
-          <Card className="">
-            <Card.Body>
-              <div className="d-flex align-items-center">
-                <Col xs={6} md={4}>
-                  <Image
-                    src={userProfile.imageURL}
-                    width="100px"
-                    alt="Profile"
-                    roundedCircle
-                  />
-                </Col>
-                {userProfile && (
-                  <div className="ml-3">
-                    <h4>{`${userProfile.FirstName} ${userProfile.LastName}`}</h4>
-                    <p>Email: {userProfile.Email}</p>
-                    <p>Contact Number: {userProfile.ContactNo}</p>
-                  </div>
-                )}
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
+      <Container className="user-profile">
+        <Row className="justify-content-center">
+          <Col md={6}>
+            <Card className="">
+              <Card.Body>
+                <div className="d-flex align-items-center">
+                  <Col xs={6} md={4}>
+                    <Image
+                      src={userProfile.imageURL}
+                      width="100px"
+                      alt="Profile"
+                      roundedCircle
+                    />
+                  </Col>
+                  {userProfile && (
+                    <div className="ml-3">
+                      <h4>{`${userProfile.FirstName} ${userProfile.LastName}`}</h4>
+                      <p>Email: {userProfile.Email}</p>
+                      <p>Contact Number: {userProfile.ContactNo}</p>
+                    </div>
+                  )}
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+      <div className="cards">
+        <h1 className="mt-5 pt-4">My Listings</h1>
+        {userProfile && <section className="cards-lists">{cards}</section>}
+      </div>
+    </div>
   );
 }
