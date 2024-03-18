@@ -1,9 +1,10 @@
 /* your CSS goes here*/
+
 body {
   background: #eee;
 }
 
-#regForm {
+#regFormPost {
   background-color: #ffffff;
   margin: 0px auto;
   font-family: Raleway;
@@ -11,11 +12,11 @@ body {
   border-radius: 10px;
 }
 
-h1 {
+h1.post {
   text-align: center;
 }
 
-input {
+input.post {
   padding: 10px;
   width: 100%;
   font-size: 17px;
@@ -23,15 +24,15 @@ input {
   border: 1px solid #aaaaaa;
 }
 
-input.invalid {
+input.post.invalid {
   background-color: #ffdddd;
 }
 
-.tab {
+.tabPost {
   display: none;
 }
 
-button {
+button.post {
   background-color: #4caf50;
   color: #ffffff;
   border: none;
@@ -41,15 +42,15 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button.post:hover {
   opacity: 0.8;
 }
 
-#prevBtn {
+#prevBtnPost {
   background-color: #bbbbbb;
 }
 
-.step {
+.stepPost {
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -60,24 +61,25 @@ button:hover {
   opacity: 0.5;
 }
 
-.step.active {
+.stepPost.active {
   opacity: 1;
 }
 
-.step.finish {
+.stepPost.finish {
   background-color: #4caf50;
 }
 
-.all-steps {
+.all-stepsPost {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.thanks-message {
+.thanks-messagePost {
   display: none;
 }
-.heading {
+
+.headingPost {
   font-size: large;
   font-weight: bold;
   font-size: 27px;
@@ -85,42 +87,39 @@ button:hover {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-left: -49px;
 }
-.container1 {
+
+.container1Post {
   display: flex;
   margin-top: 20px;
-  border: 1px solid #ccc; /* Increase border width to 2px */
+  border: 1px solid #ccc;
   height: 66px;
   width: 105%;
-  border-radius: 10px; /* Optional: Add rounded corners */
-  /* text-align: right; Align text to the right */
+  border-radius: 10px;
   margin-left: -50px;
-  padding-left: 65px; /* Add padding to the left */
+  padding-left: 65px;
   padding-top: 12px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
 }
 
-.container1:hover {
+.container1Post:hover {
   cursor: pointer;
   padding-bottom: 50px;
   padding-right: 4px;
   padding-left: 82px;
   padding-top: 20px;
   transition: 0.4s;
+  background-color: #ccc;
 }
 
-/* Hide the browser's default radio button */
-
-.container1 input[type="radio"] {
+.container1Post input[type="radio"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   margin-left: -400px;
 }
 
-/* Create a custom radio button */
-
-.checkmark {
+.checkmarkPost {
   position: absolute;
   height: 10px;
   margin-top: 12px;
@@ -133,36 +132,22 @@ button:hover {
   padding: 12px;
 }
 
-/* On mouse-over, add a grey background color */
-
-/* .container:hover input~.checkmark {
-    background-color: #ccc;
-} */
-
-/* When the radio button is checked, add a blue background */
-
-.container input:checked ~ .checkmark {
+.container1Post input:checked ~ .checkmarkPost {
   background-color: black;
   position: absolute;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-
-.checkmark:after {
+.container1Post .checkmarkPost:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
-
-.container input:checked ~ .checkmark:after {
+.container1Post input:checked ~ .checkmarkPost:after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
-
-.container .checkmark:after {
+.container1Post .checkmarkPost:after {
   top: 6px;
   left: 6.4px;
   width: 12px;
@@ -170,14 +155,15 @@ button:hover {
   border-radius: 50%;
   background: white;
 }
-.address {
+
+.addressPost {
   font-weight: bold;
   font-size: 20px;
   margin-top: 40px;
   margin-left: -50px;
 }
 
-#addressBox {
+#addressBoxPost {
   position: absolute;
   margin-left: -70px;
   margin-top: 80px;
@@ -186,19 +172,22 @@ button:hover {
   max-width: 330px;
   overflow-y: wrap;
 }
-#addressBox:hover {
+
+#addressBoxPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
-.buildingName {
+
+.buildingNamePost {
   font-weight: bold;
   font-size: 20px;
   margin-top: 40px;
   margin-left: 274px;
 }
-#buildingNameBox {
+
+#buildingNameBoxPost {
   position: absolute;
   margin-left: -129px;
   margin-top: 80px;
@@ -208,14 +197,14 @@ button:hover {
   overflow-y: wrap;
 }
 
-#buildingNameBox:hover {
+#buildingNameBoxPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-#nextBtn {
+#nextBtnPost {
   position: absolute;
   top: 122%;
   left: 60%;
@@ -226,7 +215,8 @@ button:hover {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.bedRooms {
+
+.bedRoomsPost {
   position: absolute;
   margin-top: 160px;
   margin-left: -32%;
@@ -234,7 +224,7 @@ button:hover {
   font-size: 20px;
 }
 
-#bedRooms {
+#bedRoomsPost {
   position: absolute;
   margin-left: -32%;
   margin-top: 200px;
@@ -244,14 +234,14 @@ button:hover {
   overflow-y: wrap;
 }
 
-#bedRooms:hover {
+#bedRoomsPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-.bathRooms {
+.bathRoomsPost {
   position: absolute;
   margin-top: 160px;
   margin-left: -129px;
@@ -259,7 +249,7 @@ button:hover {
   font-size: 20px;
 }
 
-#bathRooms {
+#bathRoomsPost {
   position: absolute;
   margin-left: -129px;
   margin-top: 200px;
@@ -269,14 +259,14 @@ button:hover {
   overflow-y: wrap;
 }
 
-#bathRooms:hover {
+#bathRoomsPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-.headings2 {
+.headings2Post {
   margin-left: 0px;
   margin-top: 100px;
   margin-bottom: -40px;
@@ -285,25 +275,9 @@ button:hover {
   font-size: 27px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  /* margin-left: -49px; */
 }
-/* .tab {
-    height:400px;
-    margin-left: 200px;
-} */
-/* .firstName {
-    position: relative;
-    margin-left: -8%;
-    margin-top: 15%;
-    max-width: 40%;
-} */
 
-/* .lastName {
-    position: absolute;
-    margin-right: 5%;
-} */
-
-#firsts {
+#firstsPost {
   position: absolute;
   margin-left: 40px;
   margin-top: 80px;
@@ -312,13 +286,15 @@ button:hover {
   max-width: 450px;
   overflow-y: wrap;
 }
-#firsts:hover {
+
+#firstsPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
-#last {
+
+#lastPost {
   position: absolute;
   margin-left: 2.7%;
   margin-top: 140px;
@@ -328,14 +304,14 @@ button:hover {
   overflow-y: wrap;
 }
 
-#last:hover {
+#lastPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-#email {
+#emailPost {
   position: absolute;
   margin-left: 2.7%;
   margin-top: 216px;
@@ -345,14 +321,14 @@ button:hover {
   overflow-y: wrap;
 }
 
-#email:hover {
+#emailPost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-#phone {
+#phonePost {
   position: absolute;
   margin-left: 2.7%;
   margin-top: 292px;
@@ -362,21 +338,22 @@ button:hover {
   overflow-y: wrap;
 }
 
-#phone:hover {
+#phonePost:hover {
   padding: 20px;
   transition: 0.4s;
   cursor: pointer;
   background-color: gainsboro;
 }
 
-#prevBtn {
+#prevBtnPost {
   position: absolute;
   margin-top: 30%;
   margin-left: -12%;
   border-radius: 10px;
   background-color: gray;
 }
-#prevBtn:hover {
+
+#prevBtnPost:hover {
   padding-top: 15px;
   padding-left: 30px;
   padding-bottom: 15px;

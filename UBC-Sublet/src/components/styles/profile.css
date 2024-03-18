@@ -1,4 +1,4 @@
-/* .profile-wrapper {
+.profile-wrapper {
   display: flex;
   background-color: #f2f2f2;
   padding: 20px;
@@ -138,4 +138,4 @@ p {
   max-width: 70%;
   flex-wrap: wrap;
   row-gap: 32px;
-} */
+}
