@@ -149,8 +149,8 @@ export default function Navbar() {
                   Logout
                 </a>
               ) : (
-                <Link to="/signin" className="btn">
-                  Sign in
+                <Link to="/login" className="btn">
+                  Log in
                 </Link>
               )}
             </div>

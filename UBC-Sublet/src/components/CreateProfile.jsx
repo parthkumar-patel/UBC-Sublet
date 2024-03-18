@@ -25,7 +25,7 @@ export default function CreateProfile(prop) {
   const storage = getStorage(prop.app);
 
   if (!prop.user) {
-    return <Navigate to="/signin" />;
+    return <Navigate to="/login" />;
   }
 
   function handleAddProfile() {

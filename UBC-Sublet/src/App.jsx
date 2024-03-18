@@ -4,7 +4,8 @@ import { AuthContextProvider } from "./context/AuthContext";
 import Protected from "./components/Protected";
 import Account from "./pages/Account";
 import Home from "./pages/Home";
-import Signin from "./pages/SignIn";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
 import SearchSublet from "./components/SearchSublets";
 import Description from "./components/Description";
 import Profile from "./pages/Profile";
@@ -19,7 +20,8 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/searchSubletss" element={<SearchSublet />} />
         <Route path="/desc" element={<Description />} />
