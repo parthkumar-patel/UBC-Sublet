@@ -97,10 +97,12 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-    return userProfile.lisitings.includes(image._id);
+    // console.log(image._id);
+    // return userProfile.lisitings.includes(image._id);
   });
 
   const cards = filteredImages.map((item) => {
+    console.log(item._id);
     return <CardComponent key={item._id} item={item} />;
   });
 
