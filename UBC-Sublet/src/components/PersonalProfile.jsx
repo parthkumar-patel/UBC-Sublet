@@ -10,7 +10,7 @@ import {
   query,
   onSnapshot,
 } from "firebase/firestore";
-import { Card, Container, Row, Col, Image } from "react-bootstrap";
+import { Card, Row, Col, Image } from "react-bootstrap";
 import "./styles/profile.css";
 
 export default function PersonalProfile() {
@@ -106,35 +106,38 @@ export default function PersonalProfile() {
 
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
-      <Container className="user-profile">
+      <div className="user-profile">
         <Row className="justify-content-center">
-          <Col md={6}>
-            <Card className="">
-              <Card.Body>
-                <div className="d-flex align-items-center">
-                  <Col xs={6} md={4}>
-                    <Image
-                      src={userProfile.imageURL}
-                      width="100px"
-                      alt="Profile"
-                      roundedCircle
-                    />
-                  </Col>
-                  {userProfile && (
-                    <div className="ml-3">
-                      <h4>{`${userProfile.FirstName} ${userProfile.LastName}`}</h4>
-                      <p>Email: {userProfile.Email}</p>
-                      <p>Contact Number: {userProfile.ContactNo}</p>
+          <Card className="profile-card">
+            <Card.Body>
+              <Col className="image-col">
+                <Image
+                  src={userProfile.imageURL}
+                  className="image"
+                  alt="Profile"
+                />
+              </Col>
+              <Row className="card-info">
+                {userProfile && (
+                  <div>
+                    <p className="full-name">{`${userProfile.FirstName} ${userProfile.LastName}`}</p>
+                    <div className="email-info">
+                      <span>Email:</span>
+                      <p>{userProfile.Email}</p>
                     </div>
-                  )}
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+                    <div className="contact-info">
+                      <span>Contact No.:</span>
+                      <p> +1 {userProfile.ContactNo}</p>
+                    </div>
+                  </div>
+                )}
+              </Row>
+            </Card.Body>
+          </Card>
         </Row>
-      </Container>
+      </div>
       <div className="cards">
-        <h1 className="mt-5 pt-4">My Listings</h1>
+        <h1 className="mt-5 pt-4 listing">My Listings</h1>
         {userProfile && <section className="cards-lists">{cards}</section>}
       </div>
     </div>
