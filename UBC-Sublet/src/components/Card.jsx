@@ -34,21 +34,23 @@ export default function Card() {
         console.error("Error fetching data:", error);
       });
   }
-const cards = allImage.map((item) => {
+  const cards = allImage.map((item) => {
     console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
-return (
-    <CardComponent
-        key={item._id}
-        item={item}
-    />
-)
-})
+    return <CardComponent key={item._id} item={item} />;
+  });
 
-return (
+  return (
     <div>
-      <div className="featuredITems" style={{ marginLeft: '-580px', marginTop: '30px', fontSize: "30px" }} > Featured sublets </div>
-      <section className="cards-list" style = {{ marginTop: '150px' }}>{cards}</section>
+      <div
+        className="featuredITems"
+        style={{ marginLeft: "-580px", marginTop: "30px", fontSize: "30px" }}
+      >
+        Featured sublets
+      </div>
+      <section className="cards-list" style={{ marginTop: "150px" }}>
+        {cards}
+      </section>
     </div>
   );
 }

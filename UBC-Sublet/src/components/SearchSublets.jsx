@@ -625,7 +625,7 @@ export default function SearchSublet() {
       </div>
       <div className="cards">
         {conditionalData.length == 0 ? (
-          <div className="position-absolute top-50 start-50 translate-middle">
+          <div className="position-absolute top-50 start-50 translate-middle gap-10">
             <h1> No search results found, please go back </h1>
           </div>
         ) : (
