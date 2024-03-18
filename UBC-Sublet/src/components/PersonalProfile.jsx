@@ -80,7 +80,7 @@ export default function PersonalProfile() {
 
   // Redirect to sign-in page if user is not authenticated
   if (!user) {
-    return <Navigate to="/signin" />;
+    return <Navigate to="/login" />;
   }
 
   if (loading) {
