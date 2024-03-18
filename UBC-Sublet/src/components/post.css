@@ -38,7 +38,8 @@ button {
     padding: 10px 20px;
     font-size: 17px;
     font-family: Raleway;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
 }
 
 button:hover {
@@ -89,7 +90,7 @@ button:hover {
     margin-top: 20px;
     border: 1px solid #ccc; /* Increase border width to 2px */
     height: 66px;
-    width: 105%;
+    width: 128%;
     border-radius: 10px; /* Optional: Add rounded corners */
     /* text-align: right; Align text to the right */
     margin-left: -50px;
@@ -226,8 +227,6 @@ button:hover {
 
 #nextBtn {
     position: absolute;
-    top:122%;
-    left: 60%;
     background-color: black;
     border-radius: 10px;
     width: 120px;
@@ -237,14 +236,14 @@ button:hover {
 .bedRooms {
     position: absolute;
     margin-top: 160px;
-    margin-left: -32%;
+    margin-left: -39%;
     font-weight: bold;
     font-size: 20px;
 }
 
 #bedRooms {
     position: absolute;
-    margin-left: -32%;
+    margin-left: -39%;
     margin-top: 200px;
     border-radius: 10px;
     height:60px;
@@ -273,9 +272,7 @@ button:hover {
     margin-top: 200px;
     border-radius: 10px;
     height:60px;
-    max-width: 250px;
-    overflow-y: wrap;
-    
+    max-width: 250px;    
 }
 
 #bathRooms:hover {
@@ -285,6 +282,31 @@ button:hover {
     background-color: gainsboro;
 
 }
+
+.description {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 309px;
+    margin-top: 1024px;
+}
+#description {
+    position: absolute;
+    margin-left: -470px;
+    margin-top: 340px;
+    border-radius: 10px;
+    height:100px;
+    max-width: 590px;    
+    font-size: large;
+}
+
+#description:hover {
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: gainsboro;
+
+}
+
 
 .headings2 {
     margin-left: 0px;
@@ -380,7 +402,7 @@ button:hover {
 }
 
 #prevBtn {
-    position: absolute;
+    position: inherit;
     margin-top: 30%;
     margin-left: -12%;
     border-radius: 10px;
@@ -394,4 +416,55 @@ button:hover {
     padding-right: 30px;
     background-color: black;
     transition: 0.5s;
+}
+
+#Initial_Deposit {
+    margin-top: 100px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Monthly_Rent {
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Starting_Date{
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Ending_Date {
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Time_Period {
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nextBtn1 {
+    position:absolute;
+    top:146%;
+    width:20%;
+    margin-left: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: large;
+    background-color: black;
 }

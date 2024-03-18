@@ -9,6 +9,7 @@ const subletsSchema = new Schema({
     }],
     rooms: [String],
 
+    //
     pricing: [{
         initialDeposit: Number,
         monthlyRent: Number
@@ -16,9 +17,11 @@ const subletsSchema = new Schema({
     numberOfRoomsAvailable : {
         type: String
     },
+    //
     timePeriod : {
         type: Number
     },
+    //
     contactInformation : [{
         name: String,
         email: String
@@ -26,14 +29,20 @@ const subletsSchema = new Schema({
     description : {
         type: String
     },
+
+    //
     amenities: [{
         furnished: Boolean,
         utilities: Boolean,
         utensile: Boolean,
     }],
+
+    //
     dateAdding: {
         type: String,
     },
+
+    //
     startingSubletDate: {
         type: String
     },
