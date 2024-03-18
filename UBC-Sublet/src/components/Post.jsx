@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./post.css";
+import "./post.css"; // Import your CSS file
 
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -48,9 +48,9 @@ export default function Post() {
 
     if (currentTab >= x.length) {
       document.getElementById("nextprevious").style.display = "none";
-      document.getElementById("all-steps").style.display = "none";
+      document.getElementById("all-stepsPost").style.display = "none";
       document.getElementById("register").style.display = "none";
-      document.getElementById("text-message").style.display = "block";
+      document.getElementById("thanks-messagePost").style.display = "block";
       return;
     }
 
@@ -92,15 +92,17 @@ export default function Post() {
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-md-6">
           <form id="regFormPost">
-            <h1 className="post" id="register"> </h1>
-            <div className="all-stepsPost" id="all-steps">
-              <span className="stepPost"></span>
-              <span className="stepPost"></span>
-              <span className="stepPost"></span>
-              <span className="stepPost"></span>
+            <h1 className="post" id="register">
+              {" "}
+            </h1>
+            <div className="all-stepsPost" id="all-stepsPost">
+              <span className="stepPost"></span>{" "}
+              <span className="stepPost"></span>{" "}
+              <span className="stepPost"></span>{" "}
+              <span className="stepPost"></span>{" "}
             </div>
             <div className="tabPost">
-              <h3 className="headingPost">What type of property is this?</h3>
+              <h3 className="headingPost">What type of property is this? :</h3>
               <label className="container1Post">
                 Two-Bedroom
                 <input
@@ -112,7 +114,62 @@ export default function Post() {
                 />
                 <span className="checkmarkPost"></span>
               </label>
-              {/* Add other radio button labels similarly */}
+              <label className="container1Post">
+                Four-Bedroom
+                <input
+                  type="radio"
+                  name="radio"
+                  value="four-bedroom"
+                  checked={selectedOption === "four-bedroom"}
+                  onChange={handleOptionChange}
+                />
+                <span className="checkmarkPost"></span>
+              </label>
+              <label className="container1Post">
+                Six-Bedroom
+                <input
+                  type="radio"
+                  name="radio"
+                  value="six-bedroom"
+                  checked={selectedOption === "six-bedroom"}
+                  onChange={handleOptionChange}
+                />
+                <span className="checkmarkPost"></span>
+              </label>
+              <label className="container1Post">
+                Shared-Two-Bedroom
+                <input
+                  type="radio"
+                  name="radio"
+                  value="shared-two-bedroom"
+                  checked={selectedOption === "shared-two-bedroom"}
+                  onChange={handleOptionChange}
+                />
+                <span className="checkmarkPost"></span>
+              </label>
+              <label className="container1Post">
+                Studio
+                <input
+                  type="radio"
+                  name="radio"
+                  value="studio"
+                  checked={selectedOption === "studio"}
+                  onChange={handleOptionChange}
+                />
+                <span className="checkmarkPost"></span>
+              </label>
+              <label className="container1Post">
+                Apartment
+                <input
+                  type="radio"
+                  name="radio"
+                  value="apartment"
+                  checked={selectedOption === "apartment"}
+                  onChange={handleOptionChange}
+                />
+                <span className="checkmarkPost"></span>
+              </label>
+
               <label className="addressPost"> Address </label>
               <input
                 type="text"
@@ -121,7 +178,6 @@ export default function Post() {
                 onInput={(e) => (e.target.className = "")}
                 name="address"
               />
-
               <label className="buildingNamePost"> Building Name </label>
               <input
                 type="text"
@@ -131,22 +187,79 @@ export default function Post() {
                 name="address"
               />
 
-              {/* Add other input fields similarly */}
-            </div>
-            {/* Add other tab content similarly */}
-            <div className="thanks-messagePost" id="text-message">
-              <img src="https://i.imgur.com/O18mJ1K.png" width="100" className="mb-4" />
-              <h3>Thanks for your Donation!</h3>{" "}
-              <span>Your donation has been entered! We will contact you shortly!</span>
+              <label className="bedRoomsPost"> Bedrooms </label>
+              <input
+                type="text"
+                placeholder="eg. 4"
+                id="bedRoomsPost"
+                onInput={(e) => (e.target.className = "")}
+                name="bedrooms"
+              />
+
+              <label className="bathRoomsPost"> Bathrooms </label>
+              <input
+                type="text"
+                placeholder="eg. 2"
+                id="bathRoomsPost"
+                onInput={(e) => (e.target.className = "")}
+                name="bathRooms"
+              />
+
+              <div className="tabPost">
+                <div className="headings2Post">
+                  {" "}
+                  Share your contact information
+                </div>
+                <p className="firstNamePost">
+                  <input
+                    placeholder="First Name"
+                    id="firstsPost"
+                    onInput={(e) => (e.target.className = "")}
+                    name="firsts"
+                  />
+                </p>
+                <p className="lastNamePost">
+                  <input
+                    placeholder="Last Name"
+                    id="lastPost"
+                    onInput={(e) => (e.target.className = "")}
+                    name="last"
+                  />
+                </p>
+                <p className="emailPost">
+                  <input
+                    placeholder="Email"
+                    id="emailPost"
+                    onInput={(e) => (e.target.className = "")}
+                    name="email"
+                  />
+                </p>
+                <p className="phonePost">
+                  <input
+                    placeholder="Phone"
+                    id="phonePost"
+                    onInput={(e) => (e.target.className = "")}
+                    name="phone"
+                  />
+                </p>
+              </div>
             </div>
             <div style={{ overflow: "auto" }} id="nextprevious">
               <div style={{ float: "right" }}>
-                <button type="button" id="prevBtnPost" onClick={() => nextPrev(-1)}>
+                <button
+                  type="button"
+                  id="prevBtnPost"
+                  onClick={() => nextPrev(-1)}
+                >
                   Previous
-                </button>{" "}
-                <button type="button" id="nextBtnPost" onClick={() => nextPrev(1)}>
+                </button>
+                <button
+                  type="button"
+                  id="nextBtnPost"
+                  onClick={() => nextPrev(1)}
+                >
                   Next
-                </button>{" "}
+                </button>
               </div>
             </div>
           </form>

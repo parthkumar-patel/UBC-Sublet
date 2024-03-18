@@ -209,6 +209,7 @@ button.post:hover {
   top: 122%;
   left: 60%;
   background-color: black;
+  color: white;
   border-radius: 10px;
   width: 120px;
   font-size: large;
@@ -350,7 +351,8 @@ button.post:hover {
   margin-top: 30%;
   margin-left: -12%;
   border-radius: 10px;
-  background-color: gray;
+  background-color: rgb(31, 31, 31);
+  color: white;
 }
 
 #prevBtnPost:hover {
