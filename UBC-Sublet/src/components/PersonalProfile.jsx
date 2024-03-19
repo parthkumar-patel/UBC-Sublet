@@ -45,20 +45,10 @@ export default function PersonalProfile() {
     appId: "1:744862491087:web:a44f1fe890494086b772ba",
     measurementId: "G-943F4K57XC",
   };
-  const firebaseConfignew = {
-    apiKey: "AIzaSyApjwpwpCwORh66wapgNgigm1iKdEjZub8",
-    authDomain: "art-gallery-ab57c.firebaseapp.com",
-    projectId: "art-gallery-ab57c",
-    storageBucket: "art-gallery-ab57c.appspot.com",
-    messagingSenderId: "569425492328",
-    appId: "1:569425492328:web:dd223dcd55fe4d681ffedd",
-    measurementId: "G-S5LYSLD7F9",
-  };
 
   const app = initializeApp(firebaseConfig);
-  const appNew = initializeApp(firebaseConfignew, "new");
-  const db1 = getFirestore(appNew);
-  const colRef = collection(db1, "profiles");
+  const db = getFirestore(app);
+  const colRef = collection(db, "profiles");
 
   useEffect(() => {
     if (!user) return; // Return if user is not authenticated
@@ -148,7 +138,7 @@ export default function PersonalProfile() {
       </div>
       <div className="cards">
         <h1 className="mt-5 pt-4 lisitng">My Listings</h1>
-        {userProfile && <section className="cards-lists">{content}</section>}
+        {userProfile && content}
       </div>
     </div>
   );
