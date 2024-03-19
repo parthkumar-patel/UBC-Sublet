@@ -1,6 +1,7 @@
-.login-form-container {
+.login-form-container,
+.forgot-password-form-container,
+.sign-up-form-container {
   width: 350px;
-  height: 500px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -10,16 +11,17 @@
   margin-top: 20vh;
 }
 
+.login-form-container {
+  height: 460px;
+}
+
+.forgot-password-form-container {
+  height: 280px;
+  margin-top: 35vh;
+}
+
 .sign-up-form-container {
-  width: 350px;
-  height: 550px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 20px 30px;
-  margin: auto;
-  margin-top: 20vh;
+  height: 510px;
 }
 
 .title {

@@ -10,7 +10,7 @@ import {
   query,
   onSnapshot,
 } from "firebase/firestore";
-import { Card, Col, Image } from "react-bootstrap";
+import { Card, Col, Image, Row } from "react-bootstrap";
 import "./styles/profile.css";
 
 export default function PersonalProfile() {
@@ -45,20 +45,10 @@ export default function PersonalProfile() {
     appId: "1:744862491087:web:a44f1fe890494086b772ba",
     measurementId: "G-943F4K57XC",
   };
-  const firebaseConfignew = {
-    apiKey: "AIzaSyApjwpwpCwORh66wapgNgigm1iKdEjZub8",
-    authDomain: "art-gallery-ab57c.firebaseapp.com",
-    projectId: "art-gallery-ab57c",
-    storageBucket: "art-gallery-ab57c.appspot.com",
-    messagingSenderId: "569425492328",
-    appId: "1:569425492328:web:dd223dcd55fe4d681ffedd",
-    measurementId: "G-S5LYSLD7F9",
-  };
 
   const app = initializeApp(firebaseConfig);
-  const appNew = initializeApp(firebaseConfignew, "new");
-  const db1 = getFirestore(appNew);
-  const colRef = collection(db1, "profiles");
+  const db = getFirestore(app);
+  const colRef = collection(db, "profiles");
 
   useEffect(() => {
     if (!user) return; // Return if user is not authenticated
@@ -97,19 +87,27 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-    // console.log(image._id);
-    // return userProfile.lisitings.includes(image._id);
+    return userProfile.listings.includes(image._id);
   });
 
-  const cards = filteredImages.map((item) => {
-    console.log(item._id);
-    return <CardComponent key={item._id} item={item} />;
-  });
+  let content;
+  if (filteredImages.length === 0) {
+    content = (
+      <div className="no-listing-msg">
+        You haven&apos;t posted anything yet. Create your first listing!
+      </div>
+    );
+  } else {
+    const cards = filteredImages.map((item) => (
+      <CardComponent key={item._id} item={item} />
+    ));
+    content = <section className="cards-lists">{cards}</section>;
+  }
 
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
       <div className="user-profile">
-        <div className="profile-row justify-content-center">
+        <Row className="profile-row justify-content-center">
           <Card className="profile-card">
             <Card.Body>
               <Col className="image-col">
@@ -136,11 +134,11 @@ export default function PersonalProfile() {
               </div>
             </Card.Body>
           </Card>
-        </div>
+        </Row>
       </div>
       <div className="cards">
         <h1 className="mt-5 pt-4 lisitng">My Listings</h1>
-        {userProfile && <section className="cards-lists">{cards}</section>}
+        {userProfile && content}
       </div>
     </div>
   );

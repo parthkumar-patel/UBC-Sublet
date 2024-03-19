@@ -20,6 +20,8 @@ export default function CreateProfile(prop) {
     Email: "",
     ContactNo: "",
     uid: "",
+    listings: [],
+    saved: [],
   });
 
   const storage = getStorage(prop.app);
@@ -64,6 +66,8 @@ export default function CreateProfile(prop) {
               Email: formData.Email,
               ContactNo: formData.ContactNo,
               uid: prop.user.uid,
+              listings: [],
+              saved: [],
             });
           });
         }
@@ -76,6 +80,8 @@ export default function CreateProfile(prop) {
         Email: formData.Email,
         ContactNo: formData.ContactNo,
         uid: prop.user.uid,
+        listings: [],
+        saved: [],
       });
     }
     setImage(null);
@@ -87,6 +93,8 @@ export default function CreateProfile(prop) {
       Email: "",
       ContactNo: "",
       uid: "",
+      listings: [],
+      saved: [],
     });
   }
 

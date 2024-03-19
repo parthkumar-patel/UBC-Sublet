@@ -252,7 +252,7 @@ button:hover {
 }
 .bathRooms {
     display: flex;
-    margin-left: 0px;
+    margin-left: 240px;
     font-size: 20px;
     font-weight: bold;
     margin-top: -88px;
@@ -431,14 +431,15 @@ button:hover {
     width:60%;
 }
 .description {
-    margin-top: 40px;
-    margin-left: -10%;
+    display: flex;
+    margin-top: 72%;
+    margin-left: 25%;
     font-weight: bold;
     font-size: large;
-    display: flex;
 }
 #description {
     display:flex;
+    margin-top: 100px;
     margin-left: -70px;
     border-radius: 10px;
     height: 100px;
