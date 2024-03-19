@@ -5,6 +5,7 @@ import Protected from "./components/Protected";
 import Account from "./pages/Account";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
+import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/SignUp";
 import SearchSublet from "./components/SearchSublets";
 import Description from "./components/Description";
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/searchSubletss" element={<SearchSublet />} />

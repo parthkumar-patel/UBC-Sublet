@@ -10,7 +10,7 @@ import {
   query,
   onSnapshot,
 } from "firebase/firestore";
-import { Card, Col, Image } from "react-bootstrap";
+import { Card, Col, Image, Row } from "react-bootstrap";
 import "./styles/profile.css";
 
 export default function PersonalProfile() {
@@ -107,7 +107,7 @@ export default function PersonalProfile() {
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
       <div className="user-profile">
-        <div className="profile-row justify-content-center">
+        <Row className="profile-row justify-content-center">
           <Card className="profile-card">
             <Card.Body>
               <Col className="image-col">
@@ -134,7 +134,7 @@ export default function PersonalProfile() {
               </div>
             </Card.Body>
           </Card>
-        </div>
+        </Row>
       </div>
       <div className="cards">
         <h1 className="mt-5 pt-4 lisitng">My Listings</h1>
