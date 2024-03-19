@@ -559,7 +559,7 @@ export default function Post() {
     }
     return (
         <div className="container mt-5">
-            <div className="row d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center">
                 <div className="col-md-6">
                     <form id="regForm">
                     <h1 id="register"> </h1>
@@ -590,6 +590,7 @@ export default function Post() {
                                  <input type="radio" name="radio" value="Apartment" checked={selectedOption === "Apartment"} onChange={handleOptionChange} />
                                  <span className="checkmark"></span>
                              </label>
+                            <div className='boxes'>
                              <label className="address"> Address </label>
                              <input type="text" placeholder="Building + UBC" id = "addressBox" onInput={(e) => e.target.className = ''} name="addressBox" />
 
@@ -604,7 +605,7 @@ export default function Post() {
 
                              <label className="description"> Description </label>
                              <input type="text" placeholder="What do you want to say?" id = "description" onInput={(e) => e.target.className = ''} name="description" />
-
+                            </div>
 
                          </div>
                          <div className="tab"> <div className = "headings2"> Share your contact information</div>

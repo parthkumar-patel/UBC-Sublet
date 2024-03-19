@@ -161,6 +161,10 @@ button:hover {
   display: block;
 }
 
+.boxes {
+    /* display:inline-flex */
+}
+
 /* Style the indicator (dot/circle) */
 
 .container .checkmark:after {
@@ -172,21 +176,23 @@ button:hover {
   background: white;
 }
 .address {
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 40px;
-  margin-left: -50px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: -57px;
 }
 
 #addressBox {
-  position: absolute;
-  margin-left: -70px;
-  margin-top: 80px;
-  border-radius: 10px;
-  height: 60px;
-  max-width: 330px;
-  overflow-y: wrap;
+    /* position: absolute; */
+    display: flex;
+    margin-left: -70px;
+    margin-top: 24px;
+    border-radius: 10px;
+    height: 60px;
+    max-width: 300px;
+    overflow-y: wrap;
 }
+
 #addressBox:hover {
   padding: 20px;
   transition: 0.4s;
@@ -194,19 +200,21 @@ button:hover {
   background-color: gainsboro;
 }
 .buildingName {
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 40px;
-  margin-left: 274px;
+    position: absolute;
+    font-size: 20px;
+    margin-top: 40px;
+    /* font-size: large; */
+    font-weight: bold;
+    margin-left: 274px;
 }
 #buildingNameBox {
-  position: absolute;
-  margin-left: -129px;
-  margin-top: 80px;
-  border-radius: 10px;
-  height: 60px;
-  max-width: 250px;
-  overflow-y: wrap;
+    /* position: absolute; */
+    display: flex;
+    margin-top: -58px;
+    border-radius: 10px;
+    height: 60px;
+    max-width: 300px;
+    margin-left: 245px;
 }
 
 #buildingNameBox:hover {
@@ -227,23 +235,29 @@ button:hover {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .bedRooms {
-  position: absolute;
-  margin-top: 160px;
-  margin-left: -32%;
+  display: flex;  
   font-weight: bold;
   font-size: 20px;
+  margin-left: -60px;
+  margin-top: 30px;
 }
 
 #bedRooms {
-  position: absolute;
-  margin-left: -32%;
-  margin-top: 200px;
+    margin-left: -70px;
   border-radius: 10px;
   height: 60px;
-  max-width: 330px;
+  max-width: 300px;
   overflow-y: wrap;
+  display:flex;
 }
+.bathRooms {
+    display: flex;
+    margin-left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -88px;
 
+}
 #bedRooms:hover {
   padding: 20px;
   transition: 0.4s;
@@ -251,22 +265,23 @@ button:hover {
   background-color: gainsboro;
 }
 
-.bathRooms {
-  position: absolute;
-  margin-top: 160px;
-  margin-left: -129px;
-  font-weight: bold;
-  font-size: 20px;
+.buildingName {
+    /* position: absolute; */
+    font-size: 20px;
+    margin-top: -98px;
+    /* font-size: large; */
+    font-weight: bold;
+    margin-left: 247px;
+    display: flex;
 }
 
 #bathRooms {
-  position: absolute;
-  margin-left: -129px;
-  margin-top: 200px;
-  border-radius: 10px;
-  height: 60px;
-  max-width: 250px;
-  overflow-y: wrap;
+    display: flex;
+    margin-top: 0px;
+    margin-left: 240px;
+    height: 60px;
+    border-radius: 11px;
+    max-width: 300px
 }
 
 #bathRooms:hover {
@@ -405,7 +420,7 @@ button:hover {
 #nextBtn {
     width:60%;
     margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 50%;
     border-radius: 10px;
     font-size: large;
     background-color: black;
@@ -416,14 +431,16 @@ button:hover {
     width:60%;
 }
 .description {
-    margin-top: 70%;
-    margin-left: 26.4%;
+    margin-top: 40px;
+    margin-left: -10%;
     font-weight: bold;
     font-size: large;
+    display: flex;
 }
 #description {
-    margin-top: 50%;
-    margin-left: -50px;
+    display:flex;
+    margin-left: -70px;
     border-radius: 10px;
     height: 100px;
+    width:110%;
 }
