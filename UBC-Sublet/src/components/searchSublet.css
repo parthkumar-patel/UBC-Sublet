@@ -23,12 +23,14 @@
   /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.075); large shadow*/
   box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
   z-index: 2;
+  max-width: 25%;
 }
 
 .cards {
   flex: 4;
   background-color: #f2f2f2;
   flex-wrap: wrap;
+  padding-left: 70px;
 }
 
 .cards-lists {
@@ -36,9 +38,9 @@
   margin-top: 12%;
   gap: 42%;
   margin-bottom: 20%;
-  padding-left: 64px;
+  padding-left: -20px;
   padding-top: 16px;
   max-width: 75%;
   flex-wrap: wrap;
-  row-gap: 40px;
+  row-gap: 0px;
 }

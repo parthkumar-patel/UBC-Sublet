@@ -441,15 +441,16 @@ button:hover {
   width: 60%;
 }
 .description {
+    position: relative;
     display: flex;
-    margin-top: 72%;
+    margin-top: 10%;
     margin-left: 25%;
     font-weight: bold;
     font-size: large;
 }
 #description {
     display:flex;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: -70px;
     border-radius: 10px;
     height: 100px;
@@ -462,3 +463,60 @@ button:hover {
   display: flex;
   max-width: fit-content;
 }
+
+
+@media only screen and (max-width: 1400px) {
+    .container1 {
+        position: relative; /* Ensure the container is relatively positioned */
+        left: 20px; /* Move the container to the left */
+    }
+    .checkmark {
+        display: flex;
+        left: 10px; /* Move the buttons to the left */
+    }
+    #addressBox {
+        max-width: 650px;
+        margin-left: -40px;
+        margin-top: 10px;
+    }
+    .address {
+        margin-left:-40px;
+    }
+    .buildingName {
+        margin-top: 30px;
+        margin-left: -40px;
+    }
+    #buildingNameBox{
+        max-width: 650px;
+        margin-top: 70px;
+        margin-left: -40px;
+    }
+    #bedRooms {
+        max-width: 650px;
+        margin-left: -40px;
+    }
+    .bedRooms {
+        margin-left: -41px;
+    }
+    #bathRooms {
+        margin-top: 10px;
+        margin-left: -40px;
+        max-width: 650px;
+    }
+
+    .bathRooms {
+        margin-top: 30px;
+        margin-left: -40px;
+    }
+
+    #description {
+        margin-left: -40px;
+        max-width: 105%;
+        margin-top: 5px;
+    }
+    .description {
+        margin-left: -60px;
+    }
+}
+
+

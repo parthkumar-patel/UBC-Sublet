@@ -142,7 +142,6 @@ p {
   max-width: 70%;
   flex-wrap: wrap;
   row-gap: 32px;
-  border-radius: 20px;
 }
 
 .no-listing-msg {
