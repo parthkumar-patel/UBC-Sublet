@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 const subletsSchema = new Schema({
     location: [{
         currentLocation: String,
+        buildingNumber : String,
         latitude: Number,
         longitude: Number
     }],
+
     rooms: [String],
 
     //
@@ -24,7 +26,8 @@ const subletsSchema = new Schema({
     //
     contactInformation : [{
         name: String,
-        email: String
+        email: String,
+        phone: Number,
     }],
     description : {
         type: String
@@ -44,6 +47,9 @@ const subletsSchema = new Schema({
 
     //
     startingSubletDate: {
+        type: String
+    },
+    endingSubletDate : {
         type: String
     },
     roomType : {

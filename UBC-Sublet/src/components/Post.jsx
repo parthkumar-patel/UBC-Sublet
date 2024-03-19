@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./post.css";
 
+
+/// convert images to binary 64 code
+/// room images need to be implemented each room needs to be iterated over to store it and make sure to convert it into base 64
+
+
 // export default function Post() {
 //     const [currentTab, setCurrentTab] = useState(0);
 //     const [selectedOption, setSelectedOption] = useState(""); // State to manage selected radio button
@@ -438,7 +443,7 @@ export default function Post() {
 
   return (
     <div className="container mt-5">
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="row d-flex justify-content-center align-items-center">
         <div className="col-md-6">
           <form id="regForm">
             <h1 id="register"> </h1>
