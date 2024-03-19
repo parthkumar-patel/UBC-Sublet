@@ -1,7 +1,7 @@
 /* your CSS goes here*/
 
 body {
-    background: #eee
+  background: #eee;
 }
 
 #regForm {
@@ -277,9 +277,6 @@ button:hover {
 }
 
 .headings2 {
-  margin-left: 0px;
-  margin-top: 100px;
-  margin-bottom: -40px;
   font-size: large;
   font-weight: bold;
   font-size: 27px;
@@ -289,7 +286,7 @@ button:hover {
 }
 
 #firsts {
-  margin-top: 100px;
+  margin-top: 20px;
   margin-left: 12px;
   border-radius: 10px;
   height: 60px;
@@ -363,67 +360,87 @@ button:hover {
 }
 
 #Initial_Deposit {
-    margin-top: 100px;
-    height: 60px;
-    border-radius: 10px;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 100px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #Monthly_Rent {
-    margin-top: 10px;
-    height: 60px;
-    border-radius: 10px;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-#Starting_Date{
-    margin-top: 10px;
-    height: 60px;
-    border-radius: 10px;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#Starting_Date {
+  margin-top: 10px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #Ending_Date {
-    margin-top: 10px;
-    height: 60px;
-    border-radius: 10px;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #Time_Period {
-    margin-top: 10px;
-    height: 60px;
-    border-radius: 10px;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-wrapper {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 #nextBtn {
-    width:60%;
-    margin-top: 20px;
-    margin-left: 70%;
-    border-radius: 10px;
-    font-size: large;
-    background-color: black;
+  width: 60%;
+  margin-top: 20px;
+  margin-left: 70%;
+  border-radius: 10px;
+  font-size: large;
+  background-color: black;
 }
 
 #prevBtn {
-    margin-left: 70%;
-    width:60%;
+  margin-left: 70%;
+  width: 60%;
 }
 .description {
-    margin-top: 70%;
-    margin-left: 26.4%;
-    font-weight: bold;
-    font-size: large;
+  margin-top: 70%;
+  margin-left: 26.4%;
+  font-weight: bold;
+  font-size: large;
 }
 #description {
-    margin-top: 50%;
-    margin-left: -50px;
-    border-radius: 10px;
-    height: 100px;
+  margin-top: 50%;
+  margin-left: -50px;
+  border-radius: 10px;
+  height: 100px;
+}
+
+.post-photo {
+  margin-top: 24px;
+  margin-bottom: -64px;
+  display: flex;
+  max-width: fit-content;
 }

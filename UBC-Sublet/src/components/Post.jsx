@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./post.css";
 
-
 /// convert images to binary 64 code
 /// room images need to be implemented each room needs to be iterated over to store it and make sure to convert it into base 64
-
 
 // export default function Post() {
 //     const [currentTab, setCurrentTab] = useState(0);
@@ -280,6 +278,8 @@ export default function Post() {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
+  const [images, setImages] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   useEffect(() => {
     const validateInput = () => {
@@ -441,6 +441,20 @@ export default function Post() {
     setSelectedOption(e.target.value);
   };
 
+  function handleImageChange(event) {
+    const selectedImages = event.target.files;
+    selectedImages.map((selectedImage) => {
+      setImages(selectedImage);
+
+      // Create a file preview
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setPreviewImage(e.target.result);
+      };
+      reader.readAsDataURL(selectedImage);
+    });
+  }
+
   return (
     <div className="container mt-5">
       <div className="row d-flex justify-content-center align-items-center">
@@ -572,7 +586,6 @@ export default function Post() {
               />
             </div>
             <div className="tab">
-              {" "}
               <div className="headings2"> Share your contact information</div>
               <p className="firstName">
                 <input
@@ -609,10 +622,29 @@ export default function Post() {
             </div>
 
             <div className="tab">
-              {" "}
-              <div className="headings3"> Step 3 Property info </div>
+              <div className="headings2"> Step 3 Property info </div>
+              <div className="upload-container">
+                <label htmlFor="file">
+                  {previewImage ? (
+                    <img
+                      src={previewImage}
+                      alt="Preview"
+                      className="previewImage"
+                    />
+                  ) : (
+                    "Upload atleast 5 images"
+                  )}
+                </label>
+                <input
+                  type="file"
+                  id="file"
+                  multiple
+                  className="upload-input"
+                  onChange={handleImageChange}
+                />
+              </div>
+
               <p className="Initial_Deposit">
-                {" "}
                 <input
                   placeholder="Initial Deposit"
                   id="Initial_Deposit"
@@ -650,7 +682,6 @@ export default function Post() {
                 />
               </p>
               <p className="Ending_Date">
-                {" "}
                 <input
                   placeholder="yyyy/mm/dd format"
                   id="Ending_Date"
@@ -662,7 +693,6 @@ export default function Post() {
                 />
               </p>
               <p className="Time_Period">
-                {" "}
                 <input
                   placeholder="Time period in integers eg. 4, 5"
                   id="Time_Period"
@@ -675,10 +705,9 @@ export default function Post() {
                 />
               </p>
             </div>
-
             {/* Content of your form */}
-            <div className="row mt-3">
-              <div className="col-md-6">
+            <div className="">
+              <div className="buttons-wrapper">
                 <button
                   type="button"
                   id="prevBtn"
