@@ -280,6 +280,8 @@ export default function Post() {
   const [currentStep, setCurrentStep] = useState(0);
   const [images, setImages] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [data, setData] = useState({ latitude: "", longitude: "" });
+  let isFinalStep = false;
 
   useEffect(() => {
     const validateInput = () => {
@@ -375,8 +377,10 @@ export default function Post() {
     }
 
     if (n === x.length - 1) {
+      isFinalStep = true;
       nextBtn.innerHTML = "Submit";
     } else {
+      isFinalStep = false;
       nextBtn.innerHTML = "Next";
     }
 
@@ -454,10 +458,104 @@ export default function Post() {
       reader.readAsDataURL(selectedImage);
     });
   }
+  const handleMongo = async (e) => {
+    // const rooms = document.getElementById('rooms').value;
+    // 5 images are supposed to be added
+    if (isFinalStep) {
+      const addressBox = document.getElementById("addressBox").value;
+      const buildgingName = document.getElementById("buildingNameBox").value;
+      const initial_Deposit = document.getElementById("Initial_Deposit").value;
+      const monthlyRent = document.getElementById("Monthly_Rent").value;
+      const bedRooms = document.getElementById("bedRooms").value;
+      const timePeriod = document.getElementById("Time_Period").value;
+      const first = document.getElementById("firsts").value;
+      const last = document.getElementById("last").value;
+      const email = document.getElementById("email").value;
+      const description = document.getElementById("description").value;
+      const Starting_Date = document.getElementById("Starting_Date").value;
+      const Ending_Date = document.getElementById("Ending_Date").value;
+      const radio = document.querySelector('input[name="radio"]:checked').value;
+      // const room = document.getElementById('rooms');
 
+      let searchData;
+      try {
+        const inputValue = addressBox;
+        if (inputValue.trim() !== "") {
+          const response = await fetch(
+            `http://localhost:3001/search?q=${inputValue}`
+          );
+          searchData = await response.json();
+          setData(searchData);
+        } else {
+          setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1; // Months are zero-based
+      const day = today.getDate();
+
+      // Format the date as needed (e.g., YYYY-MM-DD)
+      const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
+        day < 10 ? "0" : ""
+      }${day}`;
+
+      const formData = {
+        location: {
+          currentLocation: addressBox,
+          buildingNumber: buildgingName,
+
+          latitude: searchData.latitude,
+          longitude: searchData.longitude,
+        },
+        // rooms : [
+        //     room.map(data => {
+        //         data;
+        //     })
+        // ],
+        // rooms : to be implmented
+        pricing: {
+          initialDeposit: initial_Deposit,
+          monthlyRent: monthlyRent,
+        },
+        numberOfRoomsAvailable: bedRooms,
+        timePeriod: timePeriod,
+        contactInformation: {
+          name: first + last,
+          email: email,
+        },
+        description: description,
+        dateAdding: formattedDate,
+        startingSubletDate: Starting_Date,
+        endingSubletDate: Ending_Date,
+        roomType: radio,
+      };
+      try {
+        const response = await fetch("http://localhost:3001/sublets", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          console.log("Form data saved successfully");
+          // Handle success response
+        } else {
+          console.error("Failed to save form data:", response.statusText);
+          // Handle error response
+        }
+      } catch (error) {
+        console.error("Error saving form data:", error);
+        // Handle error
+      }
+    }
+  };
   return (
     <div className="container mt-5">
-      <div className="row d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center">
         <div className="col-md-6">
           <form id="regForm">
             <h1 id="register"> </h1>
@@ -510,8 +608,8 @@ export default function Post() {
                 <input
                   type="radio"
                   name="radio"
-                  value="six-bedroom"
-                  checked={selectedOption === "six-bedroom"}
+                  value="Shared-Two-Bedroom"
+                  checked={selectedOption === "Shared-Two-Bedroom"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
@@ -522,8 +620,8 @@ export default function Post() {
                 <input
                   type="radio"
                   name="radio"
-                  value="six-bedroom"
-                  checked={selectedOption === "six-bedroom"}
+                  value="Studio"
+                  checked={selectedOption === "Studio"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
@@ -534,58 +632,61 @@ export default function Post() {
                 <input
                   type="radio"
                   name="radio"
-                  value="six-bedroom"
-                  checked={selectedOption === "six-bedroom"}
+                  value="Apartment"
+                  checked={selectedOption === "Apartment"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
               </label>
-              <label className="address"> Address </label>
-              <input
-                type="text"
-                placeholder="Building + UBC"
-                id="addressBox"
-                onInput={(e) => (e.target.className = "")}
-                name="address"
-              />
+              <div className="boxes">
+                <label className="address"> Address </label>
+                <input
+                  type="text"
+                  placeholder="Building + UBC"
+                  id="addressBox"
+                  onInput={(e) => (e.target.className = "")}
+                  name="addressBox"
+                />
 
-              <label className="buildingName"> Building Name </label>
-              <input
-                type="text"
-                placeholder="Name eg North Tower"
-                id="buildingNameBox"
-                onInput={(e) => (e.target.className = "")}
-                name="address"
-              />
+                <label className="buildingName"> Building Name </label>
+                <input
+                  type="text"
+                  placeholder="Name eg North Tower"
+                  id="buildingNameBox"
+                  onInput={(e) => (e.target.className = "")}
+                  name="buildingNameBox"
+                />
 
-              <label className="bedRooms"> Bedrooms </label>
-              <input
-                type="text"
-                placeholder="eg. 4"
-                id="bedRooms"
-                onInput={(e) => (e.target.className = "")}
-                name="bedrooms"
-              />
+                <label className="bedRooms"> Bedrooms </label>
+                <input
+                  type="text"
+                  placeholder="eg. 4"
+                  id="bedRooms"
+                  onInput={(e) => (e.target.className = "")}
+                  name="bedRooms"
+                />
 
-              <label className="bathRooms"> bathRooms </label>
-              <input
-                type="text"
-                placeholder="eg. 2"
-                id="bathRooms"
-                onInput={(e) => (e.target.className = "")}
-                name="bathRooms"
-              />
+                <label className="bathRooms"> bathRooms </label>
+                <input
+                  type="text"
+                  placeholder="eg. 2"
+                  id="bathRooms"
+                  onInput={(e) => (e.target.className = "")}
+                  name="bathRooms"
+                />
 
-              <label className="description"> Description </label>
-              <input
-                type="text"
-                placeholder="What do you want to say?"
-                id="description"
-                onInput={(e) => (e.target.className = "")}
-                name="description"
-              />
+                <label className="description"> Description </label>
+                <input
+                  type="text"
+                  placeholder="What do you want to say?"
+                  id="description"
+                  onInput={(e) => (e.target.className = "")}
+                  name="description"
+                />
+              </div>
             </div>
             <div className="tab">
+              {" "}
               <div className="headings2"> Share your contact information</div>
               <p className="firstName">
                 <input
@@ -622,6 +723,7 @@ export default function Post() {
             </div>
 
             <div className="tab">
+              {" "}
               <div className="headings2"> Step 3 Property info </div>
               <div className="upload-container">
                 <label htmlFor="file">
@@ -643,8 +745,8 @@ export default function Post() {
                   onChange={handleImageChange}
                 />
               </div>
-
               <p className="Initial_Deposit">
+                {" "}
                 <input
                   placeholder="Initial Deposit"
                   id="Initial_Deposit"
@@ -682,6 +784,7 @@ export default function Post() {
                 />
               </p>
               <p className="Ending_Date">
+                {" "}
                 <input
                   placeholder="yyyy/mm/dd format"
                   id="Ending_Date"
@@ -693,6 +796,7 @@ export default function Post() {
                 />
               </p>
               <p className="Time_Period">
+                {" "}
                 <input
                   placeholder="Time period in integers eg. 4, 5"
                   id="Time_Period"
@@ -705,9 +809,10 @@ export default function Post() {
                 />
               </p>
             </div>
+
             {/* Content of your form */}
-            <div className="">
-              <div className="buttons-wrapper">
+            <div className="row mt-3">
+              <div className="col-md-6">
                 <button
                   type="button"
                   id="prevBtn"
