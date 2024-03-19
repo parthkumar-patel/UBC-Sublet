@@ -811,8 +811,8 @@ export default function Post() {
             </div>
 
             {/* Content of your form */}
-            <div className="row mt-3">
-              <div className="col-md-6">
+            <div className="">
+              <div className="buttons-wrapper">
                 <button
                   type="button"
                   id="prevBtn"
