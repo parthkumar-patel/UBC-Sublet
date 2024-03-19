@@ -2,6 +2,8 @@
   display: flex;
   background-color: #f2f2f2;
   padding: 20px;
+  height: 100lvh;
+  width: 100lvw;
 }
 
 .user-profile {
@@ -61,7 +63,7 @@
 }
 
 .profile-row {
-  width: 415px;
+  width: 360px;
   padding-left: 60px;
 }
 
@@ -86,6 +88,7 @@ p {
 
 .full-name {
   font-size: 30px;
+  padding-right: 24px;
 }
 
 .email-info {
@@ -138,4 +141,17 @@ p {
   max-width: 70%;
   flex-wrap: wrap;
   row-gap: 32px;
+}
+
+.no-listing-msg {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-left: 180px;
+  margin-right: -180px;
 }

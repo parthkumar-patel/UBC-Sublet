@@ -97,14 +97,22 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-    // console.log(image._id);
-    // return userProfile.lisitings.includes(image._id);
+    return userProfile.listings.includes(image._id);
   });
 
-  const cards = filteredImages.map((item) => {
-    console.log(item._id);
-    return <CardComponent key={item._id} item={item} />;
-  });
+  let content;
+  if (filteredImages.length === 0) {
+    content = (
+      <div className="no-listing-msg">
+        You haven&apos;t posted anything yet. Create your first listing!
+      </div>
+    );
+  } else {
+    const cards = filteredImages.map((item) => (
+      <CardComponent key={item._id} item={item} />
+    ));
+    content = <section className="cards-lists">{cards}</section>;
+  }
 
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
@@ -140,7 +148,7 @@ export default function PersonalProfile() {
       </div>
       <div className="cards">
         <h1 className="mt-5 pt-4 lisitng">My Listings</h1>
-        {userProfile && <section className="cards-lists">{cards}</section>}
+        {userProfile && <section className="cards-lists">{content}</section>}
       </div>
     </div>
   );
