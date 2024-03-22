@@ -3,7 +3,7 @@ import marine from "../assets/marine_drive.png";
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import './search.css'
 // import { useHistory } from 'react-router-dom';
 
 // import { GoogleComponent } from 'react-google-location'
@@ -29,21 +29,6 @@ export default function Search() {
       } else {
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
-      //       Handle the response data here
-      // const predictions = response.data.predictions;
-      // for (const prediction of predictions) {
-      //     // Extract place ID
-      //     const placeId = prediction.place_id;
-
-      //     // Fetch details of the place using Place Details API
-      //     const placeDetails = response.data.predictions;
-
-      //     // Extract coordinates from placeDetails.geometry.location
-      //     if (placeDetails && placeDetails.geometry && placeDetails.geometry.location) {
-      //         const { lat, lng } = placeDetails.geometry.location;
-      //         console.log(lat);
-      //         console.log(lng);
-      //     }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -60,17 +45,15 @@ export default function Search() {
 
   // console.warn("result return here", place)
   return (
+   
     <div className="position-relative" style={{ marginTop: "7%" }}>
       <img
         src={homepage}
-        className="img-fluid m-3 bg-body-tertiary rounded position-relative"
+        id = "imgFluid"
+        className="img-fluid m-3 bg-body-tertiary rounded position-relative" 
         style={{
-          width: "70%",
-          height: "500px",
-          marginTop: "30px",
-          borderRadius: "8px",
-          boxShadow: "0 8px 12px rgba(0, 0, 0, 0.3)",
-          filter: "contrast(110%)",
+          
+          
         }}
         alt="Homepage"
       />
@@ -84,28 +67,30 @@ export default function Search() {
       >
         <input
           className="form-control me-2"
+          id = "Searching"
           type="search"
           placeholder="Search by address or neighbourhood"
           aria-label="Search by address or neighbourhood"
           onChange={handlePlaceChange}
           style={{
-            backgroundImage: `url(${SearchIcon})`,
-            backgroundPosition: "15px center",
-            backgroundRepeat: "no-repeat",
-            borderRadius: "10px",
-            paddingInline: "50px",
+            // backgroundImage: `url(${SearchIcon})`,
+            // backgroundPosition: "15px center",
+            // backgroundRepeat: "no-repeat",
+            // borderRadius: "10px",
+            // paddingInline: "50px",
           }}
         />
         <button
           className="btn text-white"
           type="submit"
+          id = "buttonSearch"
           style={{
-            background: "#24a0ed",
-            padding: "10px",
-            paddingInline: "15px",
-            marginBlock: "7.5px",
-            marginLeft: "-100px",
-            borderRadius: "10px",
+            // background: "#24a0ed",
+            // padding: "10px",
+            // paddingInline: "15px",
+            // marginBlock: "7.5px",
+            // marginLeft: "-100px",
+            // borderRadius: "10px",
           }}
           onClick={handleSubmit}
         >
