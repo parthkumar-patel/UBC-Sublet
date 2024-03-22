@@ -1,0 +1,164 @@
+.upload-section {
+  padding: 2rem 0;
+  width: 200%;
+  margin-left: -50%;
+}
+
+.upload-label {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  border-radius: 20px;
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+.upload-span {
+  font-weight: lighter;
+  font-size: small;
+  padding-top: 0.5rem;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-images img {
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+}
+
+.upload-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-image {
+  margin: 1rem 0.5rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.upload-image button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: lightcoral;
+}
+
+.upload-image button:hover {
+  background-color: red;
+}
+
+.upload-image p {
+  padding: 0 0.5rem;
+  margin: 0;
+}
+
+.upload-btn {
+  width: 25%;
+  height: 55px;
+  background: #f2f2f2;
+  cursor: pointer;
+  display: block;
+  border-radius: 11px;
+  margin: 5px auto;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
+  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.upload-btn:hover {
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
+}
+
+.upload-label:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.upload-error {
+  text-align: center;
+}
+
+.upload-error-span {
+  color: red;
+}
+.upload-image {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  max-width: 20%;
+}
+
+.upload-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-number {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+/* close button css */
+.close-button {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: rgba(180, 83, 107, 0.11);
+  border-radius: 3px;
+  transition: 0.3s;
+  top: 5px;
+  margin-right: 5px;
+}
+
+.X,
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transform-origin: center;
+}
+
+.X {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.close-button:hover {
+  background-color: rgb(211, 21, 21);
+}
+
+.close-button:active {
+  background-color: rgb(130, 0, 0);
+}

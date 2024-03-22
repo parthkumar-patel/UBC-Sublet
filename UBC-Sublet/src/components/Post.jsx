@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./post.css";
+import "./styles/post.css";
+import UploadImages from "./UploadImages";
 
 /// convert images to binary 64 code
 /// room images need to be implemented each room needs to be iterated over to store it and make sure to convert it into base 64
@@ -278,8 +279,7 @@ export default function Post() {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
-  const [images, setImages] = useState(null);
-  const [previewImage, setPreviewImage] = useState(null);
+  const [images, setImages] = useState([]);
   const [data, setData] = useState({ latitude: "", longitude: "" });
   let isFinalStep = false;
 
@@ -363,6 +363,9 @@ export default function Post() {
 
   const showTab = (n) => {
     const x = document.getElementsByClassName("tab");
+    // const prevBtn = document.getElementsByClassName("prevBtn");
+    const nextBtn = document.getElementsByClassName("nextBtn");
+
     if (x.length > 0) {
       for (let i = 0; i < x.length; i++) {
         x[i].style.display = "none";
@@ -370,11 +373,11 @@ export default function Post() {
       x[n].style.display = "block";
     }
 
-    if (n === 0) {
-      prevBtn.style.display = "none";
-    } else {
-      prevBtn.style.display = "inline";
-    }
+    // if (n === 0) {
+    //   prevBtn.style.display = "none";
+    // } else {
+    //   prevBtn.style.display = "inline";
+    // }
 
     if (n === x.length - 1) {
       isFinalStep = true;
@@ -445,19 +448,6 @@ export default function Post() {
     setSelectedOption(e.target.value);
   };
 
-  function handleImageChange(event) {
-    const selectedImages = event.target.files;
-    selectedImages.map((selectedImage) => {
-      setImages(selectedImage);
-
-      // Create a file preview
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setPreviewImage(e.target.result);
-      };
-      reader.readAsDataURL(selectedImage);
-    });
-  }
   const handleMongo = async (e) => {
     // const rooms = document.getElementById('rooms').value;
     // 5 images are supposed to be added
@@ -560,14 +550,12 @@ export default function Post() {
           <form id="regForm">
             <h1 id="register"> </h1>
             <div className="all-steps" id="all-steps">
-              {" "}
-              <span className="step"></span> <span className="step"></span>{" "}
-              <span className="step"></span> <span className="step"></span>{" "}
+              <span className="step"></span> <span className="step"></span>
+              <span className="step"></span> <span className="step"></span>
             </div>
-            <div className="tab">
+            {/* <div className="tab">
               <h3 className="heading">What type of property is this? :</h3>
               <label className="container1">
-                {" "}
                 Two-Bedroom
                 <input
                   type="radio"
@@ -579,7 +567,6 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                {" "}
                 Four-Bedroom
                 <input
                   type="radio"
@@ -591,7 +578,6 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                {" "}
                 Six-Bedroom
                 <input
                   type="radio"
@@ -603,7 +589,6 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                {" "}
                 Shared-Two-Bedroom
                 <input
                   type="radio"
@@ -615,7 +600,6 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                {" "}
                 Studio
                 <input
                   type="radio"
@@ -627,7 +611,6 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                {" "}
                 Apartment
                 <input
                   type="radio"
@@ -686,7 +669,6 @@ export default function Post() {
               </div>
             </div>
             <div className="tab">
-              {" "}
               <div className="headings2"> Share your contact information</div>
               <p className="firstName">
                 <input
@@ -720,31 +702,10 @@ export default function Post() {
                   name="phone"
                 />
               </p>
-            </div>
+            </div> */}
 
-            <div className="tab">
-              {" "}
+            {/* <div className="tab">
               <div className="headings2"> Step 3 Property info </div>
-              <div className="upload-container">
-                <label htmlFor="file">
-                  {previewImage ? (
-                    <img
-                      src={previewImage}
-                      alt="Preview"
-                      className="previewImage"
-                    />
-                  ) : (
-                    "Upload atleast 5 images"
-                  )}
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  multiple
-                  className="upload-input"
-                  onChange={handleImageChange}
-                />
-              </div>
               <p className="Initial_Deposit">
                 {" "}
                 <input
@@ -808,8 +769,13 @@ export default function Post() {
                   name="Time Period"
                 />
               </p>
-            </div>
+            </div> */}
 
+            <div className="tab">
+              <div className="headings2"> Step 3 Photos </div>
+              <UploadImages img={images} setImg={setImages} />
+              <b>{images}</b>
+            </div>
             {/* Content of your form */}
             <div className="">
               <div className="buttons-wrapper">
