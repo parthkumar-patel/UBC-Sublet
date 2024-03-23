@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import "./styles/upload.css";
 import { UserAuth } from "../context/AuthContext";
 import { initializeApp } from "firebase/app";
@@ -11,6 +12,10 @@ const UploadImages = (prop) => {
   const [imageURLs, setImageURLs] = useState([]);
   const [success, setSuccess] = useState(false);
   const { user } = UserAuth();
+
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
 
   const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
@@ -85,7 +90,7 @@ const UploadImages = (prop) => {
 
   return (
     <section className="upload-section">
-      {success ? (
+      {true ? (
         <Success msg="Your Images have been successfully uploaded!" />
       ) : (
         <></>

@@ -771,7 +771,6 @@ export default function Post() {
             <div className="tab">
               <div className="headings2"> Step 3 Photos </div>
               <UploadImages setRooms={setRooms} />
-              {console.log("postroom" + rooms)}
             </div>
             <div className="">
               <div className="buttons-wrapper">
@@ -799,6 +798,7 @@ export default function Post() {
                 </button>
               </div>
             </div>
+            {console.log("postroom" + rooms)}
           </form>
         </div>
       </div>

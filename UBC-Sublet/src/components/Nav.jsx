@@ -77,7 +77,7 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         > */}
-          {/* <span className="navbar-toggler-icon"></span> */}
+        {/* <span className="navbar-toggler-icon"></span> */}
         {/* </button> */}
 
         <Link to="/" className="navbar-brand">
@@ -88,7 +88,7 @@ export default function Navbar() {
             height="24"
             className="d-inline-block align-text-top me-2"
           />
-          UBC Sublet 
+          UBC Sublet
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -103,9 +103,15 @@ export default function Navbar() {
               {/* <label class="form-label" for="form1">Search</label> */}
             </div>
 
-            <button class="btn text-white" type="button" id="search-button"  onClick={handlePlaceChange}>Search
+            <button
+              className="btn text-white"
+              type="button"
+              id="search-button"
+              onClick={handlePlaceChange}
+            >
+              Search
               <i className="fas fa-search"></i>
-              </button>
+            </button>
           </div>
 
           <Link to="/Fav" className="navbar">
@@ -115,7 +121,7 @@ export default function Navbar() {
               width="30"
               height="24"
               className="d-inline-block align-text-top ms-2"
-              id = "favid"
+              id="favid"
             />
           </Link>
         </div>
@@ -128,17 +134,17 @@ export default function Navbar() {
             aria-expanded="false"
           >
             <img
-              src={Profile}
+              src={user.photoURL}
               alt="Profile"
-              width="30"
+              width="24"
               height="24"
-              className="d-inline-block align-text-top ms-2"
-              id = "profileImage"
+              className="d-inline-block align-text-top ms-2 rounded-circle"
+              id="profileImage"
             />
           </a>
           <ul className="dropdown-menu">
             <Link to="/profile" className="dropdown-item ms-3">
-              <div class = "textProf"> Profile </div>
+              <div className="textProf"> Profile </div>
             </Link>
             <hr className="dropdown-divider" />
             <div className="dropdown-item ms-1">

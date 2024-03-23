@@ -1,7 +1,27 @@
+import { useEffect, useState } from "react";
 import "./styles/success.css";
 
 export default function Success(prop) {
-  function handleCloseSuccess() {}
+  const [isVisible, setIsVisible] = useState(true);
+
+  function handleCloseSuccess() {
+    setIsVisible(false);
+  }
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 5000);
+
+      // Clear the timer when the component unmounts
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
+  if (!isVisible) {
+    return <></>;
+  }
 
   return (
     <div className="success">
