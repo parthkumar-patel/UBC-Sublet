@@ -1,16 +1,14 @@
 import { useState } from "react";
 import "./styles/upload.css";
+import { UserAuth } from "../context/AuthContext";
 import { initializeApp } from "firebase/app";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  getStorage,
-} from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL, getStorage } from "firebase/storage";
 
 const UploadImages = () => {
-  const [selectedImages, setSelectedImages] = useState([]);
+  const [previewImages, setPreviewImages] = useState([]);
+  const [uploadImages, setUploadImages] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
+  const { user } = UserAuth();
 
   const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
@@ -20,14 +18,15 @@ const UploadImages = () => {
       return URL.createObjectURL(file);
     });
 
-    setSelectedImages(imagesArray);
+    setUploadImages(selectedFilesArray);
+    setPreviewImages(imagesArray);
 
     // FOR BUG IN CHROME
     event.target.value = "";
   };
 
   function deleteHandler(image) {
-    setSelectedImages(selectedImages.filter((e) => e !== image));
+    setPreviewImages(previewImages.filter((e) => e !== image));
     URL.revokeObjectURL(image);
   }
 
@@ -44,48 +43,23 @@ const UploadImages = () => {
   const app = initializeApp(firebaseConfig);
   const storage = getStorage(app);
 
-  const handleImageChange = (event) => {
+  const handleImageChange = async (event) => {
     event.preventDefault();
-    if (selectedImages && selectedImages.length > 0) {
-      //   const images = [];
 
-      for (let i = 0; i < selectedImages.length; i++) {
-        const selectedImage = selectedImages[i];
-        const fileName = `image_${Date.now()}_${selectedImage.name}`;
-        const imageRef = ref(storage, `images/${fileName}.jpg`);
-        const uploadTask = uploadBytesResumable(imageRef, selectedImage);
+    if (uploadImages.length > 0) {
+      for (let i = 0; i < uploadImages.length; i++) {
+        const uploadImage = uploadImages[i];
+        const fileName = `image_${Date.now()}_${uploadImage.name}`;
+        const imageRef = ref(storage, `images/${user.uid}/${fileName}`);
 
-        console.log(getDownloadURL(imageRef));
-        uploadTask.on(
-          storage.TaskEvent,
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log(`Upload is ${progress}% done`);
-            switch (snapshot.state) {
-              case storage.TaskState.PAUSED:
-                console.log("Upload is paused");
-                break;
-              case storage.TaskState.RUNNING:
-                console.log("Upload is running");
-                break;
-            }
-          },
-          (error) => {
-            console.error("Error uploading image:", error);
-          },
-          async () => {
-            try {
-              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-              //   images.push(downloadURL);
-              setImageURLs([...imageURLs, downloadURL]); // Update state with new URL
-            } catch (error) {
-              console.error("Error getting download URL:", error);
-            }
-          }
-        );
+        try {
+          await uploadBytes(imageRef, uploadImage);
+          const downloadURL = await getDownloadURL(imageRef);
+          setImageURLs((prev) => [...prev, downloadURL]);
+        } catch (error) {
+          console.error("Error uploading image:", error);
+        }
       }
-      //   setImageURLs(images);
     } else {
       console.error("No images selected");
     }
@@ -102,7 +76,7 @@ const UploadImages = () => {
           name="images"
           onChange={onSelectFile}
           multiple
-          accept="image/png , image/jpeg, image/webp"
+          //   accept="image/png , image/jpeg, image/webp"
           className="upload-input"
         />
       </label>
@@ -110,24 +84,24 @@ const UploadImages = () => {
 
       <input type="file" multiple className="upload-input" />
 
-      {selectedImages.length > 0 &&
-        (selectedImages.length > 10 ? (
+      {previewImages.length > 0 &&
+        (previewImages.length > 10 ? (
           <p className="upload-error">
             You can&apos;t upload more than 10 images! <br />
             <span className="upload-error-span">
-              please delete <b> {selectedImages.length - 10} </b> of them{" "}
+              please delete <b> {previewImages.length - 10} </b> of them{" "}
             </span>
           </p>
         ) : (
           <button className="upload-btn" onClick={handleImageChange}>
-            UPLOAD {selectedImages.length} IMAGE
-            {selectedImages.length === 1 ? "" : "S"}
+            UPLOAD {previewImages.length} IMAGE
+            {previewImages.length === 1 ? "" : "S"}
           </button>
         ))}
 
       <div className="upload-images">
-        {selectedImages &&
-          selectedImages.map((image, index) => {
+        {previewImages &&
+          previewImages.map((image, index) => {
             return (
               <div key={image} className="upload-image">
                 <img src={image} height="200" alt="upload" />
