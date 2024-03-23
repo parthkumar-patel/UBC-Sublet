@@ -3,31 +3,47 @@ import "./styles/upload.css";
 import { UserAuth } from "../context/AuthContext";
 import { initializeApp } from "firebase/app";
 import { ref, uploadBytes, getDownloadURL, getStorage } from "firebase/storage";
+import Success from "../components/Success";
 
-const UploadImages = () => {
+const UploadImages = (prop) => {
   const [previewImages, setPreviewImages] = useState([]);
   const [uploadImages, setUploadImages] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
+  const [success, setSuccess] = useState(false);
   const { user } = UserAuth();
 
   const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
     const selectedFilesArray = Array.from(selectedFiles);
 
-    const imagesArray = selectedFilesArray.map((file) => {
-      return URL.createObjectURL(file);
-    });
-
-    setUploadImages(selectedFilesArray);
-    setPreviewImages(imagesArray);
+    setUploadImages((previousImages) =>
+      previousImages.concat(selectedFilesArray)
+    );
+    setPreviewImages((previousImages) =>
+      previousImages.concat(
+        selectedFilesArray.map((file) => URL.createObjectURL(file))
+      )
+    );
 
     // FOR BUG IN CHROME
     event.target.value = "";
   };
 
   function deleteHandler(image) {
-    setPreviewImages(previewImages.filter((e) => e !== image));
-    URL.revokeObjectURL(image);
+    const indexToRemove = previewImages.findIndex((img) => img === image);
+
+    if (indexToRemove !== -1) {
+      const updatedPreviewImages = [...previewImages];
+      const updatedUploadImages = [...uploadImages];
+
+      updatedPreviewImages.splice(indexToRemove, 1);
+      updatedUploadImages.splice(indexToRemove, 1);
+
+      setPreviewImages(updatedPreviewImages);
+      setUploadImages(updatedUploadImages);
+
+      URL.revokeObjectURL(image);
+    }
   }
 
   const firebaseConfig = {
@@ -60,6 +76,8 @@ const UploadImages = () => {
           console.error("Error uploading image:", error);
         }
       }
+      prop.setRooms(imageURLs);
+      setSuccess(true);
     } else {
       console.error("No images selected");
     }
@@ -67,6 +85,11 @@ const UploadImages = () => {
 
   return (
     <section className="upload-section">
+      {success ? (
+        <Success msg="Your Images have been successfully uploaded!" />
+      ) : (
+        <></>
+      )}
       <label className="upload-label">
         + Add Images
         <br />
@@ -76,7 +99,7 @@ const UploadImages = () => {
           name="images"
           onChange={onSelectFile}
           multiple
-          //   accept="image/png , image/jpeg, image/webp"
+          accept="image/png , image/jpeg, image/webp"
           className="upload-input"
         />
       </label>
@@ -89,7 +112,7 @@ const UploadImages = () => {
           <p className="upload-error">
             You can&apos;t upload more than 10 images! <br />
             <span className="upload-error-span">
-              please delete <b> {previewImages.length - 10} </b> of them{" "}
+              please delete <b> {previewImages.length - 10} </b> of them
             </span>
           </p>
         ) : (
@@ -117,7 +140,6 @@ const UploadImages = () => {
             );
           })}
       </div>
-      {console.log(imageURLs)}
     </section>
   );
 };

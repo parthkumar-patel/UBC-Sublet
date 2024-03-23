@@ -274,12 +274,12 @@ import UploadImages from "./UploadImages";
 
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(""); // State to manage selected radio button
+  const [selectedOption, setSelectedOption] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
-  const [images, setImages] = useState([]);
+  const [rooms, setRooms] = useState([]);
   const [data, setData] = useState({ latitude: "", longitude: "" });
   let isFinalStep = false;
 
@@ -449,8 +449,6 @@ export default function Post() {
   };
 
   const handleMongo = async (e) => {
-    // const rooms = document.getElementById('rooms').value;
-    // 5 images are supposed to be added
     if (isFinalStep) {
       const addressBox = document.getElementById("addressBox").value;
       const buildgingName = document.getElementById("buildingNameBox").value;
@@ -465,7 +463,7 @@ export default function Post() {
       const Starting_Date = document.getElementById("Starting_Date").value;
       const Ending_Date = document.getElementById("Ending_Date").value;
       const radio = document.querySelector('input[name="radio"]:checked').value;
-      // const room = document.getElementById('rooms');
+      const room = rooms;
 
       let searchData;
       try {
@@ -500,12 +498,11 @@ export default function Post() {
           latitude: searchData.latitude,
           longitude: searchData.longitude,
         },
-        // rooms : [
-        //     room.map(data => {
-        //         data;
-        //     })
-        // ],
-        // rooms : to be implmented
+        rooms: [
+          room.map((data) => {
+            data;
+          }),
+        ],
         pricing: {
           initialDeposit: initial_Deposit,
           monthlyRent: monthlyRent,
@@ -702,9 +699,9 @@ export default function Post() {
                   name="phone"
                 />
               </p>
-            </div> */}
+            </div>
 
-            {/* <div className="tab">
+            <div className="tab">
               <div className="headings2"> Step 3 Property info </div>
               <p className="Initial_Deposit">
                 {" "}
@@ -773,10 +770,9 @@ export default function Post() {
 
             <div className="tab">
               <div className="headings2"> Step 3 Photos </div>
-              <UploadImages img={images} setImg={setImages} />
-              <b>{images}</b>
+              <UploadImages setRooms={setRooms} />
+              {console.log("postroom" + rooms)}
             </div>
-            {/* Content of your form */}
             <div className="">
               <div className="buttons-wrapper">
                 <button
