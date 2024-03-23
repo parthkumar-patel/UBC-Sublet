@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import "./styles/upload.css";
 import { UserAuth } from "../context/AuthContext";
@@ -12,6 +12,14 @@ const UploadImages = (prop) => {
   const [imageURLs, setImageURLs] = useState([]);
   const [success, setSuccess] = useState(false);
   const { user } = UserAuth();
+
+  useEffect(() => {
+    if (imageURLs.length > 0) {
+      prop.setRooms((prevRooms) => {
+        return [...prevRooms, ...imageURLs];
+      });
+    }
+  }, [success]);
 
   if (!user) {
     return <Navigate to="/login" />;
@@ -76,12 +84,13 @@ const UploadImages = (prop) => {
         try {
           await uploadBytes(imageRef, uploadImage);
           const downloadURL = await getDownloadURL(imageRef);
-          setImageURLs((prev) => [...prev, downloadURL]);
+          setImageURLs((prev) => {
+            return [...prev, downloadURL];
+          });
         } catch (error) {
           console.error("Error uploading image:", error);
         }
       }
-      prop.setRooms(imageURLs);
       setSuccess(true);
     } else {
       console.error("No images selected");
@@ -90,7 +99,7 @@ const UploadImages = (prop) => {
 
   return (
     <section className="upload-section">
-      {true ? (
+      {success ? (
         <Success msg="Your Images have been successfully uploaded!" />
       ) : (
         <></>

@@ -798,7 +798,6 @@ export default function Post() {
                 </button>
               </div>
             </div>
-            {console.log("postroom" + rooms)}
           </form>
         </div>
       </div>
