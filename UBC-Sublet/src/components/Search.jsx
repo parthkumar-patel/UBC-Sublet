@@ -50,7 +50,6 @@ export default function Search() {
         src={homepage}
         id="imgFluid"
         className="img-fluid m-3 bg-body-tertiary rounded position-relative"
-        style={{}}
         alt="Homepage"
       />
       <form
@@ -68,43 +67,31 @@ export default function Search() {
           placeholder="Search by address or neighbourhood"
           aria-label="Search by address or neighbourhood"
           onChange={handlePlaceChange}
-          style={
-            {
-              // backgroundImage: `url(${SearchIcon})`,
-              // backgroundPosition: "15px center",
-              // backgroundRepeat: "no-repeat",
-              // borderRadius: "10px",
-              // paddingInline: "50px",
-            }
-          }
+          style={{
+            backgroundImage: `url(${SearchIcon})`,
+            backgroundPosition: "15px center",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "10px",
+            paddingInline: "50px",
+          }}
         />
         <button
           className="btn text-white"
           type="submit"
           id="buttonSearch"
-          style={
-            {
-              // background: "#24a0ed",
-              // padding: "10px",
-              // paddingInline: "15px",
-              // marginBlock: "7.5px",
-              // marginLeft: "-100px",
-              // borderRadius: "10px",
-            }
-          }
+          style={{
+            background: "#24a0ed",
+            padding: "10px",
+            paddingInline: "15px",
+            marginBlock: "7.5px",
+            marginLeft: "-100px",
+            borderRadius: "10px",
+          }}
           onClick={handleSubmit}
         >
           Search
         </button>
       </form>
-      {/* <GoogleComponent
-                // apiKey={API_KEY}
-                language={'en'}
-                country={'country:us'}
-                coordinates={true}
-                //   locationBoxStyle={'custom-style'}
-                //   locationListStyle={'custom-style-list'}
-                onChange={handlePlaceChange} /> */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Button, Form, Row, Col } from "react-bootstrap";
+import DefaultProfile from "../assets/default-profile.png";
 import {
   ref,
   uploadBytesResumable,
@@ -74,7 +75,7 @@ export default function CreateProfile(prop) {
       );
     } else {
       addDoc(prop.colRef, {
-        imageURL: prop.user.photoURL,
+        imageURL: prop.user.photoURL || DefaultProfile,
         FirstName: formData.FirstName,
         LastName: formData.LastName,
         Email: formData.Email,
@@ -125,7 +126,7 @@ export default function CreateProfile(prop) {
       <Form className="create-profile-form">
         <Row className="mb-3">
           <div className="upload-container">
-            <label htmlFor="file">
+            <label htmlFor="file" className="upload-profile-label">
               {previewImage ? (
                 <img
                   src={previewImage}
@@ -133,7 +134,7 @@ export default function CreateProfile(prop) {
                   className="previewImage"
                 />
               ) : (
-                "Upload an Image"
+                "Add a Profile Picture"
               )}
             </label>
             <input

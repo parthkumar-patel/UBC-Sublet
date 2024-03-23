@@ -50,7 +50,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (user != null) {
-      navigate("/account");
+      navigate("/profile");
     }
   }, [navigate, user]);
 

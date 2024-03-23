@@ -151,10 +151,10 @@ p {
   color: #666;
   text-align: center;
   padding: 20px;
+  width: 780px;
+  margin-top: 80px;
+
   background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  margin-left: 180px;
-  margin-right: -180px;
 }

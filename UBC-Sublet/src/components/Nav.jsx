@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import Logo from "../assets/logo.png";
-import Profile from "../assets/profile.png";
 import Fav from "../assets/fav.svg";
 import Search from "../assets/search.svg";
-import DefaultProfile from "../assets/person.svg";
+import DefaultProfile from "../assets/default.png";
+import Person from "../assets/person.svg";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles/nav.css";
 
-const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
+// const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
 export default function Navbar() {
-  const [alreadyNavigated, setAlreadyNavigated] = useState(false);
   const navigate = useNavigate();
   const { user, logOut } = UserAuth();
   const [data, setData] = useState({ latitude: "", longitude: "" });
-  const [shouldNavigate, setShouldNavigate] = useState(false);
-  const [searchInput, setSearchInput] = useState([]);
 
   const handleSignOut = async () => {
     try {
@@ -28,11 +25,6 @@ export default function Navbar() {
   };
 
   const handlePlaceChange = () => {
-    // if (window.location.pathname === "/searchSubletss") {
-    //     // Reload the page if already on the "searchSubletss" page
-    //     window.location.reload();
-    // }
-
     navigate("/searchSubletss", {
       state: { latitude: data.latitude, longitude: data.longitude },
     });
@@ -42,9 +34,8 @@ export default function Navbar() {
   const handleCoordinates = async (e) => {
     try {
       let inputValue = "";
-      inputValue = e.target.value.trim(); // Trim whitespace from input
+      inputValue = e.target.value.trim();
       if (inputValue) {
-        // Check if input is not empty
         const response = await fetch(
           `http://localhost:3001/search?q=${inputValue}`
         );
@@ -57,7 +48,6 @@ export default function Navbar() {
           console.error("Search request failed:", response.statusText);
         }
       } else {
-        // Optionally provide feedback to the user about empty input
         console.log("Input is empty");
       }
     } catch (error) {
@@ -86,7 +76,17 @@ export default function Navbar() {
                 id="search-input"
                 type="search"
                 className="form-control"
+                placeholder="Search"
                 onChange={handleCoordinates}
+                style={{
+                  backgroundImage: `url(${Search})`,
+                  backgroundColor: "#f2f2f2",
+                  backgroundPosition: "15px center",
+                  backgroundRepeat: "no-repeat",
+                  borderRadius: "10px",
+                  paddingInlineStart: "50px",
+                  paddingInlineEnd: "0px",
+                }}
               />
             </div>
 
@@ -95,17 +95,14 @@ export default function Navbar() {
               type="button"
               id="search-button"
               onClick={handlePlaceChange}
-            >
-              Search
-              <i className="fas fa-search"></i>
-            </button>
+            ></button>
           </div>
 
           <Link to="/Fav" className="navbar">
             <img
               src={Fav}
               alt="Fav"
-              width="30"
+              width="24"
               height="24"
               className="d-inline-block align-text-top ms-2"
               id="favid"
@@ -121,7 +118,7 @@ export default function Navbar() {
             aria-expanded="false"
           >
             <img
-              src={user ? user.photoURL : DefaultProfile}
+              src={user ? user.photoURL || DefaultProfile : Person}
               alt="Profile"
               width="24"
               height="24"
