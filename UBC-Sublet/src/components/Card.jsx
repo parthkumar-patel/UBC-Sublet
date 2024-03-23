@@ -28,7 +28,7 @@ export default function Card() {
           return dateA - dateB;
         });
 
-        setAllImage(sortedData.slice(0, 4)); // Set only the first four sorted images
+        setAllImage(sortedData.slice(0, 5)); // Set only the first four sorted images
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -43,12 +43,11 @@ export default function Card() {
   return (
     <div>
       <div
-        className="featuredITems"
-        style={{ marginLeft: "-580px", marginTop: "30px", fontSize: "30px" }}
+        className="featuredITems" id = "featuredi"
       >
         Featured sublets
       </div>
-      <section className="cards-list" style={{ marginTop: "150px" }}>
+      <section className="cards-list" id = "cards-lists" style={{ marginTop: "150px" }}>
         {cards}
       </section>
     </div>

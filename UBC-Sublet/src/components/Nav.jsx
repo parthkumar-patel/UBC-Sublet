@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
       <div className="container">
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -76,9 +76,9 @@ export default function Navbar() {
           aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        > */}
+          {/* <span className="navbar-toggler-icon"></span> */}
+        {/* </button> */}
 
         <Link to="/" className="navbar-brand">
           <img
@@ -88,7 +88,7 @@ export default function Navbar() {
             height="24"
             className="d-inline-block align-text-top me-2"
           />
-          UBC Sublet
+          UBC Sublet 
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -102,14 +102,10 @@ export default function Navbar() {
               />
               {/* <label class="form-label" for="form1">Search</label> */}
             </div>
-            <button
-              id="search-button"
-              type="button"
-              className="btn btn-primary"
-              onClick={handlePlaceChange}
-            >
+
+            <button class="btn text-white" type="button" id="search-button"  onClick={handlePlaceChange}>Search
               <i className="fas fa-search"></i>
-            </button>
+              </button>
           </div>
 
           <Link to="/Fav" className="navbar">
@@ -119,6 +115,7 @@ export default function Navbar() {
               width="30"
               height="24"
               className="d-inline-block align-text-top ms-2"
+              id = "favid"
             />
           </Link>
         </div>
@@ -136,11 +133,12 @@ export default function Navbar() {
               width="30"
               height="24"
               className="d-inline-block align-text-top ms-2"
+              id = "profileImage"
             />
           </a>
           <ul className="dropdown-menu">
             <Link to="/profile" className="dropdown-item ms-3">
-              Profile
+              <div class = "textProf"> Profile </div>
             </Link>
             <hr className="dropdown-divider" />
             <div className="dropdown-item ms-1">
