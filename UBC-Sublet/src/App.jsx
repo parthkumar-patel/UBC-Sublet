@@ -1,8 +1,6 @@
 import Navbar from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
-import Protected from "./components/Protected";
-import Account from "./pages/Account";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -30,14 +28,6 @@ export default function App() {
         <Route path="/desc" element={<Description />} />
         <Route path="/post" element={<Post />} />
         <Route path="/fav" element={<Favourite />} />
-        <Route
-          path="/account"
-          element={
-            <Protected>
-              <Account />
-            </Protected>
-          }
-        />
       </Routes>
     </AuthContextProvider>
   );
