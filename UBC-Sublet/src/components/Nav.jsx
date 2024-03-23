@@ -85,7 +85,7 @@ export default function Navbar() {
                   backgroundRepeat: "no-repeat",
                   borderRadius: "10px",
                   paddingInlineStart: "50px",
-                  paddingInlineEnd: "0px",
+                  paddingInlineEnd: "10px",
                 }}
               />
             </div>
@@ -102,10 +102,18 @@ export default function Navbar() {
             <img
               src={Fav}
               alt="Fav"
-              width="24"
-              height="24"
               className="d-inline-block align-text-top ms-2"
               id="favid"
+              style={{
+                backgroundColor: "#f2f2f2",
+                scale: "0.83",
+                backgroundRepeat: "no-repeat",
+                border: "#d8d8d8 solid",
+                borderRadius: "10px",
+                padding: "8px",
+                marginBlock: "-8px",
+                marginRight: "2px",
+              }}
             />
           </Link>
         </div>
