@@ -4,10 +4,10 @@ import Logo from "../assets/logo.png";
 import Profile from "../assets/profile.png";
 import Fav from "../assets/fav.svg";
 import Search from "../assets/search.svg";
+import DefaultProfile from "../assets/person.svg";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./nav.css";
-// import "@fortawesome/fontawesome-free/css/all.css";
+import "./styles/nav.css";
 
 const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
@@ -68,18 +68,6 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
       <div className="container">
-        {/* <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        > */}
-        {/* <span className="navbar-toggler-icon"></span> */}
-        {/* </button> */}
-
         <Link to="/" className="navbar-brand">
           <img
             src={Logo}
@@ -100,7 +88,6 @@ export default function Navbar() {
                 className="form-control"
                 onChange={handleCoordinates}
               />
-              {/* <label class="form-label" for="form1">Search</label> */}
             </div>
 
             <button
@@ -134,7 +121,7 @@ export default function Navbar() {
             aria-expanded="false"
           >
             <img
-              src={user.photoURL}
+              src={user ? user.photoURL : DefaultProfile}
               alt="Profile"
               width="24"
               height="24"

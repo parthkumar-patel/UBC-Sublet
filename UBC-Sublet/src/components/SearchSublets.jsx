@@ -1,9 +1,8 @@
 // import { isEmpty } from "@firebase/util";
 import { useState, useEffect } from "react";
-import "./searchSublet.css";
+import "./styles/searchSublet.css";
 import CardComponent from "./CardComponent";
 import { useLocation } from "react-router-dom";
-
 
 export default function SearchSublet() {
   const [entireData, setentireData] = useState([]);
@@ -28,7 +27,6 @@ export default function SearchSublet() {
   useEffect(() => {
     getLocationCordinates();
   }, []);
-
 
   function getLocationCordinates() {
     setentireData([]);
