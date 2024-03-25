@@ -10,7 +10,6 @@
   flex: 1;
   align-items: center;
   margin-top: 100px;
-  padding-left: 30px;
 }
 
 .image-col {
@@ -24,7 +23,7 @@
 
 .profile-card {
   height: 200px;
-  padding: 0px;
+  padding: 16px;
   width: 500px;
   margin-left: -40px;
   background-color: white;
@@ -63,12 +62,13 @@
 }
 
 .profile-row {
-  width: 400px;
+  width: 424px;
+  margin-inline: 16px;
   padding-left: 120px;
 }
 
 .card-info {
-  padding: 20px;
+  padding: 24px;
   width: 340px;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@ p {
 
 .full-name {
   font-size: 26px;
-  padding-right: 24px;
+  padding-right: 40px;
 }
 
 .email-info {
@@ -97,7 +97,7 @@ p {
 }
 
 .contact-info {
-  margin-bottom: -52px;
+  margin-bottom: -48px;
 }
 
 .email-info,
@@ -125,6 +125,8 @@ p {
 
 .listing {
   font-family: "Quicksand";
+  padding-right: 160px;
+  margin-bottom: -45px;
 }
 
 .cards {
@@ -149,10 +151,10 @@ p {
   color: #666;
   text-align: center;
   padding: 20px;
+  width: 780px;
+  margin-top: 80px;
+
   background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  margin-left: 180px;
-  margin-right: -180px;
 }

@@ -3,7 +3,7 @@ import marine from "../assets/marine_drive.png";
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './search.css'
+import "./styles/search.css";
 // import { useHistory } from 'react-router-dom';
 
 // import { GoogleComponent } from 'react-google-location'
@@ -45,16 +45,11 @@ export default function Search() {
 
   // console.warn("result return here", place)
   return (
-   
     <div className="position-relative" style={{ marginTop: "7%" }}>
       <img
         src={homepage}
-        id = "imgFluid"
-        className="img-fluid m-3 bg-body-tertiary rounded position-relative" 
-        style={{
-          
-          
-        }}
+        id="imgFluid"
+        className="img-fluid m-3 bg-body-tertiary rounded position-relative"
         alt="Homepage"
       />
       <form
@@ -67,44 +62,36 @@ export default function Search() {
       >
         <input
           className="form-control me-2"
-          id = "Searching"
+          id="Searching"
           type="search"
           placeholder="Search by address or neighbourhood"
           aria-label="Search by address or neighbourhood"
           onChange={handlePlaceChange}
           style={{
-            // backgroundImage: `url(${SearchIcon})`,
-            // backgroundPosition: "15px center",
-            // backgroundRepeat: "no-repeat",
-            // borderRadius: "10px",
-            // paddingInline: "50px",
+            backgroundImage: `url(${SearchIcon})`,
+            backgroundPosition: "15px center",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "10px",
+            paddingInline: "50px",
           }}
         />
         <button
           className="btn text-white"
           type="submit"
-          id = "buttonSearch"
+          id="buttonSearch"
           style={{
-            // background: "#24a0ed",
-            // padding: "10px",
-            // paddingInline: "15px",
-            // marginBlock: "7.5px",
-            // marginLeft: "-100px",
-            // borderRadius: "10px",
+            background: "#24a0ed",
+            padding: "10px",
+            paddingInline: "15px",
+            marginBlock: "7.5px",
+            marginLeft: "-100px",
+            borderRadius: "10px",
           }}
           onClick={handleSubmit}
         >
           Search
         </button>
       </form>
-      {/* <GoogleComponent
-                // apiKey={API_KEY}
-                language={'en'}
-                country={'country:us'}
-                coordinates={true}
-                //   locationBoxStyle={'custom-style'}
-                //   locationListStyle={'custom-style-list'}
-                onChange={handlePlaceChange} /> */}
     </div>
   );
 }

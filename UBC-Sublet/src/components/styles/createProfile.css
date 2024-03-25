@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  text-align: left;
 }
 
 .create-profile-form label {
@@ -31,6 +32,7 @@
   font-size: 12px;
   color: #8b8e98;
   font-weight: 600;
+  text-align: left;
 }
 
 .create-profile-form input[type="text"],
@@ -44,6 +46,7 @@
   background-color: #f2f2f2;
   border: 1px solid #e5e5e500;
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  text-align: left;
 }
 
 .create-profile-form input[type="text"]:focus,
@@ -60,7 +63,16 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border: 2px dashed #aaaaaa;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload-profile-label {
+  padding: 12px;
+  padding-inline: 115px;
+  cursor: pointer;
 }
 
 .upload-input {

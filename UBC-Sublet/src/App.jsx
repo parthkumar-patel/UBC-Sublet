@@ -1,8 +1,6 @@
 import Navbar from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
-import Protected from "./components/Protected";
-import Account from "./pages/Account";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -14,6 +12,7 @@ import "./App.css";
 import Post from "./components/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./scss/styles.scss";
+import Favourite from "./pages/Favourite";
 
 export default function App() {
   return (
@@ -28,14 +27,7 @@ export default function App() {
         <Route path="/searchSubletss" element={<SearchSublet />} />
         <Route path="/desc" element={<Description />} />
         <Route path="/post" element={<Post />} />
-        <Route
-          path="/account"
-          element={
-            <Protected>
-              <Account />
-            </Protected>
-          }
-        />
+        <Route path="/fav" element={<Favourite />} />
       </Routes>
     </AuthContextProvider>
   );

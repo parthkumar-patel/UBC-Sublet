@@ -162,7 +162,7 @@ button:hover {
 }
 
 .boxes {
-    /* display:inline-flex */
+  /* display:inline-flex */
 }
 
 /* Style the indicator (dot/circle) */
@@ -176,21 +176,21 @@ button:hover {
   background: white;
 }
 .address {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-left: -57px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: -57px;
 }
 
 #addressBox {
-    /* position: absolute; */
-    display: flex;
-    margin-left: -70px;
-    margin-top: 24px;
-    border-radius: 10px;
-    height: 60px;
-    max-width: 300px;
-    overflow-y: wrap;
+  /* position: absolute; */
+  display: flex;
+  margin-left: -70px;
+  margin-top: 24px;
+  border-radius: 10px;
+  height: 60px;
+  max-width: 300px;
+  overflow-y: wrap;
 }
 
 #addressBox:hover {
@@ -200,21 +200,21 @@ button:hover {
   background-color: gainsboro;
 }
 .buildingName {
-    position: absolute;
-    font-size: 20px;
-    margin-top: 40px;
-    /* font-size: large; */
-    font-weight: bold;
-    margin-left: 274px;
+  position: absolute;
+  font-size: 20px;
+  margin-top: 40px;
+  /* font-size: large; */
+  font-weight: bold;
+  margin-left: 274px;
 }
 #buildingNameBox {
-    /* position: absolute; */
-    display: flex;
-    margin-top: -58px;
-    border-radius: 10px;
-    height: 60px;
-    max-width: 300px;
-    margin-left: 245px;
+  /* position: absolute; */
+  display: flex;
+  margin-top: -58px;
+  border-radius: 10px;
+  height: 60px;
+  max-width: 300px;
+  margin-left: 245px;
 }
 
 #buildingNameBox:hover {
@@ -235,7 +235,7 @@ button:hover {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .bedRooms {
-  display: flex;  
+  display: flex;
   font-weight: bold;
   font-size: 20px;
   margin-left: -60px;
@@ -243,20 +243,19 @@ button:hover {
 }
 
 #bedRooms {
-    margin-left: -70px;
+  margin-left: -70px;
   border-radius: 10px;
   height: 60px;
   max-width: 300px;
   overflow-y: wrap;
-  display:flex;
+  display: flex;
 }
 .bathRooms {
-    display: flex;
-    margin-left: 240px;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: -88px;
-
+  display: flex;
+  margin-left: 240px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -88px;
 }
 #bedRooms:hover {
   padding: 20px;
@@ -266,22 +265,22 @@ button:hover {
 }
 
 .buildingName {
-    /* position: absolute; */
-    font-size: 20px;
-    margin-top: -98px;
-    /* font-size: large; */
-    font-weight: bold;
-    margin-left: 247px;
-    display: flex;
+  /* position: absolute; */
+  font-size: 20px;
+  margin-top: -98px;
+  /* font-size: large; */
+  font-weight: bold;
+  margin-left: 247px;
+  display: flex;
 }
 
 #bathRooms {
-    display: flex;
-    margin-top: 0px;
-    margin-left: 240px;
-    height: 60px;
-    border-radius: 11px;
-    max-width: 300px
+  display: flex;
+  margin-top: 0px;
+  margin-left: 240px;
+  height: 60px;
+  border-radius: 11px;
+  max-width: 300px;
 }
 
 #bathRooms:hover {
@@ -428,12 +427,12 @@ button:hover {
 }
 
 #nextBtn {
-    width:60%;
-    margin-top: 20px;
-    margin-left: 50%;
-    border-radius: 10px;
-    font-size: large;
-    background-color: black;
+  width: 60%;
+  margin-top: 20px;
+  margin-left: 50%;
+  border-radius: 10px;
+  font-size: large;
+  background-color: black;
 }
 
 #prevBtn {
@@ -441,20 +440,20 @@ button:hover {
   width: 60%;
 }
 .description {
-    position: relative;
-    display: flex;
-    margin-top: 10%;
-    margin-left: 25%;
-    font-weight: bold;
-    font-size: large;
+  position: relative;
+  display: flex;
+  margin-top: 10%;
+  margin-left: 25%;
+  font-weight: bold;
+  font-size: large;
 }
 #description {
-    display:flex;
-    margin-top: 30px;
-    margin-left: -70px;
-    border-radius: 10px;
-    height: 100px;
-    width:110%;
+  display: flex;
+  margin-top: 30px;
+  margin-left: -70px;
+  border-radius: 10px;
+  height: 100px;
+  width: 110%;
 }
 
 .post-photo {
@@ -464,59 +463,56 @@ button:hover {
   max-width: fit-content;
 }
 
-
 @media only screen and (max-width: 1400px) {
-    .container1 {
-        position: relative; /* Ensure the container is relatively positioned */
-        left: 20px; /* Move the container to the left */
-    }
-    .checkmark {
-        display: flex;
-        left: 10px; /* Move the buttons to the left */
-    }
-    #addressBox {
-        max-width: 650px;
-        margin-left: -40px;
-        margin-top: 10px;
-    }
-    .address {
-        margin-left:-40px;
-    }
-    .buildingName {
-        margin-top: 30px;
-        margin-left: -40px;
-    }
-    #buildingNameBox{
-        max-width: 650px;
-        margin-top: 70px;
-        margin-left: -40px;
-    }
-    #bedRooms {
-        max-width: 650px;
-        margin-left: -40px;
-    }
-    .bedRooms {
-        margin-left: -41px;
-    }
-    #bathRooms {
-        margin-top: 10px;
-        margin-left: -40px;
-        max-width: 650px;
-    }
+  .container1 {
+    position: relative; /* Ensure the container is relatively positioned */
+    left: 20px; /* Move the container to the left */
+  }
+  .checkmark {
+    display: flex;
+    left: 10px; /* Move the buttons to the left */
+  }
+  #addressBox {
+    max-width: 650px;
+    margin-left: -40px;
+    margin-top: 10px;
+  }
+  .address {
+    margin-left: -40px;
+  }
+  .buildingName {
+    margin-top: 30px;
+    margin-left: -40px;
+  }
+  #buildingNameBox {
+    max-width: 650px;
+    margin-top: 70px;
+    margin-left: -40px;
+  }
+  #bedRooms {
+    max-width: 650px;
+    margin-left: -40px;
+  }
+  .bedRooms {
+    margin-left: -41px;
+  }
+  #bathRooms {
+    margin-top: 10px;
+    margin-left: -40px;
+    max-width: 650px;
+  }
 
-    .bathRooms {
-        margin-top: 30px;
-        margin-left: -40px;
-    }
+  .bathRooms {
+    margin-top: 30px;
+    margin-left: -40px;
+  }
 
-    #description {
-        margin-left: -40px;
-        max-width: 105%;
-        margin-top: 5px;
-    }
-    .description {
-        margin-left: -60px;
-    }
+  #description {
+    margin-left: -40px;
+    max-width: 105%;
+    margin-top: 5px;
+  }
+  .description {
+    margin-left: -60px;
+  }
 }
-
-

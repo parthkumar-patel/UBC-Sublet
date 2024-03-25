@@ -137,7 +137,7 @@ export default function PersonalProfile() {
         </Row>
       </div>
       <div className="cards">
-        <h1 className="mt-5 pt-4 lisitng">My Listings</h1>
+        <h1 className="mt-5 pt-4 listing">My Listings</h1>
         {userProfile && content}
       </div>
     </div>
