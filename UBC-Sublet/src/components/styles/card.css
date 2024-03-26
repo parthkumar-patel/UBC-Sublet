@@ -342,3 +342,8 @@
        height: 440px;
     } 
    }
+
+   #buttonFilter:hover {
+    padding: 3px;
+    transition: 1s;
+   }

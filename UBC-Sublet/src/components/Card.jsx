@@ -4,6 +4,7 @@ import "./styles/card.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Card() {
   const navigate = useNavigate();
 
@@ -38,12 +39,7 @@ export default function Card() {
         console.error("Error fetching data:", error);
       });
   }
-  const handleCardClick = (item) => {
-    console.log("being presssed")
-    navigate("/desc", {
-      state: { item },
-    });
-  };
+  
   const cards = allImage.map((item) => {
     console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
@@ -53,12 +49,15 @@ export default function Card() {
 
   return (
     <div>
+      <button id = "buttonFilter" className = "btn btn-dark" style = {{ width: "10%", marginLeft: "62%", maxHeight: '100px', height: '40px',marginTop: '5%'}}>
+        View all Sublets
+      </button>
       <div
         className="featuredITems" id = "featuredi"
       >
         Featured sublets
       </div>
-      <section className="cards-list" id = "cards-lists" style={{ marginTop: "150px" }}     onClick={(e => console.log(e))}>
+      <section className="cards-list" id = "cards-lists" style={{ marginTop: "90px" }}>
         {cards}
       </section>
     </div>
