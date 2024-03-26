@@ -1,5 +1,6 @@
 // import { isEmpty } from "@firebase/util";
 import { useState, useEffect } from "react";
+// import "./styles/card.css";
 import "./styles/searchSublet.css";
 import CardComponent from "./CardComponent";
 import { useLocation } from "react-router-dom";
@@ -307,15 +308,11 @@ export default function SearchSublet() {
   });
 
   return (
-    <div className="filteredData">
+    <div>
       <div className="filters">
         <h2
           style={{
-            marginLeft: "16px",
-            marginTop: "-49.5px",
-            position: "absolute",
-            fontSize: "40px",
-            fontFamily: "Quicksand",
+            
             // textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
           }}
         >
@@ -323,6 +320,7 @@ export default function SearchSublet() {
         </h2>
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Newest")
               ? "btn btn-dark"
@@ -330,6 +328,7 @@ export default function SearchSublet() {
           }
           onClick={() => {
             handleButtonClick("Newest");
+            
           }}
           style={{
             marginLeft: "10px",
@@ -343,6 +342,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Oldest")
               ? "btn btn-dark"
@@ -354,7 +354,7 @@ export default function SearchSublet() {
           style={{
             marginLeft: "10px",
             marginTop: "20px",
-            position: "absolute",
+            // position: "absolute",
           }}
         >
           {" "}
@@ -363,6 +363,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Lowest Price")
               ? "btn btn-dark"
@@ -374,7 +375,7 @@ export default function SearchSublet() {
           style={{
             marginLeft: "-80px",
             marginTop: "70px",
-            position: "absolute",
+            // position: "absolute",
           }}
         >
           {" "}
@@ -383,6 +384,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Highest Price")
               ? "btn btn-dark"
@@ -394,7 +396,7 @@ export default function SearchSublet() {
           style={{
             marginLeft: "50px",
             marginTop: "70px",
-            position: "absolute",
+            // position: "absolute",
           }}
         >
           {" "}
@@ -403,6 +405,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Shortest Lease")
               ? "btn btn-dark"
@@ -414,7 +417,7 @@ export default function SearchSublet() {
           style={{
             marginLeft: "-80px",
             marginTop: "120px",
-            position: "absolute",
+            // position: "absolute",
           }}
         >
           {" "}
@@ -423,6 +426,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f"
           className={
             activeButtons.includes("Longest Lease")
               ? "btn btn-dark"
@@ -434,7 +438,7 @@ export default function SearchSublet() {
           style={{
             marginLeft: "-80px",
             marginTop: "170px",
-            position: "absolute",
+            // position: "absolute",
           }}
         >
           {" "}
@@ -443,6 +447,7 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "250px",
             position: "absolute",
@@ -456,10 +461,11 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "255px",
             position: "absolute",
-            marginLeft: "180px",
+            marginLeft: "168px",
             fontSize: "15px",
           }}
         >
@@ -485,6 +491,7 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "320px",
             position: "absolute",
@@ -498,10 +505,11 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "320px",
             position: "absolute",
-            marginLeft: "180px",
+            marginLeft: "168px",
             fontSize: "15px",
           }}
         >
@@ -526,6 +534,7 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "415px",
             position: "absolute",
@@ -539,10 +548,11 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "415px",
             position: "absolute",
-            marginLeft: "180px",
+            marginLeft: "168px",
             fontSize: "15px",
           }}
         >
@@ -567,6 +577,7 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "468px",
             position: "absolute",
@@ -580,10 +591,11 @@ export default function SearchSublet() {
         <label
           htmlFor="customRange2"
           className="form-label"
+          id = "form-label"
           style={{
             marginTop: "468px",
             position: "absolute",
-            marginLeft: "180px",
+            marginLeft: "168px",
             fontSize: "15px",
           }}
         >
@@ -607,6 +619,7 @@ export default function SearchSublet() {
 
         <button
           type="button"
+          id = "buttons_f_1"
           className="btn btn-primary"
           onClick={handleTheFilter}
           style={{
@@ -621,13 +634,13 @@ export default function SearchSublet() {
           Apply Filters{" "}
         </button>
       </div>
-      <div className="cards">
+      <div>
         {conditionalData.length == 0 ? (
           <div className="position-absolute top-50 start-50 translate-middle gap-10">
             <h1> No search results found, please go back </h1>
           </div>
         ) : (
-          <section className="cards-lists">{cards}</section>
+          <section className="cards-lists" id = "cards-lists2">{cards}</section>
         )}
       </div>
     </div>

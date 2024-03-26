@@ -312,33 +312,33 @@
   } 
   
   .cards-list .container-3-parent {
- /* Calculate width for 3 items per row with gap */
-    /* Adjust width for more or less items per row as needed */
-    margin-bottom: 20px; /* Add bottom margin to create gap between cards */
-  
-    left: -55px;
-    margin-right: 7%; /* Add right margin to create gap between cards */
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-flow: row; */
-  
-  }
-  .carousel-item img {
-    width: 100%;
-    height: 100%;
-}
-  .container-3 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
-    max-width: 283px;
-    top: -80px;
-    left: 109px;
-    /* border-radius: 6px; */
-    background-color: #fff;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
-    height: 440px;
- } 
-}
+    /* Calculate width for 3 items per row with gap */
+       /* Adjust width for more or less items per row as needed */
+       margin-bottom: 20px; /* Add bottom margin to create gap between cards */
+     
+       left: -55px;
+       margin-right: 7%; /* Add right margin to create gap between cards */
+       /* display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
+       flex-flow: row; */
+     
+     }
+     .carousel-item img {
+       width: 100%;
+       height: 100%;
+   }
+     .container-3 {
+       display: flex;
+       flex-wrap: wrap;
+       flex-flow: row wrap;
+       max-width: 283px;
+       top: -80px;
+       left: 109px;
+       /* border-radius: 6px; */
+       background-color: #fff;
+       border-radius: 20px 20px 20px 20px;
+       box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
+       height: 440px;
+    } 
+   }
