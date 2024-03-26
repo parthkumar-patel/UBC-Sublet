@@ -1,18 +1,33 @@
 import { useState } from "react";
 import "./styles/card.css";
 import DateConvertor from "./DateConvertor";
+import { useNavigate } from "react-router-dom";
 // import prev from "../assets/prev.svg";
 
 export default function CardComponent(prop) {
+  const navigate = useNavigate(); 
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
+  // const handleMe = async(e) => {
+  //   e.preventDefault();
+  //   navigate("/desc", {
+  //     state: {},
+  //   })
+  // }
 
+  const handleClick = (data) => {
+    navigate("/desc", {
+      state: {data}
+    });
+  };
   return (
-    <div className="container-3-parent">
+
+    <div className="container-3-parent"  onClick={() => handleClick(prop.item)}>
+      {/* <a href = "" style = {{ textDecoration: "none",   color: "inherit"}} onClick={{handleMe}} > */}
       <div className="img">
         <div
           id={"carouselExampleControlsNoTouching" + prop.item._id}
@@ -88,6 +103,7 @@ export default function CardComponent(prop) {
           </label>
         </div>
       </div>
+      
       <div className="container-3">
         <div className="frame">
           <b className="location">{prop.item.location[0].currentLocation}</b>
@@ -118,6 +134,7 @@ export default function CardComponent(prop) {
           </div>
         </div>
       </div>
+      {/* </a> */}
     </div>
   );
 }
