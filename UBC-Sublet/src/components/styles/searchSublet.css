@@ -30,13 +30,12 @@
 }
 
 #featuredi {
-  margin-Left: -580px;
-  margin-Top: 40px;
-  font-Size: 30px;
+  margin-left: -580px;
+  margin-top: 40px;
+  font-size: 30px;
   font-style: italic;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} 
-
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .img {
   width: 275px;
@@ -47,9 +46,8 @@
   left: 112px;
   top: -38px;
   border-radius: 20px 20px 20px 20px;
-  }
-  
-  
+}
+
 .carousel-control-prev-icon {
   border-radius: 10px;
 }
@@ -249,9 +247,6 @@
   max-inline-size: 245px;
   margin-left: -23px;
 }
-  
-
-
 
 #buttons_f {
   position: absolute;
@@ -281,7 +276,6 @@
   /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); small shadow*/
   /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.075); large shadow*/
   box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
-  z-index: 2;
   max-width: 25%;
 }
 
@@ -306,7 +300,6 @@
   row-gap: 0px;
 } */
 
-
 @media only screen and (max-width: 1200px) {
   #customRange2 {
     width: 250px;
@@ -315,7 +308,6 @@
     margin-left: -40px;
   }
 }
-
 
 @media only screen and (max-width: 1111px) {
   #customRange2 {
@@ -337,11 +329,11 @@
     width: unset;
     width: 100px;
     height: 65px;
-    margin-left:20px !important;
-    margin-top:0px !important;
+    margin-left: 20px !important;
+    margin-top: 0px !important;
   }
   #buttons_f_1 {
-    margin-left:250px !important;
+    margin-left: 250px !important;
     margin-top: 70px !important;
     width: 30% !important;
   }
@@ -355,32 +347,32 @@
     height: 200%;
     flex: none;
     overflow-x: scroll;
-
-  } .filters h2 {
+  }
+  .filters h2 {
     font-size: initial;
     font-size: 30px;
   }
   #cards-lists2 {
     margin-top: 15%;
     margin-left: 0px;
-  } .form-range {
+  }
+  .form-range {
     position: relative !important;
     margin-top: 40px !important;
     margin-left: -150px !important;
-
-  } .form-label {
+  }
+  .form-label {
     position: relative !important;
 
     margin-top: -20px !important;
-    margin-left: 80px !important
-  } .filteredData {
+    margin-left: 80px !important;
+  }
+  .filteredData {
     max-width: 150%;
     width: 150%;
   }
 }
 
-
-  
 @media screen and (max-width: 10000px) {
   #cards-lists2 .container-3-parent {
     /* flex-flow: row wrap; */
@@ -389,7 +381,6 @@
     flex-basis: calc(59% - 20px);
   }
 }
-  
 
 .cards-list .container-3-parent {
   width: calc((110% - 40px) / 3);
@@ -398,22 +389,22 @@
   margin-right: 7%;
 }
 
-
-  
 /* 
 .cards-list {
   display: flex;
   gap: 20px;
   /* flex-flow: row wrap; */
-  /* align-content: space-around; */
-  /* gap: 100px; */
-  /* overflow: auto;
+/* align-content: space-around; */
+/* gap: 100px; */
+/* overflow: auto;
   margin-top: 100px;
   height: 490px;
   box-sizing: border-box; /* Include padding in the total width */
 
 .cards-list .container-3-parent {
-  width: calc((100% - 40px) / 3); /* Calculate width for 3 items per row with gap */
+  width: calc(
+    (100% - 40px) / 3
+  ); /* Calculate width for 3 items per row with gap */
   /* Adjust width for more or less items per row as needed */
   margin-bottom: 20px; /* Add bottom margin to create gap between cards */
 
@@ -423,9 +414,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex-flow: row; */
-
 }
-
 
 .featuredITems {
   top: 680px;
@@ -451,42 +440,42 @@
 
 @media only screen and (max-width: 450px) {
   #featuredi {
-    margin-Left: -640px;
+    margin-left: -640px;
     font-style: italic;
     font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-Top: -220px;
-    font-Size: 30px;
-  } 
-  
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin-top: -220px;
+    font-size: 30px;
+  }
+
   .cards-list .container-3-parent {
     /* Calculate width for 3 items per row with gap */
-       /* Adjust width for more or less items per row as needed */
-       margin-bottom: 20px; /* Add bottom margin to create gap between cards */
-     
-       left: -55px;
-       margin-right: 7%; /* Add right margin to create gap between cards */
-       /* display: flex;
+    /* Adjust width for more or less items per row as needed */
+    margin-bottom: 20px; /* Add bottom margin to create gap between cards */
+
+    left: -55px;
+    margin-right: 7%; /* Add right margin to create gap between cards */
+    /* display: flex;
        flex-wrap: wrap;
        flex-direction: row;
        flex-flow: row; */
-     
-     }
-     .carousel-item img {
-       width: 100%;
-       height: 100%;
-   }
-     .container-3 {
-       display: flex;
-       flex-wrap: wrap;
-       flex-flow: row wrap;
-       /* max-width: 283px; */
-       top: -80px;
-       left: 109px;
-       /* border-radius: 6px; */
-       background-color: #fff;
-       border-radius: 20px 20px 20px 20px;
-       box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
-       height: 440px;
-    } 
-   }
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    /* max-width: 283px; */
+    top: -80px;
+    left: 109px;
+    /* border-radius: 6px; */
+    background-color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
+    height: 440px;
+  }
+}

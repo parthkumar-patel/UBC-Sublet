@@ -89,17 +89,4 @@ body {
   margin-left: 20px;
   position: absolute;
 }
-/* Styles for card stats (title, artist, year) */
-.card--stats {
-  color: #b5b7c0;
-  margin: 10px 0;
-}
-
-.card--stats .firstElement h6 {
-  font-weight: 1000;
-}
-
-.card--stats div {
-  margin-top: -8px;
-}
 
