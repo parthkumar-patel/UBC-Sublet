@@ -13,6 +13,12 @@ export default function Card() {
     getImage();
   }, []);
 
+  const handleViewAll = () => {
+    navigate("/searchSubletss", {
+      state: {latitude: 49.26060520000001, longitude: -123.2459939 },
+     });
+  }
+
   function getImage() {
     fetch("http://localhost:3001/subletslist", {
       method: "GET",
@@ -49,7 +55,7 @@ export default function Card() {
 
   return (
     <div>
-      <button id = "buttonFilter" className = "btn btn-dark" style = {{ width: "10%", marginLeft: "62%", maxHeight: '100px', height: '40px',marginTop: '5%'}}>
+      <button id = "buttonFilter" className = "btn btn-dark" style = {{ width: "10%", marginLeft: "62%", maxHeight: '100px', height: '40px',marginTop: '5%'}} onClick = { handleViewAll }>
         View all Sublets
       </button>
       <div

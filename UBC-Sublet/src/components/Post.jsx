@@ -279,7 +279,7 @@ export default function Post() {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
-  const [rooms, setRooms] = useState([]);
+  const [roomsFor, setRooms] = useState([]);
   const [data, setData] = useState({ latitude: "", longitude: "" });
   let isFinalStep = false;
 
@@ -381,7 +381,8 @@ export default function Post() {
 
     if (n === x.length - 1) {
       isFinalStep = true;
-      nextBtn.innerHTML = "Submit";
+      console.log("hi")
+      document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
       isFinalStep = false;
       nextBtn.innerHTML = "Next";
@@ -412,6 +413,9 @@ export default function Post() {
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
+    if (document.getElementById("nextBtn").innerHTML == "Submit") {
+      handleMongo();
+    }
   };
 
   const handlePrevious = () => {
@@ -449,6 +453,7 @@ export default function Post() {
   };
 
   const handleMongo = async (e) => {
+    console.log("done");
     if (isFinalStep) {
       const addressBox = document.getElementById("addressBox").value;
       const buildgingName = document.getElementById("buildingNameBox").value;
@@ -463,8 +468,9 @@ export default function Post() {
       const Starting_Date = document.getElementById("Starting_Date").value;
       const Ending_Date = document.getElementById("Ending_Date").value;
       const radio = document.querySelector('input[name="radio"]:checked').value;
-      const room = rooms;
-
+      const room = roomsFor;
+      console.log(roomsFor);
+      console.log(room);
       let searchData;
       try {
         const inputValue = addressBox;
@@ -485,6 +491,7 @@ export default function Post() {
       const month = today.getMonth() + 1; // Months are zero-based
       const day = today.getDate();
 
+      console.log("done");
       // Format the date as needed (e.g., YYYY-MM-DD)
       const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
         day < 10 ? "0" : ""
@@ -498,11 +505,7 @@ export default function Post() {
           latitude: searchData.latitude,
           longitude: searchData.longitude,
         },
-        rooms: [
-          room.map((data) => {
-            data;
-          }),
-        ],
+        rooms: room,
         pricing: {
           initialDeposit: initial_Deposit,
           monthlyRent: monthlyRent,
@@ -519,8 +522,11 @@ export default function Post() {
         endingSubletDate: Ending_Date,
         roomType: radio,
       };
+      console.log("done");
       try {
+    
         const response = await fetch("http://localhost:3001/sublets", {
+          // console.log("done3");
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -774,28 +780,8 @@ export default function Post() {
             </div>
             <div className="">
               <div className="buttons-wrapper">
-                <button
-                  type="button"
-                  id="prevBtn"
-                  onClick={() => {
-                    handlePrevious();
-                    nextPrev(-1);
-                  }}
-                  className="btn btn-primary mr-2"
-                >
-                  Previous
-                </button>
-                <button
-                  type="button"
-                  id="nextBtn"
-                  onClick={() => {
-                    handleNext();
-                    nextPrev(1);
-                  }}
-                  className="btn btn-primary"
-                >
-                  Next
-                </button>
+              <button type="button" id="prevBtn" onClick={() => {handlePrevious(); nextPrev(-1)}} className="btn btn-primary mr-2">Previous</button>
+              <button type="button" id="nextBtn" onClick={() => {{ handleNext(); nextPrev(1)}}} className="btn btn-primary">Next</button>
               </div>
             </div>
           </form>

@@ -19,14 +19,23 @@ export default function CardComponent(prop) {
   //   })
   // }
 
-  const handleClick = (data) => {
-    navigate("/desc", {
-      state: {data}
-    });
+  const handleClick = (event, data) => {
+    const isClickInsideCarousel = event.target.closest('.carousel-control-prev') || event.target.closest('.carousel-control-next');
+    
+    // If the click occurred within the carousel, prevent default behavior
+    if (isClickInsideCarousel) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      navigate("/desc", {
+        state: {data}
+      });
+    }
+      
   };
   return (
 
-    <div className="container-3-parent"  onClick={() => handleClick(prop.item)}>
+    <div className="container-3-parent"  onClick={(e) => handleClick(e, prop.item)}>
       {/* <a href = "" style = {{ textDecoration: "none",   color: "inherit"}} onClick={{handleMe}} > */}
       <div className="img">
         <div
@@ -44,6 +53,7 @@ export default function CardComponent(prop) {
               </div>
             ))}
             <button
+              
               className="carousel-control-prev"
               type="button"
               data-bs-target={

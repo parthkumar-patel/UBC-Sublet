@@ -42,17 +42,20 @@ export default function SearchSublet() {
   useEffect(() => {
     // Create a variable to hold the new data to be added
     let newData = [];
-
-    entireData.forEach((data) => {
-      const latitudes = data.location.map((loc) => loc.latitude);
-      const longitudes = data.location.map((loc) => loc.longitude);
-      if (
-        Math.abs(latitudes - latitude) <= 0.005 &&
-        Math.abs(longitudes - longitude) <= 0.005
-      ) {
-        newData.push(data); // Add data to the temporary array
-      }
-    });
+    if (location.state == null) {
+      newData.push(data);
+    } else {
+      entireData.forEach((data) => {
+        const latitudes = data.location.map((loc) => loc.latitude);
+        const longitudes = data.location.map((loc) => loc.longitude);
+        if (
+          Math.abs(latitudes - latitude) <= 0.005 &&
+          Math.abs(longitudes - longitude) <= 0.005
+        ) {
+          newData.push(data); // Add data to the temporary array
+        } 
+      });
+    }
 
     // After the loop, update the state with the accumulated data
     setconditionalData((prevData) => [...prevData, ...newData]);

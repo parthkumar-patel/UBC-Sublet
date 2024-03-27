@@ -141,7 +141,7 @@ const UploadImages = (prop) => {
           previewImages.map((image, index) => {
             return (
               <div key={image} className="upload-image">
-                <img src={image} height="200" alt="upload" />
+                <img src={image} width = "275px" height="309px" alt="upload" />
                 <button
                   className="close-button"
                   onClick={() => deleteHandler(image)}
