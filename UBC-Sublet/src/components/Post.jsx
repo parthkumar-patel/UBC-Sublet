@@ -283,6 +283,8 @@ export default function Post() {
   const [data, setData] = useState({ latitude: "", longitude: "" });
   let isFinalStep = false;
 
+
+
   useEffect(() => {
     const validateInput = () => {
       if (inputValue2.trim() !== "") {
@@ -775,9 +777,14 @@ export default function Post() {
             </div>
 
             <div className="tab">
-              <div className="headings2"> Step 3 Photos </div>
+              <div className="headings2"> Step 3- Photos and amenities </div>
               <UploadImages setRooms={setRooms} />
             </div>
+
+            <div className = "amenities"> 
+                
+            </div>
+
             <div className="">
               <div className="buttons-wrapper">
               <button type="button" id="prevBtn" onClick={() => {handlePrevious(); nextPrev(-1)}} className="btn btn-primary mr-2">Previous</button>

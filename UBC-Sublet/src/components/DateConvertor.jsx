@@ -5,7 +5,9 @@ export default function DateConvertor(prop) {
     };
 
     // Parse starting sublet date
+    console.log("startingDae =",data.startingSubletDate );
     const startingDate = new Date(data.startingSubletDate);
+    console.log("testing purpose =",startingDate );
     const startingMonth = startingDate.toLocaleString('default', { month: 'long' });
     const startingDay = startingDate.getDate();
     const startingYear = startingDate.getFullYear();
@@ -19,5 +21,5 @@ export default function DateConvertor(prop) {
     const endingDay = endingDate.getDate();
     const endingYear = endingDate.getFullYear();
 
-    return (<b>: {startingMonth} {startingDay}, {startingYear} - {endingMonth} {endingDay}, {endingYear}</b>)
+    return (<b>: {startingMonth} {startingDay}, {startingYear} - {endingMonth} {endingDay} {endingYear}</b>)
 }

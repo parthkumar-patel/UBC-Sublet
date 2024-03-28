@@ -133,14 +133,16 @@ export default function CardComponent(prop) {
             1BR/{prop.item.roomType}BA • {prop.item.description}
           </div>
         </div>
-        <div className="frame4">
+        <div className="frame4" style = {{marginLeft : "-14px"}}>
           <div className="duration">
             <span> Available</span>
             {/* <b>: May 1, 2024 - July 1, 2024</b> */}
+            
             <DateConvertor
               start={prop.item.startingSubletDate}
-              timePeriod={prop.item.timePeriod.$numberInt}
-            />
+             
+              timePeriod={prop.item.timePeriod}
+           />
           </div>
         </div>
       </div>

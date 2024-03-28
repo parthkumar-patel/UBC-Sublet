@@ -80,12 +80,6 @@ export default function Search() {
           type="submit"
           id="buttonSearch"
           style={{
-            background: "#24a0ed",
-            padding: "10px",
-            paddingInline: "15px",
-            marginBlock: "7.5px",
-            marginLeft: "-100px",
-            borderRadius: "10px",
           }}
           onClick={handleSubmit}
         >
