@@ -87,7 +87,7 @@ export default function Navbar() {
                   backgroundPosition: "108%",
                   backgroundRepeat: "no-repeat",
                   borderRadius: "10px",
-                  paddingInlineStart: "50px",
+                  paddingInlineStart: "12px",
                   paddingInlineEnd: "10px",
                 }}
               />
@@ -113,8 +113,6 @@ export default function Navbar() {
                 scale: "0.83",
                 backgroundRepeat: "no-repeat",
                 border: "#d8d8d8 solid",
-                borderRadius: "10px",
-                padding: "8px",
                 marginBlock: "-8px",
                 marginRight: "2px",
               }}
