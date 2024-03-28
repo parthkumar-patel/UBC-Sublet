@@ -354,8 +354,9 @@
 
 
 #search-button {
-  margin-left: -20px;
+  margin-left: -50px;
   width: 50px;
+  border-radius: 10px;
   background-color: #24a0ed;
   /* background-color: white; */
   background-repeat: no-repeat;

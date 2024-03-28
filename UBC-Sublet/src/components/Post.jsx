@@ -454,6 +454,10 @@ export default function Post() {
     setSelectedOption(e.target.value);
   };
 
+  const handleOptionChange2 = (e) => {
+    setSelectedOption(e.target.value);
+  };
+
   const handleMongo = async (e) => {
     console.log("done");
     if (isFinalStep) {
@@ -781,8 +785,38 @@ export default function Post() {
               <UploadImages setRooms={setRooms} />
             </div>
 
-            <div className = "amenities"> 
-                
+            <div className="tab">
+              <h3 className="heading"> Amenities :</h3>
+              <label className="container2">
+                Furnished
+                <input
+                  type="radio"
+                  name="radio"
+                  value="furnished"
+                  checked={selectedOption === "furnished"}
+                  onChange={handleOptionChange2}
+                />
+              </label>
+              <label className="container2">
+                Utilities
+                <input
+                  type="radio"
+                  name="radio"
+                  value="Utilities"
+                  checked={selectedOption === "Utilities"}
+                  onChange={handleOptionChange2}
+                />
+              </label>
+              <label className="container2">
+                Utensils
+                <input
+                  type="radio"
+                  name="radio"
+                  value="utensils"
+                  checked={selectedOption === "utensils"}
+                  onChange={handleOptionChange2}
+                /> 
+                </label>
             </div>
 
             <div className="">
