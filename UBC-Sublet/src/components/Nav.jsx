@@ -7,6 +7,8 @@ import DefaultProfile from "../assets/default.png";
 import Person from "../assets/person.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import SearchIcon from "../assets/search.svg";
+
 import "./styles/nav.css";
 
 // const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
@@ -79,9 +81,10 @@ export default function Navbar() {
                 placeholder="Search"
                 onChange={handleCoordinates}
                 style={{
+                  position: "relative",
                   backgroundImage: `url(${Search})`,
-                  backgroundColor: "#f2f2f2",
-                  backgroundPosition: "15px center",
+                  backgroundColor: "white",
+                  backgroundPosition: "108%",
                   backgroundRepeat: "no-repeat",
                   borderRadius: "10px",
                   paddingInlineStart: "50px",
@@ -95,7 +98,8 @@ export default function Navbar() {
               type="button"
               id="search-button"
               onClick={handlePlaceChange}
-            ></button>
+              style = {{  zIndex: "0", backgroundImage: `url(${SearchIcon})`, backgroundPosition: '7px' }}
+            > </button>
           </div>
 
           <Link to="/Fav" className="navbar">
