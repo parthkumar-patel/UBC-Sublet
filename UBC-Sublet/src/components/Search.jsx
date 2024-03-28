@@ -1,20 +1,13 @@
 import homepage from "../assets/pic2 3.jpg";
-import marine from "../assets/marine_drive.png";
+
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/search.css";
-// import { useHistory } from 'react-router-dom';
-
-// import { GoogleComponent } from 'react-google-location'
-const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
 export default function Search() {
   const navigate = useNavigate();
   const [data, setData] = useState({ latitude: "", longitude: "" });
-  const [place, setPlace] = useState(null);
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
 
   const handlePlaceChange = async (e) => {
     try {
@@ -43,7 +36,6 @@ export default function Search() {
     });
   };
 
-  // console.warn("result return here", place)
   return (
     <div className="position-relative" style={{ marginTop: "7%" }}>
       <img
