@@ -13,7 +13,7 @@
 
 #featuredi {
   margin-Left: -580px;
-  margin-Top: 40px;
+  margin-Top: 100px !important;
   font-Size: 30px;
   font-style: italic;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -248,6 +248,7 @@
   margin-bottom: 20px;
   left: -54px;
   margin-right: 7%;
+  margin-top: 8%;
 }
 
 

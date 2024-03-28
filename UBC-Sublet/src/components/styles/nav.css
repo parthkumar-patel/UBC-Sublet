@@ -1,8 +1,10 @@
+
 /* .input-group {
   position: relative;
   right: -10px;
   left: 70%;
 }
+
 
 #search-button {
   margin-left: -30px;
@@ -332,16 +334,42 @@
 } */
 /*  */
 
+#buttonFilter {
+  background-color: #D1D9E0;
+  margin-top: 20px !important;
+  margin-left: -890px !important;
+}
+
 .input-group {
   position: relative;
   right: -10px;
   left: 70%;
 }
 
-#search-button {
-  margin-left: -50px;
-  background-color: black;
+#favid {
+  padding: 8px;
+  border-radius: 0px;
 }
+
+
+
+#search-button {
+  margin-left: -20px;
+  width: 50px;
+  background-color: #24a0ed;
+  /* background-color: white; */
+  background-repeat: no-repeat;
+}
+
+#search-button .icon {
+  background-image: url("../assets/search.svg") ;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 2px;
+  /* width: /* set width of the button */
+  /* height: set height of the button */
+}
+
 
 @media only screen and (min-width: 0px) {
 .navbar-expand-lg .navbar-collapse {
@@ -538,16 +566,6 @@
   }
 
 }
-  .dropdown-menu.show{
-      margin-left:-80px;
-  }
-
-}
-  .dropdown-menu.show{
-      margin-left:-80px;
-  }
-
-}
 
 @media only screen and (min-width: 693px) and (max-width: 623){
   .form-outline {
@@ -637,16 +655,20 @@
   } #search-button {
       margin-top: -18px;
       height:15px;
-      max-width: 40px;
-      margin-left: -7px;
+      max-width: 20px;
+      margin-left: 28px !important;
       border-radius: 2px;
       font-size: 5px;
       padding: 1px;
+      border-radius: 6px;
+      background-size: 40%;
   } #search-input {
       width: 80px;
       margin-top: -20px;
+      margin-left: 40px !important;
       height: 19px;
-  
+      font-size: 10px;
+      padding: 0px;
   } .nav-link {
       margin-left: -100px;
       margin-top: -10px;
@@ -655,12 +677,24 @@
       margin-top: -30px;
       width: 40px;
   } #favid{
-      margin-top: -25px;
-      max-height: 20px;
-      max-width: 25px;
+      border-radius: 10px;
+      margin-top: -30px !important;
+      max-height: 40px;
+      max-width: 35px;
+      width: 35px;
+      margin-left: 45px !important;
   } #profileImage {
       margin-top: -8px;
       max-height: 20px;
       max-width: 25px;
+      margin-left: 50px !important;
+  } #buttonFilter {
+    margin-top: 0px !important;
+    font-size: 10px;
+    max-width: 120px !important;
+    width: 103px !important;
+    height: 30px !important;
+    margin-left: -200px !important;
   }
+  
 }

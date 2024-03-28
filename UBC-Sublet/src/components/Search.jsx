@@ -64,7 +64,7 @@ export default function Search() {
             backgroundPosition: "15px center",
             backgroundRepeat: "no-repeat",
             borderRadius: "10px",
-            paddingInline: "50px",
+            paddingInline: "12px",
           }}
         />
         <button

@@ -96,7 +96,8 @@
         margin-left: 205px;
         background-size: 12px;
         font-size: 10px;
-        padding-left: 25px;
+        padding: 0px;
+        padding-inline: 0px;
         border-radius: 6px;
         background-position: 4%;
     }
@@ -104,7 +105,7 @@
           width: 45px;
           height: 8rem;
           font-size: 6px;
-          margin-left: -49px;
+          margin-left: -43px;
           margin-top: 1.9px;
           padding: 0px;
           padding-Inline: 0px;
@@ -119,7 +120,7 @@
       width: 30px;
       height: 1.2rem;
       font-size: 6px;
-      margin-left: -39px;
+      margin-left: -43px;
       margin-top: 3.6px;
       padding: 0px;
       padding-Inline: 0px;  
