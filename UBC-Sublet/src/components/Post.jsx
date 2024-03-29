@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./styles/post.css";
 import UploadImages from "./UploadImages";
+import { UserAuth } from "../context/AuthContext";
 
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOptionAmenities, setSelectedOptionAmenities] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
   const [roomsFor, setRooms] = useState([]);
-  const [data, setData] = useState({ latitude: "", longitude: "" });
+  // const [data, setData] = useState({ latitude: "", longitude: "" });
+  const { user } = UserAuth();
+
   let isFinalStep = false;
 
   useEffect(() => {
@@ -183,12 +187,23 @@ export default function Post() {
   };
 
   const handleOptionChange2 = (e) => {
-    setSelectedOption(e.target.value);
+    const newValue = e.target.value; // Get the new value from the event target
+    setSelectedOptionAmenities((prevOptions) => {
+      if (prevOptions.includes(newValue)) {
+        // If the value already exists in the array, remove it
+        return prevOptions.filter((option) => option !== newValue);
+      } else {
+        // If the value does not exist in the array, add it
+        return [...prevOptions, newValue];
+      }
+    });
   };
 
-  const handleMongo = async (e) => {
+  const handleMongo = async () => {
     console.log("done");
     if (isFinalStep) {
+      const usersa = user.uid;
+      console.log(usersa);
       const addressBox = document.getElementById("addressBox").value;
       const buildgingName = document.getElementById("buildingNameBox").value;
       const initial_Deposit = document.getElementById("Initial_Deposit").value;
@@ -202,9 +217,14 @@ export default function Post() {
       const Starting_Date = document.getElementById("Starting_Date").value;
       const Ending_Date = document.getElementById("Ending_Date").value;
       const radio = document.querySelector('input[name="radio"]:checked').value;
-      const room = roomsFor;
+      const checkboxes = document.querySelectorAll(
+        'input[name="checkbox"]:checked'
+      );
+      const radio2 = Array.from(checkboxes).map((checkbox) => checkbox.value);
+      const roomisIn = roomsFor;
+
       console.log(roomsFor);
-      console.log(room);
+      console.log("room", roomisIn);
       let searchData;
       try {
         const inputValue = addressBox;
@@ -213,9 +233,9 @@ export default function Post() {
             `http://localhost:3001/search?q=${inputValue}`
           );
           searchData = await response.json();
-          setData(searchData);
+          // setData(searchData);
         } else {
-          setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
+          // setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
         }
       } catch (error) {
         console.error("Error:", error);
@@ -224,12 +244,24 @@ export default function Post() {
       const year = today.getFullYear();
       const month = today.getMonth() + 1; // Months are zero-based
       const day = today.getDate();
-
       console.log("done");
       // Format the date as needed (e.g., YYYY-MM-DD)
       const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
         day < 10 ? "0" : ""
       }${day}`;
+      let b = false;
+      let c = false;
+      let d = false;
+      radio2.forEach((data) => {
+        // Update variables based on checkbox selection
+        if (data == "Furnished") {
+          b = true;
+        } else if (data == "Utilities") {
+          c = true;
+        } else if (data == "utensils") {
+          d = true;
+        }
+      });
 
       const formData = {
         location: {
@@ -239,7 +271,8 @@ export default function Post() {
           latitude: searchData.latitude,
           longitude: searchData.longitude,
         },
-        rooms: room,
+        user_id: usersa,
+        rooms: roomisIn,
         pricing: {
           initialDeposit: initial_Deposit,
           monthlyRent: monthlyRent,
@@ -255,6 +288,11 @@ export default function Post() {
         startingSubletDate: Starting_Date,
         endingSubletDate: Ending_Date,
         roomType: radio,
+        amenities: {
+          furnished: b,
+          utilities: c,
+          utensile: d,
+        },
       };
       console.log("done");
       try {
@@ -394,8 +432,41 @@ export default function Post() {
                   name="bathRooms"
                 />
 
+                <label className="amenities"> Amenities :</label>
+                <label className="container2">
+                  Furnished
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Furnished"
+                    checked={selectedOptionAmenities.includes("Furnished")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+                <label className="container2">
+                  Utilities
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Utilities"
+                    checked={selectedOptionAmenities.includes("Utilities")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+                <label className="container2">
+                  Utensils
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Utensils"
+                    checked={selectedOptionAmenities.includes("Utensils")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+
                 <label className="description"> Description </label>
-                <input
+                <textarea
+                  rows={7}
                   type="text"
                   placeholder="What do you want to say?"
                   id="description"
@@ -508,44 +579,9 @@ export default function Post() {
             </div>
 
             <div className="tab">
-              <div className="headings2"> Step 3- Photos and amenities </div>
+              <div className="headings2"> Step 3- Photos</div>
               <UploadImages setRooms={setRooms} />
             </div>
-
-            <div className="tab">
-              <h3 className="heading"> Amenities :</h3>
-              <label className="container2">
-                Furnished
-                <input
-                  type="radio"
-                  name="radio"
-                  value="furnished"
-                  checked={selectedOption === "furnished"}
-                  onChange={handleOptionChange2}
-                />
-              </label>
-              <label className="container2">
-                Utilities
-                <input
-                  type="radio"
-                  name="radio"
-                  value="Utilities"
-                  checked={selectedOption === "Utilities"}
-                  onChange={handleOptionChange2}
-                />
-              </label>
-              <label className="container2">
-                Utensils
-                <input
-                  type="radio"
-                  name="radio"
-                  value="utensils"
-                  checked={selectedOption === "utensils"}
-                  onChange={handleOptionChange2}
-                />
-              </label>
-            </div>
-
             <div className="">
               <div className="buttons-wrapper">
                 <button
@@ -580,3 +616,4 @@ export default function Post() {
     </div>
   );
 }
+

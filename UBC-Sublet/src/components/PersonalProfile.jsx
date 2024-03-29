@@ -27,6 +27,7 @@ export default function PersonalProfile() {
         const sortedData = data
           .slice()
           .sort((a, b) => a.dateAdding - b.dateAdding);
+
         setAllImage(sortedData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -34,7 +35,7 @@ export default function PersonalProfile() {
     }
 
     fetchData();
-  }, []);
+  }, []); // Ensure user_id is provided as a dependency if it's used inside the useEffect
 
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
@@ -87,7 +88,7 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-    return userProfile.listings.includes(image._id);
+    return image.user_id === user.uid;
   });
 
   let content;

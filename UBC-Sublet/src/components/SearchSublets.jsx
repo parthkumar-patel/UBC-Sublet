@@ -9,7 +9,7 @@ export default function SearchSublet() {
   const [entireData, setentireData] = useState([]);
   const [conditionalData, setconditionalData] = useState([]);
   const [conditionalDataInActive, setconditionalDataInActive] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  // const [filteredData, setFilteredData] = useState([]);
 
   const [activeButtons, setActiveButtons] = useState([]);
   const location = useLocation();
@@ -43,7 +43,7 @@ export default function SearchSublet() {
     // Create a variable to hold the new data to be added
     let newData = [];
     if (location.state == null) {
-      newData.push(data);
+      entireData.forEach((data) => newData.push(data));
     } else {
       entireData.forEach((data) => {
         const latitudes = data.location.map((loc) => loc.latitude);
@@ -59,7 +59,7 @@ export default function SearchSublet() {
 
     // After the loop, update the state with the accumulated data
     setconditionalData((prevData) => [...prevData, ...newData]);
-    setFilteredData((prevData) => [...prevData, ...newData]);
+    // setFilteredData((prevData) => [...prevData, ...newData]);
     setconditionalDataInActive((prevData) => [...prevData, ...newData]);
   }, [entireData]);
 
@@ -87,129 +87,12 @@ export default function SearchSublet() {
     setLeaseRange(parseInt(e.target.value));
   };
 
-  // const handleTheFilter = (e) => {
-  // setconditionalData(conditionalDataInActive);
-  //  setFilteredData(conditionalDataInActive);
-  // console.log(filteredData);
-  // // before the components are rendered initialize it to the main data, or the data it was earlier
-  // const filteredButtons = activeButtons.filter(data => data === "Newest");
-  // const filteredButtons2 = activeButtons.filter(data => data === "Oldest");
-  // const filteredButtons3 = activeButtons.filter(data => data == "Lowest Price");
-  // const filteredButtons4 = activeButtons.filter(data => data == "Highest Price");
-  // const filterPriceRange = priceRange;
-  // const filterLeaseRange = leaseRange;
-  // const filtermaxPriceRange = maxpriceRange;
-  // const filermaxLeaseRange = maxleaseRange;
-
-  // if (filteredButtons.length > 0) {
-  //     const sortedConditionalData = filteredData.slice().sort((a, b) => {
-  //         // Split the date strings and construct Date objects
-  //         const datePartsA = a.dateAdding.split('/');
-  //         const datePartsB = b.dateAdding.split('/');
-  //         // Create Date objects with format: day/month/year
-  //         const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-  //         const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
-  //         // Sort in descending order based on the date field
-  //         console.log(a.dateAdding);
-  //         console.log(b.dateAdding);
-  //         return dateB - dateA; // Sorting in descending order
-  //     });
-
-  //     console.log("done");
-  //     setFilteredData(sortedConditionalData);
-
-  // } if (filteredButtons2.length > 0) {
-  //     const sortedConditionalData = filteredData.slice().sort((a, b) => {
-  //         // Split the date strings and construct Date objects
-  //         const datePartsA = a.dateAdding.split('/');
-  //         const datePartsB = b.dateAdding.split('/');
-  //         // Create Date objects with format: day/month/year
-  //         const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-  //         const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
-  //         // Sort in descending order based on the date field
-  //         console.log(a.dateAdding);
-  //         console.log(b.dateAdding);
-  //         return dateA - dateB; // Sorting in descending order
-  //     });
-  //     console.log("done");
-  //     setFilteredData(sortedConditionalData);
-
-  // }  if (filteredButtons4.length > 0) {
-  //     const sortedConditionalData = filteredData.slice().sort((a, b) => {
-  //         const pricingA = a.pricing[0].monthlyRent;
-  //         const pricingB = b.pricing[0].monthlyRent;
-  //         console.log(pricingA);
-  //         console.log(pricingB);
-  //         return pricingA - pricingB; // Sorting in descending order
-  //     });
-  //     console.log("done");
-  //     setFilteredData(sortedConditionalData);
-
-  // } if (filteredButtons3.length > 0) {
-  //     const sortedConditionalData = filteredData.slice().sort((a, b) => {
-  //         const pricingA = a.pricing[0].monthlyRent;
-  //         const pricingB = b.pricing[0].monthlyRent;
-  //         return pricingB - pricingA;
-  //     });
-  //     setFilteredData(sortedConditionalData);
-
-  // } if (filterPriceRange > 0) {
-  //     const sortedConditionalData = filteredData.slice().filter(data => {
-  //         console.log(data.pricing[0].monthlyRent);
-  //         return  data.pricing.some(price => price.monthlyRent >= priceRange);
-  //     });
-  //     setFilteredData(sortedConditionalData);
-  // }
-  // if (filterLeaseRange > 0) {
-  //     const sortedConditionalData = filteredData.slice().filter(data => {
-  //        return  data.timePeriod >= leaseRange;
-  //     });
-  //     setFilteredData(sortedConditionalData);
-  // }
-  // if (filtermaxPriceRange > 1) {
-  //     const sortedConditionalData = filteredData.slice().filter(data => {
-  //         return  data.pricing.some(monthlyRent <= maxpriceRange);
-  //      });
-  //     setFilteredData(sortedConditionalData);
-  // } if (filermaxLeaseRange > 1) {
-  //     const sortedConditionalData = filteredData.slice().filter(data => {
-  //         return  data.timePeriod <= maxleaseRange;
-  //      });
-  //     setFilteredData(sortedConditionalData);
-  // }
-  // else if (filteredButtons.length == 0 && filteredButtons2 == 0 && filteredButtons3 == 0 && filteredButtons4 == 0 && filterPriceRange == 0 && filterLeaseRange == 0 && filtermaxPriceRange == 0 && filermaxLeaseRange == 0) {
-  //     setconditionalData(conditionalDataInActive);
-  //     return;
-  // }
-  // setconditionalData(filteredData);
-  // const handleTheFilter = (e) => {
-  // let filteredData = [...conditionalDataInActive]; // Start with the original data set
-
-  // if (maxpriceRange != 0) {
-  // // Apply additional filtering based on price and lease range
-  //     filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange && data.pricing[0].monthlyRent <= maxpriceRange);
-  // } else {
-  //     filteredData = filteredData.filter(data => data.pricing[0].monthlyRent >= priceRange);
-  // } if (maxleaseRange != 0) {
-  //     filteredData = filteredData.filter(data => data.timePeriod >= leaseRange && data.timePeriod <= maxleaseRange);
-  // } else {
-  //     filteredData = filteredData.filter(data => data.timePeriod >= leaseRange);
-  // }
-
-  // setFilteredData(filteredData);
-  // setconditionalData(filteredData);
-
   const handleTheFilter = () => {
-    let filteredData = [...conditionalDataInActive]; // Start with the original data set
-
-    // Determine the primary filter based on the first selected filter
+    let filteredData = [...conditionalDataInActive];
     const primaryFilter = activeButtons[0];
 
     const sortingFunctions = {
       Newest: (a, b) => {
-        // Sorting logic for sorting data by newest date
-        // This function compares two objects based on their dateAdding property
-        // and sorts them in descending order (newest first)
         const datePartsA = a.dateAdding.split("/");
         const datePartsB = b.dateAdding.split("/");
         const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
@@ -217,9 +100,6 @@ export default function SearchSublet() {
         return dateB - dateA;
       },
       Oldest: (a, b) => {
-        // Sorting logic for sorting data by oldest date
-        // This function compares two objects based on their dateAdding property
-        // and sorts them in ascending order (oldest first)
         const datePartsA = a.dateAdding.split("/");
         const datePartsB = b.dateAdding.split("/");
         const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
@@ -302,7 +182,7 @@ export default function SearchSublet() {
       );
     }
     // Update state with filtered data
-    setFilteredData(filteredData);
+    // setFilteredData(filteredData);
     setconditionalData(filteredData);
   };
 
@@ -311,8 +191,8 @@ export default function SearchSublet() {
   });
 
   return (
-    <div>
-      <div className="filters sticky-top">
+    <>
+      <div className="filters">
         <h2
           style={
             {
@@ -648,6 +528,6 @@ export default function SearchSublet() {
           </section>
         )}
       </div>
-    </div>
+    </>
   );
 }

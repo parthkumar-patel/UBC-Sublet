@@ -32,6 +32,12 @@ input.invalid {
   display: none;
 }
 
+
+
+#amenities {
+  display: flex;
+}
+
 button {
   background-color: #4caf50;
   color: #ffffff;
@@ -101,6 +107,32 @@ button:hover {
   font-size: 20px;
 }
 
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc; /* Increase border width to 2px */
+  height: 66px;
+  width: 75%;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  /* text-align: right; Align text to the right */
+  margin-left: 0px;
+  padding-left: 65px; /* Add padding to the left */
+  padding-top: 12px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+
+
+}
+
+.container2 input[type = "checkbox"] {
+  cursor: pointer;
+  margin-top: -20px;
+  margin-left: -60%;
+}
+
 .container1:hover {
   cursor: pointer;
   padding-bottom: 50px;
@@ -108,6 +140,12 @@ button:hover {
   padding-left: 82px;
   padding-top: 20px;
   transition: 0.4s;
+}
+.amenities {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 2px;
 }
 
 /* Hide the browser's default radio button */
