@@ -11,13 +11,13 @@ import PropTypes from "prop-types";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAEKCwNSFllLu5zfSPtv2CuG5N-o8agztg",
-  authDomain: "echohouse-a308d.firebaseapp.com",
-  projectId: "echohouse-a308d",
-  storageBucket: "echohouse-a308d.appspot.com",
-  messagingSenderId: "611969960248",
-  appId: "1:611969960248:web:70944b1ef2144ea61559cd",
-  measurementId: "G-0E6X8MF7Q9",
+  apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
+  authDomain: "ubc-sublet.firebaseapp.com",
+  projectId: "ubc-sublet",
+  storageBucket: "ubc-sublet.appspot.com",
+  messagingSenderId: "744862491087",
+  appId: "1:744862491087:web:a44f1fe890494086b772ba",
+  measurementId: "G-943F4K57XC",
 };
 
 initializeApp(firebaseConfig);

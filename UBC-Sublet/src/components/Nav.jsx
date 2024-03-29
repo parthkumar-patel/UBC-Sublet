@@ -83,7 +83,7 @@ export default function Navbar() {
                 style={{
                   position: "relative",
                   backgroundImage: `url(${Search})`,
-                  backgroundColor: "white",
+                  backgroundColor: "#f2f2f2",
                   backgroundPosition: "108%",
                   backgroundRepeat: "no-repeat",
                   borderRadius: "10px",
@@ -98,8 +98,14 @@ export default function Navbar() {
               type="button"
               id="search-button"
               onClick={handlePlaceChange}
-              style = {{  zIndex: "0", backgroundImage: `url(${SearchIcon})`, backgroundPosition: '7px' }}
-            > </button>
+              style={{
+                zIndex: "0",
+                backgroundImage: `url(${SearchIcon})`,
+                backgroundPosition: "7px",
+              }}
+            >
+              {" "}
+            </button>
           </div>
 
           <Link to="/Fav" className="navbar">
@@ -112,7 +118,7 @@ export default function Navbar() {
                 backgroundColor: "#f2f2f2",
                 scale: "0.83",
                 backgroundRepeat: "no-repeat",
-                border: "#d8d8d8 solid",
+                border: "1px #d1d1d1 solid",
                 marginBlock: "-8px",
                 marginRight: "2px",
               }}
@@ -158,19 +164,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-// WE WILL HAVE TO ADD THIS CODE WHEREEVER WE ARE POSTING A SUBLET IT IS TO CONVERT IMAGE FILE INTO BINARY TO STORE IT INTO THE DATABASE
-/*
-function convertToBase64(file) {
-    return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-        fileReader.onload = () => {
-            resolve(fileReader.result)
-        };
-        fileReader.onerror = (error) => {
-            reject(error)
-        }
-    })
-}
-*/
