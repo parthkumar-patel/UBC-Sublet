@@ -4,7 +4,6 @@ import UploadImages from "./UploadImages";
 import { UserAuth } from "../context/AuthContext";
 
 
-
 /// convert images to binary 64 code
 /// room images need to be implemented each room needs to be iterated over to store it and make sure to convert it into base 64
 
@@ -288,7 +287,6 @@ export default function Post() {
   const { user } = UserAuth();
 
   let isFinalStep = false;
-
 
 
   useEffect(() => {

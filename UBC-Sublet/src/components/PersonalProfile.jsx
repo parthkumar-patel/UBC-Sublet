@@ -19,6 +19,9 @@ export default function PersonalProfile() {
   const { user } = UserAuth();
   const [allImage, setAllImage] = useState([]);
 
+
+
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -26,17 +29,17 @@ export default function PersonalProfile() {
         const data = await response.json();
         const sortedData = data
           .slice()
-          .sort((a, b) => a.dateAdding - b.dateAdding)
-          
+          .sort((a, b) => a.dateAdding - b.dateAdding);
+
         setAllImage(sortedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
-  
+
     fetchData();
   }, []); // Ensure user_id is provided as a dependency if it's used inside the useEffect
-  
+
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
     authDomain: "ubc-sublet.firebaseapp.com",
@@ -88,7 +91,7 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-     return (image.user_id === user.uid);
+    return image.user_id === user.uid;
   });
 
   let content;
@@ -101,6 +104,7 @@ export default function PersonalProfile() {
   } else {
     const cards = filteredImages.map((item) => (
       <CardComponent key={item._id} item={item} />
+      
     ));
     content = <section className="cards-lists">{cards}</section>;
   }
@@ -132,15 +136,27 @@ export default function PersonalProfile() {
                     </div>
                   </div>
                 )}
+
               </div>
             </Card.Body>
             </Card>
         </Row>
+
       </div>
-      <div className="cards" style = {{ marginLeft: "-40%" }}>
+      
+
+      <div className="cards" >
+
+        
         <h1 className="mt-5 pt-4 listing">My Listings</h1>
+
         {userProfile && content}
       </div>
-    </div>
+      
+  </div>
+ 
+
+      
+
   );
 }
