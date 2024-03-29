@@ -56,7 +56,6 @@
   width: 40px;
   height: 40px;
   background-color: white;
-  /* background-image: url("../assets/prev.svg"); */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -137,7 +136,6 @@
   left: 23px;
   line-height: 22px;
   white-space: pre-wrap;
-  /* display: inline-block; */
 }
 .frame1 {
   position: absolute;
@@ -176,7 +174,6 @@
   top: 0;
   left: 23px;
   line-height: 22px;
-  /* display: inline-block; */
   width: 258px;
 }
 .frame3 {
@@ -192,7 +189,6 @@
   top: 0;
   left: 23px;
   line-height: 24px;
-  /* display: inline-block; */
   width: 258px;
 }
 
@@ -218,12 +214,11 @@
 }
 .container-3 {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  flex-wrap: wrap; 
   flex-flow: row wrap;
   max-width: 280px;
   top: -80px;
   left: 110px;
-  /* border-radius: 6px; */
   background-color: #fff;
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
@@ -231,9 +226,7 @@
 }
 .container-3-parent {
   display: flex;
-  /* max-width: 10%; */
   position: relative;
-  /* height: 100px; */
   text-align: left;
   font-size: 14px;
   color: #323743;
@@ -241,7 +234,6 @@
   left: -80px;
   height: 440px;
   margin-top: 40px;
-  /* flex-flow: row wrap; */
   flex-wrap: wrap;
   flex-flow: row wrap;
   max-inline-size: 245px;
@@ -273,9 +265,7 @@
   padding-right: 64px;
   padding-top: 150px;
   height: 100vh;
-  /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); small shadow*/
-  /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.075); large shadow*/
-  box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1); /* intense shadow */
+  box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1); 
   max-width: 25%;
 }
 
@@ -285,20 +275,6 @@
   flex-wrap: wrap;
   padding-left: 70px;
 }
-
-/* .cards-lists {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-top: 12%;
-  gap: 20%;
-  margin-bottom: 20%;
-  padding-left: -20px;
-  padding-top: 16px;
-  max-width: 75%;
-
-  row-gap: 0px;
-} */
 
 @media only screen and (max-width: 1200px) {
   #customRange2 {
@@ -375,7 +351,6 @@
 
 @media screen and (max-width: 10000px) {
   #cards-lists2 .container-3-parent {
-    /* flex-flow: row wrap; */
     flex-wrap: wrap;
     display: flex;
     flex-basis: calc(59% - 20px);
@@ -389,38 +364,20 @@
   margin-right: 7%;
 }
 
-/* 
-.cards-list {
-  display: flex;
-  gap: 20px;
-  /* flex-flow: row wrap; */
-/* align-content: space-around; */
-/* gap: 100px; */
-/* overflow: auto;
-  margin-top: 100px;
-  height: 490px;
-  box-sizing: border-box; /* Include padding in the total width */
-
 .cards-list .container-3-parent {
   width: calc(
     (100% - 40px) / 3
-  ); /* Calculate width for 3 items per row with gap */
-  /* Adjust width for more or less items per row as needed */
-  margin-bottom: 20px; /* Add bottom margin to create gap between cards */
-
+  ); 
+  margin-bottom: 20px; 
   left: -45px;
-  margin-right: 7%; /* Add right margin to create gap between cards */
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex-flow: row; */
+  margin-right: 7%; 
 }
 
 .featuredITems {
   top: 680px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 120%; /* Adjust the font size using em */
+  font-size: 120%;
   font-weight: 400;
   left: 650px;
   position: absolute;
@@ -450,16 +407,9 @@
   }
 
   .cards-list .container-3-parent {
-    /* Calculate width for 3 items per row with gap */
-    /* Adjust width for more or less items per row as needed */
-    margin-bottom: 20px; /* Add bottom margin to create gap between cards */
-
+    margin-bottom: 20px; 
     left: -55px;
-    margin-right: 7%; /* Add right margin to create gap between cards */
-    /* display: flex;
-       flex-wrap: wrap;
-       flex-direction: row;
-       flex-flow: row; */
+    margin-right: 7%; 
   }
   .carousel-item img {
     width: 100%;
@@ -469,10 +419,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-flow: row wrap;
-    /* max-width: 283px; */
     top: -80px;
     left: 109px;
-    /* border-radius: 6px; */
     background-color: #fff;
     border-radius: 20px 20px 20px 20px;
     box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);

@@ -1,4 +1,3 @@
-// import homepage from "../assets/pic2 3.jpg";
 import pond1 from "../assets/pond1.jpg";
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";

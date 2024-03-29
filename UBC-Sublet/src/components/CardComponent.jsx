@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import prev from "../assets/prev.svg";
 
 export default function CardComponent(prop) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -20,30 +20,38 @@ export default function CardComponent(prop) {
   // }
 
   const handleClick = (event, data) => {
-    const isClickInsideCarousel = event.target.closest('.carousel-control-prev') || event.target.closest('.carousel-control-next');
-    
+    const isClickInsideCarousel =
+      event.target.closest(".carousel-control-prev") ||
+      event.target.closest(".carousel-control-next");
+
     // If the click occurred within the carousel, prevent default behavior
     if (isClickInsideCarousel) {
       event.preventDefault();
       event.stopPropagation();
     } else {
       navigate("/desc", {
-        state: {data}
+        state: { data },
       });
     }
-      
   };
   return (
-
-    <div className="container-3-parent"  onClick={(e) => handleClick(e, prop.item)}>
+    <div
+      className="container-3-parent"
+      onClick={(e) => handleClick(e, prop.item)}
+    >
       {/* <a href = "" style = {{ textDecoration: "none",   color: "inherit"}} onClick={{handleMe}} > */}
-      <div className="img">
+      <div className="cardImg">
         <div
           id={"carouselExampleControlsNoTouching" + prop.item._id}
           className="carousel carousel-dark slide"
           data-bs-touch="false"
         >
-          <div className="carousel-inner">
+          <div
+            className="carousel-inner"
+            style={{
+              height: "100%",
+            }}
+          >
             {prop.item.rooms.map((room, index) => (
               <div
                 key={index}
@@ -53,7 +61,6 @@ export default function CardComponent(prop) {
               </div>
             ))}
             <button
-              
               className="carousel-control-prev"
               type="button"
               data-bs-target={
@@ -113,7 +120,7 @@ export default function CardComponent(prop) {
           </label>
         </div>
       </div>
-      
+
       <div className="container-3">
         <div className="frame">
           <b className="location">{prop.item.location[0].currentLocation}</b>
@@ -133,16 +140,15 @@ export default function CardComponent(prop) {
             1BR/{prop.item.roomType}BA • {prop.item.description}
           </div>
         </div>
-        <div className="frame4" style = {{marginLeft : "-14px"}}>
+        <div className="frame4" style={{ marginLeft: "-14px" }}>
           <div className="duration">
             <span> Available</span>
             {/* <b>: May 1, 2024 - July 1, 2024</b> */}
-            
+
             <DateConvertor
               start={prop.item.startingSubletDate}
-             
               timePeriod={prop.item.timePeriod}
-           />
+            />
           </div>
         </div>
       </div>
