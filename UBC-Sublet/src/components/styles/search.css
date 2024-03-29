@@ -1,129 +1,141 @@
 #imgFluid {
-    width: 70%;
-    height: 500px;
-    margin-Top: 30px;
-    border-Radius: 8px;
-    box-Shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-    filter: contrast(110%);
-  }
-  #buttonSearch {
-    background: #24a0ed;
-    padding: 10px;
-    padding-Inline: 15px;
-    margin-Block: 7.5px;
-    margin-Left: -100px;
-    border-Radius: 3px;
+  width: 1300px;
+  height: 600px;
+  margin-top: 5px;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  filter: contrast(110%);
+  object-fit: cover;
+  object-position: 10% 60%;
+}
+
+#buttonSearch {
+  background: #24a0ed;
+  padding: 10px;
+  padding-inline: 15px;
+  margin-block: 7.5px;
+  margin-left: -100px;
+  border-radius: 3px;
+}
+
+.search-bar:hover {
+  scale: 1.02;
+  animation: keyframes-fill-search 0.5s;
+}
+
+@keyframes keyframes-fill-search {
+  0% {
+    transform: scale(0);
   }
 
-  
-  @media only screen and (max-width: 700px) {
-    #imgFluid {
-      height: 400px;
-      width: 400px;
-    }
+  50% {
+    transform: scaleY(1.2);
   }
-  @media only screen and (max-width: 860px) {
-    #imgFluid {
-      height: 300px;
-    }
-    
-  }
-  
-  @media only screen and (max-width: 576px) {
-    #imgFluid {
-      width: 88%;
-      height: 300px;
-      left: 25px;
-    }
-    .position-relative  {
-      padding-top: 5px;
-      margin-top: -100px;
-      margin-left: -5px;
-    }
-  }
+}
 
+@media only screen and (max-width: 700px) {
+  #imgFluid {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 860px) {
+  #imgFluid {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #imgFluid {
+    width: 88%;
+    height: 300px;
+    left: 25px;
+  }
+  .position-relative {
+    padding-top: 5px;
+    margin-top: -100px;
+    margin-left: -5px;
+  }
+}
+
+#Searching {
+  background-image: url("../assets/search.svg");
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding-inline: 50px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
   #Searching {
-    background-Image: url("../assets/search.svg");
-    background-Position: 15px center;
-    background-Repeat: no-repeat;
-    border-Radius: 10px;
-    padding-Inline: 50px;
+    margin-left: 30px;
   }
+}
+@media only screen and (min-width: 860px) and (max-width: 1200px) {
+  #Searching {
+    margin-left: 100px;
+  }
+}
+@media only screen and (min-width: 770px) and (max-width: 860px) {
+  #Searching {
+    height: 50px;
+    width: 60%;
+    margin-left: 120px;
+  }
+}
 
-  @media only screen and (min-width: 1200px) and (max-width : 1300px) {
-    #Searching {
-        margin-left: 30px;
-    }
-  }
-  @media only screen and (min-width: 860px) and (max-width : 1200px) {
-    #Searching {
-        margin-left: 100px;
-    }
-  }
-  @media only screen and (min-width: 770px) and (max-width:860px) {
-    #Searching {
-        height: 50px;
-        width: 60%;
-        margin-left: 120px;
-
-    }
-  } 
-    
-  
-  @media only screen and (min-width: 450px) and (max-width: 770px) {
-    #Searching {
+@media only screen and (min-width: 450px) and (max-width: 770px) {
+  #Searching {
     width: 40%;
     height: 35%;
     margin-left: 150px;
     border-radius: 10px;
-    }
-    #buttonSearch {
-      width: 50px;
-      height: 1.7rem;
-      font-size: 6px;
-      margin-top: 1.9px;
-      padding: 0px;
-      margin-left: -65px;
-      padding-Inline: 0px;
-      border-radius: 2px;
   }
+  #buttonSearch {
+    width: 50px;
+    height: 1.7rem;
+    font-size: 6px;
+    margin-top: 1.9px;
+    padding: 0px;
+    margin-left: -65px;
+    padding-inline: 0px;
+    border-radius: 2px;
   }
+}
 
-  @media only screen and (max-width: 450px) {
-    #Searching {
-        width: 38%;
-        max-height: 25px;
-        margin-left: 205px;
-        background-size: 12px;
-        font-size: 10px;
-        padding: 0px;
-        padding-inline: 0px;
-        border-radius: 6px;
-        background-position: 4%;
-    }
-      #buttonSearch {
-          width: 45px;
-          height: 8rem;
-          font-size: 6px;
-          margin-left: -43px;
-          margin-top: 1.9px;
-          padding: 0px;
-          padding-Inline: 0px;
-          border-radius: 2px;
-      }
+@media only screen and (max-width: 450px) {
+  #Searching {
+    width: 38%;
+    max-height: 25px;
+    margin-left: 205px;
+    background-size: 12px;
+    font-size: 10px;
+    padding: 0px;
+    padding-inline: 0px;
+    border-radius: 6px;
+    background-position: 4%;
   }
-     
-
-
-  @media only screen and (max-width: 450px) {
-    #buttonSearch {
-      width: 30px;
-      height: 1.2rem;
-      font-size: 6px;
-      margin-left: -43px;
-      margin-top: 3.6px;
-      padding: 0px;
-      padding-Inline: 0px;  
-      border-radius: 2px;
-    }
+  #buttonSearch {
+    width: 45px;
+    height: 8rem;
+    font-size: 6px;
+    margin-left: -43px;
+    margin-top: 1.9px;
+    padding: 0px;
+    padding-inline: 0px;
+    border-radius: 2px;
   }
+}
+
+@media only screen and (max-width: 450px) {
+  #buttonSearch {
+    width: 30px;
+    height: 1.2rem;
+    font-size: 6px;
+    margin-left: -43px;
+    margin-top: 3.6px;
+    padding: 0px;
+    padding-inline: 0px;
+    border-radius: 2px;
+  }
+}
