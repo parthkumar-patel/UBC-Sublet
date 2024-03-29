@@ -105,6 +105,28 @@ app.post("/sublets", async(req, res) => {
     }
 })
 
+app.delete('/sublets/documents/:id', async (req, res) => {
+    const id = req.params.id;
+  
+    try {
+      // Find the document by ID and delete it
+      const result = await Sublets.findByIdAndDelete(id);
+      
+      if (!result) {
+        // If document with the specified ID is not found, return 404
+        return res.status(404).json({ error: 'Document not found' });
+      }
+  
+      // If deletion is successful, return success message
+      return res.status(200).json({ message: 'Document deleted successfully' });
+    } catch (error) {
+      // If any error occurs during deletion, return 500 status code
+      console.error('Error deleting document:', error);
+      return res.status(500).json({ error: 'An error occurred while deleting the document' });
+    }
+  });
+  
+
 app.listen(port, () => {
     console.log(`app is listening at http://localhost:${port}`);
 });

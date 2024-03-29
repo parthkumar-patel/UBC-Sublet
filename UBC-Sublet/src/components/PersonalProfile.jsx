@@ -20,6 +20,23 @@ export default function PersonalProfile() {
   const [allImage, setAllImage] = useState([]);
 
 
+  // Loop through each delete button and add a click event listener  
+
+  // const handleClickDelete = async (cardId) => {
+  //   try {
+  //     // Send DELETE request to backend endpoint
+  //     await axios.delete(`/sublets/documents/${cardId}`);
+  //     console.log('Document deleted successfully');
+
+  //     // Update UI to reflect deletion (optional)
+  //     // For example, you can filter out the deleted card from the list
+  //   } catch (error) {
+  //     // Handle errors
+  //     console.error('Error deleting document:', error);
+  //     setError('An error occurred while deleting the document');
+  //   }
+  // };
+
 
 
   useEffect(() => {

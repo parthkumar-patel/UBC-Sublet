@@ -158,19 +158,12 @@ p {
   row-gap: 32px;
 }
 
-.delete-icon {
+.delete {
   cursor: pointer;
-  margin-top: 10px;
-  margin-top: 100px;
+  display: flex;
 }
 
-.delete-icon svg {
-  width: 24px;
-  height: 24px;
-}
 
-.delete-icon:hover svg {
-}
 
 
 .no-listing-msg {

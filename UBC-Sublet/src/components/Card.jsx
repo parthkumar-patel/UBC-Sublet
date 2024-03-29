@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 export default function Card() {
   const navigate = useNavigate();
 
+  const handleClickDelete = () => {
+    // Call the onDelete function passed from PersonalProfile component
+    onDelete(prop.key); // Pass the ID of the card to delete
+  };
+
   const [allImage, setAllImage] = useState([]);
   useEffect(() => {
     getImage();
@@ -49,7 +54,7 @@ export default function Card() {
   const cards = allImage.map((item) => {
     console.log("Carousel ID:", "carouselExampleControlsNoTouching" + item._id);
 
-    return <CardComponent key={item._id} item={item}  // Test with a simple log
+    return <CardComponent key={item._id} item={item} // Test with a simple log
     />;
   });
 

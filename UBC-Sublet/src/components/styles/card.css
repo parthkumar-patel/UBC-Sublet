@@ -10,6 +10,29 @@
   flex-basis: calc(50% - 20px);
 }
 
+.delete {
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  display: none;
+}
+
+.delete .svg {
+  z-index: 1;
+  background-color: #171a1f;
+}
+
+
 #featuredi {
   margin-left: -580px;
   margin-top: 100px !important;
