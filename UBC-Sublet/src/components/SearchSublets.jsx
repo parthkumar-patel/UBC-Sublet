@@ -311,8 +311,8 @@ export default function SearchSublet() {
   });
 
   return (
-    <div>
-      <div className="filters sticky-top">
+    <div className="macbook-air-2">
+      <div className="filters">
         <h2
           style={
             {

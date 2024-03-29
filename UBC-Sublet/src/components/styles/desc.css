@@ -546,7 +546,11 @@
     width: 109%;
   }
 }
-
+@media screen and (max-width: 450px) {
+  .macbook-air-2 {
+    width: 115%;
+  }
+}
 .send-button-frame-wrapper {
   display: flex;
   align-items: flex-start;

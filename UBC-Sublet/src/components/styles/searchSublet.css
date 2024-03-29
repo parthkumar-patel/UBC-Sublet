@@ -439,6 +439,9 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .macbook-air-2 {
+    width: 109%;
+  }
   #featuredi {
     margin-left: -640px;
     font-style: italic;

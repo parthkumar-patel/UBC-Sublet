@@ -699,3 +699,17 @@
   }
   
 }
+
+@media only screen and (max-width: 400px){
+  #search-button {
+    margin-top: -18px;
+    height:15px;
+    max-width: 20px;
+    margin-left: 34px !important;
+    border-radius: 2px;
+    font-size: 5px;
+    padding: 1px;
+    border-radius: 6px;
+    background-size: 40%;
+  }
+}
