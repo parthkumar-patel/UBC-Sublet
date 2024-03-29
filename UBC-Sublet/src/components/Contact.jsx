@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
-import emailjs from 'emailjs-com';
-// import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 import send from "../assets/send.svg";
 
 const Contact = () => {
@@ -61,14 +60,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="send-button-frame-wrapper">
+    <div className="send-button-frame-wrapper mt-5 pt-3">
       <div className="send-button-frame">
-        <p className="sectionSubText">Get in touch</p>
+        <p className="sectionSubText">Get in touch.</p>
         <b className="contact">Contact</b>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 d-flex flex-column gap-4"
+          className="d-flex flex-column"
         >
           <label className="your-name-input">
             <span className="name">Your Name</span>

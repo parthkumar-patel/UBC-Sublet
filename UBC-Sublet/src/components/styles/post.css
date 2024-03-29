@@ -32,8 +32,6 @@ input.invalid {
   display: none;
 }
 
-
-
 #amenities {
   display: flex;
 }
@@ -107,7 +105,6 @@ button:hover {
   font-size: 20px;
 }
 
-
 .container2 {
   display: flex;
   flex-direction: column;
@@ -123,11 +120,9 @@ button:hover {
   padding-top: 12px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
-
-
 }
 
-.container2 input[type = "checkbox"] {
+.container2 input[type="checkbox"] {
   cursor: pointer;
   margin-top: -20px;
   margin-left: -60%;
@@ -481,17 +476,47 @@ button:hover {
   position: relative;
   display: flex;
   margin-top: 10%;
-  margin-left: 25%;
+  margin-left: -80px;
   font-weight: bold;
   font-size: large;
 }
 #description {
-  display: flex;
-  margin-top: 30px;
-  margin-left: -70px;
-  border-radius: 10px;
+  padding-top: -20px;
+  margin-top: 20px;
+  margin-left: -80px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   height: 100px;
-  width: 110%;
+  width: 630px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow for depth */
+  transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+}
+
+#description:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #007bff; /* Change border color on focus */
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #aaa; /* Placeholder color */
+  transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease,
+    color 0.3s ease; /* Smooth transitions for placeholder */
+}
+
+#description:focus + .placeholder,
+#description:not(:placeholder-shown) + .placeholder {
+  top: 10px;
+  left: 10px;
+  transform: translateY(0) scale(0.8);
+  color: #555;
+  font-size: 12px;
 }
 
 .post-photo {

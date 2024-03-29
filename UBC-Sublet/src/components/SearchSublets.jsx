@@ -191,7 +191,7 @@ export default function SearchSublet() {
 
   return (
     <>
-      <div className="filters">
+      <div className="filters sticky-top">
         <h2
           style={
             {
@@ -518,7 +518,7 @@ export default function SearchSublet() {
       </div>
       <div>
         {conditionalData.length == 0 ? (
-          <div className="position-absolute top-50 start-50 translate-middle gap-10">
+          <div className="position-absolute top-50 start-50 translate-middle gap-10 ml-5">
             <h1> No search results found, please go back </h1>
           </div>
         ) : (

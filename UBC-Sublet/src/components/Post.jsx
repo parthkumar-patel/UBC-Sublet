@@ -3,277 +3,6 @@ import "./styles/post.css";
 import UploadImages from "./UploadImages";
 import { UserAuth } from "../context/AuthContext";
 
-
-/// convert images to binary 64 code
-/// room images need to be implemented each room needs to be iterated over to store it and make sure to convert it into base 64
-
-// export default function Post() {
-//     const [currentTab, setCurrentTab] = useState(0);
-//     const [selectedOption, setSelectedOption] = useState(""); // State to manage selected radio button
-//     const [inputValue, setInputValue] = useState('');
-//     const [isFocused, setIsFocused] = useState(false);
-//     const [inputValue2, setInputValue2] = useState('');
-//     const [currentStep, setCurrentStep] = useState(0);
-
-//     useEffect(() => {
-//         const validateInput = () => {
-//             if (inputValue2.trim() !== '') {
-//                 const isValidDate = /^\d{4}\/\d{2}\/\d{2}$/.test(inputValue2);
-//                 const isLaterDate = inputValue2 > inputValue;
-//                 if (!isValidDate) {
-//                     alert("Please enter a date in the yyyy/mm/dd format.");
-//                     inputRef2.current.focus();
-//                     return true; // Return true if alert was triggered
-//                 } else if (!isLaterDate) {
-//                     alert("Ending date should be greater than the starting date.");
-//                     inputRef2.current.focus();
-//                     return true; // Return true if alert was triggered
-//                 }
-//             }
-//             return false; // Return false if no alert was triggered
-//         };
-
-//         if (!isFocused) {
-//             const alertTriggered = validateInput();
-//             if (alertTriggered) {
-//                 return; // Exit early if an alert was triggered
-//             }
-//         }
-//     }, [isFocused]);
-
-//     // }, [isFocused]);
-
-//     const inputRef2 = React.useRef(null);
-
-//     useEffect(() => {
-//         const validateInput = () => {
-//             if (inputValue.trim() !== '') {
-//                 const isValidDate = /^\d{4}\/\d{2}\/\d{2}$/.test(inputValue);
-//                 if (!isValidDate) {
-//                     // If the entered date format is incorrect and input is not empty, display an error message
-//                     alert("Please enter a date in the yyyy/mm/dd format.");
-//                     inputRef.current.focus();
-//                     return;
-//                 }
-//             }
-//         };
-
-//         if (!isFocused) {
-//             validateInput();
-//         }
-//     }, [inputValue, isFocused]);
-
-//     const inputRef = React.useRef(null);
-
-//     const handleInputChange = (e) => {
-//         setInputValue(e.target.value);
-//     };
-
-//     const handleInputFocus = () => {
-//         setIsFocused(true);
-//     };
-
-//     const handleInputBlur = () => {
-//         setIsFocused(false);
-//     };
-
-//     const handleInputChange2 = (e) => {
-//         setInputValue2(e.target.value)
-//     };
-
-//     const handleInputFocus2 = () => {
-//         setIsFocused(true);
-//     };
-
-//     const handleInputBlur2 = () => {
-//         setIsFocused(false);
-//     };
-
-//     useEffect(() => {
-//         showTab(currentTab);
-//     }, [currentTab]);
-
-//     const showTab = (n) => {
-//         const x = document.getElementsByClassName("tab");
-//         if (x.length > 0) {
-//             for (let i = 0; i < x.length; i++) {
-//                 x[i].style.display = "none";
-//             }
-//             x[n].style.display = "block";
-//         }
-
-//         const prevBtn = document.getElementById("prevBtn");
-//         const nextBtn = document.getElementById("nextBtn");
-
-//         if (n === 0) {
-//             prevBtn.style.display = "none";
-//         } else {
-//             prevBtn.style.display = "inline";
-//         }
-
-//         if (n === (x.length - 1)) {
-//             nextBtn.innerHTML = "Submit";
-//         } else {
-//             nextBtn.innerHTML = "Next";
-//         }
-
-//         fixStepIndicator(n);
-//     }
-
-//     const nextPrev = (n) => {
-//         const x = document.getElementsByClassName("tab");
-//         if (n === 1 && !validateForm()) return false;
-
-//         if (currentTab >= 0 && currentTab < x.length) {
-//             x[currentTab].style.display = "none";
-//         }
-
-//         setCurrentTab(currentTab + n);
-
-//         if (currentTab >= x.length) {
-//             document.getElementById("nextprevious").style.display = "none";
-//             document.getElementById("all-steps").style.display = "none";
-//             document.getElementById("register").style.display = "none";
-//             document.getElementById("text-message").style.display = "block";
-//             return;
-//         }
-//         showTab(currentTab);
-//     }
-
-//     const handleNext = () => {
-//         // Logic to handle next step
-//         setCurrentStep(currentStep + 1);
-//     };
-
-//     // Function to handle "Previous" button click
-//     const handlePrevious = () => {
-//         // Logic to handle previous step
-//         setCurrentStep(currentStep - 1);
-//     };
-
-//     const nextButtonId = `nextBtn${currentStep}`;
-//     const prevButtonId = `prevBtn${currentStep}`;
-
-//     const validateForm = () => {
-//         const x = document.getElementsByClassName("tab");
-//         if (x.length > 0) {
-//             const y = x[currentTab].getElementsByTagName("input");
-//             for (let i = 0; i < y.length; i++) {
-//                 if (y[i].value === "") {
-//                     y[i].className += " invalid";
-//                     return false;
-//                 }
-//             }
-//             document.getElementsByClassName("step")[currentTab].className += " finish";
-//         }
-//         return true;
-//     }
-
-//     const fixStepIndicator = (n) => {
-//         const x = document.getElementsByClassName("step");
-//         if (x.length > 0) {
-//             for (let i = 0; i < x.length; i++) {
-//                 x[i].className = x[i].className.replace(" active", "");
-//             }
-//             x[n].className += " active";
-//         }
-//     }
-
-//     const handleOptionChange = (e) => {
-//         setSelectedOption(e.target.value);
-//     };
-
-//     return (
-//         <div className="container mt-5">
-//             <div className="row d-flex justify-content-center align-items-center">
-//                 <div className="col-md-6" >
-//                     <form id="regForm">
-//                         <h1 id="register"> </h1>
-//                         <div className="all-steps" id="all-steps"> <span className="step"></span> <span className="step"></span> <span className="step"></span> <span className="step"></span> </div>
-//                         <div className="tab">
-//                             <h3 className = "heading">What type of property is this? :</h3>
-//                                 <label className="container1"> Two-Bedroom
-//                                 <input type="radio" name="radio" value="two-bedroom" checked={selectedOption === "two-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="container1"> Four-Bedroom
-//                                 <input type="radio" name="radio" value="four-bedroom" checked={selectedOption === "four-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="container1"> Six-Bedroom
-//                                 <input type="radio" name="radio" value="six-bedroom" checked={selectedOption === "six-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="container1"> Shared-Two-Bedroom
-//                                 <input type="radio" name="radio" value="six-bedroom" checked={selectedOption === "six-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="container1"> Studio
-//                                 <input type="radio" name="radio" value="six-bedroom" checked={selectedOption === "six-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="container1"> Apartment
-//                                 <input type="radio" name="radio" value="six-bedroom" checked={selectedOption === "six-bedroom"} onChange={handleOptionChange} />
-//                                 <span className="checkmark"></span>
-//                             </label>
-//                             <label className="address"> Address </label>
-//                             <input type="text" placeholder="Building + UBC" id = "addressBox" onInput={(e) => e.target.className = ''} name="address" />
-
-//                             <label className="buildingName"> Building Name </label>
-//                             <input type="text" placeholder="Name eg North Tower" id = "buildingNameBox" onInput={(e) => e.target.className = ''} name="address" />
-
-//                             <label className="bedRooms"> Bedrooms </label>
-//                             <input type="text" placeholder="eg. 4" id = "bedRooms" onInput={(e) => e.target.className = ''} name="bedrooms" />
-
-//                             <label className="bathRooms"> bathRooms </label>
-//                             <input type="text" placeholder="eg. 2" id = "bathRooms" onInput={(e) => e.target.className = ''} name="bathRooms" />
-
-//                             <label className="description"> Description </label>
-//                             <input type="text" placeholder="What do you want to say?" id = "description" onInput={(e) => e.target.className = ''} name="description" />
-
-//                         </div>
-//                         <div className="tab"> <div className = "headings2"> Share your contact information</div>
-//                             <p className='firstName'><input placeholder="First Name" id = "firsts" onInput={(e) => e.target.className = ''} name="firsts" /></p>
-//                             <p className='lastName'><input placeholder="Last Name" id = "last" onInput={(e) => e.target.className = ''} name="last" /></p>
-//                             <p className='email'><input placeholder="Email" id = "email" onInput={(e) => e.target.className = ''} name="email" /></p>
-//                             <p className='phone'><input placeholder="Phone" id = "phone" onInput={(e) => e.target.className = ''} name="phone" /></p>
-//                         </div>
-
-//                         <div className="tab"> <div className = "headings3"> Step 3 Property info </div>
-//                             <p className='Initial_Deposit'> <input placeholder="Initial Deposit" id = "Initial_Deposit" onInput={(e) => {const inputValue = e.target.value;
-//                                                                                                                           const sanitizedValue = inputValue.replace(/\D/g, ''); // Remove any non-numeric characters
-//                                                                                                                          e.target.value = sanitizedValue; // Update the input value with the sanitized value/
-//                                                                                                                         }} name="Initial_Deposit" /></p>
-//                             <p className='Monthly_Rent'><input placeholder="Monthly Rent" id = "Monthly_Rent" onInput={(e) => {const inputValue = e.target.value;
-//                                                                                                                           const sanitizedValue = inputValue.replace(/\D/g, ''); // Remove any non-numeric characters
-//                                                                                                                          e.target.value = sanitizedValue;}} name="Monthly_Rent" /></p>
-//                             <p className='Starting_Date'> <input placeholder="yyyy/mm/dd format" id = "Starting_Date"  onChange={handleInputChange} onFocus={handleInputFocus} onBlur={handleInputBlur}  ref={inputRef} name="Starting_Date" value={inputValue} /></p>
-//                             <p className='Ending_Date'> <input placeholder="yyyy/mm/dd format" id = "Ending_Date" onChange={handleInputChange2} onFocus={handleInputFocus2} onBlur={handleInputBlur2}  ref={inputRef2} name="Ending_Date" /></p>
-//                             <p className='Time_Period'> <input placeholder="Time period in integers eg. 4, 5" id = "Time_Period" onInput={(e) =>  {const inputValue = e.target.value;
-//                                                                                                                           const sanitizedValue = inputValue.replace(/\D/g, ''); // Remove any non-numeric characters
-//                                                                                                                          e.target.value = sanitizedValue; // Update the input value with the sanitized value/
-//                                                                                                                         }} name="Time Period" /></p>
-//                         </div>
-
-//                          <div className="thanks-message text-center" id="text-message">
-//                             <h3>Thanks for your submission!</h3> <span>Your submission has been entered! We will contact you shortly!</span>
-//                         </div>
-
-//                         <div className="row">
-//                         <div className="row mt-3">
-//                             <div className="col-md-6">
-//                                 <button type="button" id="prevBtn" onClick={() => {handlePrevious(); nextPrev(-1)}} className="btn btn-primary mr-2">Previous</button>
-//                                 <button type="button" id="nextBtn" onClick={() => {{handleNext(); nextPrev(1)}}} className="btn btn-primary">Next</button>
-//                             </div>
-//                             </div>
-//                         </div>
-//                     </form>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
@@ -287,7 +16,6 @@ export default function Post() {
   const { user } = UserAuth();
 
   let isFinalStep = false;
-
 
   useEffect(() => {
     const validateInput = () => {
@@ -369,8 +97,6 @@ export default function Post() {
 
   const showTab = (n) => {
     const x = document.getElementsByClassName("tab");
-    // const prevBtn = document.getElementsByClassName("prevBtn");
-    const nextBtn = document.getElementsByClassName("nextBtn");
 
     if (x.length > 0) {
       for (let i = 0; i < x.length; i++) {
@@ -388,7 +114,7 @@ export default function Post() {
     if (n === x.length - 1) {
       isFinalStep = true;
       console.log(isFinalStep);
-      console.log("hi")
+      console.log("hi");
       document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
       isFinalStep = false;
@@ -461,18 +187,18 @@ export default function Post() {
 
   const handleOptionChange2 = (e) => {
     const newValue = e.target.value; // Get the new value from the event target
-    setSelectedOptionAmenities(prevOptions => {
+    setSelectedOptionAmenities((prevOptions) => {
       if (prevOptions.includes(newValue)) {
         // If the value already exists in the array, remove it
-        return prevOptions.filter(option => option !== newValue);
+        return prevOptions.filter((option) => option !== newValue);
       } else {
         // If the value does not exist in the array, add it
         return [...prevOptions, newValue];
       }
     });
   };
-  
-  const handleMongo = async (e) => {
+
+  const handleMongo = async () => {
     console.log("done");
     const usersa = user.uid;
     console.log(usersa);
@@ -489,8 +215,10 @@ export default function Post() {
     const Starting_Date = document.getElementById("Starting_Date").value;
     const Ending_Date = document.getElementById("Ending_Date").value;
     const radio = document.querySelector('input[name="radio"]:checked').value;
-    const checkboxes = document.querySelectorAll('input[name="checkbox"]:checked');
-    const radio2 = Array.from(checkboxes).map(checkbox => checkbox.value);
+    const checkboxes = document.querySelectorAll(
+      'input[name="checkbox"]:checked'
+    );
+    const radio2 = Array.from(checkboxes).map((checkbox) => checkbox.value);
     console.log(radio2);
     const roomisIn = roomsFor;
 
@@ -510,7 +238,7 @@ export default function Post() {
       }
     } catch (error) {
       console.error("Error:", error);
-    } 
+    }
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1; // Months are zero-based
@@ -523,72 +251,70 @@ export default function Post() {
     let b = false;
     let c = false;
     let d = false;
-      radio2.forEach(data => {
-        // Update variables based on checkbox selection
-        if (data == "Furnished") {
-            b = true;
-        } else if (data == "Utilities") {
-            c = true;
-        } else if (data == "utensils") {
-            d = true;
-        }
-      })
-    
-      
-      const formData = {
-        location: {
-          currentLocation: addressBox,
-          buildingNumber: buildgingName,
-
-          latitude: searchData.latitude,
-          longitude: searchData.longitude,
-        },
-        user_id: usersa,
-        rooms: roomisIn,
-        pricing: {
-          initialDeposit: initial_Deposit,
-          monthlyRent: monthlyRent,
-        },
-        numberOfRoomsAvailable: bedRooms,
-        timePeriod: timePeriod,
-        contactInformation: {
-          name: first + last,
-          email: email,
-        },
-        description: description,
-        dateAdding: formattedDate,
-        startingSubletDate: Starting_Date,
-        endingSubletDate: Ending_Date,
-        roomType: radio,
-        amenities: {
-          furnished: b,
-          utilities: c,
-          utensile: d
-        }
-      };
-      console.log("done");
-      try {
-    
-        const response = await fetch("http://localhost:3001/sublets", {
-          // console.log("done3");
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-        if (response.ok) {
-          console.log("Form data saved successfully");
-          // Handle success response
-        } else {
-          console.error("Failed to save form data:", response.statusText);
-          // Handle error response
-        }
-      } catch (error) {
-        console.error("Error saving form data:", error);
-        // Handle error
+    radio2.forEach((data) => {
+      // Update variables based on checkbox selection
+      if (data == "Furnished") {
+        b = true;
+      } else if (data == "Utilities") {
+        c = true;
+      } else if (data == "utensils") {
+        d = true;
       }
+    });
+
+    const formData = {
+      location: {
+        currentLocation: addressBox,
+        buildingNumber: buildgingName,
+
+        latitude: searchData.latitude,
+        longitude: searchData.longitude,
+      },
+      user_id: usersa,
+      rooms: roomisIn,
+      pricing: {
+        initialDeposit: initial_Deposit,
+        monthlyRent: monthlyRent,
+      },
+      numberOfRoomsAvailable: bedRooms,
+      timePeriod: timePeriod,
+      contactInformation: {
+        name: first + last,
+        email: email,
+      },
+      description: description,
+      dateAdding: formattedDate,
+      startingSubletDate: Starting_Date,
+      endingSubletDate: Ending_Date,
+      roomType: radio,
+      amenities: {
+        furnished: b,
+        utilities: c,
+        utensile: d,
+      },
     };
+    console.log("done");
+    try {
+      const response = await fetch("http://localhost:3001/sublets", {
+        // console.log("done3");
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log("Form data saved successfully");
+        // Handle success response
+      } else {
+        console.error("Failed to save form data:", response.statusText);
+        // Handle error response
+      }
+    } catch (error) {
+      console.error("Error saving form data:", error);
+      // Handle error
+    }
+  };
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-center align-items-center">
@@ -602,45 +328,45 @@ export default function Post() {
             <div className="tab">
               <h3 className="heading">What type of property is this? :</h3>
               <label className="container1">
-                Two-Bedroom
+                Two bedroom
                 <input
                   type="radio"
                   name="radio"
-                  value="two-bedroom"
-                  checked={selectedOption === "two-bedroom"}
+                  value="2BA"
+                  checked={selectedOption === "2BA"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                Four-Bedroom
+                Four bedroom
                 <input
                   type="radio"
                   name="radio"
-                  value="four-bedroom"
-                  checked={selectedOption === "four-bedroom"}
+                  value="4BA"
+                  checked={selectedOption === "4BA"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                Six-Bedroom
+                Six bedroom
                 <input
                   type="radio"
                   name="radio"
-                  value="six-bedroom"
-                  checked={selectedOption === "six-bedroom"}
+                  value="6BA"
+                  checked={selectedOption === "6BA"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
               </label>
               <label className="container1">
-                Shared-Two-Bedroom
+                Shared two bedroom
                 <input
                   type="radio"
                   name="radio"
-                  value="Shared-Two-Bedroom"
-                  checked={selectedOption === "Shared-Two-Bedroom"}
+                  value="Shared Two Bedroom"
+                  checked={selectedOption === "Shared Two Bedroom"}
                   onChange={handleOptionChange}
                 />
                 <span className="checkmark"></span>
@@ -668,78 +394,78 @@ export default function Post() {
                 <span className="checkmark"></span>
               </label>
               <div className="boxes">
-                <label className="address"> Address </label>
+                <label className="address"> Building Name </label>
                 <input
                   type="text"
-                  placeholder="Building + UBC"
+                  placeholder="Eg: Brock Commons North Tower"
                   id="addressBox"
                   onInput={(e) => (e.target.className = "")}
                   name="addressBox"
                 />
 
-                <label className="buildingName"> Building Name </label>
+                <label className="buildingName"> Floor </label>
                 <input
                   type="text"
-                  placeholder="Name eg North Tower"
+                  placeholder="Eg: 14"
                   id="buildingNameBox"
                   onInput={(e) => (e.target.className = "")}
                   name="buildingNameBox"
                 />
 
-                <label className="bedRooms"> Bedrooms </label>
+                <label className="bedRooms">No. of bedrooms for sublet</label>
                 <input
                   type="text"
-                  placeholder="eg. 4"
+                  placeholder="Eg: 1"
                   id="bedRooms"
                   onInput={(e) => (e.target.className = "")}
                   name="bedRooms"
                 />
 
-                <label className="bathRooms"> bathRooms </label>
+                <label className="bathRooms">Total no. of bathrooms</label>
                 <input
                   type="text"
-                  placeholder="eg. 2"
+                  placeholder="Eg: 2"
                   id="bathRooms"
                   onInput={(e) => (e.target.className = "")}
                   name="bathRooms"
                 />
 
-              <label className="amenities"> Amenities :</label>
-              <label className="container2">
-                Furnished
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  value= "Furnished"
-                  checked={selectedOptionAmenities.includes("Furnished")}
-                  onChange={handleOptionChange2}
-                />
-              </label>
-              <label className="container2">
-                Utilities
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  value="Utilities"
-                  checked={selectedOptionAmenities.includes("Utilities")}
-                  onChange={handleOptionChange2}
-                />
-              </label>
-              <label className="container2">
-                Utensils
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  value="Utensils"
-                  checked={selectedOptionAmenities.includes("Utensils")}
-                  onChange={handleOptionChange2}
-                /> 
+                <label className="amenities"> Amenities :</label>
+                <label className="container2">
+                  Furnished
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Furnished"
+                    checked={selectedOptionAmenities.includes("Furnished")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+                <label className="container2">
+                  Utilities
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Utilities"
+                    checked={selectedOptionAmenities.includes("Utilities")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+                <label className="container2">
+                  Utensils
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Utensils"
+                    checked={selectedOptionAmenities.includes("Utensils")}
+                    onChange={handleOptionChange2}
+                  />
                 </label>
 
                 <label className="description"> Description </label>
-                <input
+                <textarea
                   type="text"
-                  placeholder="What do you want to say?"
+                  placeholder="Describe your house and its speciality, for instance, floor number and/or any condtions/rules you have."
                   id="description"
                   onInput={(e) => (e.target.className = "")}
                   name="description"
@@ -781,18 +507,16 @@ export default function Post() {
                 />
               </p>
             </div>
-
             <div className="tab">
               <div className="headings2"> Step 3 Property info </div>
               <p className="Initial_Deposit">
-                {" "}
                 <input
-                  placeholder="Initial Deposit"
+                  placeholder="Initial Deposit (if any)"
                   id="Initial_Deposit"
                   onInput={(e) => {
                     const inputValue = e.target.value;
-                    const sanitizedValue = inputValue.replace(/\D/g, ""); // Remove any non-numeric characters
-                    e.target.value = sanitizedValue; // Update the input value with the sanitized value/
+                    const sanitizedValue = inputValue.replace(/\D/g, "");
+                    e.target.value = sanitizedValue;
                   }}
                   name="Initial_Deposit"
                 />
@@ -803,7 +527,7 @@ export default function Post() {
                   id="Monthly_Rent"
                   onInput={(e) => {
                     const inputValue = e.target.value;
-                    const sanitizedValue = inputValue.replace(/\D/g, ""); // Remove any non-numeric characters
+                    const sanitizedValue = inputValue.replace(/\D/g, "");
                     e.target.value = sanitizedValue;
                   }}
                   name="Monthly_Rent"
@@ -812,7 +536,7 @@ export default function Post() {
               <p className="Starting_Date">
                 {" "}
                 <input
-                  placeholder="yyyy/mm/dd format"
+                  placeholder="From (yyyy/mm/dd)"
                   id="Starting_Date"
                   onChange={handleInputChange}
                   onFocus={handleInputFocus}
@@ -825,7 +549,7 @@ export default function Post() {
               <p className="Ending_Date">
                 {" "}
                 <input
-                  placeholder="yyyy/mm/dd format"
+                  placeholder="To (yyyy/mm/dd)"
                   id="Ending_Date"
                   onChange={handleInputChange2}
                   onFocus={handleInputFocus2}
@@ -837,7 +561,7 @@ export default function Post() {
               <p className="Time_Period">
                 {" "}
                 <input
-                  placeholder="Time period in integers eg. 4, 5"
+                  placeholder="Time period (months)"
                   id="Time_Period"
                   onInput={(e) => {
                     const inputValue = e.target.value;
@@ -848,15 +572,36 @@ export default function Post() {
                 />
               </p>
             </div>
-
             <div className="tab">
-              <div className="headings2"> Step 3- Photos and amenities </div>
+              <div className="headings2"> Step 3- Photos (atleast 5) </div>
               <UploadImages setRooms={setRooms} />
             </div>
             <div className="">
               <div className="buttons-wrapper">
-              <button type="button" id="prevBtn" onClick={() => {handlePrevious(); nextPrev(-1)}} className="btn btn-primary mr-2">Previous</button>
-              <button type="button" id="nextBtn" onClick={() => {{handleNext(); nextPrev(1)}}} className="btn btn-primary">Next</button>
+                <button
+                  type="button"
+                  id="prevBtn"
+                  onClick={() => {
+                    handlePrevious();
+                    nextPrev(-1);
+                  }}
+                  className="btn btn-primary mr-2"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn"
+                  onClick={() => {
+                    {
+                      handleNext();
+                      nextPrev(1);
+                    }
+                  }}
+                  className="btn btn-primary"
+                >
+                  Next
+                </button>
               </div>
             </div>
           </form>

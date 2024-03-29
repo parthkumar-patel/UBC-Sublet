@@ -11,6 +11,7 @@ const UploadImages = (prop) => {
   const [uploadImages, setUploadImages] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
   const [success, setSuccess] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const { user } = UserAuth();
 
   useEffect(() => {
@@ -75,6 +76,8 @@ const UploadImages = (prop) => {
   const handleImageChange = async (event) => {
     event.preventDefault();
 
+    setUploading(true);
+
     if (uploadImages.length > 0) {
       for (let i = 0; i < uploadImages.length; i++) {
         const uploadImage = uploadImages[i];
@@ -95,10 +98,119 @@ const UploadImages = (prop) => {
     } else {
       console.error("No images selected");
     }
+
+    setUploading(false);
   };
 
   return (
     <section className="upload-section">
+      <div
+        className="uploading-indicator position-absolute start-50 translate-middle"
+        style={{ top: "30%" }}
+      >
+        {uploading && (
+          <div className="custom-spinner">
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+            <div className="spinner-div"></div>
+          </div>
+        )}
+        <style>
+          {`
+        .custom-spinner {
+          position: absolute;
+          width: 9px;
+          height: 9px;
+        }
+
+        .custom-spinner .spinner-div {
+          position: absolute;
+          width: 50%;
+          height: 150%;
+          background: #000000;
+          transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+          animation: custom-spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+        }
+
+        .custom-spinner .spinner-div:nth-child(1) {
+          --delay: 0.1;
+          --rotation: 36;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(2) {
+          --delay: 0.2;
+          --rotation: 72;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(3) {
+          --delay: 0.3;
+          --rotation: 108;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(4) {
+          --delay: 0.4;
+          --rotation: 144;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(5) {
+          --delay: 0.5;
+          --rotation: 180;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(6) {
+          --delay: 0.6;
+          --rotation: 216;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(7) {
+          --delay: 0.7;
+          --rotation: 252;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(8) {
+          --delay: 0.8;
+          --rotation: 288;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(9) {
+          --delay: 0.9;
+          --rotation: 324;
+          --translation: 150;
+        }
+
+        .custom-spinner .spinner-div:nth-child(10) {
+          --delay: 1;
+          --rotation: 360;
+          --translation: 150;
+        }
+
+        @keyframes custom-spinner-fzua35 {
+          0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+            transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+          }
+
+          50% {
+            transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+          }
+        }
+      `}
+        </style>
+      </div>
       {success ? (
         <Success msg="Your Images have been successfully uploaded!" />
       ) : (
@@ -141,7 +253,7 @@ const UploadImages = (prop) => {
           previewImages.map((image, index) => {
             return (
               <div key={image} className="upload-image">
-                <img src={image} width = "275px" height="309px" alt="upload" />
+                <img src={image} width="275px" height="309px" alt="upload" />
                 <button
                   className="close-button"
                   onClick={() => deleteHandler(image)}
