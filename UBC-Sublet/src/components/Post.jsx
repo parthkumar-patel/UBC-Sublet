@@ -389,11 +389,12 @@ export default function Post() {
 
     if (n === x.length - 1) {
       isFinalStep = true;
+      console.log(isFinalStep);
       console.log("hi")
       document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
       isFinalStep = false;
-      nextBtn.innerHTML = "Next";
+      document.getElementById("nextBtn").innerHTML = "Next";
     }
 
     fixStepIndicator(n);
@@ -475,55 +476,55 @@ export default function Post() {
   
   const handleMongo = async (e) => {
     console.log("done");
-    if (isFinalStep) {
-      const usersa = user.uid;
-      console.log(usersa);
-      const addressBox = document.getElementById("addressBox").value;
-      const buildgingName = document.getElementById("buildingNameBox").value;
-      const initial_Deposit = document.getElementById("Initial_Deposit").value;
-      const monthlyRent = document.getElementById("Monthly_Rent").value;
-      const bedRooms = document.getElementById("bedRooms").value;
-      const timePeriod = document.getElementById("Time_Period").value;
-      const first = document.getElementById("firsts").value;
-      const last = document.getElementById("last").value;
-      const email = document.getElementById("email").value;
-      const description = document.getElementById("description").value;
-      const Starting_Date = document.getElementById("Starting_Date").value;
-      const Ending_Date = document.getElementById("Ending_Date").value;
-      const radio = document.querySelector('input[name="radio"]:checked').value;
-      const checkboxes = document.querySelectorAll('input[name="checkbox"]:checked');
-      const radio2 = Array.from(checkboxes).map(checkbox => checkbox.value);
-      const roomisIn = roomsFor;
+    const usersa = user.uid;
+    console.log(usersa);
+    const addressBox = document.getElementById("addressBox").value;
+    const buildgingName = document.getElementById("buildingNameBox").value;
+    const initial_Deposit = document.getElementById("Initial_Deposit").value;
+    const monthlyRent = document.getElementById("Monthly_Rent").value;
+    const bedRooms = document.getElementById("bedRooms").value;
+    const timePeriod = document.getElementById("Time_Period").value;
+    const first = document.getElementById("firsts").value;
+    const last = document.getElementById("last").value;
+    const email = document.getElementById("email").value;
+    const description = document.getElementById("description").value;
+    const Starting_Date = document.getElementById("Starting_Date").value;
+    const Ending_Date = document.getElementById("Ending_Date").value;
+    const radio = document.querySelector('input[name="radio"]:checked').value;
+    const checkboxes = document.querySelectorAll('input[name="checkbox"]:checked');
+    const radio2 = Array.from(checkboxes).map(checkbox => checkbox.value);
+    console.log(radio2);
+    const roomisIn = roomsFor;
 
-      console.log(roomsFor);
-      console.log("room", roomisIn);
-      let searchData;
-      try {
-        const inputValue = addressBox;
-        if (inputValue.trim() !== "") {
-          const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue}`
-          );
-          searchData = await response.json();
-          setData(searchData);
-        } else {
-          setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
-        }
-      } catch (error) {
-        console.error("Error:", error);
-      } 
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1; // Months are zero-based
-      const day = today.getDate();
-      console.log("done");
-      // Format the date as needed (e.g., YYYY-MM-DD)
-      const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
-        day < 10 ? "0" : ""
-      }${day}`;
-      let b = false;
-      let c = false;
-      let d = false;
+    console.log(roomsFor);
+    console.log("room", roomisIn);
+    let searchData;
+    try {
+      const inputValue = addressBox;
+      if (inputValue.trim() !== "") {
+        const response = await fetch(
+          `http://localhost:3001/search?q=${inputValue}`
+        );
+        searchData = await response.json();
+        setData(searchData);
+      } else {
+        setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } 
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; // Months are zero-based
+    const day = today.getDate();
+    console.log("done");
+    // Format the date as needed (e.g., YYYY-MM-DD)
+    const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
+      day < 10 ? "0" : ""
+    }${day}`;
+    let b = false;
+    let c = false;
+    let d = false;
       radio2.forEach(data => {
         // Update variables based on checkbox selection
         if (data == "Furnished") {
@@ -533,7 +534,7 @@ export default function Post() {
         } else if (data == "utensils") {
             d = true;
         }
-    });
+      })
     
       
       const formData = {
@@ -589,8 +590,7 @@ export default function Post() {
         console.error("Error saving form data:", error);
         // Handle error
       }
-    }
-  };
+    };
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-center align-items-center">
@@ -858,7 +858,7 @@ export default function Post() {
             <div className="">
               <div className="buttons-wrapper">
               <button type="button" id="prevBtn" onClick={() => {handlePrevious(); nextPrev(-1)}} className="btn btn-primary mr-2">Previous</button>
-              <button type="button" id="nextBtn" onClick={() => {{ handleNext(); nextPrev(1)}}} className="btn btn-primary">Next</button>
+              <button type="button" id="nextBtn" onClick={() => {{handleNext(); nextPrev(1)}}} className="btn btn-primary">Next</button>
               </div>
             </div>
           </form>

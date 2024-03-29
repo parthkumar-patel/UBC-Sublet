@@ -109,9 +109,9 @@ export default function PersonalProfile() {
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
       <div className="user-profile">
         <Row className="profile-row justify-content-center">
-          {/* <Card className="profile-card">
-            {/* <Card.Body> */}
-              {/* <Col className="image-col">
+          <Card className="profile-card">
+            <Card.Body>
+              <Col className="image-col">
                 <Image
                   src={userProfile.imageURL}
                   className="image"
@@ -132,9 +132,9 @@ export default function PersonalProfile() {
                     </div>
                   </div>
                 )}
-              </div> */}
-            {/* </Card.Body> */}
-        
+              </div>
+            </Card.Body>
+            </Card>
         </Row>
       </div>
       <div className="cards" style = {{ marginLeft: "-40%" }}>
