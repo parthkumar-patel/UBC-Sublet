@@ -26,16 +26,17 @@ export default function PersonalProfile() {
         const data = await response.json();
         const sortedData = data
           .slice()
-          .sort((a, b) => a.dateAdding - b.dateAdding);
+          .sort((a, b) => a.dateAdding - b.dateAdding)
+          
         setAllImage(sortedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
-
+  
     fetchData();
-  }, []);
-
+  }, []); // Ensure user_id is provided as a dependency if it's used inside the useEffect
+  
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
     authDomain: "ubc-sublet.firebaseapp.com",
@@ -87,7 +88,7 @@ export default function PersonalProfile() {
   }
 
   const filteredImages = allImage.filter((image) => {
-    return userProfile.listings.includes(image._id);
+     return (image.user_id === user.uid);
   });
 
   let content;
@@ -108,9 +109,9 @@ export default function PersonalProfile() {
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
       <div className="user-profile">
         <Row className="profile-row justify-content-center">
-          <Card className="profile-card">
-            <Card.Body>
-              <Col className="image-col">
+          {/* <Card className="profile-card">
+            {/* <Card.Body> */}
+              {/* <Col className="image-col">
                 <Image
                   src={userProfile.imageURL}
                   className="image"
@@ -131,12 +132,12 @@ export default function PersonalProfile() {
                     </div>
                   </div>
                 )}
-              </div>
-            </Card.Body>
-          </Card>
+              </div> */}
+            {/* </Card.Body> */}
+        
         </Row>
       </div>
-      <div className="cards">
+      <div className="cards" style = {{ marginLeft: "-40%" }}>
         <h1 className="mt-5 pt-4 listing">My Listings</h1>
         {userProfile && content}
       </div>

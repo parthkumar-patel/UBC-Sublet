@@ -81,6 +81,10 @@
   color: #333333;
 }
 
+.cards .save {
+  display: none;
+}
+
 p {
   margin-top: 8%;
   font-family: "Quicksand";

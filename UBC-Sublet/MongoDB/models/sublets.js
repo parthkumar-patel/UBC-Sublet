@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const subletsSchema = new Schema({
+    user_id : {
+        type: String
+    }, 
     location: [{
         currentLocation: String,
         buildingNumber : String,
