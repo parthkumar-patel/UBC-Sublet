@@ -14,7 +14,7 @@ export default function Search() {
 
       if (inputValue.trim() !== "") {
         const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue}`
+          `http://localhost:3001/search?q=${inputValue, "UBC"}`
         );
         const searchData = await response.json();
         setData(searchData);

@@ -1,11 +1,36 @@
 import "./styles/desc.css";
 import Contact from "./Contact";
+import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
+
 
 export default function Descrition() {
   const location = useLocation();
+  const [furnished, setfurnished] = useState([]);
+  const [utensils, setutensils] = useState([]);
+  const [Utilities, setUtilities] = useState([]);
+
   const { data } = location.state;
   console.log(data);
+  console.log(data.amenities[0].furnished);
+  useEffect(() => {
+    // Update the 'furnished' state based on the 'data' object
+    if (data.amenities && data.amenities.length > 0) {
+      if (data.amenities[0].furnished === true) {
+        setfurnished("furnished");
+      } else {
+        setfurnished("unfurnished");
+      }
+    } if (data.amenities[0].utensile === true){ 
+      setutensils("Utensils included");
+    } else {
+      setutensils("Utensils not included");
+    } if (data.amenities[0].Utilities === true) {
+      setUtilities("Utilities included");
+    } else {
+      setUtilities("Utilities not included");
+    }
+  }, [data]); //
 
   return (
     <div className="macbook-air-2">
@@ -42,13 +67,13 @@ export default function Descrition() {
               <div className="deposit-rent-frame">
                 
                 <div className="bonus-button-3">
-                  <div className="hover-me">In Unit</div>
+                  <div className="hover-me">{furnished}</div>
                 </div>
                 <button className="bonus-button-10">
-                  <div className="hover-me">Wifi Free</div>
+                  <div className="hover-me">{utensils}</div>
                 </button>
                 <button className="bonus-button-4">
-                  <div className="hover-me">Included</div>
+                  <div className="hover-me">{Utilities}</div>
                 </button>
                 <button className="bonus-button-5">
                   <div className="hover-me">Included</div>

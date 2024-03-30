@@ -229,8 +229,9 @@ export default function Post() {
       const inputValue = addressBox;
       if (inputValue.trim() !== "") {
         const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue}`
+          `http://localhost:3001/search?q=${inputValue, "UBC"}`
         );
+        console.log("response", response);
         searchData = await response.json();
         setData(searchData);
       } else {

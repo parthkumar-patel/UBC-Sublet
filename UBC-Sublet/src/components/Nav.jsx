@@ -39,7 +39,7 @@ export default function Navbar() {
       inputValue = e.target.value.trim();
       if (inputValue) {
         const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue}`
+          `http://localhost:3001/search?q=${inputValue, "UBC"}`
         );
         console.log("response", response);
         if (response.ok) {
