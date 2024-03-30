@@ -12,12 +12,14 @@ import {
 } from "firebase/firestore";
 import { Card, Col, Image, Row } from "react-bootstrap";
 import "./styles/profile.css";
+import Success from "../components/Success";
 
 export default function PersonalProfile() {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = UserAuth();
   const [allImage, setAllImage] = useState([]);
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -35,7 +37,7 @@ export default function PersonalProfile() {
     }
 
     fetchData();
-  }, []);
+  }, [allImage]);
 
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
@@ -99,15 +101,15 @@ export default function PersonalProfile() {
       </div>
     );
   } else {
-    {console.log(filteredImages)}
     const cards = filteredImages.map((item) => (
-      <CardComponent key={item._id} item={item} db={db} />
+      <CardComponent key={item._id} item={item} setDeleted={setDeleted} />
     ));
     content = <section className="cards-lists">{cards}</section>;
   }
 
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
+      {deleted && <Success msg="Your listing has been successfully deleted!" />}
       <div className="user-profile">
         <Row className="profile-row justify-content-center">
           <Card className="profile-card">

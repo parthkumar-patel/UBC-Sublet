@@ -78,7 +78,7 @@ const UploadImages = (prop) => {
 
     setUploading(true);
 
-    if (uploadImages.length > 0) {
+    if (uploadImages.length >= 5) {
       for (let i = 0; i < uploadImages.length; i++) {
         const uploadImage = uploadImages[i];
         const fileName = `image_${Date.now()}_${uploadImage.name}`;
@@ -96,7 +96,7 @@ const UploadImages = (prop) => {
       }
       setSuccess(true);
     } else {
-      console.error("No images selected");
+      alert("Please upload min of 5 images");
     }
 
     setUploading(false);
@@ -211,10 +211,8 @@ const UploadImages = (prop) => {
       `}
         </style>
       </div>
-      {success ? (
+      {success && (
         <Success msg="Your Images have been successfully uploaded!" />
-      ) : (
-        <></>
       )}
       <label className="upload-label">
         + Add Images

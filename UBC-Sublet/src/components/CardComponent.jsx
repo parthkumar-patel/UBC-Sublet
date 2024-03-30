@@ -6,8 +6,7 @@ import axios from "axios";
 
 export default function CardComponent(prop) {
   const navigate = useNavigate();
-  const [error, setError] = useState(null); 
-  const [deleted, setDeleted] = useState(false);
+  // const [error, setError] = useState(null); 
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -15,19 +14,15 @@ export default function CardComponent(prop) {
   };
 
   const handleClickDelete = async () => {
-    // Logic to delete the card
     try {
-      // Send DELETE request to backend endpoint
       await axios.delete(
         `http://localhost:3001/sublets/documents/${prop.item._id}`
       );
-      console.log("Document deleted successfully");
       window.location.reload();
-      setDeleted(true);
+      prop.setDeleted(true);
     } catch (error) {
-      // Handle errors
       console.error("Error deleting document:", error);
-      setError("An error occurred while deleting the document");
+      // setError("An error occurred while deleting the document");
     }
   };
 
