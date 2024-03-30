@@ -19,26 +19,6 @@ export default function PersonalProfile() {
   const { user } = UserAuth();
   const [allImage, setAllImage] = useState([]);
 
-
-  // Loop through each delete button and add a click event listener  
-
-  // const handleClickDelete = async (cardId) => {
-  //   try {
-  //     // Send DELETE request to backend endpoint
-  //     await axios.delete(`/sublets/documents/${cardId}`);
-  //     console.log('Document deleted successfully');
-
-  //     // Update UI to reflect deletion (optional)
-  //     // For example, you can filter out the deleted card from the list
-  //   } catch (error) {
-  //     // Handle errors
-  //     console.error('Error deleting document:', error);
-  //     setError('An error occurred while deleting the document');
-  //   }
-  // };
-
-
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -55,7 +35,7 @@ export default function PersonalProfile() {
     }
 
     fetchData();
-  }, []); // Ensure user_id is provided as a dependency if it's used inside the useEffect
+  }, []);
 
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
@@ -76,20 +56,19 @@ export default function PersonalProfile() {
 
     const q = query(colRef);
 
-    // Subscribe to real-time updates on 'profiles' collection
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const newProfiles = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
       setProfiles(newProfiles);
+      console.log(newProfiles);
       setLoading(false);
     });
 
     return () => unsubscribe();
   }, [user]);
 
-  // Redirect to sign-in page if user is not authenticated
   if (!user) {
     return <Navigate to="/login" />;
   }
@@ -99,6 +78,7 @@ export default function PersonalProfile() {
   }
 
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
+  console.log(userProfile);
   if (!userProfile) {
     return (
       <div style={{ marginTop: "-65px" }}>
@@ -119,9 +99,9 @@ export default function PersonalProfile() {
       </div>
     );
   } else {
+    {console.log(filteredImages)}
     const cards = filteredImages.map((item) => (
-      <CardComponent key={item._id} item={item} />
-      
+      <CardComponent key={item._id} item={item} db={db} />
     ));
     content = <section className="cards-lists">{cards}</section>;
   }
@@ -153,27 +133,16 @@ export default function PersonalProfile() {
                     </div>
                   </div>
                 )}
-
               </div>
             </Card.Body>
-            </Card>
+          </Card>
         </Row>
-
       </div>
-      
 
-      <div className="cards" >
-
-        
+      <div className="cards">
         <h1 className="mt-5 pt-4 listing">My Listings</h1>
-
         {userProfile && content}
       </div>
-      
-  </div>
- 
-
-      
-
+    </div>
   );
 }
