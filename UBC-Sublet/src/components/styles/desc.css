@@ -621,3 +621,119 @@
   text-align: left;
   width: 576px;
 }
+
+/* .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  /* z-index: 1000; /* Make sure it's above other content */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+} */ 
+
+/* .modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+
+
+/* .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+} */
+
+
+/* Apply styles to the slider container */
+.slider-container {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the slider horizontally */
+}
+
+/* Apply styles to individual slider images */
+.slider-image {
+  width: 100%; /* Ensure images fill the width of the slider */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add rounded corners */
+}
+
+/* Apply styles to slider navigation arrows */
+.slick-prev,
+.slick-next {
+  font-size: 24px; /* Adjust arrow size */
+  color: #333; /* Arrow color */
+  z-index: 1; /* Ensure arrows appear above images */
+}
+
+/* Apply styles to slider dots */
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+/* Apply styles to individual dot indicators */
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+}
+
+/* Apply styles to active dot */
+.slick-dots li button {
+  font-size: 12px;
+  color: #333; /* Dot color */
+  border: none;
+  background-color: transparent;
+}
+
+/* Apply styles to inactive dots */
+.slick-dots li button:hover {
+  color: #666; /* Dot color on hover */
+}
+
+/* Apply styles to modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Apply styles to modal content */
+.modal {
+  background-color: #fff; /* Modal background color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+/* Apply styles to close button */
+.image-slider {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.image-slider .slick-dots {
+  bottom: -30px;
+}
+.image-slider img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
