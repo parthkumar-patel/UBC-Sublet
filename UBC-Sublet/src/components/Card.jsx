@@ -44,7 +44,7 @@ export default function Card() {
           return dateA - dateB;
         });
 
-        setAllImage(sortedData.slice(0, 5)); // Set only the first four sorted images
+        setAllImage(sortedData.slice(0, 8)); // Set only the first four sorted images
       })
       .catch((error) => {
         console.error("Error fetching data:", error);

@@ -17,6 +17,7 @@
 .main-img img {
   width: 100%;
   height: 512px;
+  cursor: pointer;
 }
 
 .side-images {
@@ -24,6 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   max-height: fit-content;
+  cursor: pointer;
 }
 
 .desc-img {

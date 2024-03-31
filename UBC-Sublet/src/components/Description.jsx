@@ -85,7 +85,7 @@ export default function Descrition() {
       {modalOpen && (
         <div className="image-slider">
            <Slider {...settings}>
-            {data.rooms.slice(1, 5).map((image, index) => (
+            {data.rooms.map((image, index) => (
               
             <div key={index}>
              
