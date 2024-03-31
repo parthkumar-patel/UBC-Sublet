@@ -1,13 +1,17 @@
 #cards-lists {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 0px;
   margin-left: 26px;
   flex-flow: row wrap;
   flex-direction: row;
-  padding: 0 33px;
+  padding: 0 100px;
   box-sizing: border-box;
   flex-basis: calc(50% - 20px);
+}
+
+#viewAllsublets {
+  left: -400px;
 }
 
 .delete {
@@ -37,7 +41,7 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 105px;
-  padding-top: 42px;
+  padding-top: 7px;
   padding-bottom: 8px;
   margin-bottom: -150px;
 }
@@ -47,6 +51,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
   color: #1d194e;
+  margin-top: 140px;
 }
 
 .view-all-sublet {
@@ -277,13 +282,14 @@
     flex-wrap: wrap;
     display: flex;
     flex-basis: calc(59% - 20px);
+    left: 5%
   }
 }
 
 .cards-list .container-3-parent {
   width: calc((110% - 40px) / 3);
   margin-bottom: 20px;
-  left: -54px;
+  left: 7%;
   margin-right: 7%;
   margin-top: 8%;
 }
@@ -292,8 +298,8 @@
   width: calc((100% - 40px) / 3);
   margin-bottom: 20px;
 
-  left: -45px;
-  margin-right: 7%;
+  left: 7%;
+  margin-right: 0%;
 }
 
 @media only screen and (min-width: 860px) and (max-width: 983px) {
