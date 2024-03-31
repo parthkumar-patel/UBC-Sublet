@@ -32,12 +32,18 @@
   background-color: #171a1f;
 }
 
+.featured-viewall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-#featuredi {
-  margin-left: -580px;
-  margin-top: 100px !important;
-  font-size: 30px;
-  font-style: italic;
+.viewallsublet {
+  width: 10%;
+  height: 40px;
+  margin-left: 0;
+  margin-top: 5%;
+  max-height: 100px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -80,7 +86,7 @@
 
 .carousel-item img {
   height: 100%;
-  object-fit: cover; /* This will crop the image to cover the entire container */
+  object-fit: cover;
   object-position: center;
 }
 
@@ -275,30 +281,20 @@
   margin-right: 7%;
 }
 
-.featuredITems {
-  top: 680px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 120%;
-  font-weight: 400;
-  left: 650px;
-  position: absolute;
-}
-
 @media only screen and (min-width: 860px) and (max-width: 983px) {
-  #featuredi {
+  .featured {
     margin-top: -10px;
   }
 }
 
 @media only screen and (max-width: 860px) {
-  #featuredi {
+  .featured {
     margin-top: -200px;
   }
 }
 
 @media only screen and (max-width: 450px) {
-  #featuredi {
+  .featured {
     margin-left: -640px;
     font-style: italic;
     font-size: large;
@@ -321,7 +317,6 @@
     max-width: 283px;
     top: -80px;
     left: 109px;
-    /* border-radius: 6px; */
     background-color: #fff;
     border-radius: 20px 20px 20px 20px;
     box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
