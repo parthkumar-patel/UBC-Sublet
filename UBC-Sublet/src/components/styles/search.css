@@ -1,6 +1,6 @@
 #imgFluid {
-  width: 1400px;
-  height: 680px;
+  width: 1300px;
+  height: 600px;
   margin-top: 5px;
   border-radius: 10px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
@@ -19,17 +19,22 @@
 }
 
 .search-bar:hover {
-  scale: 1.02;
-  animation: keyframes-fill-search 0.5s;
+  transform: scale(1.02); 
+  transition: transform 0.3s ease; 
+  animation: keyframes-fill-search 0.7s forwards; 
 }
 
 @keyframes keyframes-fill-search {
   0% {
-    transform: scale(0);
+    transform: scale(1);
   }
 
   50% {
-    transform: scaleY(1.2);
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1.02);
   }
 }
 

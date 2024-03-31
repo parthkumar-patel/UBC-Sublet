@@ -42,9 +42,9 @@ export default function Card() {
 
   return (
     <div>
-      <div className="featured-viewall">
-        <div className="featured">Featured sublets</div>
-        <button className="btn btn-dark " onClick={handleViewAll}>
+      <div className="featured-view-all">
+        <div className="featured-sublet">Featured Sublets</div>
+        <button className="view-all-sublet" onClick={handleViewAll}>
           View all Sublets
         </button>
       </div>

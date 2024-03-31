@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  margin-left: 9px;
+  margin-left: 26px;
   flex-flow: row wrap;
   flex-direction: row;
   padding: 0 33px;
@@ -32,19 +32,34 @@
   background-color: #171a1f;
 }
 
-.featured-viewall {
+.featured-view-all {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-inline: 105px;
+  padding-top: 42px;
+  padding-bottom: 8px;
+  margin-bottom: -150px;
 }
 
-.viewallsublet {
-  width: 10%;
-  height: 40px;
-  margin-left: 0;
-  margin-top: 5%;
-  max-height: 100px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.featured-sublet {
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+  color: #1d194e;
+}
+
+.view-all-sublet {
+  background-color: rgb(19, 14, 61);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-sublet:hover {
+  background-color: #1a8bc2;
 }
 
 .cardImg {
@@ -282,25 +297,20 @@
 }
 
 @media only screen and (min-width: 860px) and (max-width: 983px) {
-  .featured {
+  .featured-sublet {
     margin-top: -10px;
   }
 }
 
 @media only screen and (max-width: 860px) {
-  .featured {
+  .featured-sublet {
     margin-top: -200px;
   }
 }
 
 @media only screen and (max-width: 450px) {
-  .featured {
-    margin-left: -640px;
-    font-style: italic;
-    font-size: large;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    margin-top: -220px;
+  .featured-sublet {
+    font-family: "Poppins" sans-serif;
     font-size: 30px;
   }
 
