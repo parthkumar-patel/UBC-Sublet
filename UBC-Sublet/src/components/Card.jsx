@@ -44,14 +44,14 @@ export default function Card() {
     <div>
       <div className="featured-view-all">
         <div className="featured-sublet">Featured Sublets</div>
-      </div>
-      <button className="view-all-sublet" id = "viewAllsublets" onClick={handleViewAll} style = {{ marginLeft: "-60%", marginTop: "-29px", marginBottom: "-100px" }}>
+        <button className="view-all-sublet" onClick={handleViewAll}>
           View all Sublets
         </button>
+      </div>
       <section
         className="cards-list"
         id="cards-lists"
-        style={{ marginTop: "90px" }}
+        style={{ paddingTop: "40px" }}
       >
         {cards}
       </section>

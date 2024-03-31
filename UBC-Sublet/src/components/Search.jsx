@@ -14,7 +14,7 @@ export default function Search() {
 
       if (inputValue.trim() !== "") {
         const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue, "UBC"}`
+          `http://localhost:3001/search?q=${(inputValue, "UBC")}`
         );
         const searchData = await response.json();
         setData(searchData);
@@ -47,7 +47,7 @@ export default function Search() {
         className="d-flex search-bar"
         style={{
           top: "82%",
-          left: "17.5%",
+          left: "10%",
           right: "50%",
         }}
       >
