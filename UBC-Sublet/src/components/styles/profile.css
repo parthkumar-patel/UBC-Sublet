@@ -10,6 +10,8 @@
   flex: 1;
   align-items: center;
   margin-top: 100px;
+  margin-left: 40px;
+  margin-right: -70px;
 }
 
 .image-col {
@@ -34,7 +36,6 @@
   width: 360px;
 }
 
-
 .card {
   box-sizing: border-box;
   width: 400px;
@@ -54,7 +55,7 @@
   color: black;
 }
 .card icon {
-  margin-left : -40px;
+  margin-left: -40px;
 }
 .card:hover {
   border: 1px solid black;
@@ -162,9 +163,6 @@ p {
   cursor: pointer;
   display: flex;
 }
-
-
-
 
 .no-listing-msg {
   font-size: 18px;

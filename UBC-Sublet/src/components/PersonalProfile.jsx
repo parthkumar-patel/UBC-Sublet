@@ -12,32 +12,14 @@ import {
 } from "firebase/firestore";
 import { Card, Col, Image, Row } from "react-bootstrap";
 import "./styles/profile.css";
+import Success from "../components/Success";
 
 export default function PersonalProfile() {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = UserAuth();
   const [allImage, setAllImage] = useState([]);
-
-
-  // Loop through each delete button and add a click event listener  
-
-  // const handleClickDelete = async (cardId) => {
-  //   try {
-  //     // Send DELETE request to backend endpoint
-  //     await axios.delete(`/sublets/documents/${cardId}`);
-  //     console.log('Document deleted successfully');
-
-  //     // Update UI to reflect deletion (optional)
-  //     // For example, you can filter out the deleted card from the list
-  //   } catch (error) {
-  //     // Handle errors
-  //     console.error('Error deleting document:', error);
-  //     setError('An error occurred while deleting the document');
-  //   }
-  // };
-
-
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -55,7 +37,7 @@ export default function PersonalProfile() {
     }
 
     fetchData();
-  }, []); // Ensure user_id is provided as a dependency if it's used inside the useEffect
+  }, [allImage]);
 
   const firebaseConfig = {
     apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
@@ -76,20 +58,19 @@ export default function PersonalProfile() {
 
     const q = query(colRef);
 
-    // Subscribe to real-time updates on 'profiles' collection
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const newProfiles = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
       setProfiles(newProfiles);
+      console.log(newProfiles);
       setLoading(false);
     });
 
     return () => unsubscribe();
   }, [user]);
 
-  // Redirect to sign-in page if user is not authenticated
   if (!user) {
     return <Navigate to="/login" />;
   }
@@ -99,6 +80,7 @@ export default function PersonalProfile() {
   }
 
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
+  console.log(userProfile);
   if (!userProfile) {
     return (
       <div style={{ marginTop: "-65px" }}>
@@ -120,14 +102,14 @@ export default function PersonalProfile() {
     );
   } else {
     const cards = filteredImages.map((item) => (
-      <CardComponent key={item._id} item={item} />
-      
+      <CardComponent key={item._id} item={item} setDeleted={setDeleted} />
     ));
     content = <section className="cards-lists">{cards}</section>;
   }
 
   return (
     <div className="profile-wrapper" style={{ marginTop: "-65px" }}>
+      {deleted && <Success msg="Your listing has been successfully deleted!" />}
       <div className="user-profile">
         <Row className="profile-row justify-content-center">
           <Card className="profile-card">
@@ -153,27 +135,16 @@ export default function PersonalProfile() {
                     </div>
                   </div>
                 )}
-
               </div>
             </Card.Body>
-            </Card>
+          </Card>
         </Row>
-
       </div>
-      
 
-      <div className="cards" >
-
-        
+      <div className="cards">
         <h1 className="mt-5 pt-4 listing">My Listings</h1>
-
         {userProfile && content}
       </div>
-      
-  </div>
- 
-
-      
-
+    </div>
   );
 }

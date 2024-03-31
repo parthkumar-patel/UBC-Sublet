@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/post.css";
 import UploadImages from "./UploadImages";
 import { UserAuth } from "../context/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -14,6 +15,7 @@ export default function Post() {
   const [roomsFor, setRooms] = useState([]);
   const [data, setData] = useState({ latitude: "", longitude: "" });
   const { user } = UserAuth();
+  const navigate = useNavigate();
 
   let isFinalStep = false;
 
@@ -229,7 +231,7 @@ export default function Post() {
       const inputValue = addressBox;
       if (inputValue.trim() !== "") {
         const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue, "UBC"}`
+          `http://localhost:3001/search?q=${(inputValue, "UBC")}`
         );
         console.log("response", response);
         searchData = await response.json();
@@ -297,7 +299,6 @@ export default function Post() {
     console.log("done");
     try {
       const response = await fetch("http://localhost:3001/sublets", {
-        // console.log("done3");
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -306,14 +307,13 @@ export default function Post() {
       });
       if (response.ok) {
         console.log("Form data saved successfully");
-        // Handle success response
+        window.scrollTo(0, 0);
+        return navigate("/");
       } else {
         console.error("Failed to save form data:", response.statusText);
-        // Handle error response
       }
     } catch (error) {
       console.error("Error saving form data:", error);
-      // Handle error
     }
   };
   return (

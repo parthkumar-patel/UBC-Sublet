@@ -97,8 +97,8 @@ export default function Descrition() {
             {data.numberOfRoomsAvailable}
           </h2>
           <div className="month1-br4ba">
-            ${data.pricing[0].monthlyRent}/month•{data.roomType}•
-            {data.numberOfRoomsAvailable}
+            ${data.pricing[0].monthlyRent}/month• {data.numberOfRoomsAvailable}
+            BR • {data.roomType}
           </div>
         </section>
         <section className="about-this-place-parent">
@@ -110,7 +110,6 @@ export default function Descrition() {
             <div className="line">
               <b className="amenities">Amenities</b>
               <div className="deposit-rent-frame">
-                
                 <div className="bonus-button-3">
                   <div className="hover-me">{furnished}</div>
                 </div>
@@ -129,7 +128,6 @@ export default function Descrition() {
                 <button className="bonus-button-7">
                   <div className="hover-me">Included</div>
                 </button>
-                
               </div>
             </div>
           </div>

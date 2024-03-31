@@ -211,10 +211,8 @@ const UploadImages = (prop) => {
       `}
         </style>
       </div>
-      {success ? (
+      {success && (
         <Success msg="Your Images have been successfully uploaded!" />
-      ) : (
-        <></>
       )}
       <label className="upload-label">
         + Add Images
