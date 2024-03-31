@@ -2,6 +2,10 @@ import "./styles/desc.css";
 import Contact from "./Contact";
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 export default function Descrition() {
@@ -9,6 +13,27 @@ export default function Descrition() {
   const [furnished, setfurnished] = useState([]);
   const [utensils, setutensils] = useState([]);
   const [Utilities, setUtilities] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [clickedImageIndex, setClickedImageIndex] = useState(0);
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+  
+
+  const openModal = (index) => {
+    setClickedImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+
 
   const { data } = location.state;
   console.log(data);
@@ -35,16 +60,36 @@ export default function Descrition() {
   return (
     <div className="macbook-air-2">
       <div className="desc-img-container">
-        <div className="main-img">
+        <div className="main-img" onClick={() => openModal(0)}>
           <img src={data.rooms[0]} alt="" className="desc-img" />
         </div>
-        <div className="side-images">
+        <div className="side-images" onClick={() => openModal(0)}>
           <img src={data.rooms[1]} alt="" className="desc-img" />
           <img src={data.rooms[2]} alt="" className="desc-img" />
           <img src={data.rooms[3]} alt="" className="desc-img" />
           <img src={data.rooms[4]} alt="" className="desc-img" />
         </div>
       </div>
+
+      {modalOpen && (
+      <div className="modal-overlay">
+        <div className="modal">
+          <button className="close-btn" onClick={closeModal}>Close</button>
+          <div className="modal-content">
+            <Slider {...sliderSettings}>
+              {data.rooms.map((room, index) => (
+                <div key={index}>
+                  <img src={room} alt={`Image ${index}`} />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div>
+    )}
+
+
+
       <div className="form-wrapper">
         <section className="sunny-1br-in-marine-drive-parent">
           <h2 className="sunny-1br-in">
@@ -102,7 +147,7 @@ export default function Descrition() {
               </div>
             </div>
             <div className="payment-details1">
-              <div className="first-months-rent">First Month’s Rent</div>
+              <div className="first- months-rent">First Month’s Rent</div>
               <div className="div">${data.pricing[0].monthlyRent}</div>
             </div>
           </div>
