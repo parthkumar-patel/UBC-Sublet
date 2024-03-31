@@ -1,6 +1,6 @@
 import "./styles/desc.css";
 import Contact from "./Contact";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
