@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 
+
 export default function Descrition() {
   const location = useLocation();
   const [furnished, setfurnished] = useState([]);
@@ -15,16 +16,21 @@ export default function Descrition() {
   const [Utilities, setUtilities] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(0);
-  const sliderSettings = {
+  const settings = {    
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
   
 
   const openModal = (index) => {
+    
+    
     setClickedImageIndex(index);
     setModalOpen(true);
   };
@@ -57,13 +63,18 @@ export default function Descrition() {
     }
   }, [data]); //
 
+  if (data && data.rooms) {
+    data.rooms.forEach((room, index) => {
+      console.log(`Image ${index}:`, room); // Log each room image
+    });
+  }
   return (
     <div className="macbook-air-2">
       <div className="desc-img-container">
-        <div className="main-img" onClick={() => openModal(0)}>
+        <div className="main-img" onClick={() => openModal()}>
           <img src={data.rooms[0]} alt="" className="desc-img" />
         </div>
-        <div className="side-images" onClick={() => openModal(0)}>
+        <div className="side-images" onClick={() => openModal()}>
           <img src={data.rooms[1]} alt="" className="desc-img" />
           <img src={data.rooms[2]} alt="" className="desc-img" />
           <img src={data.rooms[3]} alt="" className="desc-img" />
@@ -72,21 +83,22 @@ export default function Descrition() {
       </div>
 
       {modalOpen && (
-      <div className="modal-overlay">
-        <div className="modal">
-          <button className="close-btn" onClick={closeModal}>Close</button>
-          <div className="modal-content">
-            <Slider {...sliderSettings}>
-              {data.rooms.map((room, index) => (
-                <div key={index}>
-                  <img src={room} alt={`Image ${index}`} />
-                </div>
-              ))}
-            </Slider>
-          </div>
+        <div className="image-slider">
+           <Slider {...settings}>
+            {data.rooms.slice(1, 5).map((image, index) => (
+              
+            <div key={index}>
+             
+              <img src={image} alt={`Image ${index}`} className="desc-img" />
+              
+            </div>
+    
+          ))}
+          </Slider>
         </div>
-      </div>
-    )}
+        
+        
+      )}
 
 
 
