@@ -14,7 +14,7 @@
 
 .footer-section {
   flex: 1;
-  margin: 0 20px;
+  margin: 0 227px;
 }
 
 .footer-section h3 {
@@ -72,6 +72,8 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 .developer-link {
