@@ -35,22 +35,24 @@ export default function Navbar() {
 
   const handleCoordinates = async (e) => {
     try {
-      let inputValue = "";
-      inputValue = e.target.value.trim();
-      if (inputValue) {
-        const response = await fetch(
-          `http://localhost:3001/search?q=${inputValue, "UBC"}`
-        );
-        console.log("response", response);
-        if (response.ok) {
+      const inputValue = e.target.value;
+
+      if (inputValue.trim() !== "") {
+        if (inputValue.toUpperCase() != "UBC") {
+          const response = await fetch(
+            `http://localhost:3001/search?q=${inputValue + " UBC"}`
+          );
           const searchData = await response.json();
-          console.log(searchData.longitude);
           setData(searchData);
         } else {
-          console.error("Search request failed:", response.statusText);
+          const response = await fetch(
+            `http://localhost:3001/search?q=${inputValue}`
+          );
+          const searchData = await response.json();
+          setData(searchData);
         }
       } else {
-        console.log("Input is empty");
+        setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
       console.error("Error:", error);
