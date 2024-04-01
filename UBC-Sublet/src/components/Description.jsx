@@ -11,8 +11,8 @@ export default function Descrition() {
   const [furnished, setfurnished] = useState([]);
   const [utensils, setutensils] = useState([]);
   const [Utilities, setUtilities] = useState([]);
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const [clickedImageIndex, setClickedImageIndex] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [clickedImageIndex, setClickedImageIndex] = useState(0);
   const [wifi, setWifi] = useState(0);
   const settings = {
     dots: true,
@@ -25,17 +25,20 @@ export default function Descrition() {
     cssEase: "linear",
   };
 
-  // const openModal = (index) => {
-  //   setClickedImageIndex(index);
-  //   setModalOpen(true);
-  // };
+  const openModal = (index) => {
+    setClickedImageIndex(index);
+    setModalOpen(true);
+  };
 
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   const { data } = location.state;
+  console.log(data);
+  console.log(data.amenities[0].furnished);
   useEffect(() => {
+    // Update the 'furnished' state based on the 'data' object
     if (data.amenities && data.amenities.length > 0) {
       if (data.amenities[0].furnished === true) {
         setfurnished("furnished");
@@ -62,41 +65,38 @@ export default function Descrition() {
 
   if (data && data.rooms) {
     data.rooms.forEach((room, index) => {
-      console.log(`Image ${index}:`, room);
+      console.log(`Image ${index}:`, room); // Log each room image
     });
   }
   return (
     <div className="macbook-air-2">
       <div className="desc-img-container">
-        {/* <div className="main-img" onClick={() => openModal()}> */}
-        <img src={data.rooms[0]} alt="" className="desc-img" />
-        {/* </div> */}
-        {/* <div className="side-images" onClick={() => openModal()}> */}
-        <img src={data.rooms[1]} alt="" className="desc-img" />
-        <img src={data.rooms[2]} alt="" className="desc-img" />
-        <img src={data.rooms[3]} alt="" className="desc-img" />
-        <img src={data.rooms[4]} alt="" className="desc-img" />
-        {/* </div> */}
+        <div className="main-img" onClick={() => openModal()}>
+          <img src={data.rooms[0]} alt="" className="desc-img" />
+        </div>
+        <div className="side-images" onClick={() => openModal()}>
+          <img src={data.rooms[1]} alt="" className="desc-img" />
+          <img src={data.rooms[2]} alt="" className="desc-img" />
+          <img src={data.rooms[3]} alt="" className="desc-img" />
+          <img src={data.rooms[4]} alt="" className="desc-img" />
+        </div>
       </div>
 
-      {/* {modalOpen && ( */}
-      <div className="image-slider">
-        <Slider {...settings}>
-          {data.rooms.map((image, index) => (
-            <div key={index}>
-              <img src={image} alt={`Image ${index}`} className="desc-img" />
-            </div>
-          ))}
-        </Slider>
-      </div>
-      {/* )} */}
+      {modalOpen && (
+        <div className="image-slider">
+          <Slider {...settings}>
+            {data.rooms.map((image, index) => (
+              <div key={index}>
+                <img src={image} alt={`Image ${index}`} className="desc-img" />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      )}
 
       <div className="form-wrapper">
         <section className="sunny-1br-in-marine-drive-parent">
-          <h2 className="sunny-1br-in">
-            {data.location[0].currentLocation} {data.location[0].buildingNumber}
-            {data.numberOfRoomsAvailable}
-          </h2>
+          <h2 className="sunny-1br-in">{data.location[0].currentLocation}</h2>
           <div className="month1-br4ba">
             ${data.pricing[0].monthlyRent}/month• {data.numberOfRoomsAvailable}
             BR • {data.roomType}
@@ -146,7 +146,7 @@ export default function Descrition() {
               </div>
             </div>
             <div className="payment-details1">
-              <div className="first- months-rent">First Month’s Rent</div>
+              <div className="first-months-rent">First Month’s Rent</div>
               <div className="div">${data.pricing[0].monthlyRent}</div>
             </div>
           </div>
