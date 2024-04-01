@@ -226,7 +226,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
   min-height: 107px;
   gap: 20px;
 }
@@ -733,6 +732,8 @@
 }
 .image-slider .slick-dots {
   bottom: -30px;
+  width: 105%;
+  height: 100px;
 }
 .image-slider img {
   max-width: 100%;

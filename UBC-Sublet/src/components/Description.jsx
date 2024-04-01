@@ -1,22 +1,20 @@
 import "./styles/desc.css";
 import Contact from "./Contact";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
-
 
 export default function Descrition() {
   const location = useLocation();
   const [furnished, setfurnished] = useState([]);
   const [utensils, setutensils] = useState([]);
   const [Utilities, setUtilities] = useState([]);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [clickedImageIndex, setClickedImageIndex] = useState(0);
-  const settings = {    
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const [clickedImageIndex, setClickedImageIndex] = useState(0);
+  const [wifi, setWifi] = useState(0);
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -26,79 +24,72 @@ export default function Descrition() {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
-  
 
-  const openModal = (index) => {
-    setClickedImageIndex(index);
-    setModalOpen(true);
-  };
+  // const openModal = (index) => {
+  //   setClickedImageIndex(index);
+  //   setModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
   const { data } = location.state;
-  console.log(data);
-  console.log(data.amenities[0].furnished);
   useEffect(() => {
-    // Update the 'furnished' state based on the 'data' object
     if (data.amenities && data.amenities.length > 0) {
       if (data.amenities[0].furnished === true) {
         setfurnished("furnished");
       } else {
         setfurnished("unfurnished");
       }
-    } if (data.amenities[0].utensile === true){ 
+    }
+    if (data.amenities[0].utensile === true) {
       setutensils("Utensils included");
     } else {
       setutensils("Utensils not included");
-    } if (data.amenities[0].Utilities === true) {
+    }
+    if (data.amenities[0].Utilities === true) {
       setUtilities("Utilities included");
     } else {
       setUtilities("Utilities not included");
+    }
+    if (data.amenities[0].wifi === true) {
+      setWifi("Wifi included");
+    } else {
+      setWifi("Wifi not included");
     }
   }, [data]); //
 
   if (data && data.rooms) {
     data.rooms.forEach((room, index) => {
-      console.log(`Image ${index}:`, room); // Log each room image
+      console.log(`Image ${index}:`, room);
     });
   }
   return (
     <div className="macbook-air-2">
       <div className="desc-img-container">
-        <div className="main-img" onClick={() => openModal()}>
-          <img src={data.rooms[0]} alt="" className="desc-img" />
-        </div>
-        <div className="side-images" onClick={() => openModal()}>
-          <img src={data.rooms[1]} alt="" className="desc-img" />
-          <img src={data.rooms[2]} alt="" className="desc-img" />
-          <img src={data.rooms[3]} alt="" className="desc-img" />
-          <img src={data.rooms[4]} alt="" className="desc-img" />
-        </div>
+        {/* <div className="main-img" onClick={() => openModal()}> */}
+        <img src={data.rooms[0]} alt="" className="desc-img" />
+        {/* </div> */}
+        {/* <div className="side-images" onClick={() => openModal()}> */}
+        <img src={data.rooms[1]} alt="" className="desc-img" />
+        <img src={data.rooms[2]} alt="" className="desc-img" />
+        <img src={data.rooms[3]} alt="" className="desc-img" />
+        <img src={data.rooms[4]} alt="" className="desc-img" />
+        {/* </div> */}
       </div>
 
-      {modalOpen && (
-        <div className="image-slider">
-           <Slider {...settings}>
-            {data.rooms.map((image, index) => (
-              
+      {/* {modalOpen && ( */}
+      <div className="image-slider">
+        <Slider {...settings}>
+          {data.rooms.map((image, index) => (
             <div key={index}>
-             
               <img src={image} alt={`Image ${index}`} className="desc-img" />
-              
             </div>
-    
           ))}
-          </Slider>
-        </div>
-        
-        
-      )}
-
-
+        </Slider>
+      </div>
+      {/* )} */}
 
       <div className="form-wrapper">
         <section className="sunny-1br-in-marine-drive-parent">
@@ -130,14 +121,14 @@ export default function Descrition() {
                   <div className="hover-me">{Utilities}</div>
                 </button>
                 <button className="bonus-button-5">
-                  <div className="hover-me">Included</div>
+                  <div className="hover-me">{wifi}</div>
                 </button>
-                <button className="bonus-button-6">
+                {/* <button className="bonus-button-6">
                   <div className="hover-me">Included</div>
                 </button>
                 <button className="bonus-button-7">
                   <div className="hover-me">Included</div>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
