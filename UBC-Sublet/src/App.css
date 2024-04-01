@@ -8,15 +8,7 @@ body {
   margin: 0;
   line-height: normal;
 }
-/* Search bar overlay adjustments */
-.search-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1;
-}
+
 /*------ Save Button ------*/
 .save-container {
   --color: #a5a5b0;

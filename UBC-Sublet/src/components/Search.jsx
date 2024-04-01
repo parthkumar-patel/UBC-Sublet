@@ -15,13 +15,13 @@ export default function Search() {
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
           const response = await fetch(
-            `http://localhost:3001/search?q=${(inputValue + " UBC")}`
+            `http://localhost:3001/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
           const response = await fetch(
-            `http://localhost:3001/search?q=${(inputValue)}`
+            `http://localhost:3001/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);
@@ -55,7 +55,7 @@ export default function Search() {
         className="d-flex search-bar"
         style={{
           top: "82%",
-          left: "17%",
+          left: "10%",
           right: "50%",
         }}
       >
