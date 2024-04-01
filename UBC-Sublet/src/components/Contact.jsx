@@ -1,8 +1,12 @@
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import send from "../assets/send.svg";
+import Success from "./Success";
+import Error from "./Error";
+import { UserAuth } from "../context/AuthContext";
 
 const Contact = () => {
+  const { user } = UserAuth;
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -28,21 +32,21 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_52z3m9k",
+        "service_xjeefuk",
         "template_sa7a2lr",
         {
           from_name: form.name,
           to_name: "Parth Patel",
           from_email: form.email,
           to_email: "parthrp15@gmail.com",
-          message: form.message,
+          message: form.message + " from:" + user.displayName + user.email,
         },
         "6bwc7JEUTgSgUzO0d"
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          <Success msg="Thank you. I will get back to you as soon as possible." />;
 
           setForm({
             name: "",
@@ -53,8 +57,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          <Error msg="Ahh, something went wrong. Please try again." />;
         }
       );
   };

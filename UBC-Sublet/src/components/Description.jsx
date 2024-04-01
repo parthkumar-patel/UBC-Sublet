@@ -29,8 +29,6 @@ export default function Descrition() {
   
 
   const openModal = (index) => {
-    
-    
     setClickedImageIndex(index);
     setModalOpen(true);
   };
