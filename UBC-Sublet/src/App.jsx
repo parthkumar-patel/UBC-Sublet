@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/desc" element={<Description />} />
         <Route path="/post" element={<Post />} />
         <Route path="/fav" element={<Favourite />} />
-        <Route path = "/aboutUs" element = {<AboutUs />} />
+        <Route path = "/about" element = {<AboutUs />} />
       </Routes>
     </AuthContextProvider>
   );
