@@ -117,7 +117,7 @@ export default function Post() {
       isFinalStep = true;
       console.log(isFinalStep);
       console.log("hi");
-      document.getElementById("nextBtn").innerHTML = "Submit";
+      document.getElementById("nextBtn").innerHTML = "Post";
     } else {
       isFinalStep = false;
       document.getElementById("nextBtn").innerHTML = "Next";
@@ -148,7 +148,7 @@ export default function Post() {
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
-    if (document.getElementById("nextBtn").innerHTML == "Submit") {
+    if (document.getElementById("nextBtn").innerHTML == "Post") {
       handleMongo();
     }
   };
@@ -611,7 +611,7 @@ export default function Post() {
                   }}
                   className="btn btn-primary mr-2"
                 >
-                  Back
+                  Previous
                 </button>
                 <button
                   type="button"

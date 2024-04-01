@@ -393,7 +393,7 @@ button:hover {
 
 #prevBtn {
   margin-top: 30%;
-  margin-left: -12%;
+  margin-left: 12%;
   border-radius: 10px;
   background-color: gray;
 }
@@ -457,20 +457,20 @@ button:hover {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 10px;
 }
 
 #nextBtn {
-  width: 60%;
+  width: 20%;
   margin-top: 20px;
-  margin-left: 50%;
   border-radius: 10px;
   font-size: large;
   background-color: black;
 }
 
 #prevBtn {
-  margin-left: 70%;
-  width: 60%;
+  /* margin-left: 120%; */
+  width: 20%;
 }
 .description {
   position: relative;
