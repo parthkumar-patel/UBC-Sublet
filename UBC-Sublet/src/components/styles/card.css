@@ -2,10 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-left: 0px;
   flex-flow: row wrap;
   flex-direction: row;
-  padding: 0px 229px;
+  padding: 0px 36px;
   box-sizing: border-box;
   flex-basis: calc(50% - 20px);
 }
@@ -36,7 +35,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 270px;
+  padding-inline: 90px;
   padding-top: 42px;
   padding-bottom: 8px;
   margin-top: 20px;

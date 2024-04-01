@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Descrition() {
+  window.scroll(0, 0);
   const location = useLocation();
   const [furnished, setfurnished] = useState([]);
   const [utensils, setutensils] = useState([]);

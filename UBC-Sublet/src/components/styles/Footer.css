@@ -61,3 +61,26 @@
 .footer-bottom p {
   margin: 0;
 }
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icons li {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.developer-link {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.developer-link:hover {
+  color: #24a0ed;
+}
