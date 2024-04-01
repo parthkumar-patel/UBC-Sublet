@@ -1,0 +1,57 @@
+.AboutUs {
+    display: flex;
+}
+#image1 {
+    margin-left: -20px;
+    width: 74%;
+}
+.pics {
+    max-height: 200%;
+    height: 200%;
+}
+#image2 {
+    margin-left: 10px;
+}
+
+/* h2 {
+    margin-top: 2%;
+    left: 40%;  
+    font-weight: bold;  
+} */
+/* .description .h2 {
+    font-weight: bold;
+} */
+
+.description {
+    width: 100%;
+    left: 1%;
+}
+
+.description h2 {
+    max-width: 100%;
+    width: 120%;
+    margin-top: -10%;
+    margin-left: 100px;
+}
+
+.ourMission {
+    margin-top: -40px;
+    margin-left: -48%;
+    font-size: 21px;
+    /* padding-left: 160px; */
+    padding-right: 120px;
+    line-height: 1.5; /* Adjust the value to increase or decrease line height */
+}
+
+.STORY {
+    margin-left: 35%;
+    margin-top: 10%;
+}
+#ourSTORY {
+    margin-left: -50%;
+    padding-left: 70px;
+    padding-right: 100px;
+    font-size: 21px;
+    margin-top: 5%;
+    line-height: 1.5;
+}
