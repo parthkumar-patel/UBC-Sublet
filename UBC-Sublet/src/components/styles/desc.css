@@ -226,7 +226,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
   min-height: 107px;
   gap: 20px;
 }
