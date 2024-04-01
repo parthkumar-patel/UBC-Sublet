@@ -16,10 +16,9 @@ export default function Card() {
       state: { viewAll: true }, // Add a flag to indicate view all sublets
     });
   };
-  
 
   function getImage() {
-    fetch("http://localhost:3001/subletslist", {
+    fetch("https://ubc-sublet-1.onrender.com/subletslist", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -45,7 +44,13 @@ export default function Card() {
     <div>
       <div className="featured-view-all">
         <div className="featured-sublet">Featured Sublets</div>
-        <button className="view-all-sublet" onClick={() => { window.location.href = "./post" }} style = {{ marginLeft: "55%"}}>
+        <button
+          className="view-all-sublet"
+          onClick={() => {
+            window.location.href = "./post";
+          }}
+          style={{ marginLeft: "55%" }}
+        >
           Post A Sublet
         </button>
         <button className="view-all-sublet" onClick={handleViewAll}>

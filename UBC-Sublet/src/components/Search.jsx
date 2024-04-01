@@ -1,10 +1,9 @@
 // import pond1 from "../assets/pond1.jpg";
-import upload from "../assets/UBC.jpg"
+import upload from "../assets/UBC.jpg";
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/search.css";
-
 
 export default function Search() {
   const [isOnlyUBC, setIsOnlyUBC] = useState(false); // State to track if the input value is "UBC"
@@ -19,14 +18,14 @@ export default function Search() {
         if (inputValue.toUpperCase() != "UBC") {
           setIsOnlyUBC(false);
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue + " UBC"}`
+            `https://ubc-sublet-1.onrender.com/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
           setIsOnlyUBC(true); // Set the flag to true if input value is "UBC"
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue}`
+            `https://ubc-sublet-1.onrender.com/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);

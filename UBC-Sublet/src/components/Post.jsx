@@ -232,18 +232,18 @@ export default function Post() {
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
           const response = await fetch(
-            `http://localhost:3001/search?q=${(inputValue + " UBC")}`
+            `https://ubc-sublet-1.onrender.com/search?q=${inputValue + " UBC"}`
           );
           console.log("response", response);
           searchData = await response.json();
           setData(searchData);
         } else {
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue}`
+            `https://ubc-sublet-1.onrender.com/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);
-          console.log(searchData)
+          console.log(searchData);
         }
       } else {
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
@@ -306,18 +306,21 @@ export default function Post() {
         furnished: b,
         utilities: c,
         utensile: d,
-        wifi: e
+        wifi: e,
       },
     };
     console.log("done");
     try {
-      const response = await fetch("http://localhost:3001/sublets", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://ubc-sublet-1.onrender.com/sublets",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
         console.log("Form data saved successfully");
         window.scrollTo(0, 0);
