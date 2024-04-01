@@ -232,14 +232,14 @@ export default function Post() {
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
           const response = await fetch(
-            `https://ubc-sublet-1.onrender.com/search?q=${inputValue + " UBC"}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue + " UBC"}`
           );
           console.log("response", response);
           searchData = await response.json();
           setData(searchData);
         } else {
           const response = await fetch(
-            `https://ubc-sublet-1.onrender.com/search?q=${inputValue}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);
@@ -311,16 +311,13 @@ export default function Post() {
     };
     console.log("done");
     try {
-      const response = await fetch(
-        "https://ubc-sublet-1.onrender.com/sublets",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
       if (response.ok) {
         console.log("Form data saved successfully");
         window.scrollTo(0, 0);

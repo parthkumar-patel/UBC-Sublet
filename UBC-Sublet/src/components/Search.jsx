@@ -18,14 +18,14 @@ export default function Search() {
         if (inputValue.toUpperCase() != "UBC") {
           setIsOnlyUBC(false);
           const response = await fetch(
-            `https://ubc-sublet-1.onrender.com/search?q=${inputValue + " UBC"}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
           setIsOnlyUBC(true); // Set the flag to true if input value is "UBC"
           const response = await fetch(
-            `https://ubc-sublet-1.onrender.com/search?q=${inputValue}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);

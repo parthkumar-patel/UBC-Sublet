@@ -25,7 +25,7 @@ export default function PersonalProfile() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://ubc-sublet-1.onrender.com/subletslist"
+          "https://ubc-sublet.onrender.com/subletslist"
         );
         const data = await response.json();
         const sortedData = data

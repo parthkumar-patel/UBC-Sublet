@@ -16,7 +16,7 @@ export default function CardComponent(prop) {
   const handleClickDelete = async () => {
     try {
       await axios.delete(
-        `https://ubc-sublet-1.onrender.com/sublets/documents/${prop.item._id}`
+        `https://ubc-sublet.onrender.com/sublets/documents/${prop.item._id}`
       );
       window.location.reload();
       prop.setDeleted(true);

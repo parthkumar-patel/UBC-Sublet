@@ -30,7 +30,7 @@ export default function SearchSublet() {
 
   function getLocationCordinates() {
     setentireData([]);
-    fetch("https://ubc-sublet-1.onrender.com/subletslist", {
+    fetch("https://ubc-sublet.onrender.com/subletslist", {
       method: "GET",
     })
       .then((res) => res.json())
