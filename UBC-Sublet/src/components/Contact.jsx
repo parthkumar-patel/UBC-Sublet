@@ -5,7 +5,7 @@ import Success from "./Success";
 import Error from "./Error";
 import { UserAuth } from "../context/AuthContext";
 
-const Contact = () => {
+const Contact = (prop) => {
   const { user } = UserAuth;
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -29,17 +29,21 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+    console.log(form.name);
+    console.log(prop.owner_name);
+    console.log(form.email);
+    console.log(prop.owner_email);
+    console.log(form.message);
     emailjs
       .send(
         "service_xjeefuk",
-        "template_sa7a2lr",
+        "template_gp8g6vt",
         {
           from_name: form.name,
-          to_name: "Parth Patel",
+          to_name: prop.owner_name,
           from_email: form.email,
-          to_email: "parthrp15@gmail.com",
-          message: form.message + " from:" + user.displayName + user.email,
+          to_email: prop.owner_email,
+          message: form.message,
         },
         "6bwc7JEUTgSgUzO0d"
       )
@@ -64,6 +68,7 @@ const Contact = () => {
 
   return (
     <div className="send-button-frame-wrapper mt-5 pt-3">
+      {console.log(user)}
       <div className="send-button-frame">
         <p className="sectionSubText">Get in touch.</p>
         <b className="contact">Contact</b>

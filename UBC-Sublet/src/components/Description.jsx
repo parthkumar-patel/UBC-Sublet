@@ -124,12 +124,6 @@ export default function Descrition() {
                 <button className="bonus-button-5">
                   <div className="hover-me">{wifi}</div>
                 </button>
-                {/* <button className="bonus-button-6">
-                  <div className="hover-me">Included</div>
-                </button>
-                <button className="bonus-button-7">
-                  <div className="hover-me">Included</div>
-                </button> */}
               </div>
             </div>
           </div>
@@ -153,7 +147,10 @@ export default function Descrition() {
           </div>
           <div className="frame6" />
         </div>
-        <Contact />
+        <Contact
+          owner_name={data.contactInformation[0].name}
+          owner_email={data.contactInformation[0].email}
+        />
       </div>
     </div>
   );
