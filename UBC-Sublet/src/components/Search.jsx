@@ -1,8 +1,10 @@
-import pond1 from "../assets/pond1.jpg";
+// import pond1 from "../assets/pond1.jpg";
+import upload from "../assets/UBC.jpg"
 import SearchIcon from "../assets/search.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/search.css";
+
 
 export default function Search() {
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ export default function Search() {
   return (
     <div className="position-relative" style={{ marginTop: "7%" }}>
       <img
-        src={pond1}
+        src={upload}
         id="imgFluid"
         className="img-fluid position-relative"
         alt="Homepage"
