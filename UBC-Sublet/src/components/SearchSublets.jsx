@@ -337,8 +337,7 @@ export default function SearchSublet() {
             fontSize: "15px",
           }}
         >
-          {" "}
-          Min Price{" "}
+          Min Price
         </label>
         <label
           htmlFor="customRange2"
@@ -362,6 +361,7 @@ export default function SearchSublet() {
           max="1000"
           id="customRange2"
           onChange={handlePriceChange}
+          value={priceRange}
           style={{
             maxInlineSize: "300px",
             marginTop: "275px",
@@ -404,6 +404,7 @@ export default function SearchSublet() {
           min="0"
           max="3000"
           id="customRange2"
+          // value={priceRange}
           onChange={handleMaxPriceChange}
           style={{
             maxInlineSize: "300px",
