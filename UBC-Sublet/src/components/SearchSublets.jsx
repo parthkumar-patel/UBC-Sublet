@@ -190,8 +190,8 @@ export default function SearchSublet() {
   });
 
   return (
-    <>
-      <div className="filters">
+    <div>
+      <div className="filters sticky-top">
         <h2
           style={
             {
@@ -522,11 +522,11 @@ export default function SearchSublet() {
             <h1> No search results found, please go back </h1>
           </div>
         ) : (
-          <section className="cards-lists" id="cards-lists2">
+          <section className="cards-lists search-cards" id="cards-lists2">
             {cards}
           </section>
         )}
       </div>
-    </>
+    </div>
   );
 }
