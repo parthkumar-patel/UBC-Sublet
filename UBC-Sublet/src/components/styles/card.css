@@ -254,7 +254,10 @@
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
   height: 440px;
+  transition: 0.5s;
 }
+
+
 .container-3-parent {
   display: flex;
   position: relative;
@@ -269,7 +272,10 @@
   flex-flow: row wrap;
   max-inline-size: 245px;
   margin-left: -23px;
+  cursor: pointer;
 }
+
+
 
 @media screen and (max-width: 10000px) {
   #cards-lists .container-3-parent {
@@ -323,4 +329,9 @@
     box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
     height: 440px;
   }
+}
+
+.container-3:hover {
+  padding-top: 30px;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.5);
 }
