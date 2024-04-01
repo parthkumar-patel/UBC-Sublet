@@ -7,6 +7,7 @@ import "./styles/search.css";
 
 
 export default function Search() {
+  const [isOnlyUBC, setIsOnlyUBC] = useState(false); // State to track if the input value is "UBC"
   const navigate = useNavigate();
   const [data, setData] = useState({ latitude: "", longitude: "" });
 
@@ -16,12 +17,14 @@ export default function Search() {
 
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
+          setIsOnlyUBC(false);
           const response = await fetch(
             `http://localhost:3001/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
+          setIsOnlyUBC(true); // Set the flag to true if input value is "UBC"
           const response = await fetch(
             `http://localhost:3001/search?q=${inputValue}`
           );
@@ -29,6 +32,7 @@ export default function Search() {
           setData(searchData);
         }
       } else {
+        setIsOnlyUBC(false);
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
@@ -41,7 +45,7 @@ export default function Search() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     navigate("/searchSubletss", {
-      state: { latitude: data.latitude, longitude: data.longitude },
+      state: { latitude: data.latitude, longitude: data.longitude, isOnlyUBC },
     });
   };
 

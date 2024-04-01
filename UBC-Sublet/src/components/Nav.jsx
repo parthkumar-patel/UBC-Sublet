@@ -14,6 +14,7 @@ import "./styles/nav.css";
 // const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
 export default function Navbar() {
+  const [isOnlyUBC, setIsOnlyUBC] = useState(false); // State to track if the input value is "UBC"
   const navigate = useNavigate();
   const { user, logOut } = UserAuth();
   const [data, setData] = useState({ latitude: "", longitude: "" });
@@ -28,7 +29,7 @@ export default function Navbar() {
 
   const handlePlaceChange = () => {
     navigate("/searchSubletss", {
-      state: { latitude: data.latitude, longitude: data.longitude },
+      state: { latitude: data.latitude, longitude: data.longitude, isOnlyUBC },
     });
     window.location.reload();
   };
@@ -36,22 +37,25 @@ export default function Navbar() {
   const handleCoordinates = async (e) => {
     try {
       const inputValue = e.target.value;
-
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
+          setIsOnlyUBC(false);
           const response = await fetch(
             `http://localhost:3001/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
+          setIsOnlyUBC(true); // Set the flag to true if input value is "UBC"
           const response = await fetch(
             `http://localhost:3001/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);
+          console.log(searchData);
         }
       } else {
+        setIsOnlyUBC(false);
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
