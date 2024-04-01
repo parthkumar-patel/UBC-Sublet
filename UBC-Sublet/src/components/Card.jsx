@@ -13,9 +13,10 @@ export default function Card() {
 
   const handleViewAll = () => {
     navigate("/searchSubletss", {
-      state: { latitude: 49.26060520000001, longitude: -123.2459939 },
+      state: { viewAll: true }, // Add a flag to indicate view all sublets
     });
   };
+  
 
   function getImage() {
     fetch("http://localhost:3001/subletslist", {

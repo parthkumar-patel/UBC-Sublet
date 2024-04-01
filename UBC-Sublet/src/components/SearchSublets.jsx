@@ -41,7 +41,7 @@ export default function SearchSublet() {
   useEffect(() => {
     // Create a variable to hold the new data to be added
     let newData = [];
-    if (location.state == null) {
+    if (location.state == null || location.state.viewAll) {
       entireData.forEach((data) => newData.push(data));
     } else {
       entireData.forEach((data) => {
