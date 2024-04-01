@@ -47,7 +47,7 @@ export default function Search() {
         className="d-flex search-bar"
         style={{
           top: "82%",
-          left: "10%",
+          left: "17%",
           right: "50%",
         }}
       >

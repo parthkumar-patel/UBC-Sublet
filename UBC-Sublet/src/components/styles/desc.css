@@ -733,6 +733,8 @@
 }
 .image-slider .slick-dots {
   bottom: -30px;
+  width: 105%;
+  height: 100px;
 }
 .image-slider img {
   max-width: 100%;

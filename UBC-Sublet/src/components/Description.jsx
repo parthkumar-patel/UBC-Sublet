@@ -89,7 +89,7 @@ export default function Descrition() {
               
             <div key={index}>
              
-              <img src={image} alt={`Image ${index}`} className="desc-img" />
+              <img src={image} alt={`Image ${index}`} className="desc-img"/>
               
             </div>
     
