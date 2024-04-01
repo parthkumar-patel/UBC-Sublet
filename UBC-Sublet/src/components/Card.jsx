@@ -44,6 +44,9 @@ export default function Card() {
     <div>
       <div className="featured-view-all">
         <div className="featured-sublet">Featured Sublets</div>
+        <button className="view-all-sublet" onClick={() => { window.location.href = "./post" }} style = {{ marginLeft: "55%"}}>
+          Post A Sublet
+        </button>
         <button className="view-all-sublet" onClick={handleViewAll}>
           View all Sublets
         </button>

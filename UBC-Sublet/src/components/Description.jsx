@@ -16,7 +16,8 @@ export default function Descrition() {
   const [Utilities, setUtilities] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(0);
-  const settings = {    
+  const [wifi, setWifi] = useState(0);
+  const settings = {     
     dots: true,
     infinite: true,
     speed: 500,
@@ -60,6 +61,10 @@ export default function Descrition() {
       setUtilities("Utilities included");
     } else {
       setUtilities("Utilities not included");
+    } if (data.amenities[0].wifi === true) {
+      setWifi("Wifi included");
+    } else {
+      setWifi("Wifi not included");
     }
   }, [data]); //
 
@@ -132,14 +137,14 @@ export default function Descrition() {
                   <div className="hover-me">{Utilities}</div>
                 </button>
                 <button className="bonus-button-5">
-                  <div className="hover-me">Included</div>
+                  <div className="hover-me">{wifi}</div>
                 </button>
-                <button className="bonus-button-6">
+                {/* <button className="bonus-button-6">
                   <div className="hover-me">Included</div>
                 </button>
                 <button className="bonus-button-7">
                   <div className="hover-me">Included</div>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

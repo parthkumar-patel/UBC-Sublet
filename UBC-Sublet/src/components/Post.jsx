@@ -254,6 +254,7 @@ export default function Post() {
     let b = false;
     let c = false;
     let d = false;
+    let e = false;
     radio2.forEach((data) => {
       // Update variables based on checkbox selection
       if (data == "Furnished") {
@@ -262,6 +263,8 @@ export default function Post() {
         c = true;
       } else if (data == "utensils") {
         d = true;
+      } else if (data == "wifi") {
+        e = true;
       }
     });
 
@@ -294,6 +297,7 @@ export default function Post() {
         furnished: b,
         utilities: c,
         utensile: d,
+        wifi: e
       },
     };
     console.log("done");
@@ -459,6 +463,16 @@ export default function Post() {
                     name="checkbox"
                     value="Utensils"
                     checked={selectedOptionAmenities.includes("Utensils")}
+                    onChange={handleOptionChange2}
+                  />
+                </label>
+                <label className="container2">
+                  Wifi
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="Wifi"
+                    checked={selectedOptionAmenities.includes("Wifi")}
                     onChange={handleOptionChange2}
                   />
                 </label>

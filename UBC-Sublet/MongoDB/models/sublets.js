@@ -41,6 +41,7 @@ const subletsSchema = new Schema({
         furnished: Boolean,
         utilities: Boolean,
         utensile: Boolean,
+        wifi: Boolean
     }],
 
     //
