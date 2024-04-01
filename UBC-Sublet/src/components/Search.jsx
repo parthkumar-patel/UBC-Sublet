@@ -13,11 +13,19 @@ export default function Search() {
       const inputValue = e.target.value;
 
       if (inputValue.trim() !== "") {
-        const response = await fetch(
-          `http://localhost:3001/search?q=${(inputValue, "UBC")}`
-        );
-        const searchData = await response.json();
-        setData(searchData);
+        if (inputValue.toUpperCase() != "UBC") {
+          const response = await fetch(
+            `http://localhost:3001/search?q=${(inputValue + " UBC")}`
+          );
+          const searchData = await response.json();
+          setData(searchData);
+        } else {
+          const response = await fetch(
+            `http://localhost:3001/search?q=${(inputValue)}`
+          );
+          const searchData = await response.json();
+          setData(searchData);
+        }
       } else {
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
