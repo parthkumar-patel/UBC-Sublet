@@ -261,9 +261,9 @@ export default function Post() {
         b = true;
       } else if (data == "Utilities") {
         c = true;
-      } else if (data == "utensils") {
+      } else if (data == "Utensils") {
         d = true;
-      } else if (data == "wifi") {
+      } else if (data == "Wifi") {
         e = true;
       }
     });
