@@ -17,10 +17,11 @@
 #cards-lists2 {
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 81px;
   margin-left: 29%;
-  margin-top: -700px;
+  margin-top: -899px;
   left: 44%;
+  top: -20%;
   flex-flow: row wrap;
   flex-direction: row;
   padding: 0 33px;
@@ -383,7 +384,4 @@
     box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 4px 9px rgba(23, 26, 31, 0.11);
     height: 440px;
   }
-}
-.search-cards {
-  margin-top: 100px;
 }
