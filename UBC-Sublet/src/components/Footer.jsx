@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const handleChange = () => {
+  const handleChange = (event) => {
+    event.preventDefault(); // Prevent default behavior
+
     navigate("/about");
   };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -17,7 +20,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/about" onClick={handleChange}>About Us</a>
+              <a href="#" onClick={handleChange}>About Us</a>
             </li>
           </ul>
         </div>
