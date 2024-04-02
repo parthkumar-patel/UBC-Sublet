@@ -26,7 +26,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (user != null) {
-      // navigate("/");
+      navigate("/");
     }
   }, [navigate, user]);
 
@@ -41,7 +41,7 @@ export default function SignIn() {
   const handleGoogleSignIn = async () => {
     console.log("error");
     try {
-      await googleSignIn();
+      return googleSignIn();
     } catch (error) {
       console.log(error);
     }
