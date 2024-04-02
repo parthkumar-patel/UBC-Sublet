@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
 export default function SignIn () {
-  const { user, googleSignIn } = UserAuth();
+  const { user } = UserAuth();
   const navigate = useNavigate();
 
   const auth = getAuth();
@@ -20,7 +20,7 @@ export default function SignIn () {
         e.target.reset();
       })
       .catch((err) => {
-        console.error("Error:", err.message);
+        alert("Error:", err.message);
       });
   };
   console.log(user);
@@ -38,13 +38,13 @@ export default function SignIn () {
     navigate("/forgot-password");
   }
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     await googleSignIn();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="login-form-container">

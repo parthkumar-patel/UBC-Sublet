@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 
 const SignUp = () => {
-  const { user, googleSignIn } = UserAuth();
+  const { user } = UserAuth();
   const navigate = useNavigate();
   const auth = getAuth();
 
@@ -32,20 +32,12 @@ const SignUp = () => {
           console.log("User created:", cred.user);
           e.target.reset();
         } catch (err) {
-          console.error("Error updating profile:", err.message);
+          alert("Error updating profile:", err.message);
         }
       })
       .catch((err) => {
         console.error("Error:", err.message);
       });
-  };
-
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   useEffect(() => {
