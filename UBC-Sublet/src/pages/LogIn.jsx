@@ -28,6 +28,7 @@ export default function SignIn() {
     if (user != null) {
       navigate("/");
     }
+    console.log("errorhere");
   }, [navigate, user]);
 
   function handleNavigateToSignup() {
