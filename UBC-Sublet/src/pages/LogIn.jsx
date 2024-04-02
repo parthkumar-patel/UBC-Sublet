@@ -31,17 +31,17 @@ export default function SignIn() {
   }, [navigate, user]);
 
   function handleNavigateToSignup() {
-    return navigate("/signup");
+    navigate("/signup");
   }
 
   function handleForgotPassword() {
-    return navigate("/forgot-password");
+    navigate("/forgot-password");
   }
 
   const handleGoogleSignIn = async () => {
     console.log("error");
     try {
-      return googleSignIn();
+      await googleSignIn();
     } catch (error) {
       console.log(error);
     }
