@@ -51,6 +51,16 @@ export default function PersonalProfile() {
     measurementId: "G-943F4K57XC",
   };
 
+  // const firebaseConfig = {
+  //   apiKey: process.env.API_KEY_FIREBASE,
+  //   authDomain: process.env.AUTH_DOMAIN_FIREBASE,
+  //   projectId: process.env.PROJECT_ID_FIREBASE,
+  //   storageBucket: process.env.STORAGE_BUCKET_FIREBASE,
+  //   messagingSenderId: process.env.MESSAGING_SENDER_ID_FIREBASE,
+  //   appId: process.env.APP_ID_FIREBASE,
+  //   measurementId: process.env.MEASUREMENT_ID_FIREBASE,
+  // };
+
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const colRef = collection(db, "profiles");
@@ -144,7 +154,7 @@ export default function PersonalProfile() {
       </div>
 
       <div className="cards">
-        <h1 className="mt-5 pt-4 listing">My Listings</h1>
+        <h1 className="mt-5 pt-4 pb-4 listing">My Listings</h1>
         {userProfile && content}
       </div>
     </div>

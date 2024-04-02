@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import Logo from "../assets/logo3.png";
 import Fav from "../assets/fav.svg";
 import Search from "../assets/search.svg";
 import DefaultProfile from "../assets/default.png";
@@ -8,10 +7,7 @@ import Person from "../assets/person.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import SearchIcon from "../assets/search.svg";
-
 import "./styles/nav.css";
-
-// const API_KEY = "AIzaSyCk4iCG3RB70rBv2uIdPfepGnuRMs17e6U";
 
 export default function Navbar() {
   const [isOnlyUBC, setIsOnlyUBC] = useState(false); // State to track if the input value is "UBC"
@@ -65,16 +61,11 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg shadow-sm fixed-top p-3 bg-white">
       <div className="container">
-        <Link to="/" className="navbar-brand">
-          <img
-            src={Logo}
-            
-            alt="Logo"
-            width="100"
-            height="59"
-            className="d-inline-block align-text-top me-2" 
-            style = {{ marginTop : "-15px" }}
-          />
+        <Link
+          to="/"
+          className="navbar-brand"
+          style={{ fontSize: "26px", paddingBlock: "0px" }}
+        >
           UBC Sublet
         </Link>
 
