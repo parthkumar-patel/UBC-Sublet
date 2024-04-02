@@ -1,6 +1,6 @@
 import "./styles/Footer.css";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
  
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <Link to="../about">About Us</Link>
+            <NavLink to="/about" activeClassName="active">About Us</NavLink>
             </li>
           </ul>
         </div>
