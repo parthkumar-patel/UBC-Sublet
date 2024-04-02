@@ -5,8 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   const navigate = useNavigate();
-  const handleChange = (event) => {
-    event.preventDefault(); // Prevent default behavior
+  const handleChange = () => {
 
     navigate("/about");
   };
@@ -21,7 +20,8 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-             <a href = "/fav"> About Us </a>
+             <div onClick={() => handleChange()}>About Us</div>
+             <a href = "/about"> About Us </a>
             </li>
           </ul>
         </div>
