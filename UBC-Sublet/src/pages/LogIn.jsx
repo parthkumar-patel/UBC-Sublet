@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
 
-export default function SignIn() {
+export default function () {
   const { user, googleSignIn } = UserAuth();
   const navigate = useNavigate();
 
