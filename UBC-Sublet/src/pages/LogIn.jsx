@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
-const auth = getAuth();
+
+export default function SignIn() {
+  const { user, googleSignIn } = UserAuth();
+  const navigate = useNavigate();
+
+  const auth = getAuth();
 
 const handleLoginSubmit = (e) => {
   e.preventDefault();
@@ -20,9 +25,6 @@ const handleLoginSubmit = (e) => {
     });
 };
 
-export default function SignIn() {
-  const { user, googleSignIn } = UserAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (user != null) {
