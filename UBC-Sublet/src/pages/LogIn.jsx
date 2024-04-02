@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
-export default function LogIn() {
+export default function SignIn () {
   const { user, googleSignIn } = UserAuth();
   const navigate = useNavigate();
 
   const auth = getAuth();
 
   const handleLoginSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const email = e.target.elements.login_email.value;
     const password = e.target.elements.password.value;
     signInWithEmailAndPassword(auth, email, password)
@@ -39,7 +39,6 @@ export default function LogIn() {
   }
 
   const handleGoogleSignIn = async () => {
-    console.log("error");
     try {
       await googleSignIn();
     } catch (error) {

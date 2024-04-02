@@ -1,3 +1,14 @@
-export const presets = ["@babel/preset-env", "@babel/preset-react"];
-export const plugins = [];
-  
+require('dotenv').config();
+
+module.exports = function (api) {
+  api.cache(true);
+
+  const presets = ["@babel/preset-env", "@babel/preset-react"];
+  const plugins = [];
+
+  return {
+    presets,
+    plugins,
+  };
+};
+
