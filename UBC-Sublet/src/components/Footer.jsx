@@ -14,14 +14,13 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>Quick Links</h3> b
+          <h3>Quick Links</h3>
           <ul>
             <li>
               <a href="/">Home</a>
             </li>
             <li>
              <div onClick={() => handleChange()}>About Us</div>
-             <a href = "/about"> About Us </a>
             </li>
           </ul>
         </div>
