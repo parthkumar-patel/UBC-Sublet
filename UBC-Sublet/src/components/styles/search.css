@@ -52,13 +52,13 @@
   }
 }
 
-#Searching {
-  background-image: url("../assets/search.svg");
+/* #Searching {
+  background-image: url("../assets/searchIcon.svg");
   background-position: 15px center;
   background-repeat: no-repeat;
   border-radius: 10px;
   padding-inline: 50px;
-}
+} */
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {
   #Searching {
