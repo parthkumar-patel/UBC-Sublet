@@ -23,7 +23,7 @@ export default function SignIn () {
         console.error("Error:", err.message);
       });
   };
-
+  console.log(user);
   useEffect(() => {
     if (user != null) {
       navigate("/");
