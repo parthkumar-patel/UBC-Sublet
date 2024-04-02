@@ -12,13 +12,13 @@ export default function () {
   const auth = getAuth();
 
 const handleLoginSubmit = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   const email = e.target.elements.login_email.value;
   const password = e.target.elements.password.value;
   signInWithEmailAndPassword(auth, email, password)
     .then((cred) => {
       console.log("User logged in:", cred.user);
-      e.target.reset();
+      // e.target.reset();
     })
     .catch((err) => {
       console.error("Error:", err.message);
