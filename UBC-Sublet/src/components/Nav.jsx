@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import Fav from "../assets/fav.svg";
-import Search from "../assets/search.svg";
 import DefaultProfile from "../assets/default.png";
 import Person from "../assets/person.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import SearchIcon from "../assets/search.svg";
+import SearchIcon from "../assets/searchIcon.svg";
 import "./styles/nav.css";
 
 export default function Navbar() {
@@ -80,7 +79,7 @@ export default function Navbar() {
                 onChange={handleCoordinates}
                 style={{
                   position: "relative",
-                  backgroundImage: `url(${Search})`,
+                  // backgroundImage: `url(${Search})`,
                   backgroundColor: "#f2f2f2",
                   backgroundPosition: "108%",
                   backgroundRepeat: "no-repeat",

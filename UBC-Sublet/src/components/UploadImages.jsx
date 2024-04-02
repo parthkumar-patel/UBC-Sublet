@@ -60,14 +60,23 @@ const UploadImages = (prop) => {
     }
   }
 
+  // const firebaseConfig = {
+  //   apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
+  //   authDomain: "ubc-sublet.firebaseapp.com",
+  //   projectId: "ubc-sublet",
+  //   storageBucket: "ubc-sublet.appspot.com",
+  //   messagingSenderId: "744862491087",
+  //   appId: "1:744862491087:web:a44f1fe890494086b772ba",
+  //   measurementId: "G-943F4K57XC",
+  // };
   const firebaseConfig = {
-    apiKey: "AIzaSyABsui21YwsnUrrzZZMEFc4z_BBINYcCPA",
-    authDomain: "ubc-sublet.firebaseapp.com",
-    projectId: "ubc-sublet",
-    storageBucket: "ubc-sublet.appspot.com",
-    messagingSenderId: "744862491087",
-    appId: "1:744862491087:web:a44f1fe890494086b772ba",
-    measurementId: "G-943F4K57XC",
+    apiKey: import.meta.env.VITE_API_KEY_FIREBASE,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN_FIREBASE,
+    projectId: import.meta.env.VITE_PROJECT_ID_FIREBASE,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET_FIREBASE,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID_FIREBASE,
+    appId: import.meta.env.VITE_APP_ID_FIREBASE,
+    measurementId: import.meta.env.VITE_MEASUREMENT_ID_FIREBASE
   };
 
   const app = initializeApp(firebaseConfig);
