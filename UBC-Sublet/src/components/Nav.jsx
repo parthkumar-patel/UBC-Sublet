@@ -31,7 +31,6 @@ export default function Navbar() {
     navigate("/searchSubletss", {
       state: { latitude: data.latitude, longitude: data.longitude, isOnlyUBC },
     });
-    window.location.reload();
   };
 
   const handleCoordinates = async (e) => {
