@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
 
-export default function () {
+export default function SignIn () {
   const { user, googleSignIn } = UserAuth();
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const handleLoginSubmit = (e) => {
 
   useEffect(() => {
     if (user != null) {
-      navigate("/");
+      navigate("");
     }
   }, [navigate, user]);
 
