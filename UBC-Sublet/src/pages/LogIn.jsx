@@ -26,11 +26,11 @@ const handleLoginSubmit = (e) => {
 };
 
 
-  // useEffect(() => {
-  //   if (user != null) {
-  //     navigate("/");
-  //   }
-  // }, [navigate, user]);
+  useEffect(() => {
+    if (user != null) {
+      navigate("/");
+    }
+  }, [navigate, user]);
 
   function handleNavigateToSignup() {
     navigate("/signup");
