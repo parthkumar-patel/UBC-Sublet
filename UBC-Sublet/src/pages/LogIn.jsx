@@ -19,7 +19,7 @@ const handleLoginSubmit = (e) => {
       console.error("Error:", err.message);
     });
 };
-
+console.log("errorhere");
 export default function SignIn() {
   const { user, googleSignIn } = UserAuth();
   const navigate = useNavigate();
@@ -28,7 +28,6 @@ export default function SignIn() {
     if (user != null) {
       navigate("/");
     }
-    console.log("errorhere");
   }, [navigate, user]);
 
   function handleNavigateToSignup() {
