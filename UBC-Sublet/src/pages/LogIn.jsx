@@ -26,7 +26,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (user != null) {
-      navigate("/");
+      return navigate("/");
     }
   }, [navigate, user]);
 
