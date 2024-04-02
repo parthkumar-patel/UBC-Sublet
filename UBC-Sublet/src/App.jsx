@@ -2,7 +2,7 @@ import Navbar from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
-import LogIn from "./pages/LogIn";
+import SignIn from "./pages/LogIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/SignUp";
 import SearchSublet from "./components/SearchSublets";
@@ -21,7 +21,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/login" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
