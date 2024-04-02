@@ -30,7 +30,7 @@ export default function SearchSublet() {
 
   function getLocationCordinates() {
     setentireData([]);
-    fetch("http://localhost:3001/subletslist", {
+    fetch("https://ubc-sublet.onrender.com/subletslist", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -41,7 +41,11 @@ export default function SearchSublet() {
   useEffect(() => {
     // Create a variable to hold the new data to be added
     let newData = [];
-    if (location.state == null || location.state.viewAll || location.state.isOnlyUBC) {
+    if (
+      location.state == null ||
+      location.state.viewAll ||
+      location.state.isOnlyUBC
+    ) {
       entireData.forEach((data) => newData.push(data));
     } else {
       entireData.forEach((data) => {

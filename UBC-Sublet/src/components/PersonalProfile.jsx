@@ -24,7 +24,9 @@ export default function PersonalProfile() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:3001/subletslist");
+        const response = await fetch(
+          "https://ubc-sublet.onrender.com/subletslist"
+        );
         const data = await response.json();
         const sortedData = data
           .slice()

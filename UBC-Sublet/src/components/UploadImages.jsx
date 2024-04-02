@@ -4,7 +4,7 @@ import "./styles/upload.css";
 import { UserAuth } from "../context/AuthContext";
 import { initializeApp } from "firebase/app";
 import { ref, uploadBytes, getDownloadURL, getStorage } from "firebase/storage";
-import Success from "../components/Success";
+import Success from "./Success";
 
 const UploadImages = (prop) => {
   const [previewImages, setPreviewImages] = useState([]);

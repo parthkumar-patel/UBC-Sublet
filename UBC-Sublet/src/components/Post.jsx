@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/post.css";
 import UploadImages from "./UploadImages";
 import { UserAuth } from "../context/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Post() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -13,7 +13,7 @@ export default function Post() {
   const [inputValue2, setInputValue2] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
   const [roomsFor, setRooms] = useState([]);
-  const [data, setData] = useState({ latitude: "", longitude: "" });
+  // const [data, setData] = useState({ latitude: "", longitude: "" });
   const { user } = UserAuth();
   const navigate = useNavigate();
 
@@ -201,9 +201,7 @@ export default function Post() {
   };
 
   const handleMongo = async () => {
-    console.log("done");
     const usersa = user.uid;
-    console.log(usersa);
     const addressBox = document.getElementById("addressBox").value;
     const buildgingName = document.getElementById("buildingNameBox").value;
     const initial_Deposit = document.getElementById("Initial_Deposit").value;
@@ -221,32 +219,26 @@ export default function Post() {
       'input[name="checkbox"]:checked'
     );
     const radio2 = Array.from(checkboxes).map((checkbox) => checkbox.value);
-    console.log(radio2);
     const roomisIn = roomsFor;
-
-    console.log(roomsFor);
-    console.log("room", roomisIn);
     let searchData;
     try {
       const inputValue = addressBox;
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
           const response = await fetch(
-            `http://localhost:3001/search?q=${(inputValue + " UBC")}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue + " UBC"}`
           );
-          console.log("response", response);
           searchData = await response.json();
-          setData(searchData);
+          // setData(searchData);
         } else {
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue}`
           );
-          const searchData = await response.json();
-          setData(searchData);
-          console.log(searchData)
+          searchData = await response.json();
+          // setData(searchData);
         }
       } else {
-        setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
+        // setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
       console.error("Error:", error);
@@ -255,7 +247,6 @@ export default function Post() {
     const year = today.getFullYear();
     const month = today.getMonth() + 1; // Months are zero-based
     const day = today.getDate();
-    console.log("done");
     // Format the date as needed (e.g., YYYY-MM-DD)
     const formattedDate = `${year}-${month < 10 ? "0" : ""}${month}-${
       day < 10 ? "0" : ""
@@ -306,12 +297,12 @@ export default function Post() {
         furnished: b,
         utilities: c,
         utensile: d,
-        wifi: e
+        wifi: e,
       },
     };
     console.log("done");
     try {
-      const response = await fetch("http://localhost:3001/sublets", {
+      const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

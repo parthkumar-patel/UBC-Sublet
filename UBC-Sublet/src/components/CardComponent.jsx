@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function CardComponent(prop) {
   const navigate = useNavigate();
-  // const [error, setError] = useState(null); 
+  // const [error, setError] = useState(null);
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -16,7 +16,7 @@ export default function CardComponent(prop) {
   const handleClickDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:3001/sublets/documents/${prop.item._id}`
+        `https://ubc-sublet.onrender.com/sublets/documents/${prop.item._id}`
       );
       window.location.reload();
       prop.setDeleted(true);

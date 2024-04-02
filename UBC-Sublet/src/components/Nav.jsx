@@ -31,7 +31,6 @@ export default function Navbar() {
     navigate("/searchSubletss", {
       state: { latitude: data.latitude, longitude: data.longitude, isOnlyUBC },
     });
-    window.location.reload();
   };
 
   const handleCoordinates = async (e) => {
@@ -41,14 +40,14 @@ export default function Navbar() {
         if (inputValue.toUpperCase() != "UBC") {
           setIsOnlyUBC(false);
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue + " UBC"}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue + " UBC"}`
           );
           const searchData = await response.json();
           setData(searchData);
         } else {
           setIsOnlyUBC(true); // Set the flag to true if input value is "UBC"
           const response = await fetch(
-            `http://localhost:3001/search?q=${inputValue}`
+            `https://ubc-sublet.onrender.com/search?q=${inputValue}`
           );
           const searchData = await response.json();
           setData(searchData);
