@@ -25,9 +25,9 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // if (user != null) {
-    //   navigate("/");
-    // }
+    if (user != null) {
+      navigate("/");
+    }
   }, [navigate, user]);
 
   function handleNavigateToSignup() {
