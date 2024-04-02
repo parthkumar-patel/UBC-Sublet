@@ -1,6 +1,6 @@
 // import pond1 from "../assets/pond1.jpg";
 import upload from "../assets/UBC.jpg";
-import SearchIcon from "../assets/search.svg";
+import SearchIcon from "../assets/searchIcon.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/search.css";
