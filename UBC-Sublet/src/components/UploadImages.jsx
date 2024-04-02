@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import "./styles/upload.css";
 import { UserAuth } from "../context/AuthContext";
-// import { initializeApp } from "firebase/app";
 import { ref, uploadBytes, getDownloadURL, getStorage } from "firebase/storage";
 import Success from "./Success";
 
@@ -60,17 +59,6 @@ const UploadImages = (prop) => {
     }
   }
 
-  // const firebaseConfig = {
-  //   apiKey: import.meta.env.VITE_APP_API_KEY_FIREBASE,
-  //   authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN_FIREBASE,
-  //   projectId: import.meta.env.VITE_APP_PROJECT_ID_FIREBASE,
-  //   storageBucket: import.meta.env.VITE_APP_STORAGE_BUCKET_FIREBASE,
-  //   messagingSenderId: import.meta.env.VITE_APP_MESSAGING_SENDER_ID_FIREBASE,
-  //   appId: import.meta.env.VITE_APP_APP_ID_FIREBASE,
-  //   measurementId: import.meta.env.VITE_APP_MEASUREMENT_ID_FIREBASE,
-  // };
-
-  // const app = initializeApp(firebaseConfig);
   const storage = getStorage(prop.app);
 
   const handleImageChange = async (event) => {
