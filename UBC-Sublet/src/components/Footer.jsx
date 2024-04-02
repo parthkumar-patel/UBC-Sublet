@@ -19,12 +19,18 @@ const Footer = () => {
           <h3>Connect With Us</h3>
           <ul className="social-icons">
             <li>
-              <a href="https://www.linkedin.com/in/parth-patel-433703266/" className="developer-link">
+              <a
+                href="https://www.linkedin.com/in/parth-patel-433703266/"
+                className="developer-link"
+              >
                 Parth Patel
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/rythem-shah-423114266/" className="developer-link">
+              <a
+                href="https://www.linkedin.com/in/rythem-shah-423114266/"
+                className="developer-link"
+              >
                 Rythem Shah
               </a>
             </li>
