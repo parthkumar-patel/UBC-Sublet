@@ -65,7 +65,7 @@ export default function Navbar() {
           className="navbar-brand"
           style={{ fontSize: "26px", paddingBlock: "0px" }}
         >
-          UBC Sublet
+          Subletify
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
