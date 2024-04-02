@@ -8,6 +8,7 @@ import {
   getAuth,
 } from "firebase/auth";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -28,10 +29,12 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithRedirect(auth, provider);
+    navigate("/");
   };
 
   const logOut = () => {
