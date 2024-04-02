@@ -50,7 +50,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 UBC Sublet. All Rights Reserved.</p>
+        <p>
+          &copy; 2024 UBC Sublet. All Rights Reserved. (Not affiliated with UBC)
+        </p>
       </div>
     </footer>
   );

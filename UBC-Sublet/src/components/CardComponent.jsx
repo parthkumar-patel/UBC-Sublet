@@ -102,7 +102,6 @@ export default function CardComponent(prop) {
             </button>
           </div>
         </div>
-        {console.log(prop.item)}
         <div className="delete" onClick={handleClickDelete}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
