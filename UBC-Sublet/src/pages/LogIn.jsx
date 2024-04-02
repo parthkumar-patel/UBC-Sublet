@@ -40,7 +40,7 @@ export default function SignIn() {
 
   const handleGoogleSignIn = async () => {
     try {
-      console.log(error);
+      console.log("error");
       await googleSignIn();
     } catch (error) {
       console.log(error);
