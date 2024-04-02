@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo3.png";
 import Fav from "../assets/fav.svg";
 import Search from "../assets/search.svg";
 import DefaultProfile from "../assets/default.png";
@@ -68,10 +68,12 @@ export default function Navbar() {
         <Link to="/" className="navbar-brand">
           <img
             src={Logo}
+            
             alt="Logo"
-            width="30"
-            height="24"
-            className="d-inline-block align-text-top me-2"
+            width="100"
+            height="59"
+            className="d-inline-block align-text-top me-2" 
+            style = {{ marginTop : "-15px" }}
           />
           UBC Sublet
         </Link>
