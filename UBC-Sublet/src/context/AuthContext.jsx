@@ -60,5 +60,6 @@ AuthContextProvider.propTypes = {
 };
 
 export const UserAuth = () => {
+  console.log("erro2");
   return useContext(AuthContext);
 };
