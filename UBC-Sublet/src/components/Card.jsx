@@ -46,9 +46,7 @@ export default function Card() {
         <div className="featured-sublet">Featured Sublets</div>
         <button
           className="view-all-sublet"
-          onClick={() => {
-            window.location.href = "./post";
-          }}
+          onClick={() => navigate("/post")}
           style={{ marginLeft: "55%" }}
         >
           Post A Sublet
