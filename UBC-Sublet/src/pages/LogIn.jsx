@@ -18,7 +18,7 @@ const handleLoginSubmit = (e) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((cred) => {
       console.log("User logged in:", cred.user);
-      // e.target.reset();
+      e.target.reset();
     })
     .catch((err) => {
       console.error("Error:", err.message);
@@ -26,11 +26,11 @@ const handleLoginSubmit = (e) => {
 };
 
 
-  useEffect(() => {
-    if (user != null) {
-      navigate("/");
-    }
-  }, [navigate, user]);
+  // useEffect(() => {
+  //   if (user != null) {
+  //     navigate("/");
+  //   }
+  // }, [navigate, user]);
 
   function handleNavigateToSignup() {
     navigate("/signup");
