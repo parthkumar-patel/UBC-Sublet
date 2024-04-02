@@ -97,7 +97,7 @@ export default function Navbar() {
               id="search-button"
               onClick={handlePlaceChange}
               style={{
-                zIndex: "0",
+                zIndex: "2",
                 backgroundImage: `url(${SearchIcon})`,
                 backgroundPosition: "7px",
               }}
