@@ -79,7 +79,7 @@ export default function SignIn () {
           <span className="sign-up-link">Sign up</span>
         </p>
       </div>
-      <div className="buttons-container">
+      {/* <div className="buttons-container">
         <div className="google-login-button" onClick={handleGoogleSignIn}>
           <svg
             stroke="currentColor"
@@ -118,7 +118,7 @@ export default function SignIn () {
           </svg>
           <span>Log in with Google</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
