@@ -147,7 +147,11 @@ export default function CardComponent(prop) {
           <b className="location">{prop.item.location[0].currentLocation}</b>
         </div>
         <div className="frame1">
-          <div className="distance"> Vancouver 3.4 mi away</div>
+          <div className="distance">
+            {" "}
+            {prop.item.numberOfRoomsAvailable}
+            BR • {prop.item.roomType}{" "}
+          </div>
         </div>
         <div className="frame2">
           <b className="price">
@@ -161,11 +165,9 @@ export default function CardComponent(prop) {
             1BR/{prop.item.roomType}BA • {prop.item.description}
           </div>
         </div>
-        <div className="frame4" style={{ marginLeft: "-14px" }}>
+        <div className="frame4">
           <div className="duration">
             <span> Available</span>
-            {/* <b>: May 1, 2024 - July 1, 2024</b> */}
-
             <DateConvertor
               start={prop.item.startingSubletDate}
               timePeriod={prop.item.timePeriod}

@@ -13,7 +13,7 @@ export default function Descrition() {
   const [utensils, setutensils] = useState([]);
   const [Utilities, setUtilities] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [clickedImageIndex, setClickedImageIndex] = useState(0);
+  // const [clickedImageIndex, setClickedImageIndex] = useState(0);
   const [wifi, setWifi] = useState(0);
   const settings = {
     dots: true,
@@ -26,25 +26,23 @@ export default function Descrition() {
     cssEase: "linear",
   };
 
-  const openModal = (index) => {
-    setClickedImageIndex(index);
+  const openModal = () => {
+    // setClickedImageIndex(index);
     setModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
   const { data } = location.state;
-  console.log(data);
-  console.log(data.amenities[0].furnished);
+
   useEffect(() => {
-    // Update the 'furnished' state based on the 'data' object
     if (data.amenities && data.amenities.length > 0) {
       if (data.amenities[0].furnished === true) {
-        setfurnished("furnished");
+        setfurnished("Furnished");
       } else {
-        setfurnished("unfurnished");
+        setfurnished("Unfurnished");
       }
     }
     if (data.amenities[0].utensile === true) {
@@ -62,13 +60,8 @@ export default function Descrition() {
     } else {
       setWifi("Wifi not included");
     }
-  }, [data]); //
+  }, [data]);
 
-  if (data && data.rooms) {
-    data.rooms.forEach((room, index) => {
-      console.log(`Image ${index}:`, room); // Log each room image
-    });
-  }
   return (
     <div className="macbook-air-2">
       <div className="desc-img-container">
@@ -119,10 +112,10 @@ export default function Descrition() {
                   <div className="hover-me">{utensils}</div>
                 </button>
                 <button className="bonus-button-4">
-                  <div className="hover-me">{Utilities}</div>
+                  <div className="hover-me">{wifi}</div>
                 </button>
                 <button className="bonus-button-5">
-                  <div className="hover-me">{wifi}</div>
+                  <div className="hover-me">{Utilities}</div>
                 </button>
               </div>
             </div>
