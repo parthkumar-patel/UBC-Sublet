@@ -1,6 +1,12 @@
 import "./styles/Footer.css";
+import { useNavigate } from "react-router-dom";
+
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const handleChange = () => {
+    navigate("/about");
+  };
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -11,7 +17,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/about">About Us</a>
+              <a href="/about" onClick={handleChange}>About Us</a>
             </li>
           </ul>
         </div>
