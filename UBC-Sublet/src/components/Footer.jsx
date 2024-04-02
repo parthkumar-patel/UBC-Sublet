@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-            <NavLink to="/about" activeClassName="active">About Us</NavLink>
+             <a href = "https://subletubc.netlify.app/about"> About Us </a>
             </li>
           </ul>
         </div>
