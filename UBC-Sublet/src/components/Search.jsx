@@ -38,8 +38,6 @@ export default function Search() {
       console.error("Error:", error);
     }
   };
-  console.log(data.latitude);
-  console.log(data.longitude);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -46,7 +46,6 @@ export default function Navbar() {
           );
           const searchData = await response.json();
           setData(searchData);
-          console.log(searchData);
         }
       } else {
         setIsOnlyUBC(false);

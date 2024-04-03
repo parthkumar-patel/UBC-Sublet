@@ -21,22 +21,16 @@ const SignUp = () => {
     const displayName = e.target.elements.displayName.value;
     const email = e.target.elements.signup_email.value;
     const password = e.target.elements.password.value;
-    console.log("clicked");
-    console.log(displayName);
-    console.log(email);
-    console.log(password);
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (cred) => {
         try {
           await updateProfile(cred.user, { displayName: displayName });
-          console.log("User created:", cred.user);
           e.target.reset();
         } catch (err) {
           alert("Error updating profile:", err.message);
         }
       })
       .catch((e) => {
-        console.log(e.message);
         alert("Error creating user: " + e.message);
       });
   };

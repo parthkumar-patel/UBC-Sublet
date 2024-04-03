@@ -107,16 +107,8 @@ export default function Post() {
       x[n].style.display = "block";
     }
 
-    // if (n === 0) {
-    //   prevBtn.style.display = "none";
-    // } else {
-    //   prevBtn.style.display = "inline";
-    // }
-
     if (n === x.length - 1) {
       isFinalStep = true;
-      console.log(isFinalStep);
-      console.log("hi");
       document.getElementById("nextBtn").innerHTML = "Post";
     } else {
       isFinalStep = false;
@@ -300,7 +292,7 @@ export default function Post() {
         wifi: e,
       },
     };
-    console.log("done");
+
     try {
       const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
         method: "POST",
@@ -310,7 +302,6 @@ export default function Post() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        console.log("Form data saved successfully");
         window.scrollTo(0, 0);
         return navigate("/");
       } else {

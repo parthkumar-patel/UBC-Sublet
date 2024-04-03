@@ -3,10 +3,8 @@ import emailjs from "emailjs-com";
 import send from "../assets/send.svg";
 import Success from "./Success";
 import Error from "./Error";
-import { UserAuth } from "../context/AuthContext";
 
 const Contact = (prop) => {
-  const { user } = UserAuth;
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -29,11 +27,6 @@ const Contact = (prop) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log(form.name);
-    console.log(prop.owner_name);
-    console.log(form.email);
-    console.log(prop.owner_email);
-    console.log(form.message);
     emailjs
       .send(
         "service_xjeefuk",
@@ -68,7 +61,6 @@ const Contact = (prop) => {
 
   return (
     <div className="send-button-frame-wrapper mt-5 pt-3">
-      {console.log(user)}
       <div className="send-button-frame">
         <p className="sectionSubText">Get in touch.</p>
         <b className="contact">Contact</b>

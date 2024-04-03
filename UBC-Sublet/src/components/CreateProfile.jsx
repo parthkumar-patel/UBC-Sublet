@@ -32,9 +32,6 @@ export default function CreateProfile(prop) {
   }
 
   function handleAddProfile() {
-    console.log(prop.colRef);
-    console.log("uid" + prop.user.uid);
-
     if (image) {
       const imageRef = ref(storage, `images/${prop.user.uid}/profile-picture`);
       const uploadTask = uploadBytesResumable(imageRef, image);

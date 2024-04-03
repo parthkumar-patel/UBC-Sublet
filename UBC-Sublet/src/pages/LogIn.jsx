@@ -15,15 +15,13 @@ export default function SignIn () {
     const email = e.target.elements.login_email.value;
     const password = e.target.elements.password.value;
     signInWithEmailAndPassword(auth, email, password)
-      .then((cred) => {
-        console.log("User logged in:", cred.user);
+      .then(() => {
         e.target.reset();
       })
       .catch((err) => {
         alert("Error:", err.message);
       });
   };
-  console.log(user);
   useEffect(() => {
     if (user != null) {
       navigate("/");

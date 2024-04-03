@@ -54,7 +54,6 @@ export default function PersonalProfile() {
         id: doc.id,
       }));
       setProfiles(newProfiles);
-      console.log(newProfiles);
       setLoading(false);
     });
 
@@ -70,7 +69,6 @@ export default function PersonalProfile() {
   }
 
   const userProfile = profiles.find((profile) => profile.uid === user.uid);
-  console.log(userProfile);
   if (!userProfile) {
     return (
       <div style={{ marginTop: "-65px" }}>

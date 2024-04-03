@@ -19,10 +19,6 @@ export default function SearchSublet() {
   const [maxleaseRange, setmaxLeaseRange] = useState(0);
 
   const { latitude, longitude } = location.state;
-  // Add event listener to the search button
-
-  // console.log('Latitude:', latitude);
-  // console.log('Longitude:', longitude);
 
   useEffect(() => {
     getLocationCordinates();
