@@ -50,7 +50,7 @@ export default function Descrition() {
     } else {
       setutensils("Utensils not included");
     }
-    if (data.amenities[0].Utilities === true) {
+    if (data.amenities[0].utilities === true) {
       setUtilities("Utilities included");
     } else {
       setUtilities("Utilities not included");
