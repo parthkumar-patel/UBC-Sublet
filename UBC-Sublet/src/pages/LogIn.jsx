@@ -19,7 +19,7 @@ export default function SignIn () {
         e.target.reset();
       })
       .catch((err) => {
-        alert("Error:", err.message);
+        alert("Error:" + err.message);
       });
   };
   useEffect(() => {

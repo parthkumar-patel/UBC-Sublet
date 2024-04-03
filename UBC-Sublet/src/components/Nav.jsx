@@ -78,7 +78,7 @@ export default function Navbar() {
                 onChange={handleCoordinates}
                 style={{
                   position: "relative",
-                  // backgroundImage: `url(${Search})`,
+                  backgroundImage: `url(${SearchIcon})`,
                   backgroundColor: "#f2f2f2",
                   backgroundPosition: "108%",
                   backgroundRepeat: "no-repeat",

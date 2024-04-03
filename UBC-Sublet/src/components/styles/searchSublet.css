@@ -388,3 +388,44 @@
 .search-cards {
   margin-top: 100px;
 }
+
+
+@media only screen and (min-width: 1100px) {
+  #cards-lists2 {
+    margin-top: -80%;
+  }
+}
+
+
+@media only screen and (min-width: 1600px) {
+  #cards-lists2 {
+    margin-top: -85%;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  #cards-lists2 {
+    margin-top: -87%;
+    margin-left: 18.5%;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  #cards-lists2 {
+    margin-top: -87%;
+    margin-left: 19.5%;
+  }
+}
+@media only screen and (min-width: 3500px) {
+  #cards-lists2 {
+    margin-top: -89%;
+    margin-left: 20.5%;
+  }
+}
+
+@media only screen and (min-width: 3800px) {
+  #cards-lists2 {
+    margin-top: -92%;
+    margin-left: 22.5%;
+  }
+}
