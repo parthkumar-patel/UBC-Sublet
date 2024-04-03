@@ -35,8 +35,9 @@ const SignUp = () => {
           alert("Error updating profile:", err.message);
         }
       })
-      .catch((err) => {
-        console.error("Error:", err.message);
+      .catch((e) => {
+        console.log(e.message);
+        alert("Error creating user: " + e.message);
       });
   };
 
