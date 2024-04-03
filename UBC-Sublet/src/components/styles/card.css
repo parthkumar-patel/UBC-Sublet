@@ -395,3 +395,18 @@
     margin-left: 45%;
   }
 } */
+@media only screen and (min-width: 3100px) {
+  .container-3-parent {
+    left: 80px !important;
+  } .featured-sublet {
+    margin-left: 120px !important;
+  }
+}
+@media only screen and (min-width: 3100px) {
+   .featured-view-all {
+    padding-inline-end:  0px;
+    margin-left: 35% !important;
+   } .featured-sublet {
+    margin-left: -50% !important;
+   }
+}
