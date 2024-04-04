@@ -92,17 +92,17 @@ export default function SearchSublet() {
 
     const sortingFunctions = {
       Newest: (a, b) => {
-        const datePartsA = a.dateAdding.split("/");
-        const datePartsB = b.dateAdding.split("/");
-        const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-        const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
+        const datePartsA = a.dateAdding.split("-");
+        const datePartsB = b.dateAdding.split("-");
+        const dateA = new Date(datePartsA[0], datePartsA[1] - 1, datePartsA[2]);
+        const dateB = new Date(datePartsB[0], datePartsB[1] - 1, datePartsB[2]);
         return dateB - dateA;
       },
       Oldest: (a, b) => {
-        const datePartsA = a.dateAdding.split("/");
-        const datePartsB = b.dateAdding.split("/");
-        const dateA = new Date(datePartsA[2], datePartsA[1] - 1, datePartsA[0]);
-        const dateB = new Date(datePartsB[2], datePartsB[1] - 1, datePartsB[0]);
+        const datePartsA = a.dateAdding.split("-");
+        const datePartsB = b.dateAdding.split("-");
+        const dateA = new Date(datePartsA[0], datePartsA[1] - 1, datePartsA[2]);
+        const dateB = new Date(datePartsB[0], datePartsB[1] - 1, datePartsB[2]);
         return dateA - dateB;
       },
       "Lowest Price": (a, b) => {
