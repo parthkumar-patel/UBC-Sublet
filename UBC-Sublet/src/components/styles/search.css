@@ -68,43 +68,39 @@
 
 @media only screen and (min-width: 1750px) {
   #Searching {
-    margin-left: 50px;
-  } #imgFluid {
-    width: 85%;
+    margin-left: 95px;
   }
 }
 
 @media only screen and (min-width: 1900px) {
   #Searching {
-    margin-left: 3px;
-  } #imgFluid {
-    width: 90%;
+    margin-left: 125px;
   }
 }
 
 @media only screen and (min-width: 1950px) {
   #Searching {
-    margin-left: 5px;
+    margin-left: 145px;
   } #imgFluid {
-    width: 90%;
+    width: 1500px;
   }
 }
 
 @media only screen and (min-width: 2000px) {
   #Searching {
-    margin-left: 5px;
+    margin-left: 165px;
   }
 }
 
 @media only screen and (min-width: 2050px) {
   #Searching {
-    margin-left: 5px;
+    margin-left: 195px;
   }
 }
 
 @media only screen and (min-width: 2100px) {
   #Searching {
-    margin-left: 5px;
+    margin-left: 155px;
   }
 }
 
@@ -140,7 +136,10 @@
     margin-top: -100px;
     width: 80%;
     height: 1150px;
-  } 
+  } #viewAll {
+    margin-left: 45% !important;
+    gap: 0px;
+  }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {

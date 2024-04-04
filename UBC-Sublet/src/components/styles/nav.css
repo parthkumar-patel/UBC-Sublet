@@ -350,51 +350,24 @@
 
 @media only screen and (min-width: 2100px) {
   .navbar-brand{
-    margin-left: -20% !important;
-  } .navbar-expand-lg .navbar-collapse {
-    margin-right: -10%;
-  } #favid {
-    margin-left: 150% !important;
-  } .nav-link {
-    margin-left: 500% !important;
+    margin-left: -30% !important;
   }
 }
 
 @media only screen and (min-width: 2500px) {
   .navbar-brand{
-    margin-left: -20% !important;
+    margin-left: -45% !important;
   }
-  /* } #search-input {
-    margin-left: 20px;
-  } #search-button {
-    margin-left: 20px;
-  } #favid {
-    margin-left: 400% !important;
-    */ 
-  .nav-link {
-    margin-left: 600% !important;
-  }
-   .navbar-expand-lg .navbar-collapse {
-    margin-right: -10%;
-  }
-
-@media only screen and (min-width: 2700px) {
-    .navbar-brand{
-      margin-left: -20% !important;
-    } .navbar-expand-lg .navbar-collapse {
-      margin-right: -25%;
-    }
-  }
-
+}
 @media only screen and (min-width: 3000px) {
   .navbar-brand{
-    margin-left: -20% !important;
+    margin-left: -60% !important;
   }
 }
 
 @media only screen and (min-width: 3150px) {
   .navbar-brand{
-    margin-left: -40% !important;
+    margin-left: -70% !important;
   }
 }
 
