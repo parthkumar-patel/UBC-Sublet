@@ -42,18 +42,18 @@ export default function CreateProfile(prop) {
           // Handle different states of the upload
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log(`Upload is ${progress}% done`);
+          // console.log(`Upload is ${progress}% done`);
           switch (snapshot.state) {
             case storage.TaskState.PAUSED:
-              console.log("Upload is paused");
+              // console.log("Upload is paused");
               break;
             case storage.TaskState.RUNNING:
-              console.log("Upload is running");
+              // console.log("Upload is running");
               break;
           }
         },
         (error) => {
-          console.error("Error uploading image:", error);
+          alert("Error uploading image:" + error);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {

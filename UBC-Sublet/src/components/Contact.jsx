@@ -53,7 +53,7 @@ const Contact = (prop) => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          alert(error);
           <Error msg="Ahh, something went wrong. Please try again." />;
         }
       );

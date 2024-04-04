@@ -233,7 +233,7 @@ export default function Post() {
         // setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
-      console.error("Error:", error);
+      // alert("Error:" + error);
     }
     const today = new Date();
     const year = today.getFullYear();
@@ -307,10 +307,10 @@ export default function Post() {
           window.scrollTo(0, 0);
           return navigate("/");
         } else {
-          console.error("Failed to save form data:", response.statusText);
+          alert("Failed to save form data:" + response.statusText);
         }
       } catch (error) {
-        console.error("Error saving form data:", error);
+        alert("Error saving form data:" + error);
       }
     };
   }

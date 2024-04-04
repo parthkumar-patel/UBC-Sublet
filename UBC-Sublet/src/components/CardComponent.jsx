@@ -21,7 +21,7 @@ export default function CardComponent(prop) {
       window.location.reload();
       prop.setDeleted(true);
     } catch (error) {
-      console.error("Error deleting document:", error);
+      alert("Error deleting document:" + error);
       // setError("An error occurred while deleting the document");
     }
   };

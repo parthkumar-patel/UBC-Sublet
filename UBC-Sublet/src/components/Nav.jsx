@@ -18,7 +18,7 @@ export default function Navbar() {
     try {
       await logOut();
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -52,7 +52,7 @@ export default function Navbar() {
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
-      console.error("Error:", error);
+      // aler("Error:", error);
     }
   };
 

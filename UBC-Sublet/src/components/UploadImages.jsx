@@ -79,7 +79,7 @@ const UploadImages = (prop) => {
             return [...prev, downloadURL];
           });
         } catch (error) {
-          console.error("Error uploading image:", error);
+          alert("Error uploading image:" + error);
         }
       }
       setSuccess(true);

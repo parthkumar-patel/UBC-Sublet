@@ -32,7 +32,7 @@ export default function Card() {
         setAllImage(sortedData.slice(0, 8)); // Set only the first four sorted images
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
       });
   }
 
@@ -51,7 +51,7 @@ export default function Card() {
         >
           Post A Sublet
         </button>
-        <button className="view-all-sublet" onClick={handleViewAll}>
+        <button className="view-all-sublet" id = "viewAll" onClick={handleViewAll}>
           View all Sublets
         </button>
       </div>

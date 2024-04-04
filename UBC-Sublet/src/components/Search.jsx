@@ -35,7 +35,7 @@ export default function Search() {
         setData({ latitude: 49.26060520000001, longitude: -123.2459939 }); // set data state values for ubc
       }
     } catch (error) {
-      console.error("Error:", error);
+      alert("Error:" + error);
     }
   };
 
