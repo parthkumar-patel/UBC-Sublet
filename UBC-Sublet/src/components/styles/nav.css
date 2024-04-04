@@ -350,24 +350,24 @@
 
 @media only screen and (min-width: 2100px) {
   .navbar-brand{
-    margin-left: -30% !important;
+    margin-left: -20% !important;
   }
 }
 
 @media only screen and (min-width: 2500px) {
   .navbar-brand{
-    margin-left: -45% !important;
+    margin-left: -25% !important;
   }
 }
 @media only screen and (min-width: 3000px) {
   .navbar-brand{
-    margin-left: -60% !important;
+    margin-left: -20% !important;
   }
 }
 
 @media only screen and (min-width: 3150px) {
   .navbar-brand{
-    margin-left: -70% !important;
+    margin-left: -40% !important;
   }
 }
 
