@@ -140,10 +140,7 @@
     margin-top: -100px;
     width: 80%;
     height: 1150px;
-  } #viewAll {
-    margin-left: 45% !important;
-    gap: 0px;
-  }
+  } 
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {

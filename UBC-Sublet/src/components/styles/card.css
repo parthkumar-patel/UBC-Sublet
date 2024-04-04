@@ -408,5 +408,7 @@
     margin-left: 35% !important;
    } .featured-sublet {
     margin-left: -50% !important;
+   } #post {
+    margin-left: 101% !important;
    }
 }

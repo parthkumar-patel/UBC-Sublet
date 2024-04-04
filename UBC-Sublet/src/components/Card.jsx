@@ -48,6 +48,7 @@ export default function Card() {
           className="view-all-sublet"
           onClick={() => navigate("/post")}
           style={{ marginLeft: "55%" }}
+          id = "post"
         >
           Post A Sublet
         </button>
