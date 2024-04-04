@@ -84,6 +84,9 @@ const UploadImages = (prop) => {
       }
       setSuccess(true);
     } else {
+      setImageURLs((prev) => {
+        return [...prev];
+      });
       alert("Please upload min of 5 images");
     }
 

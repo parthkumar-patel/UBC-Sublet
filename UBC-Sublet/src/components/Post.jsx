@@ -251,11 +251,11 @@ export default function Post() {
       // Update variables based on checkbox selection
       if (data == "Furnished") {
         b = true;
-      } else if (data == "Utilities") {
+      } if (data == "Utilities") {
         c = true;
-      } else if (data == "Utensils") {
+      } if (data == "Utensils") {
         d = true;
-      } else if (data == "Wifi") {
+      } if (data == "Wifi") {
         e = true;
       }
     });
@@ -292,25 +292,28 @@ export default function Post() {
         wifi: e,
       },
     };
-
-    try {
-      const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        window.scrollTo(0, 0);
-        return navigate("/");
-      } else {
-        console.error("Failed to save form data:", response.statusText);
+    if (roomisIn.length == 0) {
+      alert("kindly upload Images");
+    } else {
+      try {
+        const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          window.scrollTo(0, 0);
+          return navigate("/");
+        } else {
+          console.error("Failed to save form data:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error saving form data:", error);
       }
-    } catch (error) {
-      console.error("Error saving form data:", error);
-    }
-  };
+    };
+  }
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-center align-items-center">
