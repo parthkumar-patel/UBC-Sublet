@@ -17,7 +17,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <div onClick={() => handleChange()}>AboutUs</div>
+              <div onClick={() => handleChange()}>About Us</div>
             </li>
           </ul>
         </div>

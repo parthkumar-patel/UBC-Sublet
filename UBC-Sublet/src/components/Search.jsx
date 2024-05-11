@@ -47,15 +47,52 @@ export default function Search() {
   };
 
   return (
-    <div className="position-relative" style={{ marginTop: "7%" }}>
-      <img
+    <div className="new">
+      <div className="slogan" style={{
+          position: 'absolute',
+          top: '50%', 
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          color: 'white', 
+          textAlign: 'center',
+          width: '100%'
+      }}>
+        <h1>Find the perfect place to sublet at UBC</h1>
+      </div>
+       <div className="landingpage">
+
+       <form className="searchform"
+          style={{
+            // top: "82%",
+            // left: "10%",
+            // right: "50%",
+          }}>
+      <input className="searchinput" 
+              placeholder="Search by address or neighbourhood"
+              aria-label="Search by address or neighbourhood"
+              onChange={handlePlaceChange} />
+      <button className="searchbutton">Search</button>
+    </form>
+      
+        
+
+       </div>
+       
+
+      {/* <img
         src={upload}
         id="imgFluid"
         className="img-fluid position-relative"
         alt="Homepage"
-      />
-      <form
-        className="d-flex search-bar"
+      /> */}
+
+    
+
+
+
+
+      {/* <form
+        className="search-bar"
         style={{
           top: "82%",
           left: "10%",
@@ -63,18 +100,18 @@ export default function Search() {
         }}
       >
         <input
-          className="form-control me-2"
+          // className="form-control"
           id="Searching"
           type="search"
           placeholder="Search by address or neighbourhood"
           aria-label="Search by address or neighbourhood"
           onChange={handlePlaceChange}
           style={{
-            backgroundImage: `url(${SearchIcon})`,
-            backgroundPosition: "15px center",
-            backgroundRepeat: "no-repeat",
-            borderRadius: "10px",
-            paddingInline: "24px",
+            // backgroundImage: `url(${SearchIcon})`,
+            // backgroundPosition: "15px center",
+            // backgroundRepeat: "no-repeat",
+            // borderRadius: "10px",
+            // paddingInline: "24px",
           }}
         />
         <button
@@ -86,7 +123,8 @@ export default function Search() {
         >
           Search
         </button>
-      </form>
+      </form> */}
+  
     </div>
   );
 }

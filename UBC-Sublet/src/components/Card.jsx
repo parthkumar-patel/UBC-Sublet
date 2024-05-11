@@ -44,10 +44,11 @@ export default function Card() {
     <div>
       <div className="featured-view-all">
         <div className="featured-sublet">Featured Sublets</div>
+          <div className="featured-sublet-button">
         <button
           className="view-all-sublet"
           onClick={() => navigate("/post")}
-          style={{ marginLeft: "55%" }}
+          // style={{ marginLeft: "55%" }}
           id = "post"
         >
           Post A Sublet
@@ -55,6 +56,7 @@ export default function Card() {
         <button className="view-all-sublet" id = "viewAll" onClick={handleViewAll}>
           View all Sublets
         </button>
+        </div>
       </div>
       <section
         className="cards-list"

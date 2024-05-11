@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Cereal-Md';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 #cards-lists {
   display: flex;
   flex-wrap: wrap;
@@ -34,24 +41,37 @@
 .featured-view-all {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-inline: 90px;
-  padding-top: 42px;
-  padding-bottom: 8px;
-  margin-top: 20px;
+  font-family: "Cereal-Md", sans-serif;
+  align-items: flex-end;
+  padding-inline: 6.25vw;
+  padding-top: 2.9vw;
+  padding-bottom: 0.5vw;
+  margin-top: 1.38vh;
+  white-space: nowrap; 
+  flex-wrap: wrap;
 }
 
 .featured-sublet {
-  font-size: 30px;
-  font-family: "Poppins", sans-serif;
+  /* font-size: 2vw; */
+  font-family: "Cereal-Md", sans-serif;
   font-weight: lighter;
+  text-align: left;
   color: #1d194e;
+  white-space: nowrap; 
+}
+
+.featured-sublet-button {
+  display: flex;
+  white-space: nowrap; 
+  margin-left: 2vw;
 }
 
 .view-all-sublet {
   background-color: rgb(19, 14, 61);
   color: white;
   padding: 10px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -296,18 +316,19 @@
 @media only screen and (min-width: 860px) and (max-width: 983px) {
   .featured-sublet {
     margin-top: -10px;
+    font-size: 0.8rem;
   }
 }
 
-@media only screen and (max-width: 860px) {
+/* @media only screen and (max-width: 860px) {
   .featured-sublet {
     margin-top: -200px;
   }
-}
+} */
 
 @media only screen and (max-width: 450px) {
   .featured-sublet {
-    font-family: "Poppins" sans-serif;
+    font-family: "Cereal" sans-serif;
     font-size: 30px;
   }
 

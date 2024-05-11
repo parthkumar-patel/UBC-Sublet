@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Cereal-Md';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 .btn.btn-primary {
   width: 35px;
 }
@@ -11,6 +18,11 @@
 .input-group {
   position: relative;
   left: 70%;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-family: 'Cereal-Md';
 }
 
 #favid {
@@ -26,7 +38,7 @@
   margin-left: -40px;
   width: 40px;
   border-radius: 0px 10px 10px 0px;
-  background-color: #24a0ed;
+  background-color: rgba(19, 14, 61, 1);
   background-repeat: no-repeat;
 }
 

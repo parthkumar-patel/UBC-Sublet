@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Cereal';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 #imgFluid {
   width: 1300px;
   height: 600px;
@@ -9,23 +16,128 @@
   object-position: 10% 60%;
 }
 
+div.new {
+  display: flex;
+}
+/* div.slogan {
+  position: 'absolute';
+  top: '50%';
+  left: '50%';
+  transform: 'translate(-50%, -50%)';
+  color: 'white';
+  text-align: 'center';
+  width: '100%'
+} */
+
+div.landingpage {
+  display: flex;
+  align-items: end;
+  background-image: url('./src/assets/UBC.jpg');
+  /* opacity: 0.75; */
+  width: 100%;
+  height: 820px;
+  max-height: 1000px;
+  background-size: cover;
+}
+
+/* div.landingpage {
+  position: relative; 
+  display: flex;
+  align-items: end;
+  width: 100%;
+  height: 820px;
+  max-height: 1000px;
+  background-size: cover;
+  z-index: 1; 
+}
+
+div.landingpage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./src/assets/UBC.jpg');
+  background-size: cover;
+  opacity: 0.85; 
+  z-index: -1; 
+} */
+
+
+form.searchform {
+  /* This bit sets up the horizontal layout */
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  position: absolute;
+  margin-bottom: 7%;
+  margin-left: 7%;
+  /* top: 82vh;
+  left: 10vw;
+  right: 50vw; */
+
+  /* This bit draws the box around it */
+  /* border:1px solid grey; */
+
+  /* I've used padding so you can see the edges of the elements. */
+  padding:1px;
+}
+
+div.slogan.h1 {
+  font-size: 600px;
+  font-family: 'Cereal-Bd';
+  max-width: 75%;
+  margin-left: 7%;
+  margin-bottom: 10%;
+}
+
+input.searchinput {
+  /* Tell the input to use all the available space */
+  flex-grow: 6;
+  /* And hide the input's outline, so the form looks like the outline */
+  border: none;
+  font-family: 'Cereal-Md';
+
+}
+
+/* remove the input focus blue box, it will be in the wrong place. */
+input.searchinput:focus {
+  outline: none;
+}
+
+/* Add the focus effect to the form so it contains the button */
+form.searchform:focus-within { 
+  outline: 1px solid rgb(19, 14, 61);
+}
+
+button.searchbutton {
+  /* Just a little styling to make it pretty */
+  /* border:1px solid blue; */
+  background: rgb(19, 14, 61);
+  color:white;
+  font-family: 'Cereal-Md';
+}
+
 #buttonSearch {
-  background: #24a0ed;
+  background: rgba(19, 14, 61, 1);
   padding: 10px;
   padding-inline: 15px;
   margin-block: 7.5px;
   margin-left: -100px;
   border-radius: 3px;
+  font-family: 'Cereal';
+  border:1px solid blue;
+  background:blue;
+  color:white;
 }
 
-.search-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1;
+.form-control {
+  font-family: 'Cereal';
+
+
 }
+
 
 @media only screen and (max-width: 700px) {
   #imgFluid {
@@ -41,9 +153,9 @@
 
 @media only screen and (max-width: 576px) {
   #imgFluid {
-    width: 88%;
-    height: 300px;
-    left: 25px;
+    width: 100%;
+    height: 100%;
+    /* left: 25px; */
   }
   .position-relative {
     padding-top: 5px;
@@ -52,15 +164,21 @@
   }
 }
 
-/* #Searching {
-  background-image: url("../assets/searchIcon.svg");
+#Searching {
+  /* background-image: url("../assets/searchIcon.svg");
   background-position: 15px center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  padding-inline: 50px;
-} */
+  padding-inline: 50px; */
 
-@media only screen and (min-width: 1620px) {
+  flex-grow:2;
+  /* And hide the input's outline, so the form looks like the outline */
+  border:none;
+}
+
+
+
+/* @media only screen and (min-width: 1620px) {
   #Searching {
     margin-left: 55px;
   }
@@ -76,16 +194,17 @@
   #Searching {
     margin-left: 125px;
   }
-}
+} */
 
 @media only screen and (min-width: 1950px) {
-  #Searching {
+  /* #Searching {
     margin-left: 145px;
-  } #imgFluid {
+  } */
+   #imgFluid {
     width: 1500px;
   }
 }
-
+/* 
 @media only screen and (min-width: 2000px) {
   #Searching {
     margin-left: 165px;
@@ -102,18 +221,19 @@
   #Searching {
     margin-left: 155px;
   }
-}
+} */
 
 @media only screen and (min-width: 2260px) {
-  #Searching {
+  /* #Searching {
     margin-left: 55px;
     width: 70%;
-  } #imgFluid {
+  }  */
+  #imgFluid {
     width: 1900px;
     height: 700px;
   }
 }
-@media only screen and (min-width: 2330px) {
+/* @media only screen and (min-width: 2330px) {
   #Searching {
     width: 60%;
     margin-left: 15%;
@@ -126,13 +246,14 @@
     width: 60%;
     margin-left: 25%;
   }
-}
+} */
 
 @media only screen and (min-width: 3100px) {
-  #Searching {
+  /* #Searching {
     width: 70%;
     margin-left: 5%;
-  } #imgFluid {
+  }  */
+  #imgFluid {
     margin-top: -100px;
     width: 80%;
     height: 1150px;
@@ -141,7 +262,7 @@
     gap: 0px;
   }
 }
-
+/* 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {
   #Searching {
     margin-left: 30px;
@@ -149,25 +270,25 @@
 }
 @media only screen and (min-width: 860px) and (max-width: 1200px) {
   #Searching {
-    margin-left: 100px;
-  }
-}
-@media only screen and (min-width: 770px) and (max-width: 860px) {
+    /* margin-left: 100px; */
+  /* }
+} */
+/* @media only screen and (min-width: 770px) and (max-width: 860px) {
   #Searching {
     height: 50px;
     width: 60%;
     margin-left: 120px;
   }
-}
+} */ 
 
 @media only screen and (min-width: 450px) and (max-width: 770px) {
-  #Searching {
+  /* #Searching {
     width: 40%;
     height: 35%;
     margin-left: 150px;
     border-radius: 10px;
-  }
-  #buttonSearch {
+  } */
+  /* #buttonSearch {
     width: 50px;
     height: 1.7rem;
     font-size: 6px;
@@ -176,11 +297,11 @@
     margin-left: -65px;
     padding-inline: 0px;
     border-radius: 2px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 450px) {
-  #Searching {
+  /* #Searching {
     width: 38%;
     max-height: 25px;
     margin-left: 205px;
@@ -190,8 +311,8 @@
     padding-inline: 0px;
     border-radius: 6px;
     background-position: 4%;
-  }
-  #buttonSearch {
+  } */
+  /* #buttonSearch {
     width: 45px;
     height: 8rem;
     font-size: 6px;
@@ -200,10 +321,10 @@
     padding: 0px;
     padding-inline: 0px;
     border-radius: 2px;
-  }
+  } */
 }
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
   #buttonSearch {
     width: 30px;
     height: 1.2rem;
@@ -214,4 +335,4 @@
     padding-inline: 0px;
     border-radius: 2px;
   }
-}
+} */
