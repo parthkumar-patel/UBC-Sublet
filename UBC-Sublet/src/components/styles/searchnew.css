@@ -61,7 +61,7 @@ div.searchbg {
   /* background-color: rgb(19, 14, 61); */
   width: 40%;
   height: 8%;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
   margin-left: 4%;
   border-radius: 25px;
 }
@@ -94,10 +94,13 @@ form.searchform {
   /* This bit sets up the horizontal layout */
   display: flex;
   flex-direction: row;
-  max-width: 1000px;
+  width: 36%;
   position: absolute;
-  margin-bottom: 7%;
-  margin-left: 7%;
+  align-items: center;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  margin-right: 5%;
+  margin-top: 1%;
   /* top: 82vh;
   left: 10vw;
   right: 50vw; */
@@ -112,12 +115,14 @@ form.searchform {
 
 input.searchinput {
   /* Tell the input to use all the available space */
-  flex-grow: 6;
+  flex-grow: 7;
   /* And hide the input's outline, so the form looks like the outline */
   border: none;
   font-family: 'Cereal-Md';
   border-radius: 15px;
-  /* margin-right: 20%; */
+  /* border: 1px solid rgb(139, 139, 142); */
+  background-color: rgb(241, 241, 241);
+  /* margin-right: 25%; */
 
 }
 
@@ -138,7 +143,7 @@ button.searchbutton {
   color:white;
   font-family: 'Cereal-Md';
   border-radius: 15px;
-  /* margin-left: 20%; */
+  margin-left: 5%;
 }
 
 
