@@ -35,6 +35,11 @@ div.new {
   display: flex;
 }
 
+/* laptop */
+
+/* @media (max-width: 1300px) { */
+
+
 div.slogan {
   position: absolute;
   top: 15%;
@@ -44,6 +49,12 @@ div.slogan {
   width: 40%;
 }
 
+.slogan p.headline {
+  font-family: 'Cereal-Md';
+  text-align: left;
+  font-size: 4.5rem;
+}
+
 
 div.landingpage {
   display: flex;
@@ -51,8 +62,7 @@ div.landingpage {
   background-image: url('./src/assets/house.svg');
   /* opacity: 0.75; */
   width: 100%;
-  height: 1000px;
-  max-height: 1000px;
+  height: 1072px;
   background-size: cover;
 }
 
@@ -223,6 +233,212 @@ button.searchbutton {
     margin-left: 125px;
   }
 } */
+
+/* tablet  */
+@media only screen and (max-width: 768px) {
+
+  div.slogan {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: black;
+    text-align: left;
+    width: 50%;
+  }
+
+  .slogan p.headline {
+    font-family: 'Cereal-Md';
+    text-align: left;
+    font-size: 3.5rem;
+  }
+
+  div.landingpage {
+    display: flex;
+    align-items: end;
+    background-image: url('./src/assets/houseipad.svg');
+    /* opacity: 0.75; */
+    width: 100%;
+    height: 1024px;
+    background-size: cover;
+  }
+
+
+  div.searchbg {
+    background-color: white;
+    /* background-color: rgb(19, 14, 61); */
+    width: 60%;
+    height: 8%;
+    margin-bottom: 8%;
+    margin-left: 4%;
+    border-radius: 25px;
+  }
+
+  form.searchform {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+    width: 56%;
+    position: absolute;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    /* top: 82vh;
+    left: 10vw;
+    right: 50vw; */
+  
+    /* This bit draws the box around it */
+    /* border:1px solid grey; */
+  
+    /* I've used padding so you can see the edges of the elements. */
+    padding:1px;
+  }
+  
+  
+  input.searchinput {
+    /* Tell the input to use all the available space */
+    flex-grow: 7;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+    font-family: 'Cereal-Md';
+    border-radius: 15px;
+    /* border: 1px solid rgb(139, 139, 142); */
+    background-color: rgb(241, 241, 241);
+    /* margin-right: 25%; */
+  
+  }
+  
+  /* remove the input focus blue box, it will be in the wrong place. */
+  input.searchinput:focus {
+    outline: none;
+  }
+  
+  /* Add the focus effect to the form so it contains the button */
+  form.searchform:focus-within { 
+    outline: 1px solid rgb(19, 14, 61);
+  }
+  
+  button.searchbutton {
+    /* Just a little styling to make it pretty */
+    /* border:1px solid blue; */
+    background: rgb(19, 14, 61);
+    color:white;
+    font-family: 'Cereal-Md';
+    border-radius: 15px;
+    margin-left: 4%;
+  }
+   
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 430px) {
+
+  div.slogan {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: black;
+    text-align: left;
+    width: 50%;
+  }
+
+  .slogan p.headline {
+    font-family: 'Cereal-Md';
+    text-align: left;
+    font-size: 2.5rem;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  div.landingpage {
+    display: flex;
+    align-items: end;
+    background-image: url('./src/assets/housemobile.svg');
+    /* opacity: 0.75; */
+    width: 100%;
+    height: 850px;
+    background-size: cover;
+  }
+
+
+  div.searchbg {
+    background-color: white;
+    /* background-color: rgb(19, 14, 61); */
+    width: 92%;
+    height: 8%;
+    margin-bottom: 8%;
+    margin-left: 4%;
+    border-radius: 25px;
+  }
+
+  form.searchform {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    position: absolute;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    /* top: 82vh;
+    left: 10vw;
+    right: 50vw; */
+  
+    /* This bit draws the box around it */
+    /* border:1px solid grey; */
+  
+    /* I've used padding so you can see the edges of the elements. */
+    padding:1px;
+  }
+  
+  
+  input.searchinput {
+    /* Tell the input to use all the available space */
+    flex-grow: 7;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+    font-family: 'Cereal-Md';
+    border-radius: 15px;
+    /* border: 1px solid rgb(139, 139, 142); */
+    background-color: rgb(241, 241, 241);
+    /* margin-right: 25%; */
+  
+  }
+  
+  /* remove the input focus blue box, it will be in the wrong place. */
+  input.searchinput:focus {
+    outline: none;
+  }
+  
+  /* Add the focus effect to the form so it contains the button */
+  form.searchform:focus-within { 
+    outline: 1px solid rgb(19, 14, 61);
+  }
+  
+  button.searchbutton {
+    /* Just a little styling to make it pretty */
+    /* border:1px solid blue; */
+    background: rgb(19, 14, 61);
+    color:white;
+    font-family: 'Cereal-Md';
+    border-radius: 15px;
+    margin-left: 4%;
+  }
+   
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 1950px) {
   /* #Searching {
