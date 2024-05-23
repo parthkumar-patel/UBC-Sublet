@@ -1,12 +1,14 @@
-@font-face {
-  font-family: 'Cereal-Md';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
-  font-weight: normal;
-  font-style: normal;
-}
-
 .btn.btn-primary {
   width: 35px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 80px !important;
 }
 
 #buttonFilter {
@@ -18,11 +20,6 @@
 .input-group {
   position: relative;
   left: 70%;
-  width: 100%;
-}
-
-.navbar-brand {
-  font-family: 'Cereal-Md';
 }
 
 #favid {
@@ -38,7 +35,7 @@
   margin-left: -40px;
   width: 40px;
   border-radius: 0px 10px 10px 0px;
-  background-color: rgba(19, 14, 61, 1);
+  background-color: #24a0ed;
   background-repeat: no-repeat;
 }
 
@@ -105,6 +102,7 @@
   }
   .nav-link {
     margin-left: -1px;
+
   }
   .btn {
     margin-top: -20px;
@@ -227,6 +225,7 @@
     width: 40%;
     max-height: 30px;
   }
+  
   #search-button {
     margin-top: 4px;
     height: 15px;
@@ -247,14 +246,21 @@
 }
 
 @media only screen and (max-width: 457px) {
+  .topLinks{
+    display: flex; 
+    column-gap: 39px;
+    margin-top: -40px; 
+  }
   .navbar {
     height: 50px;
     width: 100%;
   }
+  
   .navbar-brand {
-    margin-left: 10px;
-    margin-top: -24px;
+        margin-left: 10px;
+        margin-top: -42px;
   }
+
   .navbar-brand img {
     height: auto;
     margin-left: -24px;
@@ -267,27 +273,27 @@
     max-height: 30px;
   }
   #search-button {
-    margin-top: -18px;
-    height: 15px;
-    max-width: 20px;
-    margin-left: 28px !important;
+    margin-top: 17px;
+    height: 30px;
+    max-width: 35px;
+    margin-left: 45px !important;
     border-radius: 2px;
     font-size: 5px;
     padding: 1px;
     border-radius: 6px;
     background-size: 40%;
+    position: absolute;
   }
   #search-input {
-    width: 80px;
-    margin-top: -20px;
-    margin-left: 40px !important;
-    height: 19px;
+    width: 379px;
+    margin-top: 15px;
+    margin-left: -146px !important;
+    height: 35px;
     font-size: 10px;
-    padding: 0px;
+    border-radius: 7px !important;
   }
   .nav-link {
     margin-left: -100px;
-    margin-top: -10px;
   }
   .dropdown-menu.show {
     margin-left: -120px;
@@ -296,18 +302,17 @@
   }
   #favid {
     border-radius: 10px;
-    margin-top: -30px !important;
-    max-height: 40px;
+    max-height: 35px;
     max-width: 35px;
     width: 35px;
-    margin-left: 37px !important;
-  }
-  #profileImage {
-    margin-top: -8px;
-    max-height: 20px;
-    max-width: 25px;
-    margin-left: 50px !important;
-  }
+    margin-left: 48px !important;
+}
+#profileImage {
+  margin-top: 10px;
+  max-height: 19px;
+  max-width: 25px;
+  margin-left: 62px !important;
+}
   #buttonFilter {
     margin-top: 0px !important;
     font-size: 10px;
@@ -320,15 +325,29 @@
 
 @media only screen and (max-width: 400px) {
   #search-button {
-    margin-top: -18px;
-    height: 15px;
-    max-width: 20px;
+    margin-top: 17px;
+    height: 32px;
+    max-width: 37px;
     margin-left: 34px !important;
     border-radius: 2px;
     font-size: 5px;
     padding: 1px;
     border-radius: 6px;
     background-size: 40%;
+    position: absolute;
+}
+
+  #search-input {
+    width: 341px;
+    margin-top: 16px;
+    margin-left: -119px !important;
+    height: 34px;
+    font-size: 10px;
+    border-radius: 7px !important;
+  }
+
+  #favid {
+    margin-left: 29px !important;
   }
 }
 
@@ -337,6 +356,13 @@
   .navbar-brand{
     margin-top: 0%;
   }
+  .topLinks {
+    display: flex;
+    column-gap: 0px !important;
+    margin-top: 0px !important;
+    left: 40px !important;
+    margin-right: 0px !important;
+    justify-Content: flex-end; 
 }
 
 

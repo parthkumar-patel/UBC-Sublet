@@ -103,24 +103,24 @@ export default function Navbar() {
               {" "}
             </button>
           </div>
-
-          <Link to="/Fav" className="navbar">
-            <img
-              src={Fav}
-              alt="Fav"
-              className="d-inline-block align-text-top ms-2"
-              id="favid"
-              style={{
-                backgroundColor: "#f2f2f2",
-                scale: "0.83",
-                backgroundRepeat: "no-repeat",
-                border: "1px #d1d1d1 solid",
-                marginBlock: "-8px",
-                marginRight: "2px",
-              }}
-            />
-          </Link>
-        </div>
+     <div className="parentContainer" style={{ display: "flex", position:"relative", justifyContent: "flex-end", right: "0px" }}>
+       <div className="topLinks" style={{position: "absolute", right: "0" }}>
+        <Link to="/Fav" className="navbar">
+          <img
+            src={Fav}
+            alt="Fav"
+            className="d-inline-block align-text-top ms-2"
+            id="favid"
+            style={{
+              backgroundColor: "#f2f2f2",
+              scale: "0.83",
+              backgroundRepeat: "no-repeat",
+              border: "1px #d1d1d1 solid",
+              marginBlock: "-8px",
+              marginRight: "2px",
+            }}
+          />
+        </Link>
         <div className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"
@@ -140,7 +140,7 @@ export default function Navbar() {
           </a>
           <ul className="dropdown-menu">
             <Link to="/profile" className="dropdown-item ms-3">
-              <div className="textProf"> Profile </div>
+              <div className="textProf">Profile</div>
             </Link>
             <hr className="dropdown-divider" />
             <div className="dropdown-item ms-1">
@@ -155,6 +155,10 @@ export default function Navbar() {
               )}
             </div>
           </ul>
+        </div>
+      </div>
+
+      </div>
         </div>
       </div>
     </nav>
