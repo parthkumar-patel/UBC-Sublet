@@ -1,8 +1,29 @@
 /* Base styles */
+@font-face {
+  font-family: 'Cereal';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cereal-Md';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cereal-Bd';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_XBd.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 .footer-container {
-  background-color: #333;
+  background-color: rgb(19, 14, 61);
   color: #fff;
   padding-top: 60px;
   padding-bottom: 35px;
@@ -21,11 +42,13 @@
 .footer-section h3 {
   font-size: 20px;
   margin-bottom: 15px;
+  font-family: 'Cereal-Md';
 }
 
 .footer-section p {
   font-size: 20px;
   margin-bottom: 15px;
+  font-family: 'Cereal';
 }
 
 .footer-section ul {
@@ -33,12 +56,17 @@
   padding: 0;
   text-align: left;
   /* margin-left: 5px; */
+  font-family: 'Cereal';
+
 }
 
 .footer-section ul li {
   margin-bottom: 10px;
   text-align: left; 
   /* margin-left: 5px; */
+  font-family: 'Cereal';
+
+
 }
 
 .footer-section ul li a {
@@ -47,6 +75,7 @@
   transition: color 0.3s;
   text-align: left;
   /* margin-left: 5px; */
+  font-family: 'Cereal';
 }
 
 .footer-section ul li a:hover {
@@ -60,20 +89,21 @@
 
 .social-icons li {
   font-size: 20px;
+  font-family: 'Cereal';
 }
 
 .footer-bottom {
   margin-top: 20px;
-  border-top: 1px solid #555;
+  /* border-top: 1px solid #555; */
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 18%;
 }
 
 .footer-bottom p {
   margin: 1;
+  font-family: 'Cereal';
 }
 
 .developer-link {
