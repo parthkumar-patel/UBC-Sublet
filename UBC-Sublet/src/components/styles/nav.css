@@ -1,5 +1,18 @@
+@font-face {
+  font-family: "Cereal-Md";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .btn.btn-primary {
   width: 35px;
+}
+
+.navbar-brand {
+  font-family: "Cereal-Md";
+  color: rgba(19, 14, 61, 1);
 }
 
 .fixed-top {
@@ -37,7 +50,7 @@
   margin-left: -60px;
   width: 40px;
   border-radius: 0px 10px 10px 0px;
-  background-color: #24a0ed;
+  background-color: rgba(19, 14, 61, 1);
   background-repeat: no-repeat;
 }
 
@@ -104,7 +117,6 @@
   }
   .nav-link {
     margin-left: -1px;
-
   }
   .btn {
     margin-top: -20px;
@@ -137,144 +149,6 @@
   }
 }
 
-/* @media only screen and (min-width: 767px) and (max-width: 991px) {
-  #search-button {
-    margin-top: 4px;
-    height: 15px;
-    max-width: 40px;
-    margin-left: -20px;
-    border-radius: 2px;
-    font-size: 5px;
-    padding: 1px;
-  }
-  #search-input {
-    width: 120px;
-    margin-top: 2px;
-    height: 19px;
-  }
-  .form-outline {
-    margin-left: -60px;
-    width: 30%;
-  }
-  .dropdown-menu.show {
-    margin-left: -20px;
-  }
-} */
-
-/* @media only screen and (min-width: 623px) and (max-width: 767px) {
-  .form-outline {
-    margin-left: -90px;
-    width: 40%;
-    max-height: 30px;
-  }
-  #search-button {
-    margin-top: 4px;
-    height: 15px;
-    max-width: 40px;
-    margin-left: -20px;
-    border-radius: 2px;
-    font-size: 5px;
-    padding: 1px;
-  }
-  #search-input {
-    width: 120px;
-    margin-top: 2px;
-    height: 19px;
-  }
-  .dropdown-menu.show {
-    margin-left: -80px;
-  }
-} */
-
-/* @media only screen and (min-width: 693px) and (max-width: 623) {
-  .form-outline {
-    margin-left: -90px;
-    width: 40%;
-    max-height: 30px;
-  }
-  #search-input {
-    max-height: 30px;
-  }
-  #search-button {
-    width: 10px;
-  }
-  .dropdown-menu.show {
-    margin-left: -80px;
-  }
-} */
-
-/* @media only screen and (min-width: 520px) and (max-width: 800px) {
-  .navbar {
-    height: 110px !important;
-    width: 100%;
-  }
-  .navbar-brand {
-    margin-left: 10px;
-    margin-top: -39px;
-  }
-  .topLinks{
-    display: flex; 
-    column-gap: 39px;
-    margin-top: -40px; 
-  }
-
-  .form-outline {
-    position: absolute;
-    margin-top: -10px;
-    margin-left: -339px;
-    width: 40%;
-    max-height: 30px;
-    padding: 1%;
-  }
-  #search-button {
-    margin-top: 17px;
-    height: 30px;
-    max-width: 35px;
-    margin-left: 45px !important;
-    border-radius: 2px;
-    font-size: 5px;
-    padding: 1px;
-    border-radius: 6px;
-    background-size: 40%;
-    position: absolute;
-  }
-  #search-input {
-    width: 135%;
-    position: absolute;
-    top: 1px;
-    left: -20%;
-    box-sizing: border-box;
-  }
-  .dropdown-menu.show {
-    margin-left: -80px;
-  }
-  .nav-link {
-    margin-left: -100px;
-  }
-  .dropdown-menu.show {
-    margin-left: -120px;
-    margin-top: -30px;
-    width: 40px;
-  }
-  #favid {
-    border-radius: 10px;
-    max-height: 35px;
-    max-width: 35px;
-    width: 35px;
-    margin-top: -75px !important; 
-    margin-left: 48px !important;
-}
-#profileImage {
-  margin-top: 10px;
-  max-height: 19px;
-  max-width: 25px;
-  margin-left: 62px !important;
-}
-  .dropdown-menu.show {
-    margin-left: -80px;
-  }
-} */
-
 @media only screen and (min-width: 608px) and (max-width: 1000px) {
   .input-group {
     left: 38%;
@@ -291,7 +165,6 @@
   .nav-item {
     margin-top: 6px !important;
   }
-  
 }
 
 @media only screen and (min-width: 457px) and (max-width: 608px) {
@@ -313,10 +186,10 @@
     margin-left: 10px;
     margin-top: -39px;
   }
-  .topLinks{
-    display: flex; 
+  .topLinks {
+    display: flex;
     column-gap: 39px;
-    margin-top: -40px; 
+    margin-top: -40px;
   }
   .form-outline {
     position: relative;
@@ -326,12 +199,12 @@
     max-height: 30px;
     padding-right: 5% !important;
   }
-  
+
   #search-button {
     margin-top: 14px;
     height: 30px;
     max-width: 35px;
-    right: -46%; 
+    right: -46%;
     border-radius: 2px;
     font-size: 5px;
     padding: 1px;
@@ -345,7 +218,6 @@
     margin-top: 21px;
     height: 35px;
     left: 6px;
-    /* padding-right: 5% !important; */
     font-size: 13px;
     border-radius: 7px !important;
     padding: 5%;
@@ -363,34 +235,34 @@
     max-height: 35px;
     max-width: 35px;
     width: 35px;
-    margin-top: -75px !important; 
+    margin-top: -75px !important;
     margin-left: 48px !important;
-}
-#profileImage {
-  margin-top: 10px;
-  max-height: 19px;
-  max-width: 25px;
-  margin-left: 62px !important;
-}
+  }
+  #profileImage {
+    margin-top: 10px;
+    max-height: 19px;
+    max-width: 25px;
+    margin-left: 62px !important;
+  }
   .dropdown-menu.show {
     margin-left: -80px;
   }
 }
 
 @media only screen and (max-width: 457px) {
-  .topLinks{
-    display: flex; 
+  .topLinks {
+    display: flex;
     column-gap: 39px;
-    margin-top: -40px; 
+    margin-top: -40px;
   }
   .navbar {
     height: 50px;
     width: 100%;
   }
-  
+
   .navbar-brand {
-        margin-left: 10px;
-        margin-top: -42px;
+    margin-left: 10px;
+    margin-top: -42px;
   }
 
   .navbar-brand img {
@@ -437,15 +309,15 @@
     max-height: 35px;
     max-width: 35px;
     width: 35px;
-    margin-top: -15px !important; 
+    margin-top: -15px !important;
     margin-left: 48px !important;
-}
-#profileImage {
-  margin-top: 10px;
-  max-height: 19px;
-  max-width: 25px;
-  margin-left: 62px !important;
-}
+  }
+  #profileImage {
+    margin-top: 10px;
+    max-height: 19px;
+    max-width: 25px;
+    margin-left: 62px !important;
+  }
   #buttonFilter {
     margin-top: 0px !important;
     font-size: 10px;
@@ -468,7 +340,7 @@
     border-radius: 6px;
     background-size: 40%;
     position: absolute;
-}
+  }
 
   #search-input {
     width: 341px;
@@ -484,9 +356,8 @@
   }
 }
 
-
 @media only screen and (min-width: 1100px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-top: 0%;
   }
   .topLinks {
@@ -495,67 +366,62 @@
     margin-top: -18px !important;
     left: 40px !important;
     margin-right: 0px !important;
-    justify-Content: flex-end; 
+    justify-content: flex-end;
+  }
+  .nav-item {
+    margin-top: 5px !important;
+  }
 }
-.nav-item {
-  margin-top: 5px !important;
-}
-}
-
 
 @media only screen and (min-width: 1600px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -5% !important;
   }
 }
 
 @media only screen and (min-width: 1750px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -10% !important;
   }
 }
 
-
 @media only screen and (min-width: 1900px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -20% !important;
   }
 }
 
-
 @media only screen and (min-width: 2100px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -30% !important;
   }
 }
 
 @media only screen and (min-width: 2500px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -45% !important;
   }
 }
 @media only screen and (min-width: 3000px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -60% !important;
   }
 }
 
 @media only screen and (min-width: 3150px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -70% !important;
   }
 }
 
-
 @media only screen and (min-width: 3400px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -80% !important;
   }
 }
 
-
 @media only screen and (min-width: 4000px) {
-  .navbar-brand{
+  .navbar-brand {
     margin-left: -102% !important;
   }
 }

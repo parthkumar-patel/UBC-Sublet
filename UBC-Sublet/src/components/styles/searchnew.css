@@ -1,24 +1,26 @@
 @font-face {
-  font-family: 'Cereal';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf') format('opentype'); 
+  font-family: "Cereal";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cereal-Md';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-family: "Cereal-Md";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cereal-Bd';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_XBd.otf') format('opentype'); 
+  font-family: "Cereal-Bd";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_XBd.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
-
 
 #imgFluid {
   width: 1300px;
@@ -35,70 +37,45 @@ div.new {
   display: flex;
 }
 
-/* laptop */
-
-/* @media (max-width: 1300px) { */
-
-
 div.slogan {
   position: absolute;
-  top: 15%;
-  left: 5%;
+  top: 18%;
+  left: 7%;
   color: black;
   text-align: left;
   width: 40%;
 }
 
 .slogan p.headline {
-  font-family: 'Cereal-Md';
+  font-family: "Cereal-Md";
   text-align: left;
   font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #130e3d, #b8b7c5);
 }
-
 
 div.landingpage {
   display: flex;
   align-items: end;
-  background-image: url('./src/assets/house.svg');
-  /* opacity: 0.75; */
+  background-image: url("./src/assets/house.svg");
   width: 100%;
-  height: 1072px;
+  height: 850px;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 div.searchbg {
   background-color: white;
-  /* background-color: rgb(19, 14, 61); */
   width: 40%;
   height: 8%;
   margin-bottom: 4%;
   margin-left: 4%;
   border-radius: 25px;
 }
-/* div.landingpage {
-  position: relative; 
-  display: flex;
-  align-items: end;
-  width: 100%;
-  height: 820px;
-  max-height: 1000px;
-  background-size: cover;
-  z-index: 1; 
-}
-
-div.landingpage::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./src/assets/UBC.jpg');
-  background-size: cover;
-  opacity: 0.85; 
-  z-index: -1; 
-} */
-
 
 form.searchform {
   /* This bit sets up the horizontal layout */
@@ -119,43 +96,20 @@ form.searchform {
   /* border:1px solid grey; */
 
   /* I've used padding so you can see the edges of the elements. */
-  padding:1px;
+  padding: 1px;
 }
-
 
 input.searchinput {
   /* Tell the input to use all the available space */
   flex-grow: 7;
   /* And hide the input's outline, so the form looks like the outline */
   border: none;
-  font-family: 'Cereal-Md';
+  font-family: "Cereal-Md";
   border-radius: 15px;
   /* border: 1px solid rgb(139, 139, 142); */
   background-color: rgb(241, 241, 241);
   /* margin-right: 25%; */
-
 }
-
-/* remove the input focus blue box, it will be in the wrong place. */
-input.searchinput:focus {
-  outline: none;
-}
-
-/* Add the focus effect to the form so it contains the button */
-form.searchform:focus-within { 
-  outline: 1px solid rgb(19, 14, 61);
-}
-
-button.searchbutton {
-  /* Just a little styling to make it pretty */
-  /* border:1px solid blue; */
-  background: rgb(19, 14, 61);
-  color:white;
-  font-family: 'Cereal-Md';
-  border-radius: 15px;
-  margin-left: 5%;
-}
-
 
 #buttonSearch {
   background: rgba(19, 14, 61, 1);
@@ -164,18 +118,15 @@ button.searchbutton {
   margin-block: 7.5px;
   margin-left: -100px;
   border-radius: 3px;
-  font-family: 'Cereal';
-  border:1px solid blue;
-  background:blue;
-  color:white;
+  font-family: "Cereal";
+  border: 1px solid blue;
+  background: blue;
+  color: white;
 }
 
 .form-control {
-  font-family: 'Cereal';
-
-
+  font-family: "Cereal";
 }
-
 
 @media only screen and (max-width: 700px) {
   #imgFluid {
@@ -209,12 +160,10 @@ button.searchbutton {
   border-radius: 10px;
   padding-inline: 50px; */
 
-  flex-grow:2;
+  flex-grow: 2;
   /* And hide the input's outline, so the form looks like the outline */
-  border:none;
+  border: none;
 }
-
-
 
 /* @media only screen and (min-width: 1620px) {
   #Searching {
@@ -236,7 +185,6 @@ button.searchbutton {
 
 /* tablet  */
 @media only screen and (max-width: 768px) {
-
   div.slogan {
     position: absolute;
     top: 15%;
@@ -247,7 +195,7 @@ button.searchbutton {
   }
 
   .slogan p.headline {
-    font-family: 'Cereal-Md';
+    font-family: "Cereal-Md";
     text-align: left;
     font-size: 3.5rem;
   }
@@ -255,17 +203,15 @@ button.searchbutton {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url('./src/assets/houseipad.svg');
+    background-image: url("./src/assets/houseipad.svg");
     /* opacity: 0.75; */
     width: 100%;
     height: 1024px;
     background-size: cover;
   }
 
-
   div.searchbg {
     background-color: white;
-    /* background-color: rgb(19, 14, 61); */
     width: 60%;
     height: 8%;
     margin-bottom: 8%;
@@ -287,54 +233,40 @@ button.searchbutton {
     /* top: 82vh;
     left: 10vw;
     right: 50vw; */
-  
+
     /* This bit draws the box around it */
     /* border:1px solid grey; */
-  
+
     /* I've used padding so you can see the edges of the elements. */
-    padding:1px;
+    padding: 1px;
   }
-  
-  
+
   input.searchinput {
     /* Tell the input to use all the available space */
     flex-grow: 7;
     /* And hide the input's outline, so the form looks like the outline */
     border: none;
-    font-family: 'Cereal-Md';
+    font-family: "Cereal-Md";
     border-radius: 15px;
     /* border: 1px solid rgb(139, 139, 142); */
     background-color: rgb(241, 241, 241);
     /* margin-right: 25%; */
-  
   }
-  
+
   /* remove the input focus blue box, it will be in the wrong place. */
   input.searchinput:focus {
     outline: none;
   }
-  
+
   /* Add the focus effect to the form so it contains the button */
-  form.searchform:focus-within { 
+  form.searchform:focus-within {
     outline: 1px solid rgb(19, 14, 61);
   }
-  
-  button.searchbutton {
-    /* Just a little styling to make it pretty */
-    /* border:1px solid blue; */
-    background: rgb(19, 14, 61);
-    color:white;
-    font-family: 'Cereal-Md';
-    border-radius: 15px;
-    margin-left: 4%;
-  }
-   
 }
 
 /* MOBILE */
 
 @media only screen and (max-width: 430px) {
-
   div.slogan {
     position: absolute;
     top: 15%;
@@ -345,7 +277,7 @@ button.searchbutton {
   }
 
   .slogan p.headline {
-    font-family: 'Cereal-Md';
+    font-family: "Cereal-Md";
     text-align: left;
     font-size: 2.5rem;
     margin-left: 10%;
@@ -355,17 +287,14 @@ button.searchbutton {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url('./src/assets/housemobile.svg');
-    /* opacity: 0.75; */
+    background-image: url("./src/assets/housemobile.svg");
     width: 100%;
     height: 850px;
     background-size: cover;
   }
 
-
   div.searchbg {
     background-color: white;
-    /* background-color: rgb(19, 14, 61); */
     width: 92%;
     height: 8%;
     margin-bottom: 8%;
@@ -387,196 +316,140 @@ button.searchbutton {
     /* top: 82vh;
     left: 10vw;
     right: 50vw; */
-  
+
     /* This bit draws the box around it */
     /* border:1px solid grey; */
-  
+
     /* I've used padding so you can see the edges of the elements. */
-    padding:1px;
+    padding: 1px;
   }
-  
-  
+
   input.searchinput {
     /* Tell the input to use all the available space */
     flex-grow: 7;
     /* And hide the input's outline, so the form looks like the outline */
     border: none;
-    font-family: 'Cereal-Md';
+    font-family: "Cereal-Md";
     border-radius: 15px;
     /* border: 1px solid rgb(139, 139, 142); */
     background-color: rgb(241, 241, 241);
     /* margin-right: 25%; */
-  
   }
-  
+
   /* remove the input focus blue box, it will be in the wrong place. */
   input.searchinput:focus {
     outline: none;
   }
-  
+
   /* Add the focus effect to the form so it contains the button */
-  form.searchform:focus-within { 
+  form.searchform:focus-within {
     outline: 1px solid rgb(19, 14, 61);
   }
-  
-  button.searchbutton {
-    /* Just a little styling to make it pretty */
-    /* border:1px solid blue; */
-    background: rgb(19, 14, 61);
-    color:white;
-    font-family: 'Cereal-Md';
-    border-radius: 15px;
-    margin-left: 4%;
-  }
-   
 }
 
-
-
-
-
-
-
-
-
-
 @media only screen and (min-width: 1950px) {
-  /* #Searching {
-    margin-left: 145px;
-  } */
-   #imgFluid {
+  #imgFluid {
     width: 1500px;
   }
 }
-/* 
-@media only screen and (min-width: 2000px) {
-  #Searching {
-    margin-left: 165px;
-  }
-}
-
-@media only screen and (min-width: 2050px) {
-  #Searching {
-    margin-left: 195px;
-  }
-}
-
-@media only screen and (min-width: 2100px) {
-  #Searching {
-    margin-left: 155px;
-  }
-} */
 
 @media only screen and (min-width: 2260px) {
-  /* #Searching {
-    margin-left: 55px;
-    width: 70%;
-  }  */
   #imgFluid {
     width: 1900px;
     height: 700px;
   }
 }
-/* @media only screen and (min-width: 2330px) {
-  #Searching {
-    width: 60%;
-    margin-left: 15%;
-  }
-}
-
-
-@media only screen and (min-width: 2800px) {
-  #Searching {
-    width: 60%;
-    margin-left: 25%;
-  }
-} */
 
 @media only screen and (min-width: 3100px) {
-  /* #Searching {
-    width: 70%;
-    margin-left: 5%;
-  }  */
   #imgFluid {
     margin-top: -100px;
     width: 80%;
     height: 1150px;
-  } #viewAll {
+  }
+  #viewAll {
     margin-left: 45% !important;
     gap: 0px;
   }
 }
-/* 
-@media only screen and (min-width: 1200px) and (max-width: 1300px) {
-  #Searching {
-    margin-left: 30px;
-  }
-}
-@media only screen and (min-width: 860px) and (max-width: 1200px) {
-  #Searching {
-    /* margin-left: 100px; */
-  /* }
-} */
-/* @media only screen and (min-width: 770px) and (max-width: 860px) {
-  #Searching {
-    height: 50px;
-    width: 60%;
-    margin-left: 120px;
-  }
-} */ 
 
-@media only screen and (min-width: 450px) and (max-width: 770px) {
-  /* #Searching {
-    width: 40%;
-    height: 35%;
-    margin-left: 150px;
-    border-radius: 10px;
-  } */
-  /* #buttonSearch {
-    width: 50px;
-    height: 1.7rem;
-    font-size: 6px;
-    margin-top: 1.9px;
-    padding: 0px;
-    margin-left: -65px;
-    padding-inline: 0px;
-    border-radius: 2px;
-  } */
+.tabpanel {
+  width: 320px;
+  height: 64px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  border: 1px solid #ddd;
+  justify-content: space-between;
+  padding: 6px 9px 6px 30px;
+  gap: 20px;
+  background-color: #fff;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-left: 180px;
+  margin-bottom: 380px;
+  cursor: pointer;
+}
+.tabpanel:hover {
+  background-color: #eceef0;
 }
 
-@media only screen and (max-width: 450px) {
-  /* #Searching {
-    width: 38%;
-    max-height: 25px;
-    margin-left: 205px;
-    background-size: 12px;
-    font-size: 10px;
-    padding: 0px;
-    padding-inline: 0px;
-    border-radius: 6px;
-    background-position: 4%;
-  } */
-  /* #buttonSearch {
-    width: 45px;
-    height: 8rem;
-    font-size: 6px;
-    margin-left: -43px;
-    margin-top: 1.9px;
-    padding: 0px;
-    padding-inline: 0px;
-    border-radius: 2px;
-  } */
+.tabpanel.clicked {
+  background-color: #fff;
+}
+.where {
+  font-family: "Cereal-md";
+  line-height: 16px;
+  font-size: 12px;
+  color: inherit;
+  min-width: 38px;
+}
+.search-destinations {
+  font-family: "Cereal";
+  font-size: 14px;
+  min-width: 126.4px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: row;
+  font-size: 14px;
+  color: #6a6a6a;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.destination-search,
+.search-field {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-/* @media only screen and (max-width: 450px) {
-  #buttonSearch {
-    width: 30px;
-    height: 1.2rem;
-    font-size: 6px;
-    margin-left: -43px;
-    margin-top: 3.6px;
-    padding: 0px;
-    padding-inline: 0px;
-    border-radius: 2px;
-  }
-} */
+.destination-search,
+.search-field {
+  flex-direction: column;
+}
+.search-field {
+  gap: 2px;
+}
+.destination-search {
+  padding: 6px 0 0;
+}
+.searchbutton {
+  background-color: transparent;
+  height: 64px;
+  position: relative;
+  top: -8.5px;
+  left: 20px;
+}
+
+.button-icon {
+  transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
+}
+
+.with-icon {
+  position: relative;
+  right: 4px;
+}

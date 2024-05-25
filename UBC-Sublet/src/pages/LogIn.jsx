@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import "../components/styles/LogIn.css";
 
-export default function SignIn () {
+export default function SignIn() {
   const { user } = UserAuth();
   const navigate = useNavigate();
 

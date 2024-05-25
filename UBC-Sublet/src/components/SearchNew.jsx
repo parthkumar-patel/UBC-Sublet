@@ -1,14 +1,15 @@
-// import pond1 from "../assets/pond1.jpg";
-import upload from "../assets/UBC.jpg";
-import SearchIcon from "../assets/searchIcon.svg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/searchnew.css";
+import SearchIcon from "../assets/Button.svg";
+import SearchWithIcon from "../assets/SearchWithIcon.svg";
 
 export default function Search() {
   const [isOnlyUBC, setIsOnlyUBC] = useState(false); // State to track if the input value is "UBC"
   const navigate = useNavigate();
   const [data, setData] = useState({ latitude: "", longitude: "" });
+  const [clicked, setClicked] = useState(false);
+  const panelRef = useRef(null);
 
   const handlePlaceChange = async (e) => {
     try {
@@ -46,67 +47,62 @@ export default function Search() {
     });
   };
 
+  const handleTabPanelClick = (event) => {
+    if (panelRef.current && panelRef.current.contains(event.target)) {
+      setClicked(true);
+    }
+    const input = document.getElementById("searchInput");
+    if (event.target !== input) {
+      input.focus();
+    }
+  };
+
+  const handleClickOutside = (event) => {
+    if (panelRef.current && !panelRef.current.contains(event.target)) {
+      setClicked(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="new">
-      <div className="slogan" >
+      <div className="slogan">
         <p className="headline">Explore places to sublet at UBC</p>
       </div>
-       <div className="landingpage">
-
-        <div className="searchbg">
-
-
-       <form className="searchform"
-          style={{
-            // top: "82%",
-            // left: "10%",
-            // right: "50%",
-          }}>
-      <input className="searchinput" 
-              placeholder="Search by address or neighbourhood"
-              aria-label="Search by address or neighbourhood"
-              onChange={handlePlaceChange} />
-      <button className="searchbutton" onClick={handleSubmit}>Search</button>
-
-     
-    </form> 
-    </div>
-</div>
-      
-      {/* <form
-        className="search-bar"
-        style={{
-          top: "82%",
-          left: "10%",
-          right: "50%",
-        }}
-      >
-        <input
-          // className="form-control"
-          id="Searching"
-          type="search"
-          placeholder="Search by address or neighbourhood"
-          aria-label="Search by address or neighbourhood"
-          onChange={handlePlaceChange}
-          style={{
-            // backgroundImage: `url(${SearchIcon})`,
-            // backgroundPosition: "15px center",
-            // backgroundRepeat: "no-repeat",
-            // borderRadius: "10px",
-            // paddingInline: "24px",
-          }}
-        />
-        <button
-          className="btn text-white"
-          type="submit"
-          id="buttonSearch"
-          style={{ borderRadius: "10px" }}
-          onClick={handleSubmit}
+      <div className="landingpage">
+        <form
+          className={`tabpanel ${clicked ? "clicked" : ""}`}
+          onClick={handleTabPanelClick}
+          ref={panelRef}
         >
-          Search
-        </button>
-      </form> */}
-  
+          <div className="destination-search">
+            <div className="search-field">
+              <div className="where">Where</div>
+              <input
+                id="searchInput"
+                className="search-destinations"
+                placeholder="Search destinations"
+                aria-label="Search destinations"
+                onChange={handlePlaceChange}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+          <button className="searchbutton" onClick={handleSubmit}>
+            <img
+              className={`button-icon ${clicked ? "with-icon" : ""}`}
+              loading="lazy"
+              alt="SearchIcon"
+              src={clicked ? SearchWithIcon : SearchIcon}
+            />
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
