@@ -62,7 +62,11 @@ export default function Navbar() {
         <Link
           to="/"
           className="navbar-brand"
-          style={{ fontSize: "26px", paddingBlock: "0px" }}
+          style={{
+            fontSize: "26px",
+            paddingBlock: "0px",
+            backgroundColor: "#130e3d",
+          }}
         >
           Subletify
         </Link>
@@ -103,62 +107,72 @@ export default function Navbar() {
               {" "}
             </button>
           </div>
-     <div className="parentContainer" style={{ display: "flex", position:"relative", justifyContent: "flex-end", right: "0px" }}>
-       <div className="topLinks" style={{position: "absolute", right: "0" }}>
-        <Link to="/Fav" className="navbar">
-          <img
-            src={Fav}
-            alt="Fav"
-            className="d-inline-block align-text-top ms-2"
-            id="favid"
+          <div
+            className="parentContainer"
             style={{
-              backgroundColor: "#f2f2f2",
-              scale: "0.83",
-              backgroundRepeat: "no-repeat",
-              border: "1px #d1d1d1 solid",
-              marginBlock: "-8px",
-              marginRight: "2px",
+              display: "flex",
+              position: "relative",
+              justifyContent: "flex-end",
+              right: "0px",
             }}
-          />
-        </Link>
-        <div className="nav-item dropdown">
-          <a
-            className="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
           >
-            <img
-              src={user ? user.photoURL || DefaultProfile : Person}
-              alt="Profile"
-              width="24"
-              height="24"
-              className="d-inline-block align-text-top ms-2 rounded-circle"
-              id="profileImage"
-            />
-          </a>
-          <ul className="dropdown-menu">
-            <Link to="/profile" className="dropdown-item ms-3">
-              <div className="textProf">Profile</div>
-            </Link>
-            <hr className="dropdown-divider" />
-            <div className="dropdown-item ms-1">
-              {user ? (
-                <a onClick={handleSignOut} className="btn">
-                  Logout
+            <div
+              className="topLinks"
+              style={{ position: "absolute", right: "0" }}
+            >
+              <Link to="/Fav" className="navbar">
+                <img
+                  src={Fav}
+                  alt="Fav"
+                  className="d-inline-block align-text-top ms-2"
+                  id="favid"
+                  style={{
+                    backgroundColor: "#f2f2f2",
+                    scale: "0.83",
+                    backgroundRepeat: "no-repeat",
+                    border: "1px #d1d1d1 solid",
+                    marginBlock: "-8px",
+                    marginRight: "2px",
+                  }}
+                />
+              </Link>
+              <div className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src={user ? user.photoURL || DefaultProfile : Person}
+                    alt="Profile"
+                    width="24"
+                    height="24"
+                    className="d-inline-block align-text-top ms-2 rounded-circle"
+                    id="profileImage"
+                  />
                 </a>
-              ) : (
-                <Link to="/login" className="btn">
-                  Log in
-                </Link>
-              )}
+                <ul className="dropdown-menu">
+                  <Link to="/profile" className="dropdown-item ms-3">
+                    <div className="textProf">Profile</div>
+                  </Link>
+                  <hr className="dropdown-divider" />
+                  <div className="dropdown-item ms-1">
+                    {user ? (
+                      <a onClick={handleSignOut} className="btn">
+                        Logout
+                      </a>
+                    ) : (
+                      <Link to="/login" className="btn">
+                        Log in
+                      </Link>
+                    )}
+                  </div>
+                </ul>
+              </div>
             </div>
-          </ul>
-        </div>
-      </div>
-
-      </div>
+          </div>
         </div>
       </div>
     </nav>

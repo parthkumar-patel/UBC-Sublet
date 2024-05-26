@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Cereal-Md';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-family: "Cereal-Md";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,22 +48,22 @@
   padding-top: 2.9vw;
   padding-bottom: 0.5vw;
   margin-top: 1.38vh;
-  white-space: nowrap; 
+  white-space: nowrap;
   flex-wrap: wrap;
 }
 
 .featured-sublet {
-  /* font-size: 2vw; */
+  font-size: 2vw;
   font-family: "Cereal-Md", sans-serif;
   font-weight: lighter;
   text-align: left;
   color: #1d194e;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .featured-sublet-button {
   display: flex;
-  white-space: nowrap; 
+  white-space: nowrap;
   margin-left: 2vw;
 }
 
@@ -277,7 +278,6 @@
   transition: 0.5s;
 }
 
-
 .container-3-parent {
   display: flex;
   position: relative;
@@ -294,8 +294,6 @@
   margin-left: -23px;
   cursor: pointer;
 }
-
-
 
 @media screen and (max-width: 10000px) {
   #cards-lists .container-3-parent {
@@ -357,7 +355,6 @@
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.5);
 }
 
-
 @media only screen and (min-width: 1620px) {
   .featured-view-all {
     padding-inline-end: 140px;
@@ -372,23 +369,23 @@
 
 @media only screen and (min-width: 1900px) {
   .featured-view-all {
-    justify-content :unset !important;
+    justify-content: unset !important;
     padding-inline-end: 180px;
     gap: 40px;
   }
   .container-3-parent {
     left: 50px !important;
-  } .featured-sublet {
+  }
+  .featured-sublet {
     margin-left: 80px !important;
   }
 }
 
-
-
 @media only screen and (min-width: 2000px) {
   .container-3-parent {
     left: 80px !important;
-  } .featured-sublet {
+  }
+  .featured-sublet {
     margin-left: 120px !important;
   }
 }
@@ -419,17 +416,20 @@
 @media only screen and (min-width: 3100px) {
   .container-3-parent {
     left: 80px !important;
-  } .featured-sublet {
+  }
+  .featured-sublet {
     margin-left: 120px !important;
   }
 }
 @media only screen and (min-width: 3100px) {
-   .featured-view-all {
-    padding-inline-end:  0px;
+  .featured-view-all {
+    padding-inline-end: 0px;
     margin-left: 35% !important;
-   } .featured-sublet {
+  }
+  .featured-sublet {
     margin-left: -50% !important;
-   } #post {
+  }
+  #post {
     margin-left: 101% !important;
-   }
+  }
 }
