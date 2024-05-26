@@ -9,11 +9,13 @@ export default function Search() {
   const navigate = useNavigate();
   const [data, setData] = useState({ latitude: "", longitude: "" });
   const [clicked, setClicked] = useState(false);
+  const [inputValue, setInputValue] = useState("");
   const panelRef = useRef(null);
 
   const handlePlaceChange = async (e) => {
     try {
       const inputValue = e.target.value;
+      setInputValue(inputValue);
 
       if (inputValue.trim() !== "") {
         if (inputValue.toUpperCase() != "UBC") {
@@ -63,6 +65,19 @@ export default function Search() {
     }
   };
 
+  const handleInputBlur = () => {
+    setTimeout(() => {
+      setClicked(false);
+    }, 200); // Delay to allow click on dropdown item
+  };
+
+  const handleDropdownClick = (option) => {
+    const input = document.getElementById("searchInput");
+    input.value = option;
+    handlePlaceChange({ target: input });
+    setClicked(false);
+  };
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -88,7 +103,10 @@ export default function Search() {
                 className="search-destinations"
                 placeholder="Search destinations"
                 aria-label="Search destinations"
+                value={inputValue}
                 onChange={handlePlaceChange}
+                onFocus={() => setClicked(true)}
+                onBlur={handleInputBlur}
                 autoComplete="off"
               />
             </div>
@@ -102,6 +120,18 @@ export default function Search() {
             />
           </button>
         </form>
+        {clicked && (
+          <ul className="dropdown">
+            <li onClick={() => handleDropdownClick("Marine Drive")}>
+              Marine Drive
+            </li>
+            <li onClick={() => handleDropdownClick("Ponderosa")}>Ponderosa</li>
+            <li onClick={() => handleDropdownClick("Exchange")}>Exchange</li>
+            <li onClick={() => handleDropdownClick("Brock Commons")}>
+              Brock Commons
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
