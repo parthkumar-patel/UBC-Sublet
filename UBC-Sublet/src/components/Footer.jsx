@@ -46,7 +46,7 @@ const Footer = () => {
           <h3>Contact Info</h3>
           <p>contact.ubcsublet@gmail.com</p>
           <p>+1 (236) 995-2972</p>
-          <p>+1 (604) 773-6394</p>
+          {/* <p>+1 (604) 773-6394</p> */}
         </div>
       </div>
       <div className="footer-bottom">

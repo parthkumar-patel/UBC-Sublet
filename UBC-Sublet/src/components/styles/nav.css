@@ -143,13 +143,14 @@
   .topLinks {
     display: flex;
     top: -20px;
+    right: 49px !important;
   }
   .nav-link {
     margin-top: 8px;
   }
 }
 
-@media only screen and (min-width: 608px) and (max-width: 1000px) {
+@media only screen and (min-width: 608px) and (max-width: 990px) {
   .input-group {
     left: 38%;
   }
@@ -214,10 +215,11 @@
   }
   #search-input {
     position: absolute !important;
-    width: 153%;
+    width: 148%;
     margin-top: 21px;
     height: 35px;
     left: 6px;
+    /* padding-right: 5% !important; */
     font-size: 13px;
     border-radius: 7px !important;
     padding: 5%;
@@ -359,6 +361,14 @@
 @media only screen and (min-width: 1100px) {
   .navbar-brand {
     margin-top: 0%;
+    font-size: 50px !important;
+  }
+  #search-input {
+    left: -100px !important;
+  }
+
+  #search-button {
+    left: -85px !important; 
   }
   .topLinks {
     display: flex;
@@ -366,23 +376,45 @@
     margin-top: -18px !important;
     left: 40px !important;
     margin-right: 0px !important;
-    justify-content: flex-end;
-  }
-  .nav-item {
-    margin-top: 5px !important;
-  }
+    justify-Content: flex-end; 
+}
+.nav-item {
+  margin-top: 5px !important;
+}
 }
 
 @media only screen and (min-width: 1600px) {
-  .navbar-brand {
+  .navbar-brand{
     margin-left: -5% !important;
+  }
+  .topLinks {
+    position: absolute;
+    right: 0px;
   }
 }
 
 @media only screen and (min-width: 1750px) {
-  .navbar-brand {
+  .navbar-brand{
     margin-left: -10% !important;
   }
+  .parentContainer {
+    right: -20% !important;
+  }
+  .input-group {
+    margin-left: 50px !important;
+  }
+  #search-input {
+    width: 145% !important;
+  }
+  #search-button {
+    left: 55px !important;
+  }
+  .topLinks {
+    position: absolute;
+    right: -20px !important;
+    margin-right: 120px !important;
+  }
+
 }
 
 @media only screen and (min-width: 1900px) {
