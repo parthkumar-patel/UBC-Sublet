@@ -121,7 +121,7 @@ export default function Search() {
           </button>
         </form>
         {clicked && (
-          <ul className="dropdown">
+          <ul className="dropdown where-dropdown">
             <li onClick={() => handleDropdownClick("Marine Drive")}>
               Marine Drive
             </li>
