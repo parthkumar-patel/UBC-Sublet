@@ -23,13 +23,18 @@ export default function Card() {
     })
       .then((res) => res.json())
       .then((data) => {
+        // const sortedData = data.slice().sort((a, b) => {
+        //   const dateA = a.dateAdding;
+        //   const dateB = b.dateAdding;
+        //   return dateA - dateB;
+        // });
         const sortedData = data.slice().sort((a, b) => {
-          const dateA = a.dateAdding;
-          const dateB = b.dateAdding;
-          return dateA - dateB;
+          const priceA = a.pricing[0].monthlyRent;
+          const priceB = b.pricing[0].monthlyRent;
+          return priceA - priceB;
         });
 
-        setAllImage(sortedData.slice(0, 8)); // Set only the first four sorted images
+        setAllImage(sortedData.slice(0, 8));
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
