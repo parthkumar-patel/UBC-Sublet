@@ -1,34 +1,47 @@
 /* Base styles */
 @font-face {
-  font-family: 'Cereal';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf') format('opentype'); 
+  font-family: "Cereal";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Lt.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cereal-Md';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
+  font-family: "Cereal-Md";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cereal-Bd';
-  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_XBd.otf') format('opentype'); 
+  font-family: "Cereal-Bd";
+  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_XBd.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
-
-
 
 .footer-container {
-  background-color: rgb(19, 14, 61);
-  color: #fff;
+  position: relative;
+  background-color: white;
+  color: #130e3d;
   padding-top: 60px;
   padding-bottom: 35px;
   margin-top: 1.5vh;
   width: 100vw;
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -38,17 +51,16 @@
   flex-direction: row;
 }
 
-
 .footer-section h3 {
   font-size: 20px;
   margin-bottom: 15px;
-  font-family: 'Cereal-Md';
+  font-family: "Cereal-Md";
 }
 
 .footer-section p {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 15px;
-  font-family: 'Cereal';
+  font-family: "Cereal";
 }
 
 .footer-section ul {
@@ -56,30 +68,27 @@
   padding: 0;
   text-align: left;
   /* margin-left: 5px; */
-  font-family: 'Cereal';
-
+  font-family: "Cereal";
 }
 
 .footer-section ul li {
   margin-bottom: 10px;
-  text-align: left; 
+  text-align: left;
   /* margin-left: 5px; */
-  font-family: 'Cereal';
-
-
+  font-family: "Cereal";
 }
 
 .footer-section ul li a {
-  color: #fff;
+  color: #2b2650;
   text-decoration: none;
   transition: color 0.3s;
   text-align: left;
   /* margin-left: 5px; */
-  font-family: 'Cereal';
+  font-family: "Cereal";
 }
 
 .footer-section ul li a:hover {
-  color: #24a0ed;
+  color: #2d2292;
 }
 
 .social-icons {
@@ -89,7 +98,7 @@
 
 .social-icons li {
   font-size: 20px;
-  font-family: 'Cereal';
+  font-family: "Cereal";
 }
 
 .footer-bottom {
@@ -97,13 +106,13 @@
   /* border-top: 1px solid #555; */
   padding-top: 20px;
   text-align: left;
-  font-size: 20px;
-  margin-left: 18%;
+  font-size: 16px;
+  margin-left: 15%;
 }
 
 .footer-bottom p {
   margin: 1;
-  font-family: 'Cereal';
+  font-family: "Cereal";
 }
 
 .developer-link {
@@ -117,10 +126,9 @@
   color: #24a0ed;
 }
 
-
 /* @media screen and (min-width: 820px) { */
 
-  /* .footer-container {
+/* .footer-container {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
@@ -147,7 +155,6 @@
 
 /* Media queries for tablet */
 
-
 /* Media queries for mobile */
 @media screen and (max-width: 530px) {
   .footer-section {
@@ -159,7 +166,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
 
   .footer-content {
     display: flex;
@@ -180,21 +186,21 @@
     text-align: left;
     margin-bottom: 15px;
   }
-  
+
   .footer-section ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
     /* margin-left: 5px; */
   }
-  
+
   .footer-section ul li {
     margin-bottom: 10px;
-    text-align: left; 
+    text-align: left;
     /* margin-left: 5px; */
     font-size: 10px;
   }
-  
+
   .footer-section ul li a {
     color: #fff;
     text-decoration: none;
@@ -202,17 +208,17 @@
     text-align: left;
     /* margin-left: 5px; */
   }
-  
+
   .footer-section ul li a:hover {
     color: #24a0ed;
   }
-  
+
   .social-icons {
     /* display: flex; */
     gap: 10px;
     text-align: left;
   }
-  
+
   .social-icons li {
     font-size: 10px;
     text-align: left;
@@ -225,11 +231,11 @@
     transition: color 0.3s;
     text-align: left;
   }
-  
+
   .developer-link:hover {
     color: #24a0ed;
   }
-  
+
   .footer-bottom {
     margin-top: 20px;
     border-top: 1px solid #555;
@@ -239,9 +245,8 @@
     margin-left: 5px;
     margin-right: 5px;
   }
-  
+
   .footer-bottom p {
     margin: 1;
   }
-
 }
