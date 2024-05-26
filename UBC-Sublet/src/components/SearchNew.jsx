@@ -125,8 +125,11 @@ export default function Search() {
             <li onClick={() => handleDropdownClick("Marine Drive")}>
               Marine Drive
             </li>
+            <span className="divider"></span>
             <li onClick={() => handleDropdownClick("Ponderosa")}>Ponderosa</li>
+            <span className="divider"></span>
             <li onClick={() => handleDropdownClick("Exchange")}>Exchange</li>
+            <span className="divider"></span>
             <li onClick={() => handleDropdownClick("Brock Commons")}>
               Brock Commons
             </li>

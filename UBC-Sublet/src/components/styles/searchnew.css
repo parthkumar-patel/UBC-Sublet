@@ -252,6 +252,7 @@ div.landingpage {
 .button-icon {
   transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
 }
+
 /* 
 .with-icon {
   position: relative;
@@ -260,7 +261,7 @@ div.landingpage {
 
 .dropdown {
   position: absolute;
-  bottom: 151px;
+  bottom: 120px;
   margin-left: -360px;
   width: 200px;
   padding: 0;
@@ -275,7 +276,7 @@ div.landingpage {
 }
 
 .dropdown li {
-  padding: 10px 32px;
+  padding: 14px 36px;
   cursor: pointer;
   font-family: "Cereal";
   font-size: 14px;
@@ -288,13 +289,21 @@ div.landingpage {
 
 /* Add padding to the first and last items and adjust the border-radius */
 .dropdown li:first-child {
-  padding-top: 16px;
+  padding-top: 18px;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
 }
 
 .dropdown li:last-child {
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+}
+
+.divider {
+  display: block;
+  width: 160px;
+  height: 1px;
+  margin-left: 20px;
+  background: linear-gradient(to right, #ededed, #dddddd, #ededed);
 }
