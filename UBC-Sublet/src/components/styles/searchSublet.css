@@ -7,8 +7,24 @@
   background-color: transparent;
   border: none;
 }
+.btn-dark {
+  background-color: rgb(19, 14, 61) !important;
+}
+#buttons_f_1 {
+  background-color: rgb(19, 14, 61) !important;
+}
+
+@media only screen and (min-width: 1000px) {
+  .searchfiltermain {
+
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Adjust the widths as needed */
+  }
+}
+
+
 .filters h2 {
-  margin-left: 16px;
+
   margin-top: -49.5px;
   position: absolute;
   font-size: 40px;
@@ -19,14 +35,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
-  margin-left: 29%;
-  margin-top: -700px;
-  left: 44%;
+  margin-top: 103px!important;
   flex-flow: row wrap;
   flex-direction: row;
   padding: 0 33px;
   box-sizing: border-box;
   flex-basis: calc(50% - 20px);
+  max-width: 100% !important;
 }
 
 .img {
@@ -240,6 +255,7 @@
   transition: 0.6s;
   padding-right: 10px;
   padding-left: 10px;
+  background-color: rgb(19, 14, 61) !important;
 }
 .btn-btn-dark:hover {
   transition: 1s;
@@ -258,7 +274,6 @@
   padding-top: 150px;
   height: 100vh;
   box-shadow: 1.5rem -5rem 4rem rgba(0, 0, 0, 0.1);
-  max-width: 25%;
 }
 
 .cards {
@@ -301,27 +316,28 @@
     margin-top: 0px !important;
   }
   #buttons_f_1 {
-    margin-left: 250px !important;
-    margin-top: 70px !important;
+    position: absolute;
+    right: 0px !important; 
+    margin-left: 252px !important;
+    margin-top: -50px !important;
     width: 30% !important;
+    height: 33px;
   }
   .filters {
     display: flex;
     flex-direction: row;
-    margin-top: 0px;
+    margin-top: 15px;
     max-width: 100%;
     width: 100%;
     max-height: 200%;
     height: 200%;
-    flex: none;
-    overflow-x: scroll;
+    overflow-y: scroll;
   }
   .filters h2 {
     font-size: initial;
     font-size: 30px;
   }
   #cards-lists2 {
-    margin-top: 15%;
     margin-left: 0px;
   }
   .form-range {
@@ -352,21 +368,18 @@
 .cards-list .container-3-parent {
   width: calc((110% - 40px) / 3);
   margin-bottom: 20px;
-  left: -54px;
   margin-right: 7%;
 }
 
 .cards-list .container-3-parent {
   width: calc((100% - 40px) / 3);
   margin-bottom: 20px;
-  left: -45px;
   margin-right: 7%;
 }
 
 @media only screen and (max-width: 450px) {
   .cards-list .container-3-parent {
     margin-bottom: 20px;
-    left: -55px;
     margin-right: 7%;
   }
   .carousel-item img {
@@ -390,43 +403,8 @@
 }
 
 
- @media only screen and (min-width: 1100px) {
-  #cards-lists2 {
-    margin-top: -45%;
-  }
-}
 
 
-@media only screen and (min-width: 1600px) {
-  #cards-lists2 {
-    margin-top: -45%;
-    margin-left: 24.5%;
-  }
-}
-
-
-
-@media only screen and (min-width: 1900px) {
-  #cards-lists2 {
-    margin-top: -47%;
-    margin-left: 18.5%;
-  }
-}
-
-@media only screen and (min-width: 3000px) {
-  #cards-lists2 {
-    margin-top: -47%;
-    margin-left: 20.5%;
-  }
-}
-
-
-@media only screen and (min-width: 3500px) {
-  #cards-lists2 {
-    margin-top: -49%;
-    margin-left: 22.5%;
-  }
-}
 
 /*
 
@@ -436,3 +414,4 @@
     margin-left: 22.5%;
   }
 } */
+

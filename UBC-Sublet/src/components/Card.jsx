@@ -70,7 +70,12 @@ export default function Card() {
       <section
         className="cards-list"
         id="cards-lists"
-        style={{ paddingTop: "40px" }}
+        style={{
+          paddingTop: "40px",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)"
+        }}      
+        
       >
         {cards}
       </section>

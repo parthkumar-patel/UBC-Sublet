@@ -190,8 +190,8 @@ export default function SearchSublet() {
   });
 
   return (
-    <div>
-      <div className="filters sticky-top">
+    <div className= "searchfiltermain">
+      <div className="filters">
         <h2
           style={
             {
@@ -506,18 +506,18 @@ export default function SearchSublet() {
           className="btn btn-primary"
           onClick={handleTheFilter}
           style={{
-            width: "300px",
-            marginLeft: "-80px",
+            width: "22vw",
             marginTop: "565px",
             position: "absolute",
             weight: "bold",
+            left: "15px",
           }}
         >
           {" "}
           Apply Filters{" "}
         </button>
       </div>
-      <div>
+      <div > 
         {conditionalData.length == 0 ? (
           <div className="position-absolute top-50 start-50 translate-middle gap-10">
             <h1> No search results found, please go back </h1>
@@ -527,7 +527,7 @@ export default function SearchSublet() {
             {cards}
           </section>
         )}
-      </div>
+        </div>
     </div>
   );
 }

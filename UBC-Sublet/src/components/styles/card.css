@@ -1,20 +1,16 @@
 @font-face {
-  font-family: "Cereal-Md";
-  src: url("../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf")
-    format("opentype");
+  font-family: 'Cereal-Md';
+  src: url('../../assets/airbnb-cereal-font/AirbnbCereal_W_Md.otf') format('opentype'); 
   font-weight: normal;
   font-style: normal;
 }
 
 #cards-lists {
-  display: flex;
-  flex-wrap: wrap;
   gap: 20px;
-  flex-flow: row wrap;
-  flex-direction: row;
   padding: 0px 36px;
   box-sizing: border-box;
   flex-basis: calc(50% - 20px);
+  margin-left: 2vw !important;
 }
 
 .delete {
@@ -48,23 +44,24 @@
   padding-top: 2.9vw;
   padding-bottom: 0.5vw;
   margin-top: 1.38vh;
-  white-space: nowrap;
+  white-space: nowrap; 
   flex-wrap: wrap;
 }
 
 .featured-sublet {
-  font-size: 2vw;
+  /* font-size: 2vw; */
   font-family: "Cereal-Md", sans-serif;
   font-weight: lighter;
   text-align: left;
   color: #1d194e;
-  white-space: nowrap;
+  white-space: nowrap; 
 }
 
 .featured-sublet-button {
   display: flex;
   white-space: nowrap;
-  margin-left: 2vw;
+  position: absolute;
+  right: 5.8vw;
 }
 
 .view-all-sublet {
@@ -285,7 +282,6 @@
   font-size: 14px;
   color: #323743;
   font-family: Manrope;
-  left: -80px;
   height: 440px;
   margin-top: 40px;
   flex-wrap: wrap;
@@ -294,6 +290,7 @@
   margin-left: -23px;
   cursor: pointer;
 }
+
 
 @media screen and (max-width: 10000px) {
   #cards-lists .container-3-parent {
@@ -307,7 +304,6 @@
   margin-top: 20px;
   width: calc((100% - 40px) / 3);
   margin-bottom: 20px;
-  left: -45px;
   margin-right: 7%;
 }
 
@@ -323,6 +319,32 @@
     margin-top: -200px;
   }
 } */
+@media only screen and (max-width: 700px) {
+  .cards-list {
+    grid: 1;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+  .cards-list {
+    grid: 2;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+  .cards-list {
+    grid: 3;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+/* 
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+  .cards-list {
+    grid: 3;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+} */
 
 @media only screen and (max-width: 450px) {
   .featured-sublet {
@@ -332,7 +354,6 @@
 
   .cards-list .container-3-parent {
     margin-bottom: 20px;
-    left: -55px;
     margin-right: 7%;
   }
 
@@ -369,22 +390,17 @@
 
 @media only screen and (min-width: 1900px) {
   .featured-view-all {
-    justify-content: unset !important;
+    justify-content :unset !important;
     padding-inline-end: 180px;
     gap: 40px;
-  }
-  .container-3-parent {
-    left: 50px !important;
   }
   .featured-sublet {
     margin-left: 80px !important;
   }
 }
 
+
 @media only screen and (min-width: 2000px) {
-  .container-3-parent {
-    left: 80px !important;
-  }
   .featured-sublet {
     margin-left: 120px !important;
   }
@@ -414,22 +430,17 @@
   }
 } */
 @media only screen and (min-width: 3100px) {
-  .container-3-parent {
-    left: 80px !important;
-  }
-  .featured-sublet {
+   .featured-sublet {
     margin-left: 120px !important;
   }
 }
 @media only screen and (min-width: 3100px) {
-  .featured-view-all {
-    padding-inline-end: 0px;
+   .featured-view-all {
+    padding-inline-end:  0px;
     margin-left: 35% !important;
-  }
-  .featured-sublet {
+   } .featured-sublet {
     margin-left: -50% !important;
-  }
-  #post {
+   } #post {
     margin-left: 101% !important;
-  }
+   }
 }
