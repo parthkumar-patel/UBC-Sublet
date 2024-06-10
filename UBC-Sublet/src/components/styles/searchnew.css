@@ -121,7 +121,7 @@ div.landingpage {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url("./src/assets/houseipad.svg");
+    background-image: url("../../assets/houseipad.svg");
     /* opacity: 0.75; */
     width: 100%;
     height: 1024px;
@@ -152,7 +152,7 @@ div.landingpage {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url("./src/assets/housemobile.svg");
+    background-image: url("../../assets/housemobile.svg");
     width: 100%;
     height: 850px;
     background-size: cover;
