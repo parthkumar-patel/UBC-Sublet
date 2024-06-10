@@ -14,7 +14,7 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="/" style = {{ color: "white" }}>Home</a>
             </li>
             <li>
               <div onClick={() => handleChange()}>About Us</div>

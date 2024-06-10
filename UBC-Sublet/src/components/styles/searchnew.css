@@ -99,6 +99,11 @@ div.landingpage {
     margin-top: -100px;
     margin-left: -5px;
   }
+  
+  .tabpanel {
+    margin-left: 80px !important;
+    width: 69% !important;
+  }
 }
 
 /* tablet  */
@@ -259,6 +264,9 @@ div.landingpage {
 
 .button-icon {
   transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
 /* if u need to add animation to searchIcon and searchWithIcon
