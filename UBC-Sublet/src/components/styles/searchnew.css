@@ -61,7 +61,7 @@ div.slogan {
 div.landingpage {
   display: flex;
   align-items: end;
-  background-image: url("./src/assets/house.svg");
+  background-image: url("../src/assets/house.svg");
   width: 100%;
   height: 850px;
   background-size: cover;
