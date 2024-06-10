@@ -5,13 +5,39 @@
   font-style: normal;
 }
 
-#cards-lists {
+/* #cards-lists {
   gap: 20px;
   padding: 0px 36px;
   box-sizing: border-box;
   flex-basis: calc(50% - 20px);
   margin-left: 2vw !important;
-}
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust as needed */
+    /* gap: 20px; /* Adjust as needed */
+    /* width: 100%; /* Ensure full width */
+    /* justify-content: center; /* Center the grid within the container */
+  
+
+    #cards-lists {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      padding: 0px 53px;
+      box-sizing: border-box;
+      flex-basis: calc(50% - 20px);
+      max-width: 100% !important;
+    }
+
+    @media only screen and (min-width: 1900px) {
+      #cards-lists {
+        margin-left: 50px;
+      }
+    }
 
 .delete {
   transition: 0.2s ease-in-out;
@@ -54,13 +80,15 @@
   font-weight: lighter;
   text-align: left;
   color: #1d194e;
+  font-size: 4vw;
   white-space: nowrap; 
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .featured-sublet-button {
   display: flex;
   white-space: nowrap;
-  position: absolute;
   right: 5.8vw;
 }
 
@@ -307,12 +335,7 @@
   margin-right: 7%;
 }
 
-@media only screen and (min-width: 860px) and (max-width: 983px) {
-  .featured-sublet {
-    margin-top: -10px;
-    font-size: 0.8rem;
-  }
-}
+
 
 /* @media only screen and (max-width: 860px) {
   .featured-sublet {
@@ -376,35 +399,11 @@
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (min-width: 1620px) {
-  .featured-view-all {
-    padding-inline-end: 140px;
-  }
-}
-
-@media only screen and (min-width: 1750px) {
-  .featured-view-all {
-    padding-inline-end: 180px;
-  }
-}
-
-@media only screen and (min-width: 1900px) {
-  .featured-view-all {
-    justify-content :unset !important;
-    padding-inline-end: 180px;
-    gap: 40px;
-  }
-  .featured-sublet {
-    margin-left: 80px !important;
-  }
-}
 
 
-@media only screen and (min-width: 2000px) {
-  .featured-sublet {
-    margin-left: 120px !important;
-  }
-}
+
+
+
 /*
 
 @media only screen and (min-width: 2050px) {
@@ -429,18 +428,9 @@
     margin-left: 45%;
   }
 } */
+
 @media only screen and (min-width: 3100px) {
-   .featured-sublet {
-    margin-left: 120px !important;
-  }
-}
-@media only screen and (min-width: 3100px) {
-   .featured-view-all {
-    padding-inline-end:  0px;
-    margin-left: 35% !important;
-   } .featured-sublet {
-    margin-left: -50% !important;
-   } #post {
+ #post {
     margin-left: 101% !important;
    }
 }
