@@ -394,16 +394,15 @@ button:hover {
 #prevBtn {
   margin-top: 30%;
   margin-left: 12%;
+  height: 39px;
+  width: 111px;
+  font-size: large;
   border-radius: 10px;
   background-color: gray;
 }
+
 #prevBtn:hover {
-  padding-top: 15px;
-  padding-left: 30px;
-  padding-bottom: 15px;
-  padding-right: 30px;
   background-color: black;
-  transition: 0.5s;
 }
 
 #Initial_Deposit {
@@ -468,10 +467,6 @@ button:hover {
   background-color: black;
 }
 
-#prevBtn {
-  /* margin-left: 120%; */
-  width: 20%;
-}
 .description {
   position: relative;
   display: flex;
@@ -577,5 +572,91 @@ button:hover {
   }
   .description {
     margin-left: -60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  #regForm {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .container1,
+  .container2 {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .heading,
+  .amenities,
+  .address,
+  .buildingName,
+  .bedRooms,
+  .bathRooms,
+  .description {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  #addressBox,
+  #buildingNameBox,
+  #bedRooms,
+  #bathRooms,
+  #description {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #description {
+    height: auto;
+  }
+
+  .headings2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #firsts,
+  #last,
+  #email,
+  #phone,
+  #Initial_Deposit,
+  #Monthly_Rent,
+  #Starting_Date,
+  #Ending_Date,
+  #Time_Period {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .buttons-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nextBtn,
+  #prevBtn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .post-photo {
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -17,7 +17,7 @@ export default function Post() {
   const { user } = UserAuth();
   const navigate = useNavigate();
 
-  let isFinalStep = false;
+  // let isFinalStep = false;
 
   useEffect(() => {
     const validateInput = () => {
@@ -108,10 +108,10 @@ export default function Post() {
     }
 
     if (n === x.length - 1) {
-      isFinalStep = true;
+      // isFinalStep = true;
       document.getElementById("nextBtn").innerHTML = "Post";
     } else {
-      isFinalStep = false;
+      // isFinalStep = false;
       document.getElementById("nextBtn").innerHTML = "Next";
     }
 
@@ -251,11 +251,14 @@ export default function Post() {
       // Update variables based on checkbox selection
       if (data == "Furnished") {
         b = true;
-      } if (data == "Utilities") {
+      }
+      if (data == "Utilities") {
         c = true;
-      } if (data == "Utensils") {
+      }
+      if (data == "Utensils") {
         d = true;
-      } if (data == "Wifi") {
+      }
+      if (data == "Wifi") {
         e = true;
       }
     });
@@ -296,13 +299,16 @@ export default function Post() {
       alert("kindly upload Images");
     } else {
       try {
-        const response = await fetch("https://ubc-sublet.onrender.com/sublets", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://ubc-sublet.onrender.com/sublets",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
         if (response.ok) {
           window.scrollTo(0, 0);
           return navigate("/");
@@ -312,8 +318,8 @@ export default function Post() {
       } catch (error) {
         alert("Error saving form data:" + error);
       }
-    };
-  }
+    }
+  };
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-center align-items-center">
