@@ -88,19 +88,16 @@ button:hover {
   font-size: 27px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin-left: -49px;
 }
 .container1 {
   display: flex;
   margin-top: 20px;
-  border: 1px solid #ccc; /* Increase border width to 2px */
+  border: 1px solid #ccc;
   height: 66px;
   width: 105%;
-  border-radius: 10px; /* Optional: Add rounded corners */
-  /* text-align: right; Align text to the right */
-  margin-left: -50px;
-  padding-left: 65px; /* Add padding to the left */
-  padding-top: 12px;
+  border-radius: 10px;
+  padding-left: 65px;
+  align-items: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
 }
@@ -128,14 +125,14 @@ button:hover {
   margin-left: -60%;
 }
 
-.container1:hover {
+/* .container1:hover {
   cursor: pointer;
   padding-bottom: 50px;
   padding-right: 4px;
   padding-left: 82px;
   padding-top: 20px;
   transition: 0.4s;
-}
+} */
 .amenities {
   font-weight: bold;
   font-size: 20px;
@@ -160,7 +157,7 @@ button:hover {
   margin-top: 12px;
   margin-top: 8px;
   margin-bottom: 10px;
-  left: 29%;
+  left: 32%;
   width: 20px;
   background-color: #eee;
   border-radius: 50%;
@@ -524,7 +521,6 @@ button:hover {
 @media only screen and (max-width: 1400px) {
   .container1 {
     position: relative; /* Ensure the container is relatively positioned */
-    left: 20px; /* Move the container to the left */
   }
   .checkmark {
     display: flex;
@@ -577,7 +573,14 @@ button:hover {
 
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 10px;
+    justify-content: center;
+  }
+
+  .heading {
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding-left: 64px;
   }
 
   #regForm {
@@ -594,12 +597,12 @@ button:hover {
     font-size: 16px;
   }
 
-  .container1,
-  .container2 {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 15px;
-    padding-right: 15px;
+  .container1 {
+    width: 70%;
+    align-items: center;
+    margin-left: 64px;
+    padding-left: 50px;
+    font-size: 18px;
   }
 
   .heading,

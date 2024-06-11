@@ -331,7 +331,7 @@ export default function Post() {
               <span className="step"></span> <span className="step"></span>
             </div>
             <div className="tab">
-              <h3 className="heading">What type of property is this? :</h3>
+              <h3 className="heading">What type of property is this?</h3>
               <label className="container1">
                 Two bedroom
                 <input
