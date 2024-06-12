@@ -75,7 +75,7 @@ button:hover {
 
 .all-steps {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -524,15 +524,27 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    justify-content: center;
+  .all-steps {
+    margin-left: 70px;
   }
 
-  .heading {
-    width: fit-content;
-    justify-content: center;
+  .container1 {
+    width: 70%;
     align-items: center;
-    padding-left: 64px;
+    margin-left: 133px;
+    padding-left: 50px;
+    font-size: 18px;
+  }
+
+  .container2 {
+    font-size: 18px;
+    margin-left: 133px;
+    padding-left: 45px;
+    width: 70%;
+  }
+
+  .container2 input[type="checkbox"] {
+    margin-left: -55%;
   }
 
   #regForm {
@@ -549,14 +561,6 @@ button:hover {
     font-size: 16px;
   }
 
-  .container1 {
-    width: 70%;
-    align-items: center;
-    margin-left: 64px;
-    padding-left: 50px;
-    font-size: 18px;
-  }
-
   .heading,
   .amenities,
   .address,
@@ -564,7 +568,7 @@ button:hover {
   .bedRooms,
   .bathRooms,
   .description {
-    margin-left: 0;
+    margin-left: 138px;
     font-size: 18px;
   }
 
@@ -573,12 +577,13 @@ button:hover {
   #bedRooms,
   #bathRooms,
   #description {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 133px;
+    width: 70%;
   }
 
   #description {
     height: auto;
+    width: 70%;
   }
 
   .headings2 {
@@ -600,16 +605,19 @@ button:hover {
   }
 
   .buttons-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    width: 70%;
+    margin-left: 133px;
   }
 
   #nextBtn,
   #prevBtn {
-    width: 100%;
+    width: 15%;
     margin-top: 10px;
   }
-
+  #nextBtn {
+  }
   .post-photo {
     flex-direction: column;
     align-items: center;
