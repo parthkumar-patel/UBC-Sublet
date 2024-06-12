@@ -80,11 +80,17 @@ div.landingpage {
   #imgFluid {
     height: 300px;
   }
+  .slogan p.headline {
+    top: -8vh;
+  }
 }
 
-@media only screen and (min-width: 760px) and (max-width: 1360px) {
+@media only screen and (max-width: 1367px) {
   .tabpanel {
     margin-bottom: 20vw !important;
+  }
+  .slogan p.headline {
+    top: -14vh;
   }
 }
 
@@ -110,7 +116,6 @@ div.landingpage {
 @media only screen and (max-width: 768px) {
   div.slogan {
     position: absolute;
-    top: 15%;
     left: 5%;
     color: black;
     text-align: left;
@@ -121,6 +126,7 @@ div.landingpage {
     font-family: "Cereal-Md";
     text-align: left;
     font-size: 3.5rem;
+    top: -5vw;
   }
 
   div.landingpage {
