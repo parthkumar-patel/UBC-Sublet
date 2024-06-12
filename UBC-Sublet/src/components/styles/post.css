@@ -524,12 +524,8 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  .all-steps {
-    margin-left: 70px;
-  }
-
   .container1 {
-    width: 70%;
+    width: 53%;
     align-items: center;
     margin-left: 133px;
     padding-left: 50px;
@@ -540,7 +536,7 @@ button:hover {
     font-size: 18px;
     margin-left: 133px;
     padding-left: 45px;
-    width: 70%;
+    width: 53%;
   }
 
   .container2 input[type="checkbox"] {
@@ -578,12 +574,12 @@ button:hover {
   #bathRooms,
   #description {
     margin-left: 133px;
-    width: 70%;
+    width: 53%;
   }
 
   #description {
-    height: auto;
-    width: 70%;
+    height: 100px;
+    width: 53%;
   }
 
   .headings2 {
@@ -607,17 +603,19 @@ button:hover {
   .buttons-wrapper {
     flex-direction: row;
     align-items: center;
-    width: 70%;
+    width: 53%;
+    margin-top: 10px;
     margin-left: 133px;
   }
 
   #nextBtn,
   #prevBtn {
-    width: 15%;
+    width: 20%;
+    height: auto;
     margin-top: 10px;
+    font-size: small;
   }
-  #nextBtn {
-  }
+
   .post-photo {
     flex-direction: column;
     align-items: center;
