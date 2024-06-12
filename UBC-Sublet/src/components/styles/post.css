@@ -598,6 +598,11 @@ button:hover {
   #Time_Period {
     max-width: 100%;
     margin-left: 0;
+    font-size: 18px;
+  }
+
+  #Initial_Deposit {
+    margin-top: 24px;
   }
 
   .buttons-wrapper {
@@ -610,7 +615,7 @@ button:hover {
 
   #nextBtn,
   #prevBtn {
-    width: 20%;
+    width: calc(max(20%, fit-content()));
     height: auto;
     margin-top: 10px;
     font-size: small;

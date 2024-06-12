@@ -162,3 +162,26 @@
 .close-button:active {
   background-color: rgb(130, 0, 0);
 }
+
+@media only screen and (max-width: 1200px) {
+  .upload-image {
+    max-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .upload-images {
+    flex-direction: column;
+  }
+
+  .upload-image {
+    max-width: 45%;
+    margin: 0.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .upload-image {
+    max-width: 80%;
+  }
+}

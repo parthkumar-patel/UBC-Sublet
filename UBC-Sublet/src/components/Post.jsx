@@ -523,7 +523,7 @@ export default function Post() {
               </p>
             </div>
             <div className="tab">
-              <div className="headings2"> Step 3 Property info </div>
+              <div className="headings2"> Property info </div>
               <p className="Initial_Deposit">
                 <input
                   placeholder="Initial Deposit (if any)"
@@ -588,36 +588,34 @@ export default function Post() {
               </p>
             </div>
             <div className="tab">
-              <div className="headings2"> Step 3- Photos (atleast 5) </div>
+              <div className="headings2"> Add Photos (atleast 5) </div>
               <UploadImages setRooms={setRooms} />
             </div>
-            <div className="">
-              <div className="buttons-wrapper">
-                <button
-                  type="button"
-                  id="prevBtn"
-                  onClick={() => {
-                    handlePrevious();
-                    nextPrev(-1);
-                  }}
-                  className="btn btn-primary mr-2"
-                >
-                  Back
-                </button>
-                <button
-                  type="button"
-                  id="nextBtn"
-                  onClick={() => {
-                    {
-                      handleNext();
-                      nextPrev(1);
-                    }
-                  }}
-                  className="btn btn-primary"
-                >
-                  Next
-                </button>
-              </div>
+            <div className="buttons-wrapper">
+              <button
+                type="button"
+                id="prevBtn"
+                onClick={() => {
+                  handlePrevious();
+                  nextPrev(-1);
+                }}
+                className="btn btn-primary mr-2"
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                id="nextBtn"
+                onClick={() => {
+                  {
+                    handleNext();
+                    nextPrev(1);
+                  }
+                }}
+                className="btn btn-primary"
+              >
+                Next
+              </button>
             </div>
           </form>
         </div>
