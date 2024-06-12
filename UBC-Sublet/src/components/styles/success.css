@@ -58,3 +58,25 @@
 .success__close path {
   fill: #393a37;
 }
+
+@media (max-width: 600px) {
+  .success {
+    width: 90%;
+    padding: 10px;
+    margin-top: 20vh;
+  }
+
+  .success__title {
+    font-size: 12px;
+  }
+
+  .success__icon {
+    width: 18px;
+    height: 23px;
+  }
+
+  .success__close {
+    width: 18px;
+    height: 26px;
+  }
+}
