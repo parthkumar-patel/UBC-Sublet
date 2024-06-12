@@ -608,14 +608,17 @@ button:hover {
   .buttons-wrapper {
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 53%;
     margin-top: 10px;
     margin-left: 133px;
+    gap: 10px;
   }
 
   #nextBtn,
   #prevBtn {
-    width: calc(max(20%, fit-content()));
+    min-width: 20%;
+    width: fit-content;
     height: auto;
     margin-top: 10px;
     font-size: small;
