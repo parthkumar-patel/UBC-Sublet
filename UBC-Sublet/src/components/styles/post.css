@@ -107,13 +107,12 @@ button:hover {
   flex-direction: column;
   margin-top: 16px;
   cursor: pointer;
-  border: 1px solid #ccc; /* Increase border width to 2px */
+  border: 1px solid #ccc;
   height: 66px;
   width: 75%;
-  border-radius: 10px; /* Optional: Add rounded corners */
-  /* text-align: right; Align text to the right */
-  margin-left: 0px;
-  padding-left: 65px; /* Add padding to the left */
+  border-radius: 10px;
+  margin-left: 88px;
+  padding-left: 65px;
   padding-top: 12px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
@@ -125,19 +124,11 @@ button:hover {
   margin-left: -60%;
 }
 
-/* .container1:hover {
-  cursor: pointer;
-  padding-bottom: 50px;
-  padding-right: 4px;
-  padding-left: 82px;
-  padding-top: 20px;
-  transition: 0.4s;
-} */
 .amenities {
   font-weight: bold;
   font-size: 20px;
   margin-top: 40px;
-  margin-left: 2px;
+  margin-left: 93px;
 }
 
 /* Hide the browser's default radio button */
@@ -191,10 +182,6 @@ button:hover {
   display: block;
 }
 
-.boxes {
-  /* display:inline-flex */
-}
-
 /* Style the indicator (dot/circle) */
 
 .container .checkmark:after {
@@ -209,115 +196,114 @@ button:hover {
   font-weight: bold;
   font-size: 20px;
   margin-top: 40px;
-  margin-left: -57px;
+  margin-left: 5px;
 }
 
 #addressBox {
-  /* position: absolute; */
   display: flex;
-  margin-left: -70px;
-  margin-top: 24px;
+  margin-top: 14px;
   border-radius: 10px;
   height: 60px;
-  max-width: 300px;
+  max-width: 290px;
   overflow-y: wrap;
 }
 
-#addressBox:hover {
-  padding: 20px;
-  transition: 0.4s;
+#addressBox:hover,
+#buildingNameBox:hover,
+#bedRooms:hover,
+#bathRooms:hover {
   cursor: pointer;
   background-color: gainsboro;
+  border-color: black;
 }
+
 .buildingName {
   position: absolute;
   font-size: 20px;
   margin-top: 40px;
-  /* font-size: large; */
   font-weight: bold;
-  margin-left: 274px;
+  margin-left: 310px;
+  margin-top: -100px;
+  display: flex;
 }
 #buildingNameBox {
-  /* position: absolute; */
   display: flex;
-  margin-top: -58px;
+  margin-top: -60px;
   border-radius: 10px;
   height: 60px;
-  max-width: 300px;
-  margin-left: 245px;
-}
-
-#buildingNameBox:hover {
-  padding: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-  background-color: gainsboro;
+  max-width: 290px;
+  margin-left: 305px;
 }
 
 #nextBtn {
-  top: 122%;
-  left: 60%;
+  position: relative;
   background-color: black;
   border-radius: 10px;
   width: 120px;
   font-size: large;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: medium;
+  background-color: black;
 }
+
 .bedRooms {
   display: flex;
   font-weight: bold;
   font-size: 20px;
-  margin-left: -60px;
   margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
-
 #bedRooms {
-  margin-left: -70px;
   border-radius: 10px;
   height: 60px;
-  max-width: 300px;
+  max-width: 290px;
   overflow-y: wrap;
   display: flex;
 }
+
 .bathRooms {
   display: flex;
-  margin-left: 240px;
+  margin-left: 310px;
   font-size: 20px;
   font-weight: bold;
-  margin-top: -88px;
+  margin-top: -100px;
+  margin-bottom: 10px;
 }
-#bedRooms:hover {
-  padding: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-  background-color: gainsboro;
-}
-
-.buildingName {
-  /* position: absolute; */
-  font-size: 20px;
-  margin-top: -98px;
-  /* font-size: large; */
-  font-weight: bold;
-  margin-left: 247px;
-  display: flex;
-}
-
 #bathRooms {
   display: flex;
-  margin-top: 0px;
-  margin-left: 240px;
+  margin-left: 305px;
   height: 60px;
   border-radius: 11px;
-  max-width: 300px;
+  max-width: 290px;
 }
 
-#bathRooms:hover {
-  padding: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-  background-color: gainsboro;
+.description {
+  position: relative;
+  display: flex;
+  margin-top: 10%;
+  font-weight: bold;
+  font-size: large;
+}
+#description {
+  padding-top: -20px;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 100px;
+  width: 600px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow for depth */
+  transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+}
+
+#description:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #007bff; /* Change border color on focus */
 }
 
 .headings2 {
@@ -389,13 +375,14 @@ button:hover {
 }
 
 #prevBtn {
-  margin-top: 30%;
-  margin-left: 12%;
+  margin-top: 35px;
   height: 39px;
-  width: 111px;
-  font-size: large;
+  width: 120px;
+  font-size: medium;
   border-radius: 10px;
   background-color: gray;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #prevBtn:hover {
@@ -452,43 +439,8 @@ button:hover {
   align-items: baseline;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-#nextBtn {
-  width: 20%;
-  margin-top: 20px;
-  border-radius: 10px;
-  font-size: large;
-  background-color: black;
-}
-
-.description {
-  position: relative;
-  display: flex;
-  margin-top: 10%;
-  margin-left: -80px;
-  font-weight: bold;
-  font-size: large;
-}
-#description {
-  padding-top: -20px;
-  margin-top: 20px;
-  margin-left: -80px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  height: 100px;
-  width: 630px;
-  font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow for depth */
-  transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
-}
-
-#description:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #007bff; /* Change border color on focus */
+  justify-content: space-between;
+  width: 600px;
 }
 
 .placeholder {

@@ -480,7 +480,7 @@ export default function Post() {
                 <label className="description"> Description </label>
                 <textarea
                   type="text"
-                  placeholder="Describe your house and its speciality, for instance, floor number and/or any condtions/rules you have."
+                  placeholder="Describe your house: floor number, any tenant preferences (e.g., gender), rules, and special features."
                   id="description"
                   onInput={(e) => (e.target.className = "")}
                   name="description"
@@ -602,7 +602,7 @@ export default function Post() {
                   }}
                   className="btn btn-primary mr-2"
                 >
-                  Previous
+                  Back
                 </button>
                 <button
                   type="button"
