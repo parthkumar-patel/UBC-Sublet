@@ -2,7 +2,7 @@
   display: flex;
   background-color: #f2f2f2;
   padding: 20px;
-  height: 170lvh;
+  height: 100lvh;
   width: 100lvw;
 }
 
@@ -180,14 +180,15 @@ p {
 @media (max-width: 600px) {
   .profile-wrapper {
     flex-direction: column;
-    padding: 10px;
-    margin-top: 0;
+    padding: 54px;
+    padding-top: 32px;
+    height: auto;
   }
 
   .user-profile {
     margin-top: 20px;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: -24px;
     align-items: center;
   }
 
@@ -205,6 +206,8 @@ p {
     width: 100%;
     padding-left: 0;
     margin-inline: 0;
+    margin-top: -12px;
+    margin-bottom: 10px;
   }
 
   .card-info {
@@ -224,12 +227,18 @@ p {
 
   .full-name {
     font-size: 22px;
+    padding: 0;
+  }
+
+  .email-info {
+    margin-top: -5px;
   }
 
   .email-info,
   .contact-info {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 4px;
     padding: 0;
   }
 
@@ -245,14 +254,14 @@ p {
   }
 
   .listing {
-    font-size: 24px;
+    font-size: 32px;
     padding-right: 0;
     text-align: center;
     margin-bottom: 0;
   }
 
   .cards {
-    margin-top: 20px;
+    margin-top: -24px;
     padding: 0;
   }
 
