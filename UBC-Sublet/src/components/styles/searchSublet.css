@@ -34,7 +34,8 @@
 #cards-lists2 {
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  column-gap: 110px;
+  row-gap: 10px;
   margin-top: 103px!important;
   flex-flow: row wrap;
   justify-content: center;
@@ -299,6 +300,13 @@
   }
   #form-label {
     margin-left: -40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #cards-lists2 {
+    margin-left: -44px !important;
+    padding: 0 !important;
   }
 }
 

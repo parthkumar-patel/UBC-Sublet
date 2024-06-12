@@ -489,7 +489,7 @@
 .frame7,
 .macbook-air-2,
 .send-button {
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
 }
