@@ -70,134 +70,6 @@ div.landingpage {
   background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 700px) {
-  #imgFluid {
-    height: 400px;
-    width: 400px;
-  }
-}
-@media only screen and (max-width: 860px) {
-  #imgFluid {
-    height: 300px;
-  }
-  .slogan p.headline {
-    top: -8vh;
-  }
-}
-
-@media only screen and (max-width: 1367px) {
-  .tabpanel {
-    margin-bottom: 20vw !important;
-  }
-  .slogan p.headline {
-    top: -14vh;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  #imgFluid {
-    width: 100%;
-    height: 100%;
-    /* left: 25px; */
-  }
-  .position-relative {
-    padding-top: 5px;
-    margin-top: -100px;
-    margin-left: -5px;
-  }
-
-  .tabpanel {
-    margin-left: 80px !important;
-    width: 69% !important;
-  }
-}
-
-/* tablet  */
-@media only screen and (max-width: 768px) {
-  div.slogan {
-    position: absolute;
-    left: 5%;
-    color: black;
-    text-align: left;
-    width: 50%;
-  }
-
-  .slogan p.headline {
-    font-family: "Cereal-Md";
-    text-align: left;
-    font-size: 3.5rem;
-    top: -5vw;
-  }
-
-  div.landingpage {
-    display: flex;
-    align-items: end;
-    background-image: url("../../assets/houseipad.svg");
-    /* opacity: 0.75; */
-    width: 100%;
-    height: 1024px;
-    background-size: cover;
-  }
-}
-
-/* MOBILE */
-
-@media only screen and (max-width: 430px) {
-  div.slogan {
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    color: black;
-    text-align: left;
-    width: 50%;
-  }
-
-  .slogan p.headline {
-    font-family: "Cereal-Md";
-    text-align: left;
-    font-size: 2.2rem;
-    margin-left: 12%;
-    margin-top: 10%;
-    z-index: 2;
-  }
-
-  div.landingpage {
-    display: flex;
-    align-items: end;
-    background-image: url("../../assets/housephone.svg");
-    position: relative;
-    top: 24px;
-    width: 100%;
-    height: 650px;
-    background-size: cover;
-  }
-}
-
-@media only screen and (min-width: 1950px) {
-  #imgFluid {
-    width: 1500px;
-  }
-}
-
-@media only screen and (min-width: 2260px) {
-  #imgFluid {
-    width: 1900px;
-    height: 700px;
-  }
-}
-
-@media only screen and (min-width: 3100px) {
-  #imgFluid {
-    margin-top: -100px;
-    width: 80%;
-    height: 1150px;
-  }
-  #viewAll {
-    margin-left: 45% !important;
-    gap: 0px;
-  }
-}
-
 .tabpanel {
   width: 360px;
   height: 64px;
@@ -331,4 +203,153 @@ div.landingpage {
   height: 1px;
   margin-left: 20px;
   background: linear-gradient(to right, #ededed, #dddddd, #ededed);
+}
+
+@media only screen and (max-width: 700px) {
+  #imgFluid {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 860px) {
+  #imgFluid {
+    height: 300px;
+  }
+  .slogan p.headline {
+    top: -8vh;
+  }
+}
+
+@media only screen and (max-width: 1367px) {
+  .tabpanel {
+    margin-bottom: 20vw !important;
+  }
+  .slogan p.headline {
+    top: -14vh;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #imgFluid {
+    width: 100%;
+    height: 100%;
+    /* left: 25px; */
+  }
+  .position-relative {
+    padding-top: 5px;
+    margin-top: -100px;
+    margin-left: -5px;
+  }
+
+  .tabpanel {
+    margin-left: 80px !important;
+    width: 69% !important;
+  }
+}
+
+/* tablet  */
+@media only screen and (max-width: 768px) {
+  div.slogan {
+    position: absolute;
+    left: 5%;
+    color: black;
+    text-align: left;
+    width: 50%;
+  }
+
+  .slogan p.headline {
+    font-family: "Cereal-Md";
+    text-align: left;
+    font-size: 3.5rem;
+    top: -5vw;
+  }
+
+  div.landingpage {
+    display: flex;
+    align-items: end;
+    background-image: url("../../assets/houseipad.svg");
+    /* opacity: 0.75; */
+    width: 100%;
+    height: 1024px;
+    background-size: cover;
+  }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 430px) {
+  div.slogan {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: black;
+    text-align: left;
+    width: 50%;
+  }
+
+  .slogan p.headline {
+    font-family: "Cereal-Md";
+    text-align: left;
+    font-size: 2.2rem;
+    margin-left: 15%;
+    margin-top: 20%;
+    z-index: 2;
+  }
+
+  div.landingpage {
+    display: flex;
+    align-items: end;
+    background-image: url("../../assets/housephone.svg");
+    position: relative;
+    top: 24px;
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    filter: contrast(1.2) brightness(1.1);
+  }
+
+  .tabpanel {
+    width: 360px;
+    height: 64px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    border: 1px solid #ddd;
+    justify-content: space-between;
+    padding: 6px 9px 6px 30px;
+    gap: 20px;
+    background-color: #fff;
+    color: #222;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-left: 60px;
+    margin-bottom: 240px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1950px) {
+  #imgFluid {
+    width: 1500px;
+  }
+}
+
+@media only screen and (min-width: 2260px) {
+  #imgFluid {
+    width: 1900px;
+    height: 700px;
+  }
+}
+
+@media only screen and (min-width: 3100px) {
+  #imgFluid {
+    margin-top: -100px;
+    width: 80%;
+    height: 1150px;
+  }
+  #viewAll {
+    margin-left: 45% !important;
+    gap: 0px;
+  }
 }
