@@ -299,7 +299,7 @@ div.landingpage {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url("../../assets/housemobile.svg");
+    background-image: url("../../assets/houseipad.svg");
     position: relative;
     top: 24px;
     width: 100%;
