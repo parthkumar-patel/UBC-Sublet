@@ -299,10 +299,11 @@ div.landingpage {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url("../../assets/3d-view-house-model.jpg");
-    top: 24px;
+    background-image: url("../../assets/houseiphone.svg");
+    position: relative;
+    top: 28px;
     width: 100%;
-    height: 850px;
+    height: 650px;
     background-size: cover;
   }
 
