@@ -155,9 +155,9 @@ div.landingpage {
   .slogan p.headline {
     font-family: "Cereal-Md";
     text-align: left;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     margin-left: 12%;
-    margin-top: 5%;
+    margin-top: 10%;
     z-index: 2;
   }
 
@@ -168,7 +168,7 @@ div.landingpage {
     position: relative;
     top: 24px;
     width: 100%;
-    height: 600px;
+    height: 650px;
     background-size: cover;
   }
 }
