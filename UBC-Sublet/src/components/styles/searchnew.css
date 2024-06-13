@@ -290,7 +290,7 @@ div.landingpage {
   .slogan p.headline {
     font-family: "Cereal-Md";
     text-align: left;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     margin-left: 15%;
     margin-top: 20%;
     z-index: 2;
@@ -305,27 +305,11 @@ div.landingpage {
     width: 100%;
     height: 650px;
     background-size: cover;
-    filter: contrast(1.2) brightness(1.1);
   }
 
   .tabpanel {
-    width: 360px;
-    height: 64px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
-    border: 1px solid #ddd;
-    justify-content: space-between;
-    padding: 6px 9px 6px 30px;
-    gap: 20px;
-    background-color: #fff;
-    color: #222;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    box-sizing: border-box;
-    margin-left: 60px;
-    margin-bottom: 240px;
-    cursor: pointer;
+    margin-left: 40px !important;
+    margin-bottom: 220px !important;
   }
 }
 
