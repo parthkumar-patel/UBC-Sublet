@@ -2,7 +2,7 @@
   display: flex;
   background-color: #f2f2f2;
   padding: 20px;
-  height: 170lvh;
+  height: 100lvh;
   width: 100lvw;
 }
 
@@ -175,4 +175,106 @@ p {
   background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .profile-wrapper {
+    flex-direction: column;
+    padding: 54px;
+    padding-top: 32px;
+    height: auto;
+  }
+
+  .user-profile {
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: -24px;
+    align-items: center;
+  }
+
+  .profile-card {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px !important;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .profile-row {
+    width: 100%;
+    padding-left: 0;
+    margin-inline: 0;
+    margin-top: -12px;
+    margin-bottom: 10px;
+  }
+
+  .card-info {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .card-body {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .full-name {
+    font-size: 22px;
+    padding: 0;
+  }
+
+  .email-info {
+    margin-top: -5px;
+  }
+
+  .email-info,
+  .contact-info {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0;
+  }
+
+  .email-info span,
+  .contact-info span {
+    font-size: 16px;
+  }
+
+  .email-info p,
+  .contact-info p {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .listing {
+    font-size: 32px;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .cards {
+    margin-top: -24px;
+    padding: 0;
+  }
+
+  .cards-lists {
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .no-listing-msg {
+    width: 100%;
+    font-size: 16px;
+  }
 }
