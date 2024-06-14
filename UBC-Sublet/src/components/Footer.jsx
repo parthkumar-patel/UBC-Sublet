@@ -40,6 +40,14 @@ const Footer = () => {
                 Rythem Shah
               </a>
             </li>
+            <li>
+            <a
+                href="https://www.linkedin.com/in/shikha-rajesh-a22b5020a/"
+                className="developer-link"
+              >
+                Shikha Rajesh 
+              </a>
+            </li>
           </ul>
         </div>
         <div className="footer-section">
