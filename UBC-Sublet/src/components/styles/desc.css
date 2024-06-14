@@ -109,7 +109,7 @@
 .amenities {
   width: 436px;
   height: 26px;
-  font-size: 24px;
+  font-size: 24px !important;
   line-height: 30px;
   display: flex;
   font-family: Manrope;
@@ -117,6 +117,7 @@
   align-items: center;
   flex-shrink: 0;
   max-width: 100%;
+  margin-left: 0px !important;
 }
 .hover-me {
   font-size: 20px;
