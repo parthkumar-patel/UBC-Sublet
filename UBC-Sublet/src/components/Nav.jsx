@@ -26,6 +26,8 @@ export default function Navbar() {
     navigate("/searchSubletss", {
       state: { latitude: data.latitude, longitude: data.longitude, isOnlyUBC },
     });
+    window.location.reload(); // Add this line to reload the page
+
   };
 
   const handleCoordinates = async (e) => {
