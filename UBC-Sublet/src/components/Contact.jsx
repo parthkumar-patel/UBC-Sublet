@@ -76,7 +76,7 @@ const Contact = (prop) => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className="your-name-wrapper your-name"
             />
           </label>
@@ -87,7 +87,7 @@ const Contact = (prop) => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email address?"
               className="your-name-wrapper your-name"
             />
           </label>
@@ -98,7 +98,7 @@ const Contact = (prop) => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What you want to say?"
+              placeholder="What do you want to say?"
               className="your-name-wrapper your-name"
             />
           </label>

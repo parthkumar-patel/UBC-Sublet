@@ -101,7 +101,7 @@ export default function Search() {
               <input
                 id="searchInput"
                 className="search-destinations"
-                placeholder="Search destinations"
+                placeholder="Search destinations in UBC"
                 aria-label="Search destinations"
                 value={inputValue}
                 onChange={handlePlaceChange}

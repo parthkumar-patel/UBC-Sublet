@@ -106,7 +106,7 @@ div.landingpage {
 .search-destinations {
   font-family: "Cereal";
   font-size: 14px;
-  min-width: 126.4px;
+  min-width: 180px;
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
@@ -299,7 +299,7 @@ div.landingpage {
   div.landingpage {
     display: flex;
     align-items: end;
-    background-image: url("../../assets/housemob.jpeg");
+    background-image: url("../../assets/houseiphone.svg");
     position: relative;
     top: 28px;
     width: 100%;

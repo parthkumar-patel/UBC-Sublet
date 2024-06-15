@@ -14,7 +14,9 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="/" style = {{ color: "white" }}>Home</a>
+              <a href="/" style={{ color: "white" }}>
+                Home
+              </a>
             </li>
             <li>
               <div onClick={() => handleChange()}>About Us</div>
@@ -40,14 +42,14 @@ const Footer = () => {
                 Rythem Shah
               </a>
             </li>
-            <li>
-            <a
+            {/* <li>
+              <a
                 href="https://www.linkedin.com/in/shikha-rajesh-a22b5020a/"
                 className="developer-link"
               >
-                Shikha Rajesh 
+                Shikha Rajesh
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="footer-section">
