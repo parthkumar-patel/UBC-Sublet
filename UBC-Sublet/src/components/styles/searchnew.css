@@ -308,6 +308,7 @@ div.landingpage {
   }
 
   .tabpanel {
+    width: 280px !important;
     margin-left: 40px !important;
     margin-bottom: 230px !important;
   }
